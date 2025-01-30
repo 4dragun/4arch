@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
+toilet="toilet -t --metal --font future"
+
 cd ~/4end
-echo " GIT PULL AUTOMATION STARTED"
+echo "GIT PULL SCRIPT STARTED" | $toilet
 git pull origin main
-echo " GIT PULL AUTOMATION FINISHED"
+echo "GIT PULL SCRIPT ENDED" | $toilet
