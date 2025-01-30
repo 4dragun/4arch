@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-toilet="toilet -t --gay --font pagga"
+toilet="toilet -t --metal --font future"
 ent="START..?"
 
 echo OH-MY-ZSH | $toilet
