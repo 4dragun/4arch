@@ -21,7 +21,7 @@ echo OTHER_APPS_NEEDED SETUP...................................................
 echo y | yay -S --needed kitty brightnessctl wl-clipboard uwsm fish
 echo y | yay -S --needed bibata-cursor-theme catppuccin-gtk-theme-mocha
 echo y | yay -S --needed lsd bat swww lua-language-server
-echo y | yay -S --needed git-credential-manager-git
+echo y | yay -S --needed git-credential-manager-bin
 
 echo SOME_FONTS_TOOOO..........................................................
 echo y | yay -S --needed ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
