@@ -21,16 +21,13 @@ echo OTHER_APPS_NEEDED SETUP...................................................
 echo y | yay -S --needed kitty brightnessctl wl-clipboard uwsm fish
 echo y | yay -S --needed bibata-cursor-theme catppuccin-gtk-theme-mocha
 echo y | yay -S --needed lsd bat swww lua-language-server
+echo y | yay -S --needed git-credential-manager-git
 
 echo SOME_FONTS_TOOOO..........................................................
 echo y | yay -S --needed ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
 echo y | yay -S --needed noto-fonts-emoji noto-fonts-extra
 
 echo CONFIGURING DOTFILES......................................................
-rm ~/.config/fish/config.fish
-mkdir ~/.config/fish
-cp ~/4end/confs/config.fish ~/.config/fish
-
 rm -rf ~/.config/uwsm
 mkdir ~/.config/uwsm
 cp ~/4end/confs/env ~/.config/uwsm
@@ -49,6 +46,6 @@ cp ~/4end/confs/hyprland.conf ~/.config/hypr
 cp ~/4end/confs/hypridle.conf ~/.config/hypr
 cp ~/4end/confs/hyprlock.conf ~/.config/hypr
 
-chsh -s /usr/bin/fish
+chsh -s /usr/bin/zsh
 
 reboot

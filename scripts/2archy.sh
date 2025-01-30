@@ -1,6 +1,5 @@
 echo .........................................................................
 cd
-git clone https://github.com/orangci/walls-catppuccin-mocha
 swww img ~/walls-catppuccin-mocha/pompeii.png
 
 wl-copy < ~/4end/scripts/neovim.txt
@@ -17,7 +16,6 @@ echo PACKAGES SETUP...........................................................
 yay -S --needed clipse-bin ags-hyprpanel-git
 
 echo MYAPPS SETUP.............................................................
-echo y | yay -Rs yazi
 echo y | yay -S --needed yazi brave emote pavucontrol
 echo y | yay -S --needed telegram-desktop lsd bat nautilus mpv eog grimblast
 echo y | yay -S --needed fuzzel pacseek nwg-look fastfetch htop blueman btop
