@@ -18,7 +18,7 @@ yay -S --needed clipse-bin ags-hyprpanel-git
 
 echo MYAPPS SETUP.............................................................
 echo y | yay -Rs yazi
-echo y | yay -S --needed yazi-git brave librewolf emote pavucontrol
+echo y | yay -S --needed yazi brave emote pavucontrol
 echo y | yay -S --needed telegram-desktop lsd bat nautilus mpv eog grimblast
 echo y | yay -S --needed fuzzel pacseek nwg-look fastfetch htop blueman btop
 echo y | yay -S --needed qt5ct qt6ct kvantum-qt5 power-profiles-daemon

@@ -14,11 +14,11 @@ echo UPDATING AGAIN...........................................................
 yay
 
 echo HYPRLAND_and_its_DEPS SETUP..............................................
-echo y | yay -S --needed hyprland-git xdg-desktop-portal-hyprland-git
-echo y | yay -S --needed qt5-wayland hypridle-git hyprlock-git hyprpicker-git
+echo y | yay -S --needed hyprland xdg-desktop-portal-hyprland
+echo y | yay -S --needed qt5-wayland hypridle hyprlock hyprpicker
 
 echo OTHER_APPS_NEEDED SETUP...................................................
-echo y | yay -S --needed kitty-git brightnessctl wl-clipboard uwsm fish
+echo y | yay -S --needed kitty brightnessctl wl-clipboard uwsm fish
 echo y | yay -S --needed bibata-cursor-theme catppuccin-gtk-theme-mocha
 echo y | yay -S --needed lsd bat swww lua-language-server
 
