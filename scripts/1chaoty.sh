@@ -46,6 +46,3 @@ cp ~/4end/confs/hyprland.conf ~/.config/hypr
 cp ~/4end/confs/hypridle.conf ~/.config/hypr
 cp ~/4end/confs/hyprlock.conf ~/.config/hypr
 
-chsh -s /usr/bin/zsh
-
-reboot

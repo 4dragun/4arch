@@ -13,6 +13,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-
 wl-copy -n "powerlevel10k/powerlevel10k"
 nvim ~/.zshrc
 zsh
+wl-copy -n "POWERLEVEL9K_VCS_DISABLED_WORKDIR_PATTERN"
 nvim ~/.p10k.zsh
 
 echo ZSH-SYNTAX-HIGHLIGHTING | $toilet

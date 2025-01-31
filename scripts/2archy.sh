@@ -1,6 +1,6 @@
 echo .........................................................................
 cd
-swww img ~/walls-catppuccin-mocha/pompeii.png
+swww img ~/4end/walls/train-sideview.png
 
 wl-copy < ~/4end/scripts/neovim.txt
 git clone https://github.com/NvChad/starter ~/.config/nvim
