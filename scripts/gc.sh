@@ -2,7 +2,7 @@
 
 toilet="toilet -t --metal --font pagga"
 
-cd ~/4end
+cd ~/4arch
 echo "GIT COMMIT STARTED" | $toilet
 git add .
 read -p "enter commit message: " msg
