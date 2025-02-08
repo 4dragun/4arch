@@ -1,6 +1,13 @@
 echo UPDATING SYSTEM..........................................................
 yay
 
+echo YAY SETUP................................................................
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
+cd
+
 echo CHAOTIC_AUR SETUP........................................................
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
 sudo pacman-key --lsign-key 3056513887B78AEB
