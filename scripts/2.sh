@@ -91,7 +91,3 @@ if [[ $ras = y ]]; then
 else
   echo "please REBOOT manually!"
 fi
-
-
-
-
