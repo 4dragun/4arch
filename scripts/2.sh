@@ -8,10 +8,15 @@ cd && echo "Welcome Back ARCHY"
 read -p "click Enter to continue..."
 
 echo "configuring YAY..."
-cd && rm -rf ~/yay-bin
-sudo pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin && makepkg -si && cd && yay
+read -p "proceed..?" yas
+if [[ $yas = y ]]; then
+  cd && rm -rf ~/yay-bin
+  sudo pacman -S --needed git base-devel
+  git clone https://aur.archlinux.org/yay-bin.git
+  cd yay-bin && makepkg -si && cd && yay
+else
+  echo "skipping YAY setup..."
+fi
 
 echo "configuring SYSTEM files"
 $W < ~/4arch/scripts/scriptiles/chaoty.sh
@@ -69,8 +74,8 @@ cp -r ~/4arch/confs/config.fish ~/.config/fish
 swww-daemon &
 swww img ~/4arch/walls/train-sideview.png
 
-read -p "REBOOT now ?" ans
-if [ $ans = yes ]; then
+read -p "REBOOT now ?" ras
+if [[ $ras = y ]]; then
   reboot
 else
   echo "please REBOOT manually!"
