@@ -18,6 +18,15 @@ else
   echo "skipping NEOVIM setup"
 fi
 
+echo "configuring bash-fish stuff..."
+read -p "wanna edit .bashrc..? ;) hmm?? " bas
+if [[ $bas = y ]]; then
+  $W < ~/4arch/scripts/scriptiles/bafish.sh
+  nvim ~/.bashrc
+else
+  echo "skipping bafi stuff"
+fi
+
 echo "configuring YAY..."
 read -p "proceed..?" yas
 if [[ $yas = y ]]; then
