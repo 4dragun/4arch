@@ -56,20 +56,15 @@ sudo systemctl enable power-profiles-daemon
 sudo systemctl enable sddm
 
 echo CONFIGURING DOTFILES 
-mkdir ~/.config/uwsm
-cp -r ~/4end/confs/env ~/.config/uwsm
+cp -r ~/4arch/confs/uwsm ~/.config/
 
-mkdir ~/.config/kitty
-cp -r ~/4end/confs/kitty.conf ~/.config/kitty
-cp -r ~/4end/confs/Catppuccin-Mocha.conf ~/.config/kitty
+cp -r ~/4arch/confs/kitty ~/.config/
 
-mkdir ~/.config/fuzzel
-cp -r ~/4end/confs/fuzzel.ini ~/.config/fuzzel
+cp -r ~/4arch/confs/fuzzel ~/.config/
 
-mkdir ~/.config/hypr
-cp -r ~/4end/confs/hyprland.conf ~/.config/hypr
-cp -r ~/4end/confs/hypridle.conf ~/.config/hypr
-cp -r ~/4end/confs/hyprlock.conf ~/.config/hypr
+cp -r ~/4arch/confs/hypr ~/.config/
+
+cp -r ~/4arch/confs/config.fish ~/.config/fish
 
 swww-daemon &
 swww img ~/4arch/walls/train-sideview.png
