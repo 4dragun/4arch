@@ -1,40 +1,40 @@
 #!/usr/bin/env bash
-echo Welcome Back ARCHY...
-read -p "󰿄 click Enter to continue..."
- 
-echo  Installing YAY
-exit
+
+cd && echo "Welcome Back ARCHY"
+read -p "click Enter to continue..."
+
+echo "configuring YAY..."
+cd && rm -rf ~/yay-bin
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -si
-cd
+cd yay-bin && makepkg -si
+cd && echo YAY installed successfully!
 
-echo CHAOTIC_AUR SETUP........................................................
-sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-sudo pacman-key --lsign-key 3056513887B78AEB
-echo y | sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-echo y | sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+echo "updating SYSTEM..." && yay
 
-echo PACMAN_FILE SETUP........................................................
-sudo nvim /etc/pacman.conf
+E="echo y"
+Y="yay -S --needed"
 
-echo UPDATING AGAIN...........................................................
-yay
+echo "installing FONTS"
+$E|$Y ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
+$E|$Y noto-fonts-extra noto-fonts-emoji
 
-echo HYPRLAND_and_its_DEPS SETUP..............................................
-echo y | yay -S --needed hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
-echo y | yay -S --needed qt5-wayland hypridle hyprlock hyprpicker
+echo "installing HYPRLAND STUFF"
+$E|$Y hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+$E|$Y qt5-wayland hypridle hyprlock hyprpicker
 
-echo OTHER_APPS_NEEDED SETUP...................................................
-echo y | yay -S --needed kitty brightnessctl wl-clipboard uwsm fish
-echo y | yay -S --needed bibata-cursor-theme catppuccin-gtk-theme-mocha
-echo y | yay -S --needed lsd bat swww lua-language-server flatpak
-echo y | yay -S --needed git-credential-manager-bin
+kitty brightnessctl wl-clipboard uwsm fish
+bibata-cursor-theme catppuccin-gtk-theme-mocha
+lsd bat swww lua-language-server flatpak
+git-credential-manager-bin
 
-echo SOME_FONTS_TOOOO..........................................................
-echo y | yay -S --needed ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
-echo y | yay -S --needed noto-fonts-emoji noto-fonts-extra
+yazi brave emote pavucontrol
+telegram-desktop lsd bat nautilus mpv eog grimblast
+fuzzel pacseek nwg-look fastfetch htop blueman btop
+qt5ct qt6ct kvantum-qt5 power-profiles-daemon
+ffmpegthumbnailer python-pillow
+
+sudo systemctl enable --now power-profiles-daemon
 
 echo CONFIGURING DOTFILES......................................................
 rm -rf ~/.config/uwsm
