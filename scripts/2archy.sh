@@ -1,8 +1,8 @@
 echo .........................................................................
 cd
-swww img ~/4end/walls/train-sideview.png
+swww img ~/4arch/walls/train-sideview.png
 
-wl-copy < ~/4end/scripts/neovim.txt
+wl-copy < ~/4arch/scripts/neovim.txt
 git clone https://github.com/NvChad/starter ~/.config/nvim
 nvim ~/.config/nvim/init.lua
 

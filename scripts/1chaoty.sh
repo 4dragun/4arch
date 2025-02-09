@@ -23,16 +23,22 @@ echo "installing HYPRLAND STUFF"
 $E|$Y hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 $E|$Y qt5-wayland hypridle hyprlock hyprpicker
 
-kitty brightnessctl wl-clipboard uwsm fish
-bibata-cursor-theme catppuccin-gtk-theme-mocha
-lsd bat swww lua-language-server flatpak
-git-credential-manager-bin
+echo "installing GUI APPS"
+$E|$Y brave emote pavucontrol telegram-desktop nautilus mpv eog
+$E|$Y fuzzel nwg-look blueman kitty qt5ct qt6ct kvantum-qt5
 
-yazi brave emote pavucontrol
-telegram-desktop lsd bat nautilus mpv eog grimblast
-fuzzel pacseek nwg-look fastfetch htop blueman btop
-qt5ct qt6ct kvantum-qt5 power-profiles-daemon
-ffmpegthumbnailer python-pillow
+echo "installing CLI APPS"
+$E|$Y yazi lsd bat grimblast pacseek fastfetch htop btop swww
+$E|$Y power-profiles-daemon brightnessctl wl-clipboard uwsm fish
+$E|$Y lua-language-server flatpak git-credential-manager-bin 
+
+echo "installing few DEPENDENCIES"
+$E|$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
+
+echo "installing THEME"
+cd
+git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
+cd ~/Catppuccin-GTK-Theme/themes && ./install.sh
 
 sudo systemctl enable --now power-profiles-daemon
 
