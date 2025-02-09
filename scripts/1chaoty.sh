@@ -7,8 +7,7 @@ echo "configuring YAY..."
 cd && rm -rf ~/yay-bin
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin && makepkg -si
-cd && echo YAY installed successfully!
+cd yay-bin && makepkg -si && cd
 
 echo "updating SYSTEM..." && yay
 
@@ -25,7 +24,7 @@ $E|$Y qt5-wayland hypridle hyprlock hyprpicker
 
 echo "installing GUI APPS"
 $E|$Y brave emote pavucontrol telegram-desktop nautilus mpv eog
-$E|$Y fuzzel nwg-look blueman kitty qt5ct qt6ct kvantum-qt5
+$E|$Y fuzzel nwg-look blueman kitty qt5ct qt6ct kvantum-qt5 sddm
 
 echo "installing CLI APPS"
 $E|$Y yazi lsd bat grimblast pacseek fastfetch htop btop swww
@@ -35,29 +34,27 @@ $E|$Y lua-language-server flatpak git-credential-manager-bin
 echo "installing few DEPENDENCIES"
 $E|$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
 
-echo "installing THEME"
-cd
+echo "installing THEME" && cd
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
-cd ~/Catppuccin-GTK-Theme/themes && ./install.sh
+cd ~/Catppuccin-GTK-Theme/themes && ./install.sh && cd
 
-sudo systemctl enable --now power-profiles-daemon
+echo "enabling system SERVICES"
+sudo systemctl enable power-profiles-daemon
+sudo systemctl enable sddm
 
-echo CONFIGURING DOTFILES......................................................
-rm -rf ~/.config/uwsm
+echo CONFIGURING DOTFILES 
 mkdir ~/.config/uwsm
-cp ~/4end/confs/env ~/.config/uwsm
+cp -r ~/4end/confs/env ~/.config/uwsm
 
-rm -rf ~/.config/kitty
 mkdir ~/.config/kitty
-cp ~/4end/confs/kitty.conf ~/.config/kitty
-cp ~/4end/confs/Catppuccin-Mocha.conf ~/.config/kitty
+cp -r ~/4end/confs/kitty.conf ~/.config/kitty
+cp -r ~/4end/confs/Catppuccin-Mocha.conf ~/.config/kitty
 
 mkdir ~/.config/fuzzel
-cp ~/4end/confs/fuzzel.ini ~/.config/fuzzel
+cp -r ~/4end/confs/fuzzel.ini ~/.config/fuzzel
 
-rm -rf ~/.config/hypr
 mkdir ~/.config/hypr
-cp ~/4end/confs/hyprland.conf ~/.config/hypr
-cp ~/4end/confs/hypridle.conf ~/.config/hypr
-cp ~/4end/confs/hyprlock.conf ~/.config/hypr
+cp -r ~/4end/confs/hyprland.conf ~/.config/hypr
+cp -r ~/4end/confs/hypridle.conf ~/.config/hypr
+cp -r ~/4end/confs/hyprlock.conf ~/.config/hypr
 
