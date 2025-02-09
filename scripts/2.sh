@@ -7,6 +7,17 @@ Y="yay -S --needed"
 cd && echo "Welcome Back ARCHY"
 read -p "click Enter to continue..."
 
+echo "configuring NEOVIM"
+read -p "proceed..?" nas
+if [[ $nas = y ]]; then
+  $W < ~/4arch/scripts/scriptiles/nvhypr.sh
+  rm -rf ~/.config/nvim && mkdir ~/.config/nvim
+  git clone https://github.com/NvChad/starter ~/.config/nvim
+  nvim ~/.config/nvim/init.lua
+else
+  echo "skipping NEOVIM setup"
+fi
+
 echo "configuring YAY..."
 read -p "proceed..?" yas
 if [[ $yas = y ]]; then
