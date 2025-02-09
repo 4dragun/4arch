@@ -1,7 +1,9 @@
-echo UPDATING SYSTEM..........................................................
-yay
-
-echo YAY SETUP................................................................
+#!/usr/bin/env bash
+echo Welcome Back ARCHY...
+read -p "󰿄 click Enter to continue..."
+ 
+echo  Installing YAY
+exit
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
