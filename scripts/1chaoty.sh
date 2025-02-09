@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+N="sudo nvim"
+E="echo y"
+W="wl-copy -n"
+Y="yay -S --needed"
 
 cd && echo "Welcome Back ARCHY"
 read -p "click Enter to continue..."
@@ -7,12 +11,21 @@ echo "configuring YAY..."
 cd && rm -rf ~/yay-bin
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin && makepkg -si && cd
+cd yay-bin && makepkg -si && cd && yay
 
-echo "updating SYSTEM..." && yay
+echo "configuring SYSTEM files"
+$W < ~/4arch/scripts/scriptiles/chaoty.sh
+$N /etc/pacman.conf
 
-E="echo y"
-Y="yay -S --needed"
+$W HandlePowerKey=suspend-then-hibernate
+$N /etc/systemd/logind.conf
+
+$W HibernateDelaySec=2400s
+$N /etc/systemd/sleep.conf
+
+yay
+echo "installing AUR apps"
+$Y clipse-bin ags-hyprpanel-git
 
 echo "installing FONTS"
 $E|$Y ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
@@ -57,4 +70,17 @@ mkdir ~/.config/hypr
 cp -r ~/4end/confs/hyprland.conf ~/.config/hypr
 cp -r ~/4end/confs/hypridle.conf ~/.config/hypr
 cp -r ~/4end/confs/hyprlock.conf ~/.config/hypr
+
+swww-daemon &
+swww img ~/4arch/walls/train-sideview.png
+
+read -p "REBOOT now ?" ans
+if [ $ans = yes ]; then
+  reboot
+else
+  echo "please REBOOT manually!"
+fi
+
+
+
 
