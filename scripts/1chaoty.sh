@@ -33,7 +33,7 @@ $E|$Y noto-fonts-extra noto-fonts-emoji
 
 echo "installing HYPRLAND STUFF"
 $E|$Y hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
-$E|$Y qt5-wayland hypridle hyprlock hyprpicker
+$E|$Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent
 
 echo "installing GUI APPS"
 $E|$Y brave emote pavucontrol telegram-desktop nautilus mpv eog
