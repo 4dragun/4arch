@@ -80,16 +80,16 @@ echo "enabling system SERVICES"
 sudo systemctl enable power-profiles-daemon
 sudo systemctl enable sddm
 
-echo CONFIGURING DOTFILES 
-cp -r ~/4arch/confs/uwsm ~/.config/
-
-cp -r ~/4arch/confs/kitty ~/.config/
-
-cp -r ~/4arch/confs/fuzzel ~/.config/
-
-cp -r ~/4arch/confs/hypr ~/.config/
-
-cp -r ~/4arch/confs/config.fish ~/.config/fish
+# echo CONFIGURING DOTFILES 
+# cp -r ~/4arch/confs/uwsm ~/.config/
+#
+# cp -r ~/4arch/confs/kitty ~/.config/
+#
+# cp -r ~/4arch/confs/fuzzel ~/.config/
+#
+# cp -r ~/4arch/confs/hypr ~/.config/
+#
+# cp -r ~/4arch/confs/config.fish ~/.config/fish
 
 swww-daemon &
 swww img ~/4arch/walls/train-sideview.png
