@@ -21,7 +21,7 @@ fi
 
 read -p "install critical PROGRAMMSSS..? " pas
 if [[ $pas = y ]]; then
-  $EY|$PS wl-clipboard hyprland uwsm fish kitty yazi neovim brightnessctl
+  $EY|$PS wl-clipboard hyprland uwsm fish kitty yazi neovim brightnessctl sddm
 else
   echo "skipped critical PROGRAMMSSS installation..!"
 fi
