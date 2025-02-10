@@ -4,42 +4,37 @@ E="echo y"
 W="wl-copy -n"
 Y="yay -S --needed"
 
-cd && echo "Welcome Back ARCHY"
-read -p "click Enter to continue..."
+cd && read -p "click Enter to continue... "
 
-echo "configuring NEOVIM"
-read -p "proceed..?" nas
+read -p "configure NVCHAD..? " nas
 if [[ $nas = y ]]; then
   $W < ~/4arch/scripts/scriptiles/nvhypr.sh
   rm -rf ~/.config/nvim && mkdir ~/.config/nvim
   git clone https://github.com/NvChad/starter ~/.config/nvim
   nvim ~/.config/nvim/init.lua
 else
-  echo "skipping NEOVIM setup"
+  echo "skipped NVCHAD setup..!"
 fi
 
-echo "configuring bash-fish stuff..."
-read -p "wanna edit .bashrc..? ;) hmm?? " bas
-if [[ $bas = y ]]; then
+read -p "configure FISH as interactive shell..? " fas
+if [[ $fas = y ]]; then
   $W < ~/4arch/scripts/scriptiles/bafish.sh
   nvim ~/.bashrc
 else
-  echo "skipping bafi stuff"
+  echo "skipped bafish configuration..!"
 fi
 
-echo "configuring YAY..."
-read -p "proceed..?" yas
+read -p "install YAY - Yet Another AUR Helper..? " yas
 if [[ $yas = y ]]; then
-  cd && rm -rf ~/yay-bin
+  rm -rf ~/yay-bin
   sudo pacman -S --needed git base-devel
   git clone https://aur.archlinux.org/yay-bin.git
   cd yay-bin && makepkg -si && cd && yay
 else
-  echo "skipping YAY setup..."
+  echo "skipped YAY setup..!"
 fi
 
-echo "configuring SYSTEM files"
-read -p "continue?" sas
+read -p "sudoedit SYSTEM-files..? " sas
 if [[ $sas = y ]]; then
   $W < ~/4arch/scripts/scriptiles/chaoty.sh
   $N /etc/pacman.conf
@@ -56,11 +51,10 @@ if [[ $sas = y ]]; then
   $W resume
   $N /etc/mkinitcpio.conf
 else
-  echo "skipping system files editings..."
+  echo "skipped SYSTEM-files editing..!"
 fi
 
-echo "creating SWAP file..."
-read -p "continue..?" swas
+read -p "configure SWAP-file..? " was
 if [[ $swas = y ]]; then
   sudo mkswap -U clear --size 8G --file /swapfile
   sudo swapon /swapfile
