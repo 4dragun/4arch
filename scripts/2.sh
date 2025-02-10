@@ -17,14 +17,6 @@ else
   echo "skipped NVCHAD setup..!"
 fi
 
-read -p "configure FISH as interactive shell..? " fas
-if [[ $fas = y ]]; then
-  $W < ~/4arch/scripts/scriptiles/bafish.sh
-  nvim ~/.bashrc
-else
-  echo "skipped bafish configuration..!"
-fi
-
 read -p "install YAY - Yet Another AUR Helper..? " yas
 if [[ $yas = y ]]; then
   rm -rf ~/yay-bin
@@ -63,6 +55,29 @@ else
   echo "skipped SWAP-file creation..!"
 fi
 
+read -p "configure FISH as interactive shell..? " fas
+if [[ $fas = y ]]; then
+  $W < ~/4arch/scripts/scriptiles/bafish.sh
+  nvim ~/.bashrc
+else
+  echo "skipped bafish configuration..!"
+fi
+
+read -p "install a GTK-theme..? " gas
+if [[ $gas = y ]]; then
+  git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
+  cd ~/Catppuccin-GTK-Theme/themes && ./install.sh && cd
+else
+  echo "skipped GTK-theme installation..!"
+fi
+read -p "install a QT-theme..? " qas
+if [[ $qas = y ]]; then
+  git clone https://github.com/catppuccin/Kvantum
+  kvantummanager && qt5ct && qt6ct
+else
+  echo "skipped QT-theme installation..!"
+fi
+
 yay
 
 echo "installing AUR-apps..."
@@ -95,10 +110,6 @@ $E|$Y lua-language-server flatpak git-credential-manager-bin
 
 echo "installing DEPENDENCIES..."
 $E|$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
-
-echo "installing THEME..."
-git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
-cd ~/Catppuccin-GTK-Theme/themes && ./install.sh && cd
 
 echo "enabling SERVICES..."
 sudo systemctl enable power-profiles-daemon
