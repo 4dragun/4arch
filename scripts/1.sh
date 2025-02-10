@@ -5,7 +5,7 @@ P="sudo pacman -S --needed"
 
 $E|$P wl-clipboard hyprland uwsm fish kitty yazi neovim brightnessctl
 
-echo CONFIGURING DOTFILES 
+echo CONFIGURING DOTFILES
 cp -r ~/4arch/confs/uwsm ~/.config/
 
 cp -r ~/4arch/confs/kitty ~/.config/
