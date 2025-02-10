@@ -62,60 +62,52 @@ else
   echo "skipped SWAP-file creation..!"
 fi
 
-echo "...UPDAting system..." && yay
-
-echo "installing AUR apps"
+echo "installing AUR-apps..."
 $Y clipse-bin ags-hyprpanel-git
 
-echo "installing FONTS"
+read -p "regenerate INITRAMFS..? " ias
+if [[ $ias = y ]]; then
+  sudo mkinitcpio -P
+else
+  echo "skipped INITRAMFS regeneration..!"
+fi
+
+echo "installing FONTS..."
 $E|$Y ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
 $E|$Y noto-fonts-extra noto-fonts-emoji
 
-echo "installing HYPRLAND STUFF"
+echo "installing HYPRLAND-stuff..."
 $E|$Y hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 $E|$Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent
 
-echo "installing GUI APPS"
+echo "installing GUI-apps..."
 $E|$Y brave emote pavucontrol telegram-desktop nautilus mpv eog
 $E|$Y fuzzel nwg-look blueman kitty qt5ct qt6ct kvantum-qt5 sddm
 
-echo "installing CLI APPS"
+echo "installing CLI-apps..."
 $E|$Y yazi lsd bat grimblast pacseek fastfetch htop btop swww
 $E|$Y power-profiles-daemon brightnessctl wl-clipboard uwsm fish
 $E|$Y lua-language-server flatpak git-credential-manager-bin 
 
-echo "installing few DEPENDENCIES"
+echo "installing DEPENDENCIES..."
 $E|$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
 
-echo "installing THEME" && cd
+echo "installing THEME..."
 git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
 cd ~/Catppuccin-GTK-Theme/themes && ./install.sh && cd
 
-echo "enabling system SERVICES"
+echo "enabling SERVICES..."
 sudo systemctl enable power-profiles-daemon
 sudo systemctl enable sddm
 
-# echo CONFIGURING DOTFILES 
-# cp -r ~/4arch/confs/uwsm ~/.config/
-#
-# cp -r ~/4arch/confs/kitty ~/.config/
-#
-# cp -r ~/4arch/confs/fuzzel ~/.config/
-#
-# cp -r ~/4arch/confs/hypr ~/.config/
-#
-# cp -r ~/4arch/confs/config.fish ~/.config/fish
+
 
 swww-daemon &
 swww img ~/4arch/walls/train-sideview.png
 
-echo "regenerating the initramfs..."
-sudo mkinitcpio -P
-
-echo ">>>FINISHED SCRIPT EXECUTION..."
-read -p "REBOOT now ?" ras
+read -p "finished script execution, REBOOT now..? " ras
 if [[ $ras = y ]]; then
   reboot
 else
-  echo "please REBOOT manually!"
+  echo "please REBOOT manually..!"
 fi
