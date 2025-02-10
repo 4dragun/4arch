@@ -16,4 +16,4 @@ cp -r ~/4arch/confs/hypr ~/.config/
 
 cp -r ~/4arch/confs/config.fish ~/.config/fish
 
-uwsm start hyprland
+uwsm start hyprland.desktop
