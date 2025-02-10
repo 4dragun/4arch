@@ -62,7 +62,7 @@ else
   echo "skipped SWAP-file creation..!"
 fi
 
-$E|yay
+yay
 
 echo "installing AUR-apps..."
 $Y clipse-bin ags-hyprpanel-git
