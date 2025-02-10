@@ -39,16 +39,37 @@ else
 fi
 
 echo "configuring SYSTEM files"
-$W < ~/4arch/scripts/scriptiles/chaoty.sh
-$N /etc/pacman.conf
+read -p "continue?" sas
+if [[ $sas = y ]]; then
+  $W < ~/4arch/scripts/scriptiles/chaoty.sh
+  $N /etc/pacman.conf
 
-$W HandlePowerKey=suspend-then-hibernate
-$N /etc/systemd/logind.conf
+  $W HandlePowerKey=suspend-then-hibernate
+  $N /etc/systemd/logind.conf
 
-$W HibernateDelaySec=2400s
-$N /etc/systemd/sleep.conf
+  $W HibernateDelaySec=2400s
+  $N /etc/systemd/sleep.conf
 
-yay
+  $W "/swapfile none swap defaults 0 0"
+  $N /etc/fstab
+
+  $W resume
+  $N /etc/mkinitcpio.conf
+else
+  echo "skipping system files editings..."
+fi
+
+echo "creating SWAP file..."
+read -p "continue..?" swas
+if [[ $swas = y ]]; then
+  sudo mkswap -U clear --size 8G --file /swapfile
+  sudo swapon /swapfile
+else
+  echo "skipping swap file creation!"
+fi
+
+echo "...UPDAting system..." && yay
+
 echo "installing AUR apps"
 $Y clipse-bin ags-hyprpanel-git
 
@@ -94,6 +115,10 @@ sudo systemctl enable sddm
 swww-daemon &
 swww img ~/4arch/walls/train-sideview.png
 
+echo "regenerating the initramfs..."
+sudo mkinitcpio -P
+
+echo ">>>FINISHED SCRIPT EXECUTION..."
 read -p "REBOOT now ?" ras
 if [[ $ras = y ]]; then
   reboot
