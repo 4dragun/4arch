@@ -86,6 +86,7 @@ $E|$Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent
 echo "installing GUI-apps..."
 $E|$Y brave emote pavucontrol telegram-desktop nautilus mpv eog
 $E|$Y fuzzel nwg-look blueman kitty qt5ct qt6ct kvantum-qt5 sddm
+$E|$Y qbittorrent
 
 echo "installing CLI-apps..."
 $E|$Y yazi lsd bat grimblast pacseek fastfetch htop btop swww
