@@ -59,7 +59,7 @@ if [[ $swas = y ]]; then
   sudo mkswap -U clear --size 8G --file /swapfile
   sudo swapon /swapfile
 else
-  echo "skipping swap file creation!"
+  echo "skipped SWAP-file creation..!"
 fi
 
 echo "...UPDAting system..." && yay
