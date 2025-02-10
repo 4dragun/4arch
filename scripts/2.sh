@@ -100,8 +100,6 @@ echo "enabling SERVICES..."
 sudo systemctl enable power-profiles-daemon
 sudo systemctl enable sddm
 
-
-
 swww-daemon &
 swww img ~/4arch/walls/train-sideview.png
 
