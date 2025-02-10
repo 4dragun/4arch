@@ -14,7 +14,7 @@ else
   echo "skipped CHAOTIC-AUR setup..!"
 fi
 
-read -p "shit went down? REBOOT now..? " ras
+read -p "shit went down..? REBOOT now..? " ras
 if [[ $ras = y ]]; then
   reboot
 fi
