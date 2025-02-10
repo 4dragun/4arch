@@ -5,6 +5,7 @@ W="wl-copy -n"
 Y="yay -S --needed"
 
 cd && read -p "click Enter to continue... "
+swww img ~/4arch/walls/train-sideview.png
 
 read -p "configure NVCHAD..? " nas
 if [[ $nas = y ]]; then
@@ -101,9 +102,6 @@ cd ~/Catppuccin-GTK-Theme/themes && ./install.sh && cd
 echo "enabling SERVICES..."
 sudo systemctl enable power-profiles-daemon
 sudo systemctl enable sddm
-
-swww-daemon &
-swww img ~/4arch/walls/train-sideview.png
 
 read -p "finished script execution, REBOOT now..? " ras
 if [[ $ras = y ]]; then
