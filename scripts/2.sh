@@ -96,17 +96,17 @@ $E|$Y noto-fonts noto-fonts-cjk noto-fonts-extra
 $E|$Y noto-fonts-emoji
 
 echo "installing HYPRLAND-stuff..."
-$E|$Y hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+$E|$Y xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 $E|$Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent
 
 echo "installing GUI-apps..."
 $E|$Y brave emote pavucontrol telegram-desktop nautilus mpv eog
-$E|$Y librewolf fuzzel nwg-look blueman qbittorrent
+$E|$Y librewolf fuzzel nwg-look blueman qbittorrent sddm
 
 echo "installing CLI-apps..."
-$E|$Y yazi lsd bat grimblast pacseek fastfetch htop btop swww
-$E|$Y power-profiles-daemon brightnessctl wl-clipboard uwsm fish
-$E|$Y lua-language-server flatpak git-credential-manager-bin 
+$E|$Y lsd bat grimblast pacseek fastfetch htop btop udiskie
+$E|$Y power-profiles-daemon git-credential-manager-bin
+$E|$Y lua-language-server flatpak
 
 echo "installing DEPENDENCIES..."
 $E|$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
