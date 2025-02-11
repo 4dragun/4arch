@@ -1,0 +1,49 @@
+{
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "bar.layouts": {
+    "*": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "systray",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "theme.font.name": "JetBrainsMono Nerd Font",
+  "theme.font.style": "normal",
+  "theme.font.label": "JetBrainsMono Nerd Font Ultra-Light",
+  "theme.font.size": "0.7rem",
+  "theme.bar.floating": false,
+  "theme.bar.transparent": false,
+  "theme.bar.buttons.y_margins": "0em",
+  "theme.bar.outer_spacing": "1.6em",
+  "bar.launcher.autoDetectIcon": true,
+  "bar.workspaces.monitorSpecific": false,
+  "bar.workspaces.show_numbered": true,
+  "theme.bar.buttons.workspaces.fontSize": "1em",
+  "bar.workspaces.workspaces": 10,
+  "bar.clock.format": "%a %b %d  %R",
+  "bar.media.truncation_size": 30,
+  "theme.bar.buttons.enableBorders": false,
+  "theme.bar.buttons.radius": "0.3em",
+  "theme.bar.buttons.innerRadiusMultiplier": "0.4",
+  "theme.bar.buttons.background_opacity": 0,
+  "theme.bar.buttons.padding_x": "0.2rem",
+  "theme.font.weight": 600,
+  "theme.bar.border_radius": "0.4em",
+  "theme.bar.buttons.opacity": 100,
+  "theme.bar.buttons.padding_y": "0.2rem",
+  "bar.workspaces.show_icons": false
+}
