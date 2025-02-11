@@ -91,8 +91,8 @@ else
 fi
 
 echo "installing FONTS..."
-$E|$Y ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
-$E|$Y noto-fonts-extra noto-fonts-emoji
+$E|$Y noto-fonts noto-fonts-cjk noto-fonts-extra
+$E|$Y noto-fonts-emoji
 
 echo "installing HYPRLAND-stuff..."
 $E|$Y hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
@@ -100,7 +100,7 @@ $E|$Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent
 
 echo "installing GUI-apps..."
 $E|$Y brave emote pavucontrol telegram-desktop nautilus mpv eog
-$E|$Y fuzzel nwg-look blueman qbittorrent
+$E|$Y librewolf fuzzel nwg-look blueman qbittorrent
 
 echo "installing CLI-apps..."
 $E|$Y yazi lsd bat grimblast pacseek fastfetch htop btop swww
