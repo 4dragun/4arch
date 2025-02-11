@@ -22,12 +22,13 @@ fi
 
 read -p "install critical PROGRAMMSSS..? " pas
 if [[ $pas = y ]]; then
-  sudo pacman -Syu
   $EY|$PS wl-clipboard hyprland uwsm fish kitty yazi neovim brightnessctl
   $EY|$PS ttf-jetbrains-mono-nerd qt5ct qt6ct kvantum-qt5 swww
 else
   echo "skipped critical PROGRAMMSSS installation..!"
 fi
+
+echo "FISH test incoming..." && fish ignorethiserror
 
 read -p "copy/overwrite DOTFILES..? " das
 if [[ $das = y ]]; then

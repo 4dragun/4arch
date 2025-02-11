@@ -27,6 +27,8 @@ else
   echo "skipped YAY setup..!"
 fi
 
+yay
+
 read -p "sudoedit SYSTEM-files..? " sas
 if [[ $sas = y ]]; then
   $W < ~/4arch/scripts/scriptiles/chaoty.sh
@@ -78,8 +80,6 @@ if [[ $qas = y ]]; then
 else
   echo "skipped QT-theme installation..!"
 fi
-
-yay
 
 echo "installing AUR-apps..."
 $Y clipse-bin ags-hyprpanel-git
