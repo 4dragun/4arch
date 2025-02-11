@@ -73,7 +73,7 @@ fi
 read -p "install a QT-theme..? " qas
 if [[ $qas = y ]]; then
   git clone https://github.com/catppuccin/Kvantum
-  kvantummanager && qt5ct && qt6ct
+  kvantummanager
 else
   echo "skipped QT-theme installation..!"
 fi
