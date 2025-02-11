@@ -66,7 +66,8 @@ fi
 read -p "install a GTK-theme..? " gas
 if [[ $gas = y ]]; then
   git clone https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme
-  cd ~/Catppuccin-GTK-Theme/themes && ./install.sh && cd
+  cd ~/Catppuccin-GTK-Theme/themes
+  ./install.sh -l -c dark --tweaks float macos && cd
 else
   echo "skipped GTK-theme installation..!"
 fi
