@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-N="sudo nvim"
+N="sudoedit"
 E="echo y"
 W="wl-copy -n"
 Y="yay -S --needed"
