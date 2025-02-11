@@ -37,6 +37,7 @@ if [[ $das = y ]]; then
   cp -r ~/4arch/confs/kitty ~/.config
   cp -r ~/4arch/confs/uwsm ~/.config
   cp -r ~/4arch/confs/config.fish ~/.config/fish
+  cp -r ~/4arch/confs/mepanel.json ~/.config
 else
   echo "skipped DOTFILES configuration..!"
 fi
