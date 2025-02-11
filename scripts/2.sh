@@ -106,7 +106,7 @@ $E|$Y librewolf fuzzel nwg-look blueman qbittorrent sddm
 echo "installing CLI-apps..."
 $E|$Y lsd bat grimblast pacseek fastfetch htop btop udiskie
 $E|$Y power-profiles-daemon git-credential-manager-bin
-$E|$Y lua-language-server flatpak
+$E|$Y lua-language-server gnome-boxes
 
 echo "installing DEPENDENCIES..."
 $E|$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
