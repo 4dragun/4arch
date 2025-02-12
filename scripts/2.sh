@@ -27,8 +27,6 @@ else
   echo "skipped YAY setup..!"
 fi
 
-yay
-
 read -p "sudoedit SYSTEM-files..? " sas
 if [[ $sas = y ]]; then
   $W < ~/4arch/scripts/scriptiles/chaoty.sh
@@ -49,8 +47,10 @@ else
   echo "skipped SYSTEM-files editing..!"
 fi
 
+yay
+
 read -p "configure SWAP-file..? " was
-if [[ $swas = y ]]; then
+if [[ $was = y ]]; then
   sudo mkswap -U clear --size 8G --file /swapfile
   sudo swapon /swapfile
 else
