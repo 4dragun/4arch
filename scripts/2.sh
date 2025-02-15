@@ -30,7 +30,7 @@ fi
 read -p "sudoedit SYSTEM-files..? " sas
 if [[ $sas = y ]]; then
   $W < ~/4arch/scripts/scriptiles/chaoty.sh
-  $N /etc/pacman.conf
+  $N /etc/pacman.conf && yay
 
   $W HandlePowerKey=suspend-then-hibernate
   $N /etc/systemd/logind.conf
@@ -46,8 +46,6 @@ if [[ $sas = y ]]; then
 else
   echo "skipped SYSTEM-files editing..!"
 fi
-
-yay
 
 read -p "configure SWAP-file..? " was
 if [[ $was = y ]]; then
@@ -90,6 +88,8 @@ if [[ $ias = y ]]; then
 else
   echo "skipped INITRAMFS regeneration..!"
 fi
+
+yay
 
 echo "installing FONTS..."
 $E|$Y noto-fonts noto-fonts-cjk noto-fonts-extra
