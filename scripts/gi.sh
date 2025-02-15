@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-gity="git config --global"
+gi="git config --global"
 
-$gity user.name 4
-$gity user.email 4
-$gity credential.helper manager
-$gity credential.credentialStore cache
+$gi user.name 4
+$gi user.email 4
+$gi credential.helper manager
+$gi credential.credentialStore cache
