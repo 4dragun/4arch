@@ -4,11 +4,10 @@
     "*": {
       "left": [
         "dashboard",
-        "workspaces",
-        "windowtitle"
+        "workspaces"
       ],
       "middle": [
-        "media"
+        "windowtitle"
       ],
       "right": [
         "volume",
