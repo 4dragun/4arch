@@ -90,6 +90,10 @@ kvantummanager
 plasma-open-settings
 konsole
 
+cp -r /home/archy/.local/share/plasma/desktoptheme/Sweet ~/sweeThemebackup
+inkscape /home/archy/.local/share/plasma/desktoptheme/Sweet/widgets/panel-background.svgz
+systemctl --user restart plasma-plasmashell.service
+
 read -p "finished script execution, REBOOT now..? " ras
 if [[ $ras = y ]]; then
   reboot
