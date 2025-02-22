@@ -83,6 +83,13 @@ $Y noto-fonts noto-fonts-cjk noto-fonts-extra
 $Y noto-fonts-emoji ttf-jetbrains-mono-nerd
 $Y brave telegram-desktop qbittorrent gnome-boxes
 
+echo "Downloading Kvantum theme..."
+brave "https://www.pling.com/find?search=sweet"
+dolphin
+kvantummanager
+plasma-open-settings
+konsole
+
 read -p "finished script execution, REBOOT now..? " ras
 if [[ $ras = y ]]; then
   reboot
