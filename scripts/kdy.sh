@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-EY="echo y"
-PU="sudo pacman -U"
+PU="sudo pacman -U --needed --noconfirm"
 PS="sudo pacman -S --needed --noconfirm"
 N="sudo nano"
 W="wl-copy -n"
@@ -16,8 +15,8 @@ if [[ $cas = y ]]; then
   sudo pacman -Syu
   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
   sudo pacman-key --lsign-key 3056513887B78AEB
-  $EY|$PU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-  $EY|$PU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+  $PU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+  $PU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 else
   echo "skipped CHAOTIC-AUR setup..!"
 fi
@@ -68,7 +67,7 @@ fi
 read -p "configure FISH as interactive shell..? " fas
 if [[ $fas = y ]]; then
   $W < ~/4arch/scripts/scriptiles/bafish.sh
-  nvim ~/.bashrc
+  nano ~/.bashrc
 else
   echo "skipped bafish configuration..!"
 fi
