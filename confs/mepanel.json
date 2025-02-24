@@ -1,5 +1,5 @@
 {
-  "bar.customModules.updates.pollingInterval": 1440000,
+  "bar.customModules.updates.pollingInterval": 21600000,
   "bar.layouts": {
     "*": {
       "left": [
@@ -21,9 +21,9 @@
     }
   },
   "theme.font.name": "JetBrainsMono Nerd Font",
-  "theme.font.style": "normal",
-  "theme.font.label": "JetBrainsMono Nerd Font Ultra-Light",
-  "theme.font.size": "0.7rem",
+  "theme.font.style": "italic",
+  "theme.font.label": "JetBrainsMono Nerd Font Italic",
+  "theme.font.size": "0.9rem",
   "theme.bar.floating": false,
   "theme.bar.transparent": false,
   "theme.bar.buttons.y_margins": "0em",
@@ -43,6 +43,9 @@
   "theme.font.weight": 600,
   "theme.bar.border_radius": "0.4em",
   "theme.bar.buttons.opacity": 100,
-  "theme.bar.buttons.padding_y": "0.2rem",
-  "bar.workspaces.show_icons": false
+  "theme.bar.buttons.padding_y": "0rem",
+  "bar.workspaces.show_icons": false,
+  "theme.bar.menus.shadow": "0px 0px 0px 0px #16161e",
+  "theme.bar.menus.shadowMargins": "0px 0px",
+  "theme.bar.buttons.spacing": "0.25em"
 }
