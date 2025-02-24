@@ -85,6 +85,7 @@ fi
 $Y noto-fonts noto-fonts-cjk noto-fonts-extra
 $Y noto-fonts-emoji ttf-jetbrains-mono-nerd
 $Y brave telegram-desktop qbittorrent gnome-boxes
+$Y git-credential-manager-bin
 
 echo "Downloading Kvantum theme..."
 brave "https://www.pling.com/find?search=sweet"
