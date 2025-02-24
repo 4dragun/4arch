@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 N="sudoedit"
-E="echo y"
 W="wl-copy -n"
-Y="yay -S --needed"
+Y="yay -S --needed --noconfirm"
 
 cd && read -p "click Enter to continue... "
 swww img ~/4arch/walls/train-sideview.png
@@ -92,24 +91,24 @@ fi
 yay
 
 echo "installing FONTS..."
-$E|$Y noto-fonts noto-fonts-cjk noto-fonts-extra
-$E|$Y noto-fonts-emoji
+$Y noto-fonts noto-fonts-cjk noto-fonts-extra
+$Y noto-fonts-emoji
 
 echo "installing HYPRLAND-stuff..."
-$E|$Y xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
-$E|$Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent
+$Y xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+$Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent
 
 echo "installing GUI-apps..."
-$E|$Y brave emote pavucontrol telegram-desktop nautilus mpv eog
-$E|$Y librewolf fuzzel nwg-look blueman qbittorrent sddm
+$Y brave emote pavucontrol telegram-desktop nautilus mpv eog
+$Y librewolf fuzzel nwg-look blueman qbittorrent sddm
 
 echo "installing CLI-apps..."
-$E|$Y lsd bat grimblast pacseek fastfetch htop btop udiskie
-$E|$Y power-profiles-daemon git-credential-manager-bin
-$E|$Y lua-language-server gnome-boxes
+$Y lsd bat grimblast pacseek fastfetch htop btop udiskie
+$Y power-profiles-daemon git-credential-manager-bin
+$Y lua-language-server gnome-boxes
 
 echo "installing DEPENDENCIES..."
-$E|$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
+$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
 
 echo "enabling SERVICES..."
 sudo systemctl enable power-profiles-daemon

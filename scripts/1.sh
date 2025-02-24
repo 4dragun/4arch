@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
 
-EY="echo y"
-PU="sudo pacman -U"
-PS="sudo pacman -S --needed"
+PU="sudo pacman -U --needed --noconfirm"
+PS="sudo pacman -S --needed --noconfirm"
 
 read -p "configure CHAOTIC-AUR repo..? " cas
 if [[ $cas = y ]]; then
   sudo pacman -Syu
   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
   sudo pacman-key --lsign-key 3056513887B78AEB
-  $EY|$PU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-  $EY|$PU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+  $PU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+  $PU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 else
   echo "skipped CHAOTIC-AUR setup..!"
 fi
@@ -22,8 +21,8 @@ fi
 
 read -p "install critical PROGRAMMSSS..? " pas
 if [[ $pas = y ]]; then
-  $EY|$PS wl-clipboard hyprland uwsm fish kitty yazi neovim brightnessctl
-  $EY|$PS ttf-jetbrains-mono-nerd qt5ct qt6ct kvantum-qt5 swww
+  $PS wl-clipboard hyprland uwsm fish kitty yazi neovim brightnessctl
+  $PS ttf-jetbrains-mono-nerd qt5ct qt6ct kvantum-qt5 swww
 else
   echo "skipped critical PROGRAMMSSS installation..!"
 fi
