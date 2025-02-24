@@ -2,13 +2,16 @@
 
 PU="sudo pacman -U --needed --noconfirm"
 PS="sudo pacman -S --needed --noconfirm"
-N="sudo nano"
+N="sudo nvim"
 W="wl-copy -n"
 Y="yay -S --needed --noconfirm"
 
 echo "Installing critical apps..."
 sudo pacman -Syu
 $PS fish wl-clipboard inkscape fastfetch htop btop kvantum
+$PS power-profiles-daemon
+
+sudo systemctl enable --now power-profiles-daemon
 
 read -p "configure CHAOTIC-AUR repo..? " cas
 if [[ $cas = y ]]; then
@@ -67,7 +70,7 @@ fi
 read -p "configure FISH as interactive shell..? " fas
 if [[ $fas = y ]]; then
   $W < ~/4arch/scripts/scriptiles/bafish.sh
-  nano ~/.bashrc
+  nvim ~/.bashrc
 else
   echo "skipped bafish configuration..!"
 fi
@@ -87,7 +90,7 @@ echo "Downloading Kvantum theme..."
 brave "https://www.pling.com/find?search=sweet"
 dolphin
 kvantummanager
-plasma-open-settings
+systemsettings
 konsole
 
 cp -r /home/archy/.local/share/plasma/desktoptheme/Sweet ~/sweeThemebackup
