@@ -23,7 +23,7 @@
   "theme.font.name": "JetBrainsMono Nerd Font",
   "theme.font.style": "italic",
   "theme.font.label": "JetBrainsMono Nerd Font Italic",
-  "theme.font.size": "0.9rem",
+  "theme.font.size": "0.8rem",
   "theme.bar.floating": false,
   "theme.bar.transparent": false,
   "theme.bar.buttons.y_margins": "0em",
