@@ -3,7 +3,6 @@ N="sudoedit"
 W="wl-copy -n"
 Y="yay -S --needed --noconfirm"
 
-cd && read -p "click Enter to continue... "
 swww img ~/4arch/walls/train-sideview.png
 
 read -p "configure NVCHAD..? " nas
@@ -14,16 +13,6 @@ if [[ $nas = y ]]; then
   nvim ~/.config/nvim/init.lua
 else
   echo "skipped NVCHAD setup..!"
-fi
-
-read -p "install YAY - Yet Another AUR Helper..? " yas
-if [[ $yas = y ]]; then
-  rm -rf ~/yay-bin
-  sudo pacman -S --needed git base-devel
-  git clone https://aur.archlinux.org/yay-bin.git
-  cd yay-bin && makepkg -si && cd && yay
-else
-  echo "skipped YAY setup..!"
 fi
 
 read -p "sudoedit SYSTEM-files..? " sas
@@ -37,21 +26,10 @@ if [[ $sas = y ]]; then
   $W HibernateDelaySec=2400s
   $N /etc/systemd/sleep.conf
 
-  $W "/swapfile none swap defaults 0 0"
-  $N /etc/fstab
-
   $W resume
   $N /etc/mkinitcpio.conf
 else
   echo "skipped SYSTEM-files editing..!"
-fi
-
-read -p "configure SWAP-file..? " was
-if [[ $was = y ]]; then
-  sudo mkswap -U clear --size 8G --file /swapfile
-  sudo swapon /swapfile
-else
-  echo "skipped SWAP-file creation..!"
 fi
 
 read -p "configure FISH as interactive shell..? " fas
@@ -78,9 +56,6 @@ else
   echo "skipped QT-theme installation..!"
 fi
 
-echo "installing AUR-apps..."
-$Y clipse-bin ags-hyprpanel-git
-
 read -p "regenerate INITRAMFS..? " ias
 if [[ $ias = y ]]; then
   sudo mkinitcpio -P
@@ -89,6 +64,9 @@ else
 fi
 
 yay
+
+echo "installing AUR-apps..."
+$Y clipse-bin ags-hyprpanel-git
 
 echo "installing FONTS..."
 $Y noto-fonts noto-fonts-cjk noto-fonts-extra
@@ -108,7 +86,7 @@ $Y power-profiles-daemon git-credential-manager-bin
 $Y lua-language-server gnome-boxes
 
 echo "installing DEPENDENCIES..."
-$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
+$Y ffmpegthumbnailer python-pillow
 
 echo "enabling SERVICES..."
 sudo systemctl enable power-profiles-daemon
