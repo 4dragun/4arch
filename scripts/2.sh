@@ -78,7 +78,7 @@ $Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent
 
 echo "installing GUI-apps..."
 $Y brave emote pavucontrol telegram-desktop nautilus mpv eog
-$Y librewolf fuzzel nwg-look blueman qbittorrent sddm gnome-boxes
+$Y librewolf fuzzel nwg-look blueman qbittorrent sddm
 
 echo "installing CLI-apps..."
 $Y lsd bat grimblast pacseek fastfetch htop btop udiskie
