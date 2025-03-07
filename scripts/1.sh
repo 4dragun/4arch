@@ -31,7 +31,7 @@ fi
 
 read -p "install critical PROGRAMMSSS..? " pas
 if [[ $pas = y ]]; then
-  $YS wl-clipboard hyprland uwsm kitty yazi brightnessctl bibata-cursor-theme
+  $YS wl-clipboard hyprland uwsm kitty yazi brightnessctl
   $YS ttf-jetbrains-mono-nerd qt5ct qt6ct kvantum-qt5 swww
 else
   echo "skipped critical PROGRAMMSSS installation..!"

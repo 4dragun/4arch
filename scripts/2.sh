@@ -86,7 +86,7 @@ $Y power-profiles-daemon git-credential-manager-bin
 $Y lua-language-server
 
 echo "installing DEPENDENCIES..."
-$Y ffmpegthumbnailer python-pillow
+$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
 
 echo "enabling SERVICES..."
 sudo systemctl enable power-profiles-daemon
