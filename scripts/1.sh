@@ -32,7 +32,7 @@ fi
 read -p "install critical PROGRAMMSSS..? " pas
 if [[ $pas = y ]]; then
   $YS wl-clipboard hyprland uwsm kitty yazi brightnessctl
-  $YS ttf-jetbrains-mono-nerd qt5ct qt6ct kvantum-qt5 swww
+  $YS ttf-jetbrains-mono-nerd qt6ct kvantum swww
 else
   echo "skipped critical PROGRAMMSSS installation..!"
 fi
@@ -41,6 +41,7 @@ echo "FISH test incoming..." && fish ignorethiserrormone
 
 read -p "copy/overwrite DOTFILES..? " das
 if [[ $das = y ]]; then
+  mkdir ~/puthiyam && cp -r ~/.config ~/puthiyam
   cp -r ~/4arch/confs/fuzzel ~/.config
   cp -r ~/4arch/confs/hypr ~/.config
   cp -r ~/4arch/confs/kitty ~/.config
