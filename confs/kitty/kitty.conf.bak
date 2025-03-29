@@ -11,6 +11,6 @@ include ~/.config/kitty/Catppuccin-Mocha.conf
 
 
 # BEGIN_KITTY_THEME
-# Tokyo Night
+# Sakura Night
 include current-theme.conf
 # END_KITTY_THEME

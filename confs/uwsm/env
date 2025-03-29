@@ -6,6 +6,6 @@ export QT_QPA_PLATFORM=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export QT_QPA_PLATFORMTHEME=qt5ct
 export QT_STYLE_OVERRIDE=kvantum
-export GTK_THEME=Catppuccin-Dark
+export GTK_THEME=Sweet-Dark
 export XCURSOR_THEME=Bibata-Modern-Classic
 export EDITOR=nvim
