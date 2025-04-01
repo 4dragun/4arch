@@ -70,6 +70,12 @@ $Y lib32-vulkan-virtio memtest_vulkan vulkan-dzn vulkan-extra-layers
 $Y vulkan-extra-tools vulkan-gfxstream vulkan-headers vulkan-icd-loader
 $Y vulkan-intel vulkan-mesa-layers vulkan-swrast vulkan-tools
 $Y vulkan-utility-libraries vulkan-validation-layers vulkan-virtio
+$Y linux-lqx update-grub
+
+sudo update-grub
 
 systemctl enable sddm.service
 systemctl enable power-profiles-daemon.service
+
+read -p REBOOTing...................................................
+reboot
