@@ -3,7 +3,6 @@
 PU="sudo pacman -U --needed --noconfirm"
 PS="sudo pacman -S --needed --noconfirm"
 N="sudo nvim"
-W="wl-copy -n"
 Y="yay -S --needed --noconfirm"
 
 read -p "install YAY - Yet Another AUR Helper..? " yas
@@ -44,14 +43,8 @@ fi
 
 read -p "sudoedit SYSTEM-files..? " sas
 if [[ $sas = y ]]; then
-
-  $W HandlePowerKey=suspend-then-hibernate
   $N /etc/systemd/logind.conf
-
-  $W HibernateDelaySec=2400
   $N /etc/systemd/sleep.conf
-
-  $W resume
   $N /etc/mkinitcpio.conf
 else
   echo "skipped SYSTEM-files editing..!"
