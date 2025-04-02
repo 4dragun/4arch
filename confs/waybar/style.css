@@ -27,72 +27,6 @@ button:hover {
     padding: 0 7px;
 }
 
-#window {
-    color: #7DCFFF;
-}
-
-#workspaces button {
-    padding: 0 4px;
-    background-color: transparent;
-    color: #F4748C
-}
-
-#workspaces button.active {
-    color: #F4748C;
-    background-color: transparent;
-    box-shadow: inset 0 -1px #7DCFFF;
-}
-
-#workspaces button.empty {
-  color: #7DCFFF
-}
-
-
-
-/* If workspaces is the leftmost module, omit left margin */
-/* .modules-left > widget:first-child > #workspaces { */
-/*     margin-left: 20px; */
-/* } */
-
-/* If workspaces is the rightmost module, omit right margin */
-/* .modules-right > widget:last-child > #workspaces { */
-/*     margin-right: 10px; */
-/* } */
-
-#clock {
-    padding: 0 17px;
-    color: #F7768E;
-    background-color: transparent;
-}
-
-#battery {
-    background-color: transparent;
-    color: #9ECE6A;
-}
-
-#battery.charging, #battery.plugged {
-    color: #1A1B26;
-    background-color: #26A65B;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #1A1B26;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
 #power-profiles-daemon {
   padding: 0 17px
 }
@@ -112,15 +46,35 @@ button:hover {
     color: #1A1B26;
 }
 
-#network {
-    color: #BB9AF7;
+#workspaces button {
+    padding: 0 4px;
     background-color: transparent;
+    color: #F4748C
 }
 
-#network.disconnected {
-    color: red;
+#workspaces button.active {
+    color: #F4748C;
     background-color: transparent;
+    box-shadow: inset 0 -1px #7DCFFF;
 }
+
+#workspaces button.empty {
+  color: #7DCFFF
+}
+
+#window {
+    color: #7DCFFF;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+/* .modules-left > widget:first-child > #workspaces { */
+/*     margin-left: 20px; */
+/* } */
+
+/* If workspaces is the rightmost module, omit right margin */
+/* .modules-right > widget:last-child > #workspaces { */
+/*     margin-right: 10px; */
+/* } */
 
 #pulseaudio {
     background-color: transparent;
@@ -132,6 +86,21 @@ button:hover {
     color: #E0AF68;
 }
 
+#network {
+    color: #BB9AF7;
+    background-color: transparent;
+}
+
+#network.disconnected {
+    color: red;
+    background-color: transparent;
+}
+
+#bluetooth {
+  background-color: transparent;
+  color: #E0AF68;
+}
+
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
@@ -140,7 +109,36 @@ button:hover {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
-#bluetooth {
-  background-color: transparent;
-  color: #E0AF68;
+
+#battery {
+    background-color: transparent;
+    color: #9ECE6A;
+}
+
+#battery.charging, #battery.plugged {
+    color: #1A1B26;
+    background-color: #26A65B;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #1A1B26;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#clock {
+    padding: 0 17px;
+    color: #F7768E;
+    background-color: transparent;
 }
