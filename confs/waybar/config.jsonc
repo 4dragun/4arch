@@ -5,6 +5,7 @@
     "spacing": 0,
 
     "modules-left": [
+        "power-profiles-daemon",
         "hyprland/workspaces"
     ],
     "modules-center": [
@@ -14,7 +15,6 @@
         "pulseaudio",
         "network",
         "bluetooth",
-        "power-profiles-daemon",
         "battery",
         "clock",
         "tray"
@@ -23,11 +23,11 @@
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
-        "format-icons": {
-          "1": "1",
-          "urgent": "",
-          "active": "󰣇"
-        },
+        // "format-icons": {
+        //   "1": "1",
+        //   "urgent": "",
+        //   "active": "󰣇"
+        // },
         "sort-by-number": true,
         "all-outputs": true,
         "persistent-workspaces": {
@@ -51,7 +51,8 @@
     },
 
     "tray": {
-        "spacing": 10
+        "spacing": 13,
+        "show-passive-items": true
     },
     
     "clock": {
@@ -77,10 +78,10 @@
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
         "tooltip": true,
         "format-icons": {
-            "default": "",
-            "performance": "",
-            "balanced": "",
-            "power-saver": ""
+            "default": ""
+            // "performance": "",
+            // "balanced": "",
+            // "power-saver": ""
         }
     },
 
@@ -94,14 +95,14 @@
     },
 
     "bluetooth": {
-       "format": "{device_alias}"
+       "on-click": "blueman-manager"
     },
 
     "pulseaudio": {
         "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
