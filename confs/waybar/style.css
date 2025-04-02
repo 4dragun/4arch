@@ -34,13 +34,17 @@ button:hover {
 #workspaces button {
     padding: 0 4px;
     background-color: transparent;
-    color: #7DCFFF;
+    color: #F4748C
 }
 
 #workspaces button.active {
     color: #F4748C;
     background-color: transparent;
     box-shadow: inset 0 -1px #7DCFFF;
+}
+
+#workspaces button.empty {
+  color: #7DCFFF
 }
 
 
