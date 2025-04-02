@@ -19,12 +19,13 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
+#workspaces button,
 #pulseaudio,
 #network,
 #bluetooth,
 #tray,
 #battery {
-    padding: 0 7px;
+    padding: 0 4px;
 }
 
 #power-profiles-daemon {
@@ -47,7 +48,6 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 4px;
     background-color: transparent;
     color: #F4748C
 }
