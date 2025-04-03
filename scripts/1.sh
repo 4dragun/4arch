@@ -19,11 +19,6 @@ if [[ $dit = y ]]; then
   mkdir ~/.themes
   mkdir ~/.local/share/themes
 
-  cp -r ~/4arch/eyecandy/BeautyLine ~/.icons
-  cp -r ~/4arch/eyecandy/BeautyLine ~/.local/share/icons
-  cp -r ~/4arch/eyecandy/Sweet-Dark ~/.themes
-  cp -r ~/4arch/eyecandy/Sweet-Dark ~/.local/share/themes
-  cp -r ~/4arch/eyecandy/Kvantum    ~/.config
 else
   echo "skipped DOTFILES setup..!"
 fi
