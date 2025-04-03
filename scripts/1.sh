@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
@@ -29,10 +28,12 @@ if [[ $ras = y ]]; then
   reboot
 fi
 
+sudo nvim /etc/pacman.conf && yay
+
 read -p "install critical PROGRAMMSSS..? " pas
 if [[ $pas = y ]]; then
-  $YS wl-clipboard hyprland uwsm kitty yazi brightnessctl
-  $YS ttf-jetbrains-mono-nerd qt6ct kvantum swww
+  $YS wl-clipboard hyprland uwsm kitty yazi brightnessctl swaync waybar
+  $YS ttf-jetbrains-mono-nerd qt6ct kvantum hyprpaper swayosd-git fuzzel
 else
   echo "skipped critical PROGRAMMSSS installation..!"
 fi
@@ -41,12 +42,13 @@ echo "FISH test incoming..." && fish ignorethiserrormone
 
 read -p "copy/overwrite DOTFILES..? " das
 if [[ $das = y ]]; then
-  cp -r ~/4arch/confs/fuzzel ~/.config
-  cp -r ~/4arch/confs/hypr ~/.config
-  cp -r ~/4arch/confs/kitty ~/.config
-  cp -r ~/4arch/confs/uwsm ~/.config
+  cp -r ~/4arch/confs/fuzzel      ~/.config
+  cp -r ~/4arch/confs/hypr        ~/.config
+  cp -r ~/4arch/confs/kitty       ~/.config
+  cp -r ~/4arch/confs/swaync      ~/.config
+  cp -r ~/4arch/confs/uwsm        ~/.config
+  cp -r ~/4arch/confs/waybar      ~/.config
   cp -r ~/4arch/confs/config.fish ~/.config/fish
-  cp -r ~/4arch/confs/mepanel.json ~/.config
 else
   echo "skipped DOTFILES setup..!"
 fi
