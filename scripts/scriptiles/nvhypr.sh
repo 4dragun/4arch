@@ -7,3 +7,6 @@ vim.filetype.add({
 vim.filetype.add({
   pattern = { [".*/hypridle%.conf"] = "hyprlang" },
 })
+vim.filetype.add({
+  pattern = { [".*/hyprpaper%.conf"] = "hyprlang" },
+})
