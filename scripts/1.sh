@@ -18,9 +18,16 @@ if [[ $dit = y ]]; then
   mkdir ~/.local/share/icons
   mkdir ~/.themes
   mkdir ~/.local/share/themes
+  mkdir ~/.config/Kvantum
+
+  tar -xf ~/4arch/icandy/BeautyLine.tar.gz -C ~/.icons
+  tar -xf ~/4arch/icandy/BeautyLine.tar.gz -C ~/.local/share/icons
+  tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.themes
+  tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.local/share/themes
+  tar -xf ~/4arch/icandy/Sweet.tar.xz      -C ~/.config/Kvantum
 
 else
-  echo "skipped DOTFILES setup..!"
+  echo "skipped DOTFILES, ICONS, THEMES setup..!"
 fi
 
 read -p "install YAY - Yet Another AUR Helper..? " yas
