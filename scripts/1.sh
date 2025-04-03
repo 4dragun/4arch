@@ -31,7 +31,7 @@ fi
 read -p "install YAY - Yet Another AUR Helper..? " yas
 if [[ $yas = y ]]; then
   rm -rf ~/yay-bin
-  sudo pacman -S --needed git base-devel
+  sudo pacman -S --needed --noconfirm git base-devel
   git clone https://aur.archlinux.org/yay-bin.git
   cd yay-bin && makepkg -si && cd && yay
 else
@@ -40,7 +40,6 @@ fi
 
 read -p "configure CHAOTIC-AUR repo..? " cas
 if [[ $cas = y ]]; then
-  yay
   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
   sudo pacman-key --lsign-key 3056513887B78AEB
   $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
@@ -57,32 +56,35 @@ fi
 sudo nvim /etc/pacman.conf && yay
 
 echo "installing AUR-apps..."
-$Y clipse-bin
+$YS clipse-bin
 
 echo "installing DEPENDENCIES..."
-$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
+$YS ffmpegthumbnailer python-pillow bibata-cursor-theme
 
 echo "installing FONTS..."
-$Y noto-fonts noto-fonts-cjk noto-fonts-extra
-$Y noto-fonts-emoji ttf-jetbrains-mono-nerd ttf-fira-sans
+$YS noto-fonts noto-fonts-cjk noto-fonts-extra
+$YS noto-fonts-emoji ttf-jetbrains-mono-nerd ttf-fira-sans
 
 echo "installing HYPRLAND-stuff..."
-$Y hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm kitty
-$Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
+$YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm kitty
+$YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 
 echo "installing GUI-apps..."
-$Y sddm brave emote pavucontrol telegram-desktop nautilus mpv eog
-$Y librewolf fuzzel nwg-look blueman qbittorrent swaync swayosd-git
-$Y waybar nwg-look qt6ct kvantum fuzzel
+$YS sddm brave emote pavucontrol telegram-desktop nautilus mpv eog
+$YS librewolf nwg-look blueman qbittorrent swaync swayosd-git
+$YS waybar nwg-look qt6ct kvantum fuzzel
 
 echo "installing CLI-apps..."
-$Y lsd bat grimblast pacseek fastfetch htop btop udiskie
-$Y git-credential-manager-bin yazi wl-clipboard brightnessctl
-$Y lua-language-server power-profiles-daemon
+$YS lsd bat grimblast pacseek fastfetch htop btop udiskie
+$YS git-credential-manager-bin yazi wl-clipboard brightnessctl
+$YS lua-language-server power-profiles-daemon
 
-echo "enabling SERVICES..."
-sudo systemctl enable power-profiles-daemon
-sudo systemctl enable sddm
+echo "enabling POWER-PROFILES-DAEMON..."
+sudo systemctl enable --now power-profiles-daemon
 
-read -p "REBOOTING IN NEXT STEP, CLICK TO CANCEL..."
-systemctl reboot
+read -p "start DISPLAY-MANAGER (sddm)..? " das
+if [[ $das = y ]]; then
+  sudo systemctl enable --now sddm
+else
+  echo "DISPLAY-MANAGER not started, script ended..!"
+fi
