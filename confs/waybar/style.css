@@ -24,7 +24,8 @@ button:hover {
 #network,
 #bluetooth,
 #tray,
-#battery {
+#battery,
+#clock {
     padding: 0 4px;
 }
 
@@ -138,7 +139,11 @@ button:hover {
 }
 
 #clock {
-    padding: 0 17px;
     color: #F7768E;
     background-color: transparent;
+}
+
+#custom-notification {
+  padding: 0 17px;
+  color: #FFFFFF
 }
