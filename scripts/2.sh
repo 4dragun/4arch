@@ -3,6 +3,8 @@ N="sudoedit"
 W="wl-copy -n"
 Y="yay -S --needed --noconfirm"
 
+nwg-look && kvantummanager
+
 read -p "configure NVCHAD..? " nas
 if [[ $nas = y ]]; then
   $W < ~/4arch/scripts/scriptiles/nvhypr.sh
