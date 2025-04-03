@@ -2,6 +2,32 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
+echo "FISH test incoming..." && fish ignore_this_mone
+
+read -p "copy/overwrite DOTFILES, ICONS, THEMES..? " dit
+if [[ $dit = y ]]; then
+  cp -r ~/4arch/confs/fuzzel      ~/.config
+  cp -r ~/4arch/confs/hypr        ~/.config
+  cp -r ~/4arch/confs/kitty       ~/.config
+  cp -r ~/4arch/confs/swaync      ~/.config
+  cp -r ~/4arch/confs/uwsm        ~/.config
+  cp -r ~/4arch/confs/waybar      ~/.config
+  cp -r ~/4arch/confs/config.fish ~/.config/fish
+
+  mkdir ~/.icons
+  mkdir ~/.local/share/icons
+  mkdir ~/.themes
+  mkdir ~/.local/share/themes
+
+  cp -r ~/4arch/eyecandy/BeautyLine ~/.icons
+  cp -r ~/4arch/eyecandy/BeautyLine ~/.local/share/icons
+  cp -r ~/4arch/eyecandy/Sweet-Dark ~/.themes
+  cp -r ~/4arch/eyecandy/Sweet-Dark ~/.local/share/themes
+  cp -r ~/4arch/eyecandy/Kvantum    ~/.config
+else
+  echo "skipped DOTFILES setup..!"
+fi
+
 read -p "install YAY - Yet Another AUR Helper..? " yas
 if [[ $yas = y ]]; then
   rm -rf ~/yay-bin
@@ -30,32 +56,33 @@ fi
 
 sudo nvim /etc/pacman.conf && yay
 
-read -p "install critical PROGRAMMSSS..? " pas
-if [[ $pas = y ]]; then
-  $YS wl-clipboard hyprland uwsm kitty yazi brightnessctl swaync waybar
-  $YS ttf-jetbrains-mono-nerd qt6ct kvantum hyprpaper swayosd-git fuzzel
-else
-  echo "skipped critical PROGRAMMSSS installation..!"
-fi
+echo "installing AUR-apps..."
+$Y clipse-bin
 
-echo "FISH test incoming..." && fish ignorethiserrormone
+echo "installing DEPENDENCIES..."
+$Y ffmpegthumbnailer python-pillow bibata-cursor-theme
 
-read -p "copy/overwrite DOTFILES..? " das
-if [[ $das = y ]]; then
-  cp -r ~/4arch/confs/fuzzel      ~/.config
-  cp -r ~/4arch/confs/hypr        ~/.config
-  cp -r ~/4arch/confs/kitty       ~/.config
-  cp -r ~/4arch/confs/swaync      ~/.config
-  cp -r ~/4arch/confs/uwsm        ~/.config
-  cp -r ~/4arch/confs/waybar      ~/.config
-  cp -r ~/4arch/confs/config.fish ~/.config/fish
-else
-  echo "skipped DOTFILES setup..!"
-fi
+echo "installing FONTS..."
+$Y noto-fonts noto-fonts-cjk noto-fonts-extra
+$Y noto-fonts-emoji ttf-jetbrains-mono-nerd ttf-fira-sans
 
-read -p "start HYPRLAND via uwsm..? " has
-if [[ $has = y ]]; then
-  uwsm start hyprland.desktop
-else
-  echo "enter HYPRLAND manually..!"
-fi
+echo "installing HYPRLAND-stuff..."
+$Y hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm kitty
+$Y qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
+
+echo "installing GUI-apps..."
+$Y sddm brave emote pavucontrol telegram-desktop nautilus mpv eog
+$Y librewolf fuzzel nwg-look blueman qbittorrent swaync swayosd-git
+$Y waybar nwg-look qt6ct kvantum fuzzel
+
+echo "installing CLI-apps..."
+$Y lsd bat grimblast pacseek fastfetch htop btop udiskie
+$Y git-credential-manager-bin yazi wl-clipboard brightnessctl
+$Y lua-language-server power-profiles-daemon
+
+echo "enabling SERVICES..."
+sudo systemctl enable power-profiles-daemon
+sudo systemctl enable sddm
+
+read -p "REBOOTING IN NEXT STEP, CLICK TO CANCEL..."
+systemctl reboot
