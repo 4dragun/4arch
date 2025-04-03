@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 PU="sudo pacman -U --needed --noconfirm"
 PS="sudo pacman -S --needed --noconfirm"
 N="sudo nvim"

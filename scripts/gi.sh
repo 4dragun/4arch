@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 gi="git config --global"
 
 $gi user.name 4
