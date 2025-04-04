@@ -64,7 +64,8 @@ if [[ $ras = y ]]; then
   reboot
 fi
 
-sudo nvim /etc/pacman.conf && yay
+export EDITOR=nvim
+sudoedit /etc/pacman.conf && yay
 
 echo "installing AUR-apps..."
 $YS clipse-bin
