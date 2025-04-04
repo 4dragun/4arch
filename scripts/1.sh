@@ -74,7 +74,7 @@ echo "installing DEPENDENCIES..."
 $YS ffmpegthumbnailer python-pillow bibata-cursor-theme
 
 echo "installing FONTS..."
-$YS noto-fonts noto-fonts-cjk noto-fonts-extra
+$YS noto-fonts noto-fonts-cjk noto-fonts-extra otf-font-awesome
 $YS noto-fonts-emoji ttf-jetbrains-mono-nerd ttf-fira-sans
 
 echo "installing HYPRLAND-stuff..."
