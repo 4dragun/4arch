@@ -3,7 +3,6 @@
     "position": "top",
     "height": 0,
     "spacing": 0,
-
     "modules-left": [
         "power-profiles-daemon",
         "hyprland/workspaces"
@@ -20,27 +19,17 @@
         "clock",
         "custom/notification"
     ],
-
     "power-profiles-daemon": {
         "format": "{icon}",
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
         "tooltip": true,
         "format-icons": {
             "default": ""
-            // "performance": "",
-            // "balanced": "",
-            // "power-saver": ""
         }
     },
-
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
-        // "format-icons": {
-        //   "1": "1",
-        //   "urgent": "",
-        //   "active": "󰣇"
-        // },
         "sort-by-number": true,
         "all-outputs": true,
         "persistent-workspaces": {
@@ -56,21 +45,19 @@
             "10": []
         }
     },
-
     "hyprland/window": {
         "separate-outputs": true,
         "rewrite": {
             "": "Hyprland"
         }
     },
-
     "pulseaudio": {
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": "{icon}   {format_source}",
         "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
-        "format-muted": "x {format_source}",
+        "format-muted": " {format_source}",
         "format-source": " {volume}%",
-        "format-source-muted": " ",
+        "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -82,31 +69,28 @@
         },
         "on-click": "pavucontrol"
     },
-
     "network": {
-        "format-wifi": "󰤨 {essid} ({signalStrength}%)",
+        "format-wifi": "  {essid} ({signalStrength}%)",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-disconnected": "  Disconnected",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
-
     "bluetooth": {
         "on-click": "blueman-manager"
     },
-
     "tray": {
-        "spacing": 13,
+        "spacing": 7,
+        "icon-size": 16,
         "show-passive-items": true
     },
-
     "battery": {
         "states": {
             "warning": 30,
-            "critical": 20,
-            "full-at": 88
+            "critical": 20
         },
+        "interval": 0,
         "format": "{icon} {capacity}%",
         "format-full": "{icon} {capacity}%",
         "format-charging": "{icon} {capacity}%",
@@ -114,19 +98,17 @@
         "format-alt": "{icon} {time}",
         "format-icons": ["", "", "", "", ""]
     },
-    
     "clock": {
-        "format": " {:%a %b %d %R}"
+        "format": " {:%a %b %d %R}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
     },
-
     "custom/notification": {
-        "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-            "notification": "",
-            "none": "",
-            "dnd-notification": "",
-            "dnd-none": "",
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
             "inhibited-notification": "<span foreground='red'><sup></sup></span>",
             "inhibited-none": "",
             "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
