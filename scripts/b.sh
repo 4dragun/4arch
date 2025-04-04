@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-wl-copy -n < ~/4arch/scripts/scriptiles/kcuf.sh
+wl-copy -n < ~/4arch/scripts/scriptiles/ukcuf.sh
 echo " okay..."
