@@ -2,6 +2,15 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
+read -p "configure NVCHAD..? " nas
+if [[ $nas = y ]]; then
+  rm -rf ~/.config/nvim && mkdir ~/.config/nvim
+  git clone https://github.com/NvChad/starter ~/.config/nvim
+  nvim ~/.config/nvim/lua/chadrc.lua
+else
+  echo "skipped NVCHAD setup..!"
+fi
+
 echo "FISH test incoming..." && fish ignore_this_mone
 
 read -p "copy/overwrite DOTFILES, ICONS, THEMES..? " dit
@@ -10,6 +19,7 @@ if [[ $dit = y ]]; then
   cp -r ~/4arch/confs/hypr        ~/.config
   cp -r ~/4arch/confs/kitty       ~/.config
   cp -r ~/4arch/confs/swaync      ~/.config
+  cp -r ~/4arch/confs/swayosd     ~/.config
   cp -r ~/4arch/confs/uwsm        ~/.config
   cp -r ~/4arch/confs/waybar      ~/.config
   cp -r ~/4arch/confs/config.fish ~/.config/fish
@@ -25,7 +35,6 @@ if [[ $dit = y ]]; then
   tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.themes
   tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.local/share/themes
   tar -xf ~/4arch/icandy/Sweet.tar.xz      -C ~/.config/Kvantum
-
 else
   echo "skipped DOTFILES, ICONS, THEMES setup..!"
 fi
@@ -86,6 +95,7 @@ sudo systemctl enable --now power-profiles-daemon
 
 read -p "start DISPLAY-MANAGER (sddm)..? " das
 if [[ $das = y ]]; then
+  sync && sync && sync
   sudo systemctl enable --now sddm
 else
   echo "DISPLAY-MANAGER not started, script ended..!"

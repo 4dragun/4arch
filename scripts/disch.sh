@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-cfdisk nvme0n1
+cfdisk /dev/nvme0n1
 
 mkfs.fat -F32 /dev/nvme0n1p1
 mkfs.ext4     /dev/nvme0n1p3

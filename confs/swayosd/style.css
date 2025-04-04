@@ -1,0 +1,6 @@
+window#osd {
+  padding: 0px 0px;
+  border-radius: 20px;
+  border: 2px solid pink;
+  background: alpha(@theme_bg_color, 1);
+}
