@@ -14,4 +14,4 @@ $Y linux-lqx update-grub
 sudo update-grub
 
 read -p "REBOOTING IN NEXT STEP, CLICK TO CANCEL..."
-systemctl reboot
+sync && sync && sync && systemctl reboot
