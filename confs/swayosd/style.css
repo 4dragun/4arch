@@ -1,6 +1,12 @@
 window#osd {
   padding: 0px 0px;
   border-radius: 20px;
-  border: 2px solid pink;
-  background: alpha(@theme_bg_color, 1);
+  border: 2px solid #BB9AF7;
+  background: @theme_bg_color;
+}
+window#osd progress {
+  background: linear-gradient(to right, #BB9AF7, #E0AF68);
+}
+window#osd trough {
+  background: none;
 }
