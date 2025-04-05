@@ -89,8 +89,8 @@ button {
 }
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: #F7768E;
+        color: #1A1B26;
     }
 }
 #clock {
