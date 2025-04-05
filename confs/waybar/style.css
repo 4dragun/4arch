@@ -11,10 +11,6 @@ button {
     border: none;
     border-radius: 0;
 }
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
 #workspaces button,
 #pulseaudio,
 #network,
@@ -28,7 +24,7 @@ button:hover {
   padding: 0 17px
 }
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
+    background-color: #F7768E;
     color: #1A1B26;
 }
 #power-profiles-daemon.balanced {
@@ -36,7 +32,7 @@ button:hover {
     color: #9ECE6A;
 }
 #power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
+    background-color: #9ECE6A;
     color: #1A1B26;
 }
 #workspaces button {
@@ -46,7 +42,7 @@ button:hover {
 #workspaces button.active {
     color: #F4748C;
     background-color: transparent;
-    box-shadow: inset 0 -1px #9ECE6A;
+    box-shadow: inset 0 -2px #9ECE6A;
 }
 #workspaces button.empty {
   color: #7DCFFF
@@ -67,19 +63,12 @@ button:hover {
     background-color: transparent;
 }
 #network.disconnected {
-    color: red;
+    color: #F7768E;
     background-color: transparent;
 }
 #bluetooth {
   background-color: transparent;
   color: #E0AF68;
-}
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
 }
 #battery {
     background-color: transparent;
@@ -87,10 +76,10 @@ button:hover {
 }
 #battery.charging, #battery.plugged {
     color: #1A1B26;
-    background-color: #26A65B;
+    background-color: #9ECE6A;
 }
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background-color: #F7768E;
     color: #1A1B26;
     animation-name: blink;
     animation-duration: 0.5s;
