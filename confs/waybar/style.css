@@ -78,6 +78,10 @@ button {
     color: #1A1B26;
     background-color: #9ECE6A;
 }
+#battery.critical {
+    background-color: #E0AF68;
+    color: #1A1B26;
+}
 #battery.critical:not(.charging) {
     background-color: #F7768E;
     color: #1A1B26;
