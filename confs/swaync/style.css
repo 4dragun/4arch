@@ -1,16 +1,7 @@
-@define-color cc-bg rgba(26, 27, 38, 1);
-@define-color noti-border-color rgba(158, 206, 106, 1);
-@define-color noti-bg rgba(26, 27, 38, 1);
-@define-color noti-bg-opaque rgb(26, 27, 38);
-@define-color noti-bg-darker rgb(38, 38, 38);
-@define-color noti-bg-hover rgb(56, 56, 56);
-@define-color noti-bg-hover-opaque rgb(56, 56, 56);
-@define-color noti-bg-focus rgba(68, 68, 68, 0.6);
-@define-color noti-close-bg rgba(255, 255, 255, 0.1);
-@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
-@define-color text-color rgb(125, 207, 255);
-@define-color text-color-disabled rgb(150, 150, 150);
-@define-color bg-selected rgb(0, 128, 255);
+@define-color cc-bg  #1A1B26;
+@define-color noti-border-color #7DCFFF;
+@define-color noti-bg #1A1B26;
+@define-color text-color #9ECE6A;
 
 .notification {
   border: 2px solid @noti-border-color;
