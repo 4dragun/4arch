@@ -90,7 +90,9 @@ $YS thunar thunar-archive-plugin thunar-media-tags-plugin gvfs
 echo "installing CLI-apps..."
 $YS lsd bat grimblast pacseek fastfetch htop btop udiskie
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl
-$YS lua-language-server power-profiles-daemon
+$YS lua-language-server power-profiles-daemon xdg-user-dirs
+
+xdg-user-dirs-update
 
 echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon
