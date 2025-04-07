@@ -71,7 +71,7 @@ echo "installing AUR-apps..."
 $YS clipse-bin
 
 echo "installing DEPENDENCIES..."
-$YS ffmpegthumbnailer python-pillow bibata-cursor-theme tumbler
+$YS ffmpegthumbnailer python-pillow bibata-cursor-theme tumbler gvfs
 
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra otf-font-awesome
@@ -85,14 +85,11 @@ echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog
 $YS librewolf nwg-look blueman qbittorrent swaync swayosd-git
 $YS waybar nwg-look qt6ct kvantum fuzzel network-manager-applet
-$YS thunar thunar-archive-plugin thunar-media-tags-plugin gvfs
-
+$YS thunar thunar-archive-plugin thunar-media-tags-plugin
 echo "installing CLI-apps..."
 $YS lsd bat grimblast pacseek fastfetch htop btop udiskie
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl
-$YS lua-language-server power-profiles-daemon xdg-user-dirs
-
-xdg-user-dirs-update
+$YS lua-language-server power-profiles-daemon xdg-user-dirs-gtk
 
 echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon
