@@ -78,7 +78,7 @@ button {
     color: #1A1B26;
     background-color: #9ECE6A;
 }
-#battery.critical {
+#battery.warning:not(.charging) {
     background-color: #E0AF68;
     color: #1A1B26;
 }
@@ -93,8 +93,8 @@ button {
 }
 @keyframes blink {
     to {
-        background-color: #F7768E;
-        color: #1A1B26;
+        background-color: transparent;
+        color: #F7768E;
     }
 }
 #clock {

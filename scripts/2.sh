@@ -5,7 +5,7 @@ Y="yay -S --needed --noconfirm"
 W="wl-copy -n"
 N="sudoedit"
 
-nwg-look && kvantummanager
+nwg-look && kvantummanager && qt6ct
 
 read -p "configure FISH as interactive shell..? " fas
 if [[ $fas = y ]]; then
