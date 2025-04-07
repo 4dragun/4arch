@@ -11,19 +11,8 @@ else
   echo "skipped NVCHAD setup..!"
 fi
 
-echo "FISH test incoming..." && fish ignore_this_mone
-
-read -p "copy/overwrite DOTFILES, ICONS, THEMES..? " dit
-if [[ $dit = y ]]; then
-  cp -r ~/4arch/confs/fuzzel      ~/.config
-  cp -r ~/4arch/confs/hypr        ~/.config
-  cp -r ~/4arch/confs/kitty       ~/.config
-  cp -r ~/4arch/confs/swaync      ~/.config
-  cp -r ~/4arch/confs/swayosd     ~/.config
-  cp -r ~/4arch/confs/uwsm        ~/.config
-  cp -r ~/4arch/confs/waybar      ~/.config
-  cp -r ~/4arch/confs/config.fish ~/.config/fish
-
+read -p "copy/overwrite DOTFILES, ICONS, THEMES..? " itd
+if [[ $itd = y ]]; then
   mkdir ~/.icons
   mkdir ~/.local/share/icons
   mkdir ~/.themes
@@ -35,6 +24,15 @@ if [[ $dit = y ]]; then
   tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.themes
   tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.local/share/themes
   tar -xf ~/4arch/icandy/Sweet.tar.xz      -C ~/.config/Kvantum
+  
+  cp -r ~/4arch/confs/fuzzel      ~/.config
+  cp -r ~/4arch/confs/hypr        ~/.config
+  cp -r ~/4arch/confs/kitty       ~/.config
+  cp -r ~/4arch/confs/swaync      ~/.config
+  cp -r ~/4arch/confs/swayosd     ~/.config
+  cp -r ~/4arch/confs/uwsm        ~/.config
+  cp -r ~/4arch/confs/waybar      ~/.config
+  cp -r ~/4arch/confs/config.fish ~/.config/fish
 else
   echo "skipped DOTFILES, ICONS, THEMES setup..!"
 fi
