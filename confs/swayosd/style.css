@@ -8,5 +8,9 @@ window#osd progress {
   background: linear-gradient(to right, #C451FA, #6F44DF);
 }
 window#osd trough {
-  background: none;
+  background: transparent;
+}
+window#osd progressbar {
+  min-height: 10px;
+  min-width: 163px;
 }
