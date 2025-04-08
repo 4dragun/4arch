@@ -5,7 +5,7 @@ window#osd {
   background: @theme_bg_color;
 }
 window#osd progress {
-  background: linear-gradient(to right, #BB9AF7, #E0AF68);
+  background: linear-gradient(to right, #C451FA, #6F44DF);
 }
 window#osd trough {
   background: none;
