@@ -11,29 +11,31 @@ button {
     border: none;
     border-radius: 0;
 }
-#power-profiles-daemon,
 #workspaces button,
 #pulseaudio,
 #network,
 #bluetooth,
 #tray,
 #battery,
-#clock,
-#custom-notification {
+#clock {
     padding: 0 3px;
 }
 #power-profiles-daemon,
 #custom-notification {
-  margin: 0 13px;
+  min-width: 46px;
 }
 #power-profiles-daemon.performance {
-    color: #F7768E;
+    color: #1A1B26;
+    background-color: #F7768E;
+    border-radius: 7px;
 }
 #power-profiles-daemon.balanced {
-    color: white;
+    color: violet;
 }
 #power-profiles-daemon.power-saver {
-    color: #9ECE6A;
+    color: #1A1B26;
+    background-color: #9ECE6A;
+    border-radius: 7px;
 }
 #workspaces button {
     background-color: transparent;
@@ -60,6 +62,7 @@ button {
 }
 #battery {
     color: #9ECE6A;
+    border-radius: 7px;
 }
 #battery.charging, #battery.plugged {
     color: #1A1B26;
