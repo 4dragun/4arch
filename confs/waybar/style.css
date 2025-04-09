@@ -52,18 +52,10 @@ button {
 }
 #pulseaudio {
     background-color: transparent;
-    color: #E0AF68;
-}
-#pulseaudio.muted {
-    background-color: transparent;
-    color: #E0AF68;
+    color: #BB9AF7;
 }
 #network {
-    color: #BB9AF7;
-    background-color: transparent;
-}
-#network.disconnected {
-    color: #F7768E;
+    color: #7DCFFF;
     background-color: transparent;
 }
 #bluetooth {
