@@ -8,9 +8,10 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/window",
     ],
     "modules-right": [
+        "privacy",
         "pulseaudio",
         "network",
         "bluetooth",
@@ -53,6 +54,9 @@
             "kitty = ~": "kitty"
         }
     },
+    "privacy": {
+       "icon-size": 11
+    },
     "pulseaudio": {
         "format-bluetooth": "{icon} {volume}% {format_source}",
         "format-bluetooth-muted": "{icon}   {format_source}",
@@ -77,7 +81,8 @@
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "  Disconnected",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "max-length": 10
     },
     "bluetooth": {
         "on-click": "blueman-manager",
@@ -85,7 +90,8 @@
         "format-on": "󰂳 {status}",
         "format-connected": "󰂰 {status}",
         "format-disabled": " error",
-        "tooltip-format": "{device_alias}({device_battery_percentage}%)"
+        "tooltip-format": "{device_alias}({device_battery_percentage}%)",
+        "max-length": 10
     },
     "tray": {
         "spacing": 7,

@@ -12,6 +12,7 @@ button {
     border-radius: 0;
 }
 #workspaces button,
+#privacy,
 #pulseaudio,
 #network,
 #bluetooth,
@@ -50,6 +51,11 @@ button {
 }
 #window {
     color: #7DCFFF;
+}
+#privacy {
+  color: black;
+  border-radius: 10px;
+  background-color: greenyellow;
 }
 #pulseaudio {
     color: #BB9AF7;
