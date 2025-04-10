@@ -81,7 +81,8 @@
     },
     "bluetooth": {
         "on-click": "blueman-manager",
-        "format": " {status}"
+        "format": " {status}",
+        "tooltip-format": "{device_alias}({device_battery_percentage}%)"
     },
     "tray": {
         "spacing": 7,
