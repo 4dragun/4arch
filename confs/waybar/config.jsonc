@@ -12,8 +12,8 @@
     ],
     "modules-right": [
         "pulseaudio",
-        //"network",
-        //"bluetooth",
+        "network",
+        "bluetooth",
         "tray",
         "battery",
         "clock",
@@ -46,9 +46,11 @@
         }
     },
     "hyprland/window": {
+        "format": "{class} - {title}",
         "separate-outputs": true,
+        "max-length": 64,
         "rewrite": {
-            "": "Hyprland"
+            " - ": "Hyprland"
         }
     },
     "pulseaudio": {
@@ -69,17 +71,18 @@
         },
         "on-click": "pavucontrol"
     },
-    //"network": {
-        //"format-wifi": "  {essid} ({signalStrength}%)",
-        //"format-ethernet": "{ipaddr}/{cidr} ",
-        //"tooltip-format": "{ifname} via {gwaddr} ",
-        //"format-linked": "{ifname} (No IP) ",
-        //"format-disconnected": "  Disconnected",
-        //"format-alt": "{ifname}: {ipaddr}/{cidr}"
-    //},
-    //"bluetooth": {
-        //"on-click": "blueman-manager"
-    //},
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "  Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "bluetooth": {
+        "on-click": "blueman-manager",
+        "format": " {status}"
+    },
     "tray": {
         "spacing": 7,
         "icon-size": 16,
