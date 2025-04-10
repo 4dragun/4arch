@@ -82,7 +82,10 @@
     },
     "bluetooth": {
         "on-click": "blueman-manager",
-        "format": " {status}",
+        "format": "󰂲 {status}",
+        "format-on": "󰂳 {status}",
+        "format-connected": "󰂰 {status}",
+        "format-disabled": " error",
         "tooltip-format": "{device_alias}({device_battery_percentage}%)"
     },
     "tray": {
