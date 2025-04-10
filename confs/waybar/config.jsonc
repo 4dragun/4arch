@@ -32,6 +32,8 @@
     "on-click": "activate",
     "sort-by-number": true,
     "all-outputs": true,
+    "show-special": true,
+    "special-visible-only": true,
     "persistent-workspaces": {
       "1": [],
       "2": [],
