@@ -46,11 +46,12 @@
         }
     },
     "hyprland/window": {
-        "format": "{class} - {title}",
+        "format": "{class} = {title}",
         "separate-outputs": true,
         "max-length": 64,
         "rewrite": {
-            " - ": "Hyprland"
+            " = ": "hyprland",
+            "kitty = ~": "kitty"
         }
     },
     "pulseaudio": {
