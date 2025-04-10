@@ -24,7 +24,7 @@
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
         "tooltip": true,
         "format-icons": {
-            "default": ""
+            "default": " rch Linux"
         }
     },
     "hyprland/workspaces": {

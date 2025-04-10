@@ -22,7 +22,7 @@ button {
 }
 #power-profiles-daemon,
 #custom-notification {
-  min-width: 46px;
+  padding: 0 17px;
 }
 #power-profiles-daemon.performance {
     color: #1A1B26;
@@ -30,7 +30,7 @@ button {
     border-radius: 7px;
 }
 #power-profiles-daemon.balanced {
-    color: violet;
+    color: pink;
 }
 #power-profiles-daemon.power-saver {
     color: #1A1B26;
