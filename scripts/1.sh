@@ -84,7 +84,7 @@ $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog
-$YS librewolf nwg-look blueman qbittorrent swaync
+$YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look qt6ct kvantum fuzzel network-manager-applet
 $YS thunar thunar-archive-plugin thunar-media-tags-plugin
 
