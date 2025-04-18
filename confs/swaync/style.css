@@ -1,0 +1,20 @@
+@define-color cc-bg  #1A1B26;
+@define-color noti-border-color #7DCFFF;
+@define-color noti-bg #1A1B26;
+@define-color text-color #9ECE6A;
+
+.notification {
+  border: 2px solid @noti-border-color;
+}
+.notification-row .notification-background {
+  padding: 10px 10px;
+}
+.control-center {
+  border: 2px solid @noti-border-color;
+}
+.widget-title > button {
+  border: 2px solid @noti-border-color;
+}
+.widget-dnd > switch {
+  border: 2px solid @noti-border-color;
+}
