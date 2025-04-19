@@ -26,8 +26,8 @@ $scala\
 $docker_context\
 [](bg:#07AE92 fg:#FF9500)\
 $time\
-[](bg:#53EE84 fg:#07AE92)\
-[ ](fg:#53EE84)\
+[](bg:#53EE84 fg:#07AE92)\
+[ ](fg:#53EE84)\
 """
 
 add_newline = false
