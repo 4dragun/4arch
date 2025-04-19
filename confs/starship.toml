@@ -2,14 +2,14 @@ format = """
 [](#FD4985)\
 $os\
 $username\
-[](bg:#FF9A8C fg:#FD4985)\
-[](bg:#5577FF fg:#FF9A8C)\
+[](bg:#FF9A8C fg:#FD4985)\
+[](bg:#5577FF fg:#FF9A8C)\
 $directory\
-[](bg:#4EC1FF fg:#5577FF)\
-[](bg:#AD3DFF fg:#4EC1FF)\
+[](bg:#4EC1FF fg:#5577FF)\
+[](bg:#AD3DFF fg:#4EC1FF)\
 $git_branch\
 $git_status\
-[](bg:#FA7DFF fg:#AD3DFF)\
+[](bg:#FA7DFF fg:#AD3DFF)\
 $c\
 $elixir\
 $elm\
@@ -22,9 +22,9 @@ $nodejs\
 $nim\
 $rust\
 $scala\
-[](bg:#FF9500 fg:#FA7DFF)\
+[](bg:#FF9500 fg:#FA7DFF)\
 $docker_context\
-[](bg:#07AE92 fg:#FF9500)\
+[ ](bg:#07AE92 fg:#FF9500)\
 $time\
 [](bg:#53EE84 fg:#07AE92)\
 [ ](fg:#53EE84)\
