@@ -1,15 +1,9 @@
 format = """
-[](#FD4985)\
 $os\
 $username\
-[](bg:#FF9A8C fg:#FD4985)\
-[](bg:#5577FF fg:#FF9A8C)\
 $directory\
-[](bg:#4EC1FF fg:#5577FF)\
-[](bg:#AD3DFF fg:#4EC1FF)\
 $git_branch\
 $git_status\
-[](bg:#FA7DFF fg:#AD3DFF)\
 $c\
 $elixir\
 $elm\
@@ -22,19 +16,15 @@ $nodejs\
 $nim\
 $rust\
 $scala\
-[](bg:#FF9500 fg:#FA7DFF)\
 $docker_context\
-[ ](bg:#07AE92 fg:#FF9500)\
-$time\
-[](bg:#53EE84 fg:#07AE92)\
-[ ](fg:#53EE84)\
+$time   \
 """
 
 add_newline = false
 
 [username]
 show_always = true
-style_user = "bold italic bg:#FD4985 fg:#1A1B26"
+style_user = "bold italic fg:#FD4985"
 style_root = "bg:#9A348E"
 format = '[$user ]($style)'
 disabled = false
@@ -44,7 +34,7 @@ style = "bg:#9A348E"
 disabled = true
 
 [directory]
-style = "bold italic bg:#5577FF fg:#1A1B26"
+style = "bold italic fg:#5577FF"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -78,11 +68,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bold italic bg:#AD3DFF fg:#1A1B26"
+style = "bold italic fg:#AD3DFF"
 format = '[ $symbol $branch ]($style)'
 
 [git_status]
-style = "bg:#AD3DFF"
+style = "fg:#AD3DFF"
 format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
@@ -132,5 +122,5 @@ format = '[ $symbol ($version) ]($style)'
 [time]
 disabled = false
 time_format = "%R"
-style = "bold italic bg:#07AE92 fg:#1A1B26"
+style = "bold italic fg:#07AE92"
 format = '[󰥔 $time ]($style)'
