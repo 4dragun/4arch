@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top",
   "height": 0,
-  "spacing": 9,
+  "spacing": 7,
   "modules-left": [
     "power-profiles-daemon",
     "hyprland/workspaces"

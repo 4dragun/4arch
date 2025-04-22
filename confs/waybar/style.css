@@ -22,13 +22,13 @@ button {
 #custom-notification {
   background: #1A1B26;
   border-radius: 10px;
-  padding: 3px 10px;
+  padding: 0px 10px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 #power-profiles-daemon {
   margin-left: 10px;
-  padding: 1px 23px;
+  padding: 0px 23px;
 }
 #power-profiles-daemon.performance {
   color: #1A1B26;
