@@ -46,9 +46,6 @@ button {
 #workspaces button { color: #2AE7FF; }
 #workspaces button.active {
   color: #FD3A84;
-  background: #1F2336;
-  border-radius: 11pt;
-  padding: 0 13pt;
 }
 #workspaces button.empty { color: #A63AFB; }
 #window { color: #2AE7FF; }
