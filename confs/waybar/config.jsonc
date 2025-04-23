@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "top",
   "height": 0,
-  "spacing": 7,
+  "spacing": 5,
   "modules-left": [
     "power-profiles-daemon",
     "hyprland/workspaces"
@@ -27,7 +27,7 @@
     }
   },
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "{name}",
     "on-click": "activate",
     "sort-by-number": true,
     "all-outputs": true,
@@ -47,7 +47,7 @@
     },
     "format-icons": {
       "active": "󰮯",
-      "empty": "󰸳",
+      "empty": "",
       "default": ""
     }
   },

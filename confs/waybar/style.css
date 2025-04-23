@@ -1,7 +1,7 @@
 * {
     font-family: JetBrainsMono Nerd Font;
     font-weight: bolder;
-    font-size: 10pt;
+    font-size: 9pt;
   }
 window#waybar { background: #1F2336; }
 button {
@@ -21,10 +21,10 @@ button {
 #clock,
 #custom-notification {
   background: #1A1B26;
-  border-radius: 13px;
-  padding: 0px 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  border-radius: 12pt;
+  padding: 4px 13px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 #power-profiles-daemon {
   margin-left: 10px;
@@ -39,12 +39,17 @@ button {
   color: #1A1B26;
   background-color: #9ECE6A;
 }
-#workspaces button { color: #2AE7FF; }
-#power-profiles-daemon,
-#workspaces button label {
+/* #workspaces button label, */
+#power-profiles-daemon {
   font-size: 12pt;
 }
-#workspaces button.active { color: #FD3A84; }
+#workspaces button { color: #2AE7FF; }
+#workspaces button.active {
+  color: #FD3A84;
+  background: #1F2336;
+  border-radius: 11pt;
+  padding: 0 13pt;
+}
 #workspaces button.empty { color: #A63AFB; }
 #window { color: #2AE7FF; }
 #privacy { color: greenyellow; }
