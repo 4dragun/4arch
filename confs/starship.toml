@@ -33,7 +33,7 @@ add_newline = false
 
 [username]
 show_always = true
-style_user = "bold italic fg:#FD3A84 bg:#1F2336"
+style_user = "bold fg:#FD3A84 bg:#1F2336"
 style_root = "bg:#9A348E"
 format = '[$user]($style)'
 disabled = false
@@ -43,7 +43,7 @@ style = "bg:#9A348E"
 disabled = true
 
 [directory]
-style = "bold italic fg:#4DD2FF bg:#1F2336"
+style = "bold fg:#4DD2FF bg:#1F2336"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -77,11 +77,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bold italic #FF9700 bg:#1F2336"
+style = "bold #FF9700 bg:#1F2336"
 format = '[$symbol $branch]($style)'
 
 [git_status]
-style = "fg:#FF9700 bg:#1F2336"
+style = "bold fg:#FF9700 bg:#1F2336"
 format = '[$all_status$ahead_behind]($style)'
 
 [golang]
@@ -131,5 +131,5 @@ format = '[ $symbol ($version) ]($style)'
 [time]
 disabled = false
 time_format = "%R"
-style = "bold italic fg:#66FE80  bg:#1F2336"
+style = "bold fg:#66FE80  bg:#1F2336"
 format = '[󰥔 $time]($style)'
