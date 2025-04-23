@@ -3,12 +3,9 @@ format = """
 $os\
 $username\
 [](#1F2336)\
-[ ](#1A1B26)\
-[](#1F2336)\
 $directory\
 $git_branch\
 $git_status\
-[](#1F2336)\
 $c\
 $elixir\
 $elm\
@@ -43,7 +40,7 @@ style = "bg:#9A348E"
 disabled = true
 
 [directory]
-style = "bold fg:#4DD2FF bg:#1F2336"
+style = "bold fg:#4DD2FF"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -77,11 +74,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [git_branch]
 symbol = ""
-style = "bold #FF9700 bg:#1F2336"
+style = "bold #FF9700"
 format = '[$symbol $branch]($style)'
 
 [git_status]
-style = "bold fg:#FF9700 bg:#1F2336"
+style = "bold fg:#FF9700"
 format = '[$all_status$ahead_behind]($style)'
 
 [golang]
