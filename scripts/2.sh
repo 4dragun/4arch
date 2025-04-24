@@ -7,14 +7,6 @@ N="sudoedit"
 
 nwg-look && kvantummanager && qt6ct
 
-read -p "configure FISH as interactive shell..? " fas
-if [[ $fas = y ]]; then
-  $W < ~/4arch/scripts/scriptiles/bafish.sh
-  nvim ~/.bashrc
-else
-  echo "skipped bafish configuration..!"
-fi
-
 read -p "sudoedit SYSTEM-files..? " sas
 if [[ $sas = y ]]; then
   echo -e "$H1\n$H2" | $W
