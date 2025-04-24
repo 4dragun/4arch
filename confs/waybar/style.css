@@ -50,7 +50,9 @@ button {
   border-radius: 10pt;
 }
 #workspaces button.empty { color: #787C99;}
-/* #window { color: #2AE7FF; } */
+#window {
+background: #1A1B26;
+margin-left: 13px;}
 #privacy { color: greenyellow; }
 /* #backlight{ color: #FD3A84; } */
 /* #pulseaudio { color: #24C5F9; } */
@@ -62,10 +64,10 @@ button {
 /*   color: #E0AF68; */
   /* background: #30313C; */
 /* } */
-/* #tray { */
-/*   background-color: #1F2336; */
-/* } */
-/* #battery { color: #66FF80; } */
+#tray {
+  background: #1A1B26;
+}
+#battery { background: #1A1B26; }
 #battery.charging, #battery.plugged {
   color: #1A1B26;
   background-color: #B4F9F8;
@@ -92,6 +94,6 @@ button {
 /* #clock { color: #FF8700; } */
 #custom-notification {
   /* color: #A63AFB; */
-  margin-right: 10px;
-  padding: 0px 23px;
+  background: #1A1B26;
+  margin-right: 13px;
 }
