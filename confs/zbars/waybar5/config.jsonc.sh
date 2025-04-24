@@ -5,19 +5,18 @@
   "spacing": 5,
   "modules-left": [
     "power-profiles-daemon",
-    "hyprland/window"
+    "hyprland/workspaces"
   ],
   "modules-center": [
-    "hyprland/workspaces",
-"privacy",
-    "backlight",
-    "pulseaudio",
-    
-    "clock"
+    "hyprland/window"
   ],
   "modules-right": [
+    "privacy",
+    "backlight",
+    "pulseaudio",
     "tray",
     "battery",
+    "clock",
     "custom/notification"
   ],
   "power-profiles-daemon": {
@@ -53,12 +52,12 @@
     }
   },
   "hyprland/window": {
-    "format": "{class}",
+    "format": "{class} -> {title}",
     "separate-outputs": true,
     "max-length": 64,
     "rewrite": {
-      "": "hyprland",
-      "kitty": "kitty"
+      " -> ": "hyprland",
+      "kitty -> ~": "kitty"
     }
   },
   "privacy": {
