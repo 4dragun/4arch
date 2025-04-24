@@ -45,7 +45,7 @@ button {
   font-size: 12pt;
 }
 #workspaces button { color: #B4F9F8; }
-#workspaces button.active {
+#workspaces button.active, #workspaces button:hover {
   color: #B4F9F8;
   background: #2F3549;
   border-radius: 10pt;
