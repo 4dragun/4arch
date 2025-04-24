@@ -1,0 +1,23 @@
+# font_family             ComicShannsMono Nerd Font Mono
+# bold_font               ComicShannsMono Nerd Font Mono Bold
+# italic_font             ComicShannsMono Nerd Font Mono Italic
+# bold_italic_font        ComicShannsMono Nerd Font Bold Italic
+
+font_size               14
+confirm_os_window_close 0
+window_padding_width    7
+cursor_shape beam
+cursor_shape_unfocused unchanged
+
+# BEGIN_KITTY_THEME
+# Tokyo Night
+include current-theme.conf
+# END_KITTY_THEME
+
+
+# BEGIN_KITTY_FONTS
+font_family      SpaceMonoNF
+bold_font        SpaceMonoNF-Bold
+italic_font      SpaceMonoNF-Italic
+bold_italic_font SpaceMonoNF-BoldItalic
+# END_KITTY_FONTS
