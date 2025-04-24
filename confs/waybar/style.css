@@ -44,11 +44,13 @@ button {
 #power-profiles-daemon {
   font-size: 12pt;
 }
-#workspaces button { color: #2AE7FF; }
+#workspaces button { color: #B4F9F8; }
 #workspaces button.active {
-  color: #FD3A84;
+  color: #B4F9F8;
+  background: #2F3549;
+  border-radius: 10pt;
 }
-#workspaces button.empty { color: #A63AFB; }
+#workspaces button.empty { color: #787C99; }
 /* #window { color: #2AE7FF; } */
 #privacy { color: greenyellow; }
 /* #backlight{ color: #FD3A84; } */
@@ -67,14 +69,14 @@ button {
 /* #battery { color: #66FF80; } */
 #battery.charging, #battery.plugged {
   color: #1A1B26;
-  background-color: #9ECE6A;
+  background-color: #B4F9F8;
 }
 #battery.warning:not(.charging) {
-  background-color: #E0AF68;
+  background-color: #FF9E64;
   color: #1A1B26;
 }
 #battery.critical:not(.charging) {
-  background-color: #F7768E;
+  background-color: #B4F9F8;
   color: #1A1B26;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -84,8 +86,8 @@ button {
 }
 @keyframes blink {
   to {
-    background-color: transparent;
-    color: #F7768E;
+    background-color: #1A1B26;
+    color: #B4F9F8;
   }
 }
 /* #clock { color: #FF8700; } */
