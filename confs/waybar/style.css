@@ -28,7 +28,6 @@ button {
   color: #B4F9F8;
 }
 #power-profiles-daemon {
-  margin-left: 10px;
   padding: 0px 23px;
 }
 #power-profiles-daemon.performance {
@@ -45,12 +44,12 @@ button {
   font-size: 12pt;
 }
 #workspaces button { color: #B4F9F8; }
-#workspaces button.active, #workspaces button:hover {
-  color: #B4F9F8;
-  background: #2F3549;
+#workspaces button.active /*#workspaces button:hover*/ {
+  background-color: #B4F9F8;
+  color: #1A1B26;
   border-radius: 10pt;
 }
-#workspaces button.empty { color: #787C99; }
+#workspaces button.empty { color: #787C99;}
 /* #window { color: #2AE7FF; } */
 #privacy { color: greenyellow; }
 /* #backlight{ color: #FD3A84; } */

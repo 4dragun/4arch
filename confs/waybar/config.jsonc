@@ -4,10 +4,10 @@
   "height": 0,
   "spacing": 5,
   "modules-left": [
-    "power-profiles-daemon",
-    "hyprland/window"
+        "hyprland/window"
   ],
   "modules-center": [
+   "power-profiles-daemon",
     "hyprland/workspaces",
 "privacy",
     "backlight",
