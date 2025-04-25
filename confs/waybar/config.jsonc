@@ -9,13 +9,15 @@
   "modules-center": [
    "power-profiles-daemon",
     "hyprland/workspaces",
-"privacy",
-    "backlight",
-    "pulseaudio",
     
-    "clock"
+    
+    "clock",
+    "backlight",
+     "backlight/slider",
+"pulseaudio",
   ],
   "modules-right": [
+    "privacy",
     "tray",
     "battery",
     "custom/notification"
@@ -65,7 +67,7 @@
     "icon-size": 11
   },
   "backlight": {
-    "format": "{icon} {percent}%",
+    "format": "  {percent}",
     "format-icons": ["󰽤", "", "", "", "", "", "", "", "", ""]
   },
   "pulseaudio": {
@@ -122,7 +124,7 @@
     "format-icons": ["", "", "", "", ""]
   },
   "clock": {
-    "format": " {:%a %b %d %R}",
+    "format": "{:%A %b %d - %R}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
   "custom/notification": {
