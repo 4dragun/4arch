@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-killall waybar
-waybar
+killall -SIGUSR2 waybar
