@@ -24,7 +24,7 @@ button {
 #tray,
 #battery,
 #clock,
-#backlight-slider,
+#pulseaudio-slider,
 #custom-notification {
   background: #1F2336;
   border-radius: 10pt;
@@ -115,27 +115,50 @@ margin-left: 13px;}
   background: #1A1B26;
   margin-right: 13px;
 }
-
-#backlight{
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
-#backlight-slider {
-  min-width: 100pt;
-  margin-left: -11pt;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-}
-#backlight-slider slider {
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-#backlight-slider trough {
-  min-height: 13pt;
-  border-radius: 999pt;
-}
-#backlight-slider highlight {
-  border-radius: 999pt;
-  background: #B4F9F8;
-}
+/* #backlight { */
+/*   border-top-right-radius: 0px; */
+/*   border-bottom-right-radius: 0px; */
+/* } */
+/* #backlight-slider { */
+/*   min-width: 100pt; */
+/*   margin-left: -11pt; */
+/*   border-top-left-radius: 0px; */
+/*   border-bottom-left-radius: 0px; */
+/* } */
+/* #backlight-slider slider { */
+/*   background: none; */
+/*   border: none; */
+/*   box-shadow: none; */
+/*   min-height: 23pt; */
+/* } */
+/* #backlight-slider trough { */
+/*   border-radius: 999pt; */
+/* } */
+/* #backlight-slider highlight { */
+/*   border-radius: 999pt; */
+/*   background: #B4F9F8; */
+/* } */
+/**/
+/* #pulseaudio { */
+/*   border-top-right-radius: 0px; */
+/*   border-bottom-right-radius: 0px; */
+/* } */
+/* #pulseaudio-slider { */
+/*   min-width: 100pt; */
+/*   margin-left: -11pt; */
+/*   border-top-left-radius: 0px; */
+/*   border-bottom-left-radius: 0px; */
+/* } */
+/* #pulseaudio-slider slider { */
+/*   background: none; */
+/*   border: none; */
+/*   box-shadow: none; */
+/*   min-height: 23pt; */
+/* } */
+/* #pulseaudio-slider trough { */
+/*   border-radius: 999pt; */
+/* } */
+/* #pulseaudio-slider highlight { */
+/*   border-radius: 999pt; */
+/*   background: #B4F9F8; */
+/* } */

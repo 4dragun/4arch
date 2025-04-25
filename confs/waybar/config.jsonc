@@ -13,8 +13,7 @@
     
     "clock",
     "backlight",
-     "backlight/slider",
-"pulseaudio",
+    "pulseaudio",
   ],
   "modules-right": [
     "privacy",
@@ -71,11 +70,11 @@
     "format-icons": ["󰽤", "", "", "", "", "", "", "", "", ""]
   },
   "pulseaudio": {
-    "format-bluetooth": "{icon} {volume}% {format_source}",
-    "format-bluetooth-muted": "{icon}   {format_source}",
-    "format": "{icon} {volume}% {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": " {volume}%",
+    "format-bluetooth": "{icon} {volume}  {format_source}",
+    "format-bluetooth-muted": "{icon}    {format_source}",
+    "format": "{icon}{volume}  {format_source}",
+    "format-muted": "  {format_source}",
+    "format-source": " {volume}",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
@@ -84,7 +83,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": [" ", "  ", "   "]
     },
     "on-click": "pavucontrol"
   },
@@ -116,11 +115,11 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon}  {capacity}%",
-    "format-full": "{icon}  {capacity}%",
-    "format-charging": "{icon}  󱐋{capacity}%",
-    "format-plugged": "{icon}  󱐋{capacity}%",
-    "format-alt": "{icon}  {time}",
+    "format": "{icon}   {capacity}%",
+    "format-full": "{icon}   {capacity}%",
+    "format-charging": "{icon} 󱐋 {capacity}%",
+    "format-plugged": "{icon} 󱐋 {capacity}%",
+    "format-alt": "{icon}   {time}",
     "format-icons": ["", "", "", "", ""]
   },
   "clock": {
