@@ -1,7 +1,7 @@
 * {
-    font-family: ComicShannsMono Nerd Font;
-    font-weight: bolder;
-    font-size: 10pt;
+    font-family: ComicshannsMono Nerd Font;
+    /* font-weight: bolder; */
+    font-size: 12pt;
   }
 window#waybar { background: #1A1B26; }
 button {
@@ -43,13 +43,20 @@ button {
 #power-profiles-daemon {
   font-size: 12pt;
 }
-#workspaces button { color: #B4F9F8; }
-#workspaces button.active /*#workspaces button:hover*/ {
-  background-color: #B4F9F8;
-  color: #1A1B26;
+#workspaces button { color: #B4F9F8;
+background-color: #2F3549;
   border-radius: 10pt;
+  margin-left: 2px;
+  margin-right: 2px;
 }
-#workspaces button.empty { color: #787C99;}
+#workspaces button.active {
+  color: #1A1B26;
+  background: #B4F9F8;
+  border-radius: 999pt;
+}
+#workspaces button.empty { color: #787C99;
+background: none;
+}
 #workspaces button:hover {
     background: #787C99;
   color: #1F2336;
