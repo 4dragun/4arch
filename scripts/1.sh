@@ -69,14 +69,14 @@ export EDITOR=nvim
 sudoedit /etc/pacman.conf && yay
 
 echo "installing AUR-apps..."
-$YS clipse-bin
+$YS clipse-bin ttf-rubik-vf
 
 echo "installing DEPENDENCIES..."
 $YS ffmpegthumbnailer python-pillow bibata-cursor-theme tumbler gvfs gvfs-mtp
 
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
-$YS noto-fonts-emoji ttf-jetbrains-mono-nerd ttf-rubik-vf
+$YS noto-fonts-emoji ttf-jetbrains-mono-nerd
 
 echo "installing HYPRLAND-stuff..."
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm kitty
