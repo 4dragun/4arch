@@ -1,0 +1,130 @@
+@import "colors.css";
+
+* {
+    font-family: Rubik, JetBrainsMono Nerd Font;
+    font-size: 11pt;
+  }
+window#waybar {
+  background: @background
+}
+button {
+  border: none;
+  border-radius: 0;
+}
+#power-profiles-daemon,
+#workspaces,
+#window,
+#privacy,
+#backlight,
+#backlight-slider,
+#pulseaudio,
+#network,
+#bluetooth,
+#tray,
+#battery,
+#clock,
+#custom-notification {
+  background: @surface_container;
+  border-radius: 11pt;
+  padding: 3px 10px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: @on_primary_container;
+}
+#power-profiles-daemon {
+  /* padding: 0px 23px; */
+}
+#power-profiles-daemon.performance {
+  color: @background;
+  background: @red;
+}
+#power-profiles-daemon.power-saver {
+  color: @background;
+  background: @green;
+}
+#power-profiles-daemon {
+  font-size: 12pt;
+}
+#workspaces button {
+  color: @on_primary_container;
+  background: @surface_bright;
+  border-radius: 999pt;
+  margin: 2px;
+  padding: 0px 5px;
+}
+#workspaces button.active {
+  color: @background;
+  background: @primary;
+  border-radius: 999pt;
+}
+#workspaces button.empty {
+  color: @outline;
+  background: none;
+}
+#workspaces button:hover {
+  background: @source_color;
+  color: @background;
+  border-radius: 10pt;
+}
+#window {
+  background: none;
+  margin-left: 13px;
+}
+#privacy {
+  color: greenyellow;
+  background: none
+}
+#tray {
+  background: none;
+}
+#battery { background: none; }
+#battery.charging, #battery.plugged {
+  color: @background;
+  background: @primary;
+}
+#battery.warning:not(.charging) {
+  background: @green;
+  color: @background;
+}
+#battery.critical:not(.charging) {
+  background: @primary;
+  color: @background;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  to {
+    background: @background;
+    color: @primary;
+  }
+}
+#custom-notification {
+  background: none;
+  margin-right: 13px;
+}
+/* #backlight { */
+/*   border-radius: 9pt 9pt; */
+/* } */
+#backlight-slider {
+  /* border-radius: 0pt 9pt 9pt 0pt; */
+  min-width: 100pt;
+  /* background: @surface_container; */
+  /* margin-top: 4px; */
+  /* margin-bottom: 4px; */
+}
+#backlight-slider slider {
+  background: none;
+  border: none;
+  box-shadow:none
+}
+#backlight-slider trough {
+  border-radius: 999pt;
+}
+#backlight-slider highlight {
+  background: @primary;
+  min-height: 10pt;
+  border-radius: 999pt;
+}
