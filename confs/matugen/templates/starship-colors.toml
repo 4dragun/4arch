@@ -31,9 +31,9 @@ add_newline = false
 palette = 'colors'
 
 [palettes.colors]
-color1 = '#4cd9df'
-color2 = '#6ff6fb'
-color3 = '#0d141b'
+color1 = '{{colors.primary.default.hex}}'
+color2 = '{{colors.primary_fixed.default.hex}}'
+color3 = '{{colors.surface.default.hex}}'
 
 [username]
 show_always = true

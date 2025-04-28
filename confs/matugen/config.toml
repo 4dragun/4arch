@@ -1,0 +1,58 @@
+[config]
+version_check = true
+
+[templates.kitty]
+input_path = "./templates/kitty-colors.conf"
+output_path = "../kitty/matukit.conf"
+post_hook = "kitty @ set-colors -a -c ~/.config/kitty/matukit.conf"
+
+[templates.starship]
+input_path = './templates/starship-colors.toml'
+output_path = '../starship.toml'
+
+[templates.yazi]
+input_path = './templates/yazi-theme.toml'
+output_path = '../yazi/theme.toml'
+
+[templates.waybar]
+input_path = './templates/colors.css'
+output_path = '../waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.hyprland]
+input_path = './templates/hyprland-colors.conf'
+output_path = '../hypr/colors.conf'
+post_hook = 'hyprctl reload'
+
+[templates.hyprlock]
+input_path = './templates/hyprlock-colors.conf'
+output_path = '../hypr/hyprlock.conf'
+
+[templates.gtk3]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+
+[templates.gtk4]
+input_path = './templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.gtk3fix]
+input_path = './templates/gtk-fix.css'
+output_path = '../gtk-3.0/gtk.css'
+
+[templates.gtk4fix]
+input_path = './templates/gtk-fix.css'
+output_path = '../gtk-4.0/gtk.css'
+
+[templates.qt6ct]
+input_path = './templates/qtct-colors.conf'
+output_path = '~/.config/qt6ct/colors/matugen.conf'
+
+[templates.fuzzel]
+input_path = './templates/fuzzel-colors.ini'
+output_path = '~/.config/fuzzel/fuzzel.ini'
+
+[config.custom_colors]
+green = "#00ff00"
+red = "#ff0000"
+blue = { color = "#0000ff", blend = false }

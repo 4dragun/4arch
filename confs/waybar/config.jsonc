@@ -7,12 +7,13 @@
         "hyprland/window"
   ],
   "modules-center": [
-   "power-profiles-daemon",
-    "hyprland/workspaces",
+   //"power-profiles-daemon",
+   "backlight",
+   "backlight/slider", 
+   "hyprland/workspaces",
     
     
     "clock",
-    "backlight",
     "pulseaudio",
   ],
   "modules-right": [
@@ -66,13 +67,13 @@
     "icon-size": 11
   },
   "backlight": {
-    "format": "  {percent}",
+    "format": "󰃠  {percent}",
     "format-icons": ["󰽤", "", "", "", "", "", "", "", "", ""]
   },
   "pulseaudio": {
     "format-bluetooth": "{icon} {volume}  {format_source}",
     "format-bluetooth-muted": "{icon}    {format_source}",
-    "format": "{icon}{volume}  {format_source}",
+    "format": "{icon}{volume} 󰇘 {format_source}",
     "format-muted": " {format_source}",
     "format-source": " {volume}",
     "format-source-muted": "",
