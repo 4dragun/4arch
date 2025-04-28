@@ -5,7 +5,8 @@ Y="yay -S --needed --noconfirm"
 W="wl-copy -n"
 N="sudoedit"
 
-nwg-look && kvantummanager && qt6ct
+nwg-look && qt6ct
+#kvantummanager
 
 read -p "sudoedit SYSTEM-files..? " sas
 if [[ $sas = y ]]; then
