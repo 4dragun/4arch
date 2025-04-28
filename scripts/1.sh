@@ -73,6 +73,7 @@ $YS clipse-bin ttf-rubik-vf matugen-bin
 
 echo "installing DEPENDENCIES..."
 $YS ffmpegthumbnailer python-pillow bibata-cursor-theme #tumbler gvfs gvfs-mtp
+$YS adw-gtk-theme
 
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
