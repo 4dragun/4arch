@@ -17,22 +17,22 @@ read -p "copy/overwrite DOTFILES, ICONS, THEMES..? " itd
 if [[ $itd = y ]]; then
   mkdir ~/.icons
   mkdir ~/.local/share/icons
-  mkdir ~/.themes
-  mkdir ~/.local/share/themes
-  mkdir ~/.config/Kvantum
+  # mkdir ~/.themes
+  # mkdir ~/.local/share/themes
+  # mkdir ~/.config/Kvantum
 
-  tar -xf ~/4arch/icandy/BeautyLine.tar.gz -C ~/.icons
-  tar -xf ~/4arch/icandy/BeautyLine.tar.gz -C ~/.local/share/icons
-  tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.themes
-  tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.local/share/themes
-  tar -xf ~/4arch/icandy/Sweet.tar.xz      -C ~/.config/Kvantum
+  # tar -xf ~/4arch/icandy/BeautyLine.tar.gz -C ~/.icons
+  # tar -xf ~/4arch/icandy/BeautyLine.tar.gz -C ~/.local/share/icons
+  # tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.themes
+  # tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.local/share/themes
+  # tar -xf ~/4arch/icandy/Sweet.tar.xz      -C ~/.config/Kvantum
   
   cp -r ~/4arch/confs/fish          ~/.config
   cp -r ~/4arch/confs/fuzzel        ~/.config
   cp -r ~/4arch/confs/hypr          ~/.config
   cp -r ~/4arch/confs/kitty         ~/.config
   cp -r ~/4arch/confs/swaync        ~/.config
-  cp -r ~/4arch/confs/swayosd       ~/.config
+  # cp -r ~/4arch/confs/swayosd       ~/.config
   cp -r ~/4arch/confs/uwsm          ~/.config
   cp -r ~/4arch/confs/waybar        ~/.config
   cp -r ~/4arch/confs/starship.toml ~/.config
@@ -69,7 +69,7 @@ export EDITOR=nvim
 sudoedit /etc/pacman.conf && yay
 
 echo "installing AUR-apps..."
-$YS clipse-bin ttf-rubik-vf
+$YS clipse-bin ttf-rubik-vf matugen-bin
 
 echo "installing DEPENDENCIES..."
 $YS ffmpegthumbnailer python-pillow bibata-cursor-theme #tumbler gvfs gvfs-mtp
@@ -94,6 +94,8 @@ $YS git-credential-manager-bin yazi wl-clipboard brightnessctl
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
 xdg-user-dirs-update
+
+matugen -t scheme-fruit-salad image ~/4arch/walls/a_park_with_benches_and_trees_at_night.jpg
 
 echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon
