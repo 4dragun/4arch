@@ -72,7 +72,7 @@ echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf
 
 echo "installing DEPENDENCIES..."
-$YS ffmpegthumbnailer python-pillow bibata-cursor-theme tumbler gvfs gvfs-mtp
+$YS ffmpegthumbnailer python-pillow bibata-cursor-theme #tumbler gvfs gvfs-mtp
 
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
@@ -83,10 +83,10 @@ $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm kitty
 $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 
 echo "installing GUI-apps..."
-$YS sddm brave emote pavucontrol telegram-desktop mpv eog file-roller
+$YS sddm brave emote pavucontrol telegram-desktop mpv eog #file-roller
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
-$YS waybar nwg-look qt6ct kvantum fuzzel network-manager-applet
-$YS thunar thunar-archive-plugin thunar-media-tags-plugin
+$YS waybar nwg-look qt6ct fuzzel network-manager-applet nautilus
+# $YS thunar thunar-archive-plugin thunar-media-tags-plugin
 
 echo "installing CLI-apps..."
 $YS lsd bat grimblast pacseek fastfetch htop btop udiskie
