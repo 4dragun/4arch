@@ -21,8 +21,8 @@ if [[ $itd = y ]]; then
   # mkdir ~/.local/share/themes
   # mkdir ~/.config/Kvantum
 
-  # tar -xf ~/4arch/icandy/BeautyLine.tar.gz -C ~/.icons
-  # tar -xf ~/4arch/icandy/BeautyLine.tar.gz -C ~/.local/share/icons
+  tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.icons
+  tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.local/share/icons
   # tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.themes
   # tar -xf ~/4arch/icandy/Sweet-Dark.tar.xz -C ~/.local/share/themes
   # tar -xf ~/4arch/icandy/Sweet.tar.xz      -C ~/.config/Kvantum
