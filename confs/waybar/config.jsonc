@@ -124,7 +124,7 @@
     "format-icons": ["", "", "", "", ""]
   },
   "clock": {
-    "format": "{:%A %b %d - %R}",
+    "format": "{:%R - %A %b %d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
   "custom/notification": {
