@@ -49,7 +49,7 @@
       "10": []
     },
     "format-icons": {
-      "active": "<b>%</b>" 
+      "active": "<b></b>" 
       //"empty": "",
       //"default": ""
     }
@@ -67,7 +67,7 @@
     "icon-size": 11
   },
   "backlight": {
-    "format": "󰃠  {percent}",
+    "format": "  {percent}",
     "format-icons": ["󰽤", "", "", "", "", "", "", "", "", ""]
   },
   "pulseaudio": {
