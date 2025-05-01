@@ -10,3 +10,6 @@ mount  /dev/nvme0n1p1 /mnt/boot --mkdir
 swapon /dev/nvme0n1p2
 
 lsblk
+
+read -p "executing ARCHINSTALL in next step"
+archinstall
