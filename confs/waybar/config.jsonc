@@ -30,7 +30,7 @@
     }
   },
   "hyprland/workspaces": {
-    "format": "{name}",
+    "format": "{icon}",
     "on-click": "activate",
     "sort-by-number": true,
     "all-outputs": true,
@@ -49,9 +49,9 @@
       "10": []
     },
     "format-icons": {
-      "active": "󰮯",
-      "empty": "",
-      "default": ""
+      "active": "🟤"
+      //"empty": "",
+      //"default": ""
     }
   },
   "hyprland/window": {
