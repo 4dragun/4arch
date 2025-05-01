@@ -33,6 +33,7 @@ button {
   color: @tertiary_fixed;
 }
 #power-profiles-daemon {
+  color: @primary
   /* padding: 0px 23px; */
 }
 #power-profiles-daemon.performance {
@@ -44,7 +45,7 @@ button {
   background: @green;
 }
 #power-profiles-daemon {
-  font-size: 12pt;
+  /* font-size: 15pt; */
 }
 #workspaces {
   padding: 2px 2px;

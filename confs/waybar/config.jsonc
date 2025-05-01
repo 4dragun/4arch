@@ -7,7 +7,7 @@
         "hyprland/window"
   ],
   "modules-center": [
-   //"power-profiles-daemon",
+   "power-profiles-daemon",
    "backlight",
    "backlight/slider", 
    "hyprland/workspaces",
@@ -26,7 +26,7 @@
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "format-icons": {
-      "default": "󰣇"
+      "default": "󰮯 󰧞󰧞󰧞󰧞󰧞󰧞"
     }
   },
   "hyprland/workspaces": {
@@ -49,7 +49,7 @@
       "10": []
     },
     "format-icons": {
-      "active": "<b></b>" 
+      "active": "" 
       //"empty": "",
       //"default": ""
     }
