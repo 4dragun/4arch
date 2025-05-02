@@ -3,7 +3,7 @@ environment {
   QT_QPA_PLATFORMTHEME "qt6ct"
   // QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
   EDITOR "nvim"
-  DISPLAY ":0"
+  DISPLAY ":1"
 }
 cursor {
   xcursor-theme "Bibata-Modern-Classic"
@@ -55,6 +55,10 @@ layout {
     bottom 0
   }
 }
+
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
@@ -122,6 +126,12 @@ window-rule {
     open-floating true
     default-column-width { proportion 0.40; }
     default-window-height { proportion 0.40; }
+}
+window-rule {
+  match app-id="qt6ct"
+  open-floating true
+  default-column-width { proportion 0.40; }
+  default-window-height { proportion 0.50; }
 }
 window-rule {
   match app-id="4clipse"
