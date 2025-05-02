@@ -30,13 +30,14 @@ if [[ $itd = y ]]; then
   
   cp -r ~/4arch/confs/fish          ~/.config
   cp -r ~/4arch/confs/fuzzel        ~/.config
-  cp -r ~/4arch/confs/hypr          ~/.config
+  # cp -r ~/4arch/confs/hypr          ~/.config
   cp -r ~/4arch/confs/kitty         ~/.config
   cp -r ~/4arch/confs/matugen       ~/.config
+  cp -r ~/4arch/confs/niri          ~/.config
   cp -r ~/4arch/confs/swaync        ~/.config
   # cp -r ~/4arch/confs/swayosd       ~/.config
   cp -r ~/4arch/confs/systemd       ~/.config
-  cp -r ~/4arch/confs/uwsm          ~/.config
+  # cp -r ~/4arch/confs/uwsm          ~/.config
   cp -r ~/4arch/confs/waybar        ~/.config
   cp -r ~/4arch/confs/starship.toml ~/.config
 
