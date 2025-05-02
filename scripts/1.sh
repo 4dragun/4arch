@@ -13,13 +13,14 @@ fi
 
 fish ignore-this-shyit
 
-read -p "copy/overwrite DOTFILES, ICONS, THEMES..? " itd
+read -p "configure DOTFILES, ICONS, THEMES..? " itd
 if [[ $itd = y ]]; then
-  mkdir ~/.icons
-  mkdir ~/.local/share/icons
-  # mkdir ~/.themes
-  # mkdir ~/.local/share/themes
-  # mkdir ~/.config/Kvantum
+  mkdir -p ~/.icons
+  mkdir -p ~/.local/share/icons
+  # mkdir -p ~/.themes
+  # mkdir -p ~/.local/share/themes
+  # mkdir -p ~/.config/Kvantum
+  mkdir -p ~/.config/systemd/user/niri.service.wants
 
   tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.icons
   tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.local/share/icons
@@ -34,9 +35,14 @@ if [[ $itd = y ]]; then
   cp -r ~/4arch/confs/matugen       ~/.config
   cp -r ~/4arch/confs/swaync        ~/.config
   # cp -r ~/4arch/confs/swayosd       ~/.config
+  cp -r ~/4arch/confs/systemd       ~/.config
   cp -r ~/4arch/confs/uwsm          ~/.config
   cp -r ~/4arch/confs/waybar        ~/.config
   cp -r ~/4arch/confs/starship.toml ~/.config
+
+  ln -s /usr/lib/systemd/user/waybar.service ~/.config/systemd/user/niri.service.wants
+  ln -s /usr/lib/systemd/user/swaync.service ~/.config/systemd/user/niri.service.wants
+  ln -s ~/.config/systemd/user/swaybg.service ~/.config/systemd/user/niri.service.wants
 else
   echo "skipped DOTFILES, ICONS, THEMES setup..!"
 fi
