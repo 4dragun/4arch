@@ -4,13 +4,15 @@
   "height": 0,
   "spacing": 5,
   "modules-left": [
-        "hyprland/window"
+        "hyprland/window",
+        "niri/window"
   ],
   "modules-center": [
    "power-profiles-daemon",
    "backlight",
    "backlight/slider", 
    "hyprland/workspaces",
+   "niri/workspaces",
     
     
     "clock",
@@ -62,6 +64,17 @@
       "": "hyprland",
       "kitty": "kitty"
     }
+  },
+  "niri/workspaces": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "format-icons": {
+      "active": "<b></b>"
+    }
+  },
+  "niri/window": {
+    "format": "{app_id}",
+    "separate-outputs": true
   },
   "privacy": {
     "icon-size": 11
