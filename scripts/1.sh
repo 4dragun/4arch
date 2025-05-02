@@ -73,25 +73,28 @@ echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
 
 echo "installing DEPENDENCIES..."
-$YS ffmpegthumbnailer python-pillow bibata-cursor-theme #tumbler gvfs gvfs-mtp
+$YS ffmpegthumbnailer python-pillow bibata-cursor-theme
 $YS adw-gtk-theme starship
 
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
 $YS noto-fonts-emoji ttf-jetbrains-mono-nerd
 
-echo "installing HYPRLAND-stuff..."
-$YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm kitty
-$YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
+# echo "installing HYPRLAND-stuff..."
+# $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm grimblast
+# $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
+
+echo "installing NIRI-stuff..."
+$YS niri gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+$YS polkit-kde-agent xwayland-satellite swaybg swaylock
 
 echo "installing GUI-apps..."
-$YS sddm brave emote pavucontrol telegram-desktop mpv eog #file-roller
+$YS sddm brave emote pavucontrol telegram-desktop mpv eog
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look qt6ct fuzzel network-manager-applet nautilus
-# $YS thunar thunar-archive-plugin thunar-media-tags-plugin
 
 echo "installing CLI-apps..."
-$YS lsd bat grimblast pacseek fastfetch htop btop udiskie
+$YS lsd bat pacseek fastfetch htop btop udiskie kitty
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
