@@ -19,14 +19,14 @@ input_path = './templates/colors.css'
 output_path = '../waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
-[templates.hyprland]
-input_path = './templates/hyprland-colors.conf'
-output_path = '../hypr/colors.conf'
-post_hook = 'hyprctl reload'
-
-[templates.hyprlock]
-input_path = './templates/hyprlock-colors.conf'
-output_path = '../hypr/hyprlock.conf'
+# [templates.hyprland]
+# input_path = './templates/hyprland-colors.conf'
+# output_path = '../hypr/colors.conf'
+# post_hook = 'hyprctl reload'
+#
+# [templates.hyprlock]
+# input_path = './templates/hyprlock-colors.conf'
+# output_path = '../hypr/hyprlock.conf'
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
