@@ -1,10 +1,14 @@
 [config]
 version_check = true
 
-[templates.kitty]
-input_path = "./templates/kitty-colors.conf"
-output_path = "../kitty/matukit.conf"
-post_hook = "kitty @ set-colors -a -c ~/.config/kitty/matukit.conf"
+# [templates.kitty]
+# input_path = "./templates/kitty-colors.conf"
+# output_path = "../kitty/matukit.conf"
+# post_hook = "kitty @ set-colors -a -c ~/.config/kitty/matukit.conf"
+
+[templates.ghostty]
+input_path = "./templates/ghostty-theme"
+output_path = "~/.config/ghostty/themes/matughost"
 
 [templates.starship]
 input_path = './templates/starship-colors.toml'

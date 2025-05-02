@@ -57,6 +57,7 @@ layout {
 }
 
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "clipse -listen"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 
 prefer-no-csd
@@ -133,27 +134,29 @@ window-rule {
   default-column-width { proportion 0.40; }
   default-window-height { proportion 0.50; }
 }
+// window-rule {
+//   match app-id="4clipse"
+//   open-floating true
+//   default-column-width { proportion 0.38; }
+//   default-window-height { proportion 0.62; }
+// }
 window-rule {
-  match app-id="4clipse"
+  match app-id="ghost.clipse"
   open-floating true
   default-column-width { proportion 0.38; }
   default-window-height { proportion 0.62; }
 }
-// window-rule {
-//   match app-id="kitty"
-//   open-floating false
-//   default-column-width { proportion 0.38; }
-//   default-window-height { proportion 0.62; }
-// }
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Q { spawn "kitty"; }
+    // Mod+Q { spawn "kitty"; }
+    Mod+Q { spawn "ghostty"; }
     Mod+D { spawn "fuzzel"; }
     Mod+W { spawn "brave"; }
     Mod+E { spawn "kitty" "yazi"; }
     Mod+N { spawn "kitty" "nvim"; }
-    Mod+V { spawn "kitty" "--app-id" "4clipse" "clipse"; }
+    // Mod+V { spawn "kitty" "--app-id" "4clipse" "clipse"; }
+    Mod+V { spawn "ghostty" "--class=ghost.clipse" "-e" "clipse"; }
     Ctrl+Shift+R { spawn "bash" "-c" "systemctl --user reload waybar"; }
 
     XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
