@@ -31,9 +31,9 @@ add_newline = false
 palette = 'colors'
 
 [palettes.colors]
-color1 = '#ffade1'
-color2 = '#ffd8ed'
-color3 = '#1e100c'
+color1 = '#4cd9df'
+color2 = '#6ff6fb'
+color3 = '#0d141b'
 
 [username]
 show_always = true
