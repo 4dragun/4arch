@@ -153,7 +153,7 @@ binds {
     // Mod+V { spawn "kitty" "--app-id" "4clipse" "clipse"; }
     Mod+V { spawn "ghostty" "--class=ghost.flot" "-e" "clipse"; }
     Mod+B { spawn "ghostty" "--class=ghost.flot" "-e" "~/4arch/scripts/b.sh"; }
-    Ctrl+Shift+R { spawn "bash" "-c" "systemctl --user reload waybar"; }
+    Ctrl+Shift+R { spawn "bash" "-c" "~/4arch/scripts/nbar.sh"; }
     Ctrl+Shift+I { spawn "bash" "-c" "notify-send 'swayidle started manually' && ~/4arch/scripts/swidle.sh"; }
 
     XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
