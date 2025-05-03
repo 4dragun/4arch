@@ -94,7 +94,7 @@ $YS noto-fonts-emoji ttf-jetbrains-mono-nerd
 
 echo "installing NIRI-stuff..."
 $YS niri gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
-$YS polkit-kde-agent xwayland-satellite swaybg swaylock hyprpicker
+$YS polkit-kde-agent xwayland-satellite swaybg swaylock swayidle hyprpicker
 
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog
@@ -102,7 +102,7 @@ $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look qt6ct fuzzel network-manager-applet nautilus
 
 echo "installing CLI-apps..."
-$YS lsd bat pacseek fastfetch htop btop udiskie kitty
+$YS lsd bat pacseek fastfetch htop btop udiskie ghostty
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
