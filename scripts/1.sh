@@ -35,6 +35,7 @@ if [[ $itd = y ]]; then
   cp -r ~/4arch/confs/ghostty       ~/.config
   cp -r ~/4arch/confs/matugen       ~/.config
   cp -r ~/4arch/confs/niri          ~/.config
+  cp -r ~/4arch/confs/swaylock      ~/.config
   cp -r ~/4arch/confs/swaync        ~/.config
   # cp -r ~/4arch/confs/swayosd       ~/.config
   cp -r ~/4arch/confs/systemd       ~/.config

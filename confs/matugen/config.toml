@@ -56,6 +56,10 @@ output_path = '~/.config/qt6ct/colors/matugen.conf'
 input_path = './templates/fuzzel-colors.ini'
 output_path = '~/.config/fuzzel/fuzzel.ini'
 
+[templates.swaylock]
+input_path = './templates/swaylock-colors'
+output_path = '~/.config/swaylock/config'
+
 [config.custom_colors]
 green = "#00ff00"
 red = "#ff0000"

@@ -156,6 +156,7 @@ binds {
     Mod+E { spawn "kitty" "yazi"; }
     Mod+N { spawn "kitty" "nvim"; }
     Mod+H { spawn "hyprpicker" "-a"; }
+    Mod+L { spawn "swaylock" "-f"; }
     // Mod+V { spawn "kitty" "--app-id" "4clipse" "clipse"; }
     Mod+V { spawn "ghostty" "--class=ghost.clipse" "-e" "clipse"; }
     Ctrl+Shift+R { spawn "bash" "-c" "systemctl --user reload waybar"; }
