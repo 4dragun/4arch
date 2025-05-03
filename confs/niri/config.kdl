@@ -141,7 +141,7 @@ window-rule {
 //   default-window-height { proportion 0.62; }
 // }
 window-rule {
-  match app-id="ghost.clipse"
+  match app-id="ghost.flot"
   open-floating true
   default-column-width { proportion 0.38; }
   default-window-height { proportion 0.62; }
@@ -153,12 +153,13 @@ binds {
     Mod+Q { spawn "ghostty"; }
     Mod+D { spawn "fuzzel"; }
     Mod+W { spawn "brave"; }
-    Mod+E { spawn "kitty" "yazi"; }
-    Mod+N { spawn "kitty" "nvim"; }
+    Mod+E { spawn "ghostty" "-e" "yazi"; }
+    Mod+N { spawn "ghostty" "-e" "nvim"; }
     Mod+H { spawn "hyprpicker" "-a"; }
     Mod+L { spawn "swaylock" "-f"; }
     // Mod+V { spawn "kitty" "--app-id" "4clipse" "clipse"; }
-    Mod+V { spawn "ghostty" "--class=ghost.clipse" "-e" "clipse"; }
+    Mod+V { spawn "ghostty" "--class=ghost.flot" "-e" "clipse"; }
+    Mod+B { spawn "ghostty" "--class=ghost.flot" "-e" "~/4arch/scripts/b.sh"; }
     Ctrl+Shift+R { spawn "bash" "-c" "systemctl --user reload waybar"; }
 
     XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
