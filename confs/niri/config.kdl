@@ -1,14 +1,16 @@
 environment {
   GTK_THEME "adw-gtk3-dark"
   QT_QPA_PLATFORMTHEME "qt6ct"
-  // QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+  QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
   EDITOR "nvim"
   DISPLAY ":1"
 }
+
 cursor {
   xcursor-theme "Bibata-Modern-Classic"
   xcursor-size 24
 }
+
 input {
   keyboard {
     xkb {
@@ -59,6 +61,7 @@ layout {
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "clipse -listen"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "~/4arch/scripts/swidle.sh"
 
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -103,21 +106,11 @@ window-rule {
   match app-id="" title="Picture in picture"
   open-floating true
 }
-
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
 /-window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
     block-out-from "screen-capture"
-
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
 }
-
-// Example: enable rounded corners for all windows.
-// (This example rule is commented out with a "/-" in front.)
 window-rule {
     geometry-corner-radius 20
     clip-to-geometry true
@@ -161,6 +154,7 @@ binds {
     Mod+V { spawn "ghostty" "--class=ghost.flot" "-e" "clipse"; }
     Mod+B { spawn "ghostty" "--class=ghost.flot" "-e" "~/4arch/scripts/b.sh"; }
     Ctrl+Shift+R { spawn "bash" "-c" "systemctl --user reload waybar"; }
+    Ctrl+Shift+I { spawn "bash" "-c" "notify-send 'swayidle started manually' && ~/4arch/scripts/swidle.sh"; }
 
     XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
