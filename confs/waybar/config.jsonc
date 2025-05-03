@@ -69,7 +69,7 @@
     "format": "{icon}",
     "all-outputs": true,
     "format-icons": {
-      "active": "<b></b>"
+      "active": "<b>=</b>"
     }
   },
   "niri/window": {
