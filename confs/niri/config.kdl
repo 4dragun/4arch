@@ -220,8 +220,8 @@ binds {
 
     Mod+Shift+Left { set-window-width "-10%"; }
     Mod+Shift+Right { set-window-width "+10%"; }
-    Mod+Shift+Down { set-window-height "-10%"; }
-    Mod+Shift+Up { set-window-height "+10%"; }
+    Mod+Shift+Down { set-window-height "+10%"; }
+    Mod+Shift+Up { set-window-height "-10%"; }
 
     Mod+F       { toggle-window-floating; }
     Mod+Shift+F { switch-focus-between-floating-and-tiling; }
