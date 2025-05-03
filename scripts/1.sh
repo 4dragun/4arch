@@ -103,7 +103,7 @@ $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look qt6ct fuzzel network-manager-applet nautilus
 
 echo "installing CLI-apps..."
-$YS lsd bat pacseek fastfetch htop btop udiskie ghostty
+$YS lsd bat pacseek fastfetch htop btop udiskie ghostty wget
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
