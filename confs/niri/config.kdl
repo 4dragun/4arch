@@ -150,6 +150,10 @@ binds {
     Mod+N { spawn "ghostty" "-e" "nvim"; }
     Mod+H { spawn "hyprpicker" "-a"; }
     Mod+L { spawn "swaylock" "-f"; }
+    Mod+I { spawn "nautilus"; }
+    Mod+O { spawn "emote"; }
+    Mod+Shift+B { spawn "bash" "-c" "~/4arch/scripts/bsta.sh"; }
+    Mod+Alt+B { spawn "bash" "-c" "~/4arch/scripts/bsto.sh"; }
     // Mod+V { spawn "kitty" "--app-id" "4clipse" "clipse"; }
     Mod+V { spawn "ghostty" "--class=ghost.flot" "-e" "clipse"; }
     Mod+B { spawn "ghostty" "--class=ghost.flot" "-e" "~/4arch/scripts/b.sh"; }
