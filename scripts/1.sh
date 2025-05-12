@@ -109,7 +109,7 @@ $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
 xdg-user-dirs-update
 
-matugen -t scheme-fruit-salad image ~/4arch/walls/Anime-City-Night.png
+matugen -t scheme-fruit-salad image ~/4arch/walls/a_painting_of_a_forest_with_trees_and_fog.jpg
 
 echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon
