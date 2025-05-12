@@ -95,7 +95,7 @@ $YS noto-fonts-emoji ttf-jetbrains-mono-nerd
 
 echo "installing NIRI-stuff..."
 $YS niri gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
-$YS polkit-kde-agent xwayland-satellite swaybg swaylock swayidle hyprpicker
+$YS polkit-kde-agent xwayland-satellite swaybg swaylock-effects swayidle hyprpicker
 
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog
