@@ -20,7 +20,7 @@ if [[ $itd = y ]]; then
   # mkdir -p ~/.themes
   # mkdir -p ~/.local/share/themes
   # mkdir -p ~/.config/Kvantum
-  mkdir -p ~/.config/systemd/user/niri.service.wants
+  # mkdir -p ~/.config/systemd/user/niri.service.wants
 
   tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.icons
   tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.local/share/icons
@@ -30,22 +30,22 @@ if [[ $itd = y ]]; then
   
   cp -r ~/4arch/confs/fish          ~/.config
   cp -r ~/4arch/confs/fuzzel        ~/.config
-  # cp -r ~/4arch/confs/hypr          ~/.config
+  cp -r ~/4arch/confs/hypr          ~/.config
   # cp -r ~/4arch/confs/kitty         ~/.config
   cp -r ~/4arch/confs/ghostty       ~/.config
   cp -r ~/4arch/confs/matugen       ~/.config
-  cp -r ~/4arch/confs/niri          ~/.config
-  cp -r ~/4arch/confs/swaylock      ~/.config
+  # cp -r ~/4arch/confs/niri          ~/.config
+  # cp -r ~/4arch/confs/swaylock      ~/.config
   cp -r ~/4arch/confs/swaync        ~/.config
   # cp -r ~/4arch/confs/swayosd       ~/.config
-  cp -r ~/4arch/confs/systemd       ~/.config
-  # cp -r ~/4arch/confs/uwsm          ~/.config
+  # cp -r ~/4arch/confs/systemd       ~/.config
+  cp -r ~/4arch/confs/uwsm          ~/.config
   cp -r ~/4arch/confs/waybar        ~/.config
   cp -r ~/4arch/confs/starship.toml ~/.config
 
-  ln -s /usr/lib/systemd/user/waybar.service ~/.config/systemd/user/niri.service.wants
-  ln -s /usr/lib/systemd/user/swaync.service ~/.config/systemd/user/niri.service.wants
-  ln -s ~/.config/systemd/user/swaybg.service ~/.config/systemd/user/niri.service.wants
+  # ln -s /usr/lib/systemd/user/waybar.service ~/.config/systemd/user/niri.service.wants
+  # ln -s /usr/lib/systemd/user/swaync.service ~/.config/systemd/user/niri.service.wants
+  # ln -s ~/.config/systemd/user/swaybg.service ~/.config/systemd/user/niri.service.wants
 else
   echo "skipped DOTFILES, ICONS, THEMES setup..!"
 fi
@@ -89,13 +89,13 @@ echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
 $YS noto-fonts-emoji ttf-jetbrains-mono-nerd
 
-# echo "installing HYPRLAND-stuff..."
-# $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm grimblast
-# $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
+echo "installing HYPRLAND-stuff..."
+$YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm grimblast
+$YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 
-echo "installing NIRI-stuff..."
-$YS niri gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
-$YS polkit-kde-agent xwayland-satellite swaybg swaylock-effects swayidle hyprpicker
+# echo "installing NIRI-stuff..."
+# $YS niri gnome-keyring xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+# $YS polkit-kde-agent xwayland-satellite swaybg swaylock-effects swayidle hyprpicker
 
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog
@@ -109,7 +109,7 @@ $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
 xdg-user-dirs-update
 
-matugen -t scheme-fruit-salad image ~/4arch/walls/a_painting_of_a_forest_with_trees_and_fog.jpg
+matugen -t scheme-fruit-salad image ~/4arch/walls/Anime-City-Night.png
 
 echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon

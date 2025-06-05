@@ -12,7 +12,7 @@
    "backlight",
    "backlight/slider", 
    "hyprland/workspaces",
-   "niri/workspaces",
+   //"niri/workspaces",
     
     
     "clock",
@@ -51,7 +51,7 @@
       "10": []
     },
     "format-icons": {
-      "active": "" 
+      "active": "" 
       //"empty": "",
       //"default": ""
     }
