@@ -107,7 +107,7 @@ $YS lsd bat pacseek fastfetch htop btop udiskie ghostty wget
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
-xdg-user-dirs-update
+xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
 
 matugen -t scheme-fruit-salad image ~/4arch/walls/Anime-City-Night.png
 
