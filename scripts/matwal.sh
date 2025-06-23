@@ -1,6 +1,9 @@
 #!/bin/bash
-wal_dir="$HOME/Wallpaper-Bank/wallpapers"
-wal=$(find "$wal_dir" -type f | fzf --prompt="Select a wallpaper: ")
+
+wal=$(find "$HOME" \
+  -type d -name ".*" -prune -o \
+  -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -print \
+  | fzf --prompt="Select a wallpaper: ")
 
 # Check selection
 if [ -z "$wal" ]; then
