@@ -1,6 +1,10 @@
 [config]
 version_check = true
 
+[config.wallpaper]
+command = "hyprctl"
+arguments = ["hyprpaper reload ,"]
+
 # [templates.kitty]
 # input_path = "./templates/kitty-colors.conf"
 # output_path = "../kitty/matukit.conf"
