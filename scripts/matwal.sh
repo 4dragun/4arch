@@ -1,31 +1,15 @@
 #!/bin/bash
-
-WALL_DIR="$HOME/Wallpaper-Bank/wallpapers"
-
-# Check dependencies
-if ! command -v fzf &> /dev/null; then
-    echo "fzf is not installed. Please install it with: sudo pacman -S fzf (or your distro's package manager)"
-    exit 1
-fi
-
-if ! command -v matugen &> /dev/null; then
-    echo "matugen is not installed. Install it first."
-    exit 1
-fi
-
-# Select image with fzf
-wallpaper=$(find "$WALL_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) | fzf --prompt="Select a wallpaper: ")
+wal_dir="$HOME/Wallpaper-Bank/wallpapers"
+wal=$(find "$wal_dir" -type f | fzf --prompt="Select a wallpaper: ")
 
 # Check selection
-if [ -z "$wallpaper" ]; then
+if [ -z "$wal" ]; then
     echo "No image selected. Exiting."
     exit 1
 fi
 
-# Apply with matugen
-echo "Applying theme using: $wallpaper"
-matugen image "$wallpaper"
+echo "Applying theme using: $wal"
+matugen image "$wal"
 
-# Send notification
-notify-send "Wallpaper changed" "$wallpaper" -i "$wallpaper"
+notify-send "Wallpaper changed" "$wal" -i "$wal"
 
