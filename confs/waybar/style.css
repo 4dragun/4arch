@@ -51,7 +51,7 @@ button {
   padding: 2px 2px;
 }
 #workspaces button {
-  color: @on_primary_container;
+  color: @outline;
   background: @surface_bright;
   border-radius: 999pt;
   margin: 2px;
