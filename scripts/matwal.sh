@@ -12,7 +12,7 @@ if [ -z "$wal" ]; then
 fi
 
 echo "Applying theme using: $wal"
-matugen image "$wal"
+matugen image --type scheme-content "$wal"
 
 notify-send "Wallpaper changed" "$wal" -i "$wal"
 
