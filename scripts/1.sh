@@ -98,7 +98,7 @@ $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 # $YS polkit-kde-agent xwayland-satellite swaybg swaylock-effects swayidle hyprpicker
 
 echo "installing GUI-apps..."
-$YS sddm brave emote pavucontrol telegram-desktop mpv eog
+$YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look qt6ct fuzzel network-manager-applet nautilus
 

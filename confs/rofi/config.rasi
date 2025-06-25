@@ -1,0 +1,64 @@
+
+configuration {
+  font: "JetBrainsMono Nerd Font 12";
+  display-drun: "";
+  drun-display-format: "{icon}{name}";
+  show-icons: true;
+  prompt: "halo:";
+}
+
+@theme "/dev/null"
+
+* {
+  background-color: transparent;
+}
+
+window {
+  background-color: #141318;
+  border-radius: 20;
+  width: 30%;
+  padding: 30;
+  border: 1;
+  border-color: #201F24;
+}
+
+listview {
+  lines: 9;
+}
+
+element-text {
+  text-color: #C7BFFF;
+  padding: 10;
+  vertical-align: 0.5;
+}
+
+element-text selected {
+  text-color: #141318;
+}
+
+element-icon {
+  size: 48;
+  padding: 10;
+}
+
+element selected {
+  background-color: #FFADE5;
+  text-color: #141318;
+  border-radius: 20;
+}
+
+inputbar {
+  background-color: #1C1B20;
+  border-radius: 20;
+  padding: 15;
+  margin: 10;
+}
+
+entry {
+  placeholder: "Search ";
+  placeholder-color: #3A383E;
+  text-color: #C7BFFF;
+  cursor-color: transparent;
+}
+
+
