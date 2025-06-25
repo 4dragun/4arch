@@ -4,6 +4,7 @@ configuration {
   display-drun: "";
   drun-display-format: "{icon}{name}";
   show-icons: true;
+  prompt: "halo:";
 }
 
 @theme "~/.config/rofi/matrofi.rasi"

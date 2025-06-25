@@ -1,29 +1,20 @@
 format = """
 [](color1)\
-$os\
 $username\
 [](color1)\
+[ ]()\
+[](color4)\
 $directory\
+[](color4)\
 $git_branch\
 $git_status\
-$c\
-$elixir\
-$elm\
-$golang\
-$gradle\
-$haskell\
-$java\
-$julia\
-$nodejs\
-$nim\
-$rust\
-$scala\
-$docker_context\
 [ ]()\
+"""
+
+right_format = """
 [](color2)\
-$time\
+$cmd_duration\
 [](color2)\
-[ ]()\
 """
 
 add_newline = false
@@ -31,109 +22,42 @@ add_newline = false
 palette = 'colors'
 
 [palettes.colors]
-color1 = '#ffade1'
-color2 = '#ffd8ed'
-color3 = '#1e100c'
+color1 = '#c7bfff'
+color2 = '#e5deff'
+color3 = '#141318'
+color4 = '#c8c2e9'
+color5 = '#5b51a3'
 
 [username]
 show_always = true
 style_user = "bold fg:color3 bg:color1"
 style_root = "bg:#9A348E"
-format = '[$user]($style)'
+format = '[$user󰧞linux]($style)'
 disabled = false
 
-[os]
-style = "bg:#9A348E"
-disabled = true
-
 [directory]
-style = "bold fg:#4DD2FF"
+style = "bold fg:color3 bg:color4"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [directory.substitutions]
-"~" = " 󰮯 "
-"Documents" = " 󰈙 "
-"Downloads" = "   "
-"Music" = "   "
-"Pictures" = "   "
-
-[c]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[docker_context]
-symbol = " "
-style = "bg:#06969A"
-format = '[ $symbol $context ]($style)'
-
-[elixir]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[elm]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
+"~" = " "
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
 
 [git_branch]
 symbol = ""
-style = "bold #FF9700"
-format = '[$symbol $branch]($style)'
+style = "bold color5"
+format = '[ $symbol $branch]($style)'
 
 [git_status]
 style = "bold fg:#FF9700"
 format = '[$all_status$ahead_behind]($style)'
 
-[golang]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[gradle]
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[haskell]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[java]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[julia]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[nodejs]
-symbol = ""
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[nim]
-symbol = "󰆥 "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[rust]
-symbol = ""
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[scala]
-symbol = " "
-style = "bg:#86BBD8"
-format = '[ $symbol ($version) ]($style)'
-
-[time]
-disabled = false
-time_format = "%R"
+[cmd_duration]
+min_time = 0
 style = "bold fg:color3 bg:color2"
-format = '[󰥔 $time]($style)'
+format = '[$duration]($style)'
