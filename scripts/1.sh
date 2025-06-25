@@ -30,11 +30,12 @@ if [[ $itd = y ]]; then
   
   cp -r ~/4arch/confs/fish          ~/.config
   cp -r ~/4arch/confs/fuzzel        ~/.config
+  cp -r ~/4arch/confs/ghostty       ~/.config
   cp -r ~/4arch/confs/hypr          ~/.config
   # cp -r ~/4arch/confs/kitty         ~/.config
-  cp -r ~/4arch/confs/ghostty       ~/.config
   cp -r ~/4arch/confs/matugen       ~/.config
   # cp -r ~/4arch/confs/niri          ~/.config
+  cp -r ~/4arch/confs/rofi          ~/.config
   # cp -r ~/4arch/confs/swaylock      ~/.config
   cp -r ~/4arch/confs/swaync        ~/.config
   # cp -r ~/4arch/confs/swayosd       ~/.config
@@ -100,7 +101,7 @@ $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
-$YS waybar nwg-look qt6ct fuzzel network-manager-applet nautilus
+$YS waybar nwg-look qt6ct rofi network-manager-applet nautilus
 
 echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty wget
@@ -109,7 +110,7 @@ $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
 xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
 
-matugen -t scheme-fruit-salad image ~/4arch/walls/Anime-City-Night.png
+matugen --type scheme-content image ~/4arch/walls/Fantasy-Hongkong.png
 
 echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon
