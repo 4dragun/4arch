@@ -12,7 +12,7 @@ arguments = ["hyprpaper reload ,"]
 
 [templates.ghostty]
 input_path = "./templates/ghostty-theme"
-output_path = "~/.config/ghostty/themes/matughost"
+output_path = "../ghostty/themes/matughost"
 
 [templates.starship]
 input_path = './templates/starship-colors.toml'
@@ -38,11 +38,11 @@ output_path = '../hypr/hyprlock.conf'
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
-output_path = '~/.config/gtk-3.0/colors.css'
+output_path = '../gtk-3.0/colors.css'
 
 [templates.gtk4]
 input_path = './templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/colors.css'
+output_path = '../gtk-4.0/colors.css'
 
 [templates.gtk3fix]
 input_path = './templates/gtk-fix.css'
@@ -54,11 +54,15 @@ output_path = '../gtk-4.0/gtk.css'
 
 [templates.qt6ct]
 input_path = './templates/qtct-colors.conf'
-output_path = '~/.config/qt6ct/colors/matugen.conf'
+output_path = '../qt6ct/colors/matugen.conf'
 
 [templates.fuzzel]
 input_path = './templates/fuzzel-colors.ini'
-output_path = '~/.config/fuzzel/fuzzel.ini'
+output_path = '../fuzzel/fuzzel.ini'
+
+[templates.rofi]
+input_path = './templates/rofi-colors.rasi'
+output_path = '../rofi/matrofi.rasi'
 
 # [templates.swaylock]
 # input_path = './templates/swaylock-colors'

@@ -1,0 +1,50 @@
+* {
+  background-color: transparent;
+}
+
+window {
+  background-color: {{colors.surface.default.hex}};
+  border-radius: 20;
+  width: 30%;
+  padding: 30;
+  border: 1;
+  border-color: {{colors.surface_variant.default.hex}};
+}
+
+listview {
+  lines: 9;
+}
+
+element-text {
+  text-color: {{colors.primary.default.hex}};
+  padding: 10;
+  vertical-align: 0.5;
+}
+
+element-text selected {
+  text-color: {{colors.surface.default.hex}};
+}
+
+element-icon {
+  size: 48;
+  padding: 10;
+}
+
+element selected {
+  background-color: {{colors.primary.default.hex}};
+  border-radius: 20;
+}
+
+inputbar {
+  background-color: {{colors.surface_container_low.default.hex}};
+  border-radius: 20;
+  padding: 15;
+  margin: 10;
+}
+
+entry {
+  placeholder: "Search ";
+  placeholder-color: {{colors.surface_bright.default.hex}};
+  text-color: {{colors.primary.default.hex}};
+  cursor-color: transparent;
+}
