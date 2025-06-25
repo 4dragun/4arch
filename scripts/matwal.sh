@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 wal=$(find "$HOME" \
   -type d -name ".*" -prune -o \
