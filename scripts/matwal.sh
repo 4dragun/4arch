@@ -11,6 +11,8 @@ if [ -z "$wal" ]; then
     exit 1
 fi
 
+echo "$wal" > "$HOME/.cache/last-wall.txt"
+
 echo "Applying theme using: $wal"
 matugen --type scheme-content image "$wal"
 
