@@ -38,7 +38,6 @@ element selected {
 
 element-text selected {
   text-color: #141318;
-  font: "Rubik Medium 12";
 }
 
 element-icon {
@@ -46,7 +45,7 @@ element-icon {
 }
 
 element-text {
-  font: "Rubik 12";
+  font: "JetBrainsMono Nerd Font Bold 10";
   color: #c7bfff;
   vertical-align: 0.5;
   horizontal-align: 0.5;
@@ -64,4 +63,5 @@ entry {
   placeholder-color: #3a383e;
   text-color: #c7bfff;
   cursor-color: transparent;
+  font: "JetBrainsMono Nerd Font Bold 13";
 }
