@@ -1,0 +1,62 @@
+* {
+  background-color: transparent;
+  border-radius: 20;
+}
+
+window {
+  width: 80%;
+  height: 85%;
+  background-color: #141318;
+  border: 1;
+  border-color: #474551;
+  border-radius: 20;
+  padding: 40;
+}
+
+mainbox {
+  spacing: 17;
+}
+
+listview {
+  columns: 4;
+  lines: 2;
+}
+
+element {
+  orientation: vertical;
+  padding: 10;
+  background-color: transparent;
+  border-radius: 20;
+  text-align: center;
+}
+
+element selected {
+  background-color: #3A383E;
+  border-radius: 20;
+  border: 1;
+}
+
+element-icon {
+  size: 300;
+}
+
+element-text {
+  font: "Rubik 12";
+  color: #c0caf5;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
+}
+
+inputbar {
+  background-color: #1C1B20;
+  border-radius: 20;
+  padding: 17;
+  margin: 0 60;
+}
+
+entry {
+  placeholder: "Search ";
+  placeholder-color: #3a383e;
+  text-color: #c7bfff;
+  cursor-color: transparent;
+}
