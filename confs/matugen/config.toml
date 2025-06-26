@@ -56,9 +56,14 @@ output_path = '../gtk-4.0/gtk.css'
 input_path = './templates/qtct-colors.conf'
 output_path = '../qt6ct/colors/matugen.conf'
 
-[templates.fuzzel]
-input_path = './templates/fuzzel-colors.ini'
-output_path = '../fuzzel/fuzzel.ini'
+# [templates.fuzzel]
+# input_path = './templates/fuzzel-colors.ini'
+# output_path = '../fuzzel/fuzzel.ini'
+
+[templates.swaync]
+input_path = './templates/swaync-style-colors.css'
+output_path = '../swaync/style.css'
+post_hook = 'pkill swaync'
 
 [templates.rofi]
 input_path = './templates/rofi-colors.rasi'

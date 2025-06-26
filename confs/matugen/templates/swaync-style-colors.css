@@ -1,7 +1,7 @@
-@define-color cc-bg #141318;
-@define-color noti-border-color #c7bfff;
-@define-color noti-bg #141318;
-@define-color text-color #c8c2e9;
+@define-color cc-bg {{colors.surface.default.hex}};
+@define-color noti-border-color {{colors.surface_tint.default.hex}};
+@define-color noti-bg {{colors.surface.default.hex}};
+@define-color text-color {{colors.secondary.default.hex}};
 
 .notification {
   border: 1px solid @noti-border-color;
