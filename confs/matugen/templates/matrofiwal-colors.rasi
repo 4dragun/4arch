@@ -28,6 +28,7 @@ element {
   background-color: transparent;
   border-radius: 20;
   text-align: center;
+  font: "";
 }
 
 element selected {
@@ -38,7 +39,6 @@ element selected {
 
 element-text selected {
   text-color: {{colors.surface.default.hex}};
-  font: "Rubik Medium 12";
 }
 
 element-icon {
@@ -46,7 +46,7 @@ element-icon {
 }
 
 element-text {
-  font: "Rubik 12";
+  font: "JetBrainsMono Nerd Font Bold 10";
   color: {{colors.primary.default.hex}};
   vertical-align: 0.5;
   horizontal-align: 0.5;
@@ -64,4 +64,5 @@ entry {
   placeholder-color: {{colors.surface_bright.default.hex}};
   text-color: {{colors.primary.default.hex}};
   cursor-color: transparent;
+  font: "JetBrainsMono Nerd Font Bold 13";
 }
