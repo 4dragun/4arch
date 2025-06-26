@@ -6,9 +6,9 @@
 window {
   width: 80%;
   height: 85%;
-  background-color: #141318;
+  background-color: {{colors.surface.default.hex}};
   border: 1;
-  border-color: #474551;
+  border-color: {{colors.surface_variant.default.hex}};
   border-radius: 20;
   padding: 40;
 }
@@ -31,13 +31,13 @@ element {
 }
 
 element selected {
-  background-color: #c7bfff;
+  background-color: {{colors.primary.default.hex}};
   border-radius: 20;
   border: 1;
 }
 
 element-text selected {
-  text-color: #141318;
+  text-color: {{colors.surface.default.hex}};
   font: "Rubik Medium 12";
 }
 
@@ -47,13 +47,13 @@ element-icon {
 
 element-text {
   font: "Rubik 12";
-  color: #c7bfff;
+  color: {{colors.primary.default.hex}};
   vertical-align: 0.5;
   horizontal-align: 0.5;
 }
 
 inputbar {
-  background-color: #1c1b20;
+  background-color: {{colors.surface_container_low.default.hex}};
   border-radius: 20;
   padding: 17;
   margin: 0 60;
@@ -61,7 +61,7 @@ inputbar {
 
 entry {
   placeholder: "Search";
-  placeholder-color: #3a383e;
-  text-color: #c7bfff;
+  placeholder-color: {{colors.surface_bright.default.hex}};
+  text-color: {{colors.primary.default.hex}};
   cursor-color: transparent;
 }

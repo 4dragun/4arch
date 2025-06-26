@@ -64,6 +64,10 @@ output_path = '../fuzzel/fuzzel.ini'
 input_path = './templates/rofi-colors.rasi'
 output_path = '../rofi/matrofi.rasi'
 
+[templates.matrofiwal]
+input_path = './templates/matrofiwal-colors.rasi'
+output_path = '../rofi/matrofiwal.rasi'
+
 # [templates.swaylock]
 # input_path = './templates/swaylock-colors'
 # output_path = '~/.config/swaylock/config'
