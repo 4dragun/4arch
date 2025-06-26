@@ -1,5 +1,5 @@
 @define-color cc-bg {{colors.surface.default.hex}};
-@define-color noti-border-color {{colors.surface_tint.default.hex}};
+@define-color noti-border-color {{colors.surface_variant.default.hex}};
 @define-color noti-bg {{colors.surface.default.hex}};
 @define-color text-color {{colors.secondary.default.hex}};
 
