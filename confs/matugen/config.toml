@@ -32,10 +32,6 @@ input_path = './templates/hyprland-colors.conf'
 output_path = '../MATUGEN_OUTPUTS/matuhyprland.conf'
 post_hook = 'hyprctl reload'
 
-[templates.hyprlock]
-input_path = './templates/hyprlock-colors.conf'
-output_path = '../MATUGEN_OUTPUTS/matuhyprlock.conf'
-
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
 output_path = '../gtk-3.0/colors.css'
@@ -55,10 +51,6 @@ output_path = '../gtk-4.0/gtk.css'
 [templates.qt6ct]
 input_path = './templates/qtct-colors.conf'
 output_path = '../qt6ct/colors/matugen.conf'
-
-# [templates.fuzzel]
-# input_path = './templates/fuzzel-colors.ini'
-# output_path = '../fuzzel/fuzzel.ini'
 
 [templates.swaync]
 input_path = './templates/swaync-colors.css'
