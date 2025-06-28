@@ -12,7 +12,7 @@ arguments = ["hyprpaper reload ,"]
 
 [templates.ghostty]
 input_path = "./templates/ghostty-theme"
-output_path = "../ghostty/themes/matughost"
+output_path = "../MATUGEN_OUTPUTS/matughostty"
 
 [templates.starship]
 input_path = './templates/starship-colors.toml'
@@ -23,18 +23,18 @@ input_path = './templates/yazi-theme.toml'
 output_path = '../yazi/theme.toml'
 
 [templates.waybar]
-input_path = './templates/colors.css'
-output_path = '../waybar/colors.css'
+input_path = './templates/waybar-colors.css'
+output_path = '../MATUGEN_OUTPUTS/matuwaybar.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
-output_path = '../hypr/colors.conf'
+output_path = '../MATUGEN_OUTPUTS/matuhyprland.conf'
 post_hook = 'hyprctl reload'
 
 [templates.hyprlock]
 input_path = './templates/hyprlock-colors.conf'
-output_path = '../hypr/hyprlock.conf'
+output_path = '../MATUGEN_OUTPUTS/matuhyprlock.conf'
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
@@ -61,17 +61,17 @@ output_path = '../qt6ct/colors/matugen.conf'
 # output_path = '../fuzzel/fuzzel.ini'
 
 [templates.swaync]
-input_path = './templates/swaync-style-colors.css'
-output_path = '../swaync/style.css'
-post_hook = 'pkill swaync'
+input_path = './templates/swaync-colors.css'
+output_path = '../MATUGEN_OUTPUTS/matuswaync.css'
+post_hook = 'swaync-client -rs'
 
-[templates.rofi]
-input_path = './templates/rofi-colors.rasi'
-output_path = '../rofi/matrofi.rasi'
+[templates.rofimain]
+input_path = './templates/rofimain-colors.rasi'
+output_path = '../MATUGEN_OUTPUTS/maturofimain.rasi'
 
-[templates.matrofiwal]
-input_path = './templates/matrofiwal-colors.rasi'
-output_path = '../rofi/matrofiwal.rasi'
+[templates.rofiwal]
+input_path = './templates/rofiwal-colors.rasi'
+output_path = '../MATUGEN_OUTPUTS/maturofiwal.rasi'
 
 # [templates.swaylock]
 # input_path = './templates/swaylock-colors'

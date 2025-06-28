@@ -11,7 +11,7 @@ for f in "${files[@]}"; do
 done
 
 # Use printf to preserve null bytes and newlines correctly
-wal=$(printf "%b" "$rofi_input" | rofi -dmenu -show-icons -theme ~/.config/rofi/matrofiwal.rasi -i -p "")
+wal=$(printf "%b" "$rofi_input" | rofi -dmenu -show-icons -theme ~/.config/MATUGEN_OUTPUTS/maturofiwal.rasi -i -p "")
 
 if [ -z "$wal" ]; then
     echo "No image selected. Exiting."
