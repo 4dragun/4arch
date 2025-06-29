@@ -29,7 +29,6 @@ if [[ $itd = y ]]; then
   # tar -xf ~/4arch/icandy/Sweet.tar.xz      -C ~/.config/Kvantum
   
   cp -r ~/4arch/confs/fish          ~/.config
-  cp -r ~/4arch/confs/fuzzel        ~/.config
   cp -r ~/4arch/confs/ghostty       ~/.config
   cp -r ~/4arch/confs/hypr          ~/.config
   # cp -r ~/4arch/confs/kitty         ~/.config
@@ -38,11 +37,9 @@ if [[ $itd = y ]]; then
   cp -r ~/4arch/confs/rofi          ~/.config
   # cp -r ~/4arch/confs/swaylock      ~/.config
   cp -r ~/4arch/confs/swaync        ~/.config
-  # cp -r ~/4arch/confs/swayosd       ~/.config
   # cp -r ~/4arch/confs/systemd       ~/.config
   cp -r ~/4arch/confs/uwsm          ~/.config
   cp -r ~/4arch/confs/waybar        ~/.config
-  cp -r ~/4arch/confs/starship.toml ~/.config
 
   # ln -s /usr/lib/systemd/user/waybar.service ~/.config/systemd/user/niri.service.wants
   # ln -s /usr/lib/systemd/user/swaync.service ~/.config/systemd/user/niri.service.wants
@@ -111,6 +108,7 @@ $YS lua-language-server power-profiles-daemon xdg-user-dirs
 xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
 
 matugen --type scheme-content image ~/4arch/walls/Fantasy-Hongkong.png
+echo "/home/archy/4arch/walls/Fantasy-Hongkong.png">"$HOME/.cache/last-wall.txt"
 
 echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon
