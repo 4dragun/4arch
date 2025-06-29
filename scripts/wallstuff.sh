@@ -32,7 +32,7 @@ if [ -z "$selected_path" ]; then
     exit 1
 fi
 
-echo "$wal" > "$HOME/.cache/last-wall.txt"
+echo "$selected_path" > "$HOME/.cache/last-wall.txt"
 
 echo "Applying theme using: $selected_path"
 matugen --type scheme-content image "$selected_path"
