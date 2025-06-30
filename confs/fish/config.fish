@@ -17,6 +17,7 @@ alias cat   "bat"
 alias gi    "~/4arch/scripts/gi.sh"
 alias gc    "~/4arch/scripts/gc.sh"
 alias gp    "~/4arch/scripts/gp.sh"
+alias s     "~/4arch/scripts/scrpt.sh"
 alias clear "command clear; commandline -f clear-screen"
 
 starship init fish | source
