@@ -65,6 +65,16 @@ output_path = '../MATUGEN_OUTPUTS/maturofimain.rasi'
 input_path = './templates/rofiwal-colors.rasi'
 output_path = '../MATUGEN_OUTPUTS/maturofiwal.rasi'
 
+[templates.emotefixman]
+input_path = '/dev/null'
+output_path = '/dev/null'
+post_hook = 'pkill emote && emote &'
+
+[templates.filepickerfixman]
+input_path = '/dev/null'
+output_path = '/dev/null'
+post_hook = 'systemctl --user restart xdg-desktop-portal-gtk'
+
 # [templates.swaylock]
 # input_path = './templates/swaylock-colors'
 # output_path = '~/.config/swaylock/config'
