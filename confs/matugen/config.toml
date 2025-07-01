@@ -25,7 +25,7 @@ output_path = '../yazi/theme.toml'
 [templates.waybar]
 input_path = './templates/waybar-colors.css'
 output_path = '../MATUGEN_OUTPUTS/matuwaybar.css'
-post_hook = 'systemctl --user restart waybar'
+post_hook = '~/test.sh'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
@@ -74,7 +74,7 @@ output_path = '../MATUGEN_OUTPUTS/maturofiwal.rasi'
 [templates.emotefixman]
 input_path = '/dev/null'
 output_path = '/dev/null'
-post_hook = 'pkill emote && emote &'
+post_hook = 'killall emote'
 
 [templates.filepickerfixman]
 input_path = '/dev/null'

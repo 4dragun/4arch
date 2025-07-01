@@ -1,0 +1,4 @@
+[config]
+[templates.rofiwall]
+input_path = './templates/rofiwal-colors.rasi'
+output_path = '../MATUGEN_OUTPUTS/maturofiwal.rasi'
