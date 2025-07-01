@@ -59,23 +59,23 @@ else
   echo "skipped YAY setup..!"
 fi
 
-# read -p "configure CHAOTIC-AUR repo..? " cas
-# if [[ $cas = y ]]; then
-#   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-#   sudo pacman-key --lsign-key 3056513887B78AEB
-#   $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-#   $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-# else
-#   echo "skipped CHAOTIC-AUR setup..!"
-# fi
-#
-# read -p "shit went down..? REBOOT now..? " ras
-# if [[ $ras = y ]]; then
-#   sync && sync && sync && systemctl reboot
-# fi
+read -p "configure CHAOTIC-AUR repo..? " cas
+if [[ $cas = y ]]; then
+  sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+  sudo pacman-key --lsign-key 3056513887B78AEB
+  $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+  $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+else
+  echo "skipped CHAOTIC-AUR setup..!"
+fi
 
-# export EDITOR=nvim
-# sudoedit /etc/pacman.conf && yay
+read -p "shit went down..? REBOOT now..? " ras
+if [[ $ras = y ]]; then
+  sync && sync && sync && systemctl reboot
+fi
+
+export EDITOR=nvim
+sudoedit /etc/pacman.conf && yay
 
 echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
