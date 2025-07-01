@@ -75,7 +75,7 @@ if [[ $ras = y ]]; then
 fi
 
 export EDITOR=nvim
-sudoedit /etc/pacman.conf && yay
+sudoedit /etc/pacman.conf && yay --noconfirm
 
 echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
@@ -99,7 +99,7 @@ $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
-$YS waybar nwg-look qt6ct rofi network-manager-applet nautilus
+$YS waybar nwg-look qt6ct network-manager-applet nautilus
 
 echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty wget
@@ -108,7 +108,7 @@ $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
 xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
 
-matugen --type scheme-content image ~/4arch/walls/Fantasy-Hongkong.png --show-colors
+matugen image ~/4arch/walls/Fantasy-Hongkong.png --show-colors --dry-run
 echo "/home/archy/4arch/walls/Fantasy-Hongkong.png">"$HOME/.cache/last-wall.txt"
 
 echo "enabling POWER-PROFILES-DAEMON..."
