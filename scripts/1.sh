@@ -3,19 +3,18 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
-# read -p "configure NVCHAD..? " nas
-# if [[ $nas = y ]]; then
-#   rm -rf ~/.config/nvim && mkdir ~/.config/nvim
-#   git clone https://github.com/NvChad/starter ~/.config/nvim
-#   nvim ~/.config/nvim/lua/chadrc.lua
-# else
-#   echo "skipped NVCHAD setup..!"
-# fi
-
 fish ignore-this-shyit
 
 read -p "configure DOTFILES, ICONS, THEMES..? " itd
 if [[ $itd = y ]]; then
+
+  rm -rf ~/.config/nvim
+  rm -rf ~/.local/state/nvim
+  rm -rf ~/.local/share/nvim
+  
+  git clone https://github.com/NvChad/starter ~/.config/nvim
+  cp -r ~/4arch/confs/chadrc.lua ~/.config/nvim/lua
+
   mkdir -p ~/.icons
   mkdir -p ~/.local/share/icons
   # mkdir -p ~/.themes
