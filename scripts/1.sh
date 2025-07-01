@@ -2,14 +2,14 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
-read -p "configure NVCHAD..? " nas
-if [[ $nas = y ]]; then
-  rm -rf ~/.config/nvim && mkdir ~/.config/nvim
-  git clone https://github.com/NvChad/starter ~/.config/nvim
-  nvim ~/.config/nvim/lua/chadrc.lua
-else
-  echo "skipped NVCHAD setup..!"
-fi
+# read -p "configure NVCHAD..? " nas
+# if [[ $nas = y ]]; then
+#   rm -rf ~/.config/nvim && mkdir ~/.config/nvim
+#   git clone https://github.com/NvChad/starter ~/.config/nvim
+#   nvim ~/.config/nvim/lua/chadrc.lua
+# else
+#   echo "skipped NVCHAD setup..!"
+# fi
 
 fish ignore-this-shyit
 
@@ -58,23 +58,23 @@ else
   echo "skipped YAY setup..!"
 fi
 
-read -p "configure CHAOTIC-AUR repo..? " cas
-if [[ $cas = y ]]; then
-  sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-  sudo pacman-key --lsign-key 3056513887B78AEB
-  $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-  $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-else
-  echo "skipped CHAOTIC-AUR setup..!"
-fi
+# read -p "configure CHAOTIC-AUR repo..? " cas
+# if [[ $cas = y ]]; then
+#   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+#   sudo pacman-key --lsign-key 3056513887B78AEB
+#   $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+#   $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+# else
+#   echo "skipped CHAOTIC-AUR setup..!"
+# fi
+#
+# read -p "shit went down..? REBOOT now..? " ras
+# if [[ $ras = y ]]; then
+#   sync && sync && sync && systemctl reboot
+# fi
 
-read -p "shit went down..? REBOOT now..? " ras
-if [[ $ras = y ]]; then
-  sync && sync && sync && systemctl reboot
-fi
-
-export EDITOR=nvim
-sudoedit /etc/pacman.conf && yay
+# export EDITOR=nvim
+# sudoedit /etc/pacman.conf && yay
 
 echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
