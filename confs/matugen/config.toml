@@ -25,7 +25,7 @@ output_path = '../yazi/theme.toml'
 [templates.waybar]
 input_path = './templates/waybar-colors.css'
 output_path = '../MATUGEN_OUTPUTS/matuwaybar.css'
-post_hook = 'pkill -SIGUSR2 waybar'
+post_hook = 'systemctl --user restart waybar'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
@@ -65,6 +65,12 @@ output_path = '../MATUGEN_OUTPUTS/maturofimain.rasi'
 input_path = './templates/rofiwal-colors.rasi'
 output_path = '../MATUGEN_OUTPUTS/maturofiwal.rasi'
 
+# [templates.swaylock]
+# input_path = './templates/swaylock-colors'
+# output_path = '~/.config/swaylock/config'
+
+### ### ### FIXES_MAN 💀 ### ### ### 👇️👇️👇️
+
 [templates.emotefixman]
 input_path = '/dev/null'
 output_path = '/dev/null'
@@ -75,9 +81,10 @@ input_path = '/dev/null'
 output_path = '/dev/null'
 post_hook = 'systemctl --user restart xdg-desktop-portal-gtk'
 
-# [templates.swaylock]
-# input_path = './templates/swaylock-colors'
-# output_path = '~/.config/swaylock/config'
+[templates.hyprpolkitfixman]
+input_path = '/dev/null'
+output_path = '/dev/null'
+post_hook = 'systemctl --user restart hyprpolkitagent'
 
 [config.custom_colors]
 green = "#00ff00"
