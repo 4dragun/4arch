@@ -108,7 +108,7 @@ $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
 xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
 
-matugen image ~/4arch/walls/Fantasy-Hongkong.png --show-colors --dry-run
+matugen image ~/4arch/walls/Fantasy-Hongkong.png -c ~/.config/matugen/init.toml
 echo "/home/archy/4arch/walls/Fantasy-Hongkong.png">"$HOME/.cache/last-wall.txt"
 
 echo "enabling POWER-PROFILES-DAEMON..."
