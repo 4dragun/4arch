@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
@@ -107,11 +108,13 @@ $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
 xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
 
-matugen --type scheme-content image ~/4arch/walls/Fantasy-Hongkong.png
+matugen --type scheme-content image ~/4arch/walls/Fantasy-Hongkong.png --show-colors
 echo "/home/archy/4arch/walls/Fantasy-Hongkong.png">"$HOME/.cache/last-wall.txt"
 
 echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon
+
+#type here
 
 read -p "start DISPLAY-MANAGER (sddm)..? " das
 if [[ $das = y ]]; then
