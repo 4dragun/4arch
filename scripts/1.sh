@@ -81,7 +81,7 @@ $YS clipse-bin ttf-rubik-vf matugen-bin
 
 echo "installing DEPENDENCIES..."
 $YS ffmpegthumbnailer python-pillow bibata-cursor-theme
-$YS adw-gtk-theme starship gvfs-mtp
+$YS adw-gtk-theme gvfs-mtp
 
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
@@ -102,8 +102,8 @@ $YS waybar nwg-look qt6ct network-manager-applet nautilus
 
 echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty wget
-$YS git-credential-manager-bin yazi wl-clipboard brightnessctl
-$YS lua-language-server power-profiles-daemon xdg-user-dirs
+$YS git-credential-manager-bin yazi wl-clipboard brightnessctl starship
+$YS lua-language-server power-profiles-daemon xdg-user-dirs aria2
 
 xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
 
