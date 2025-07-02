@@ -81,7 +81,7 @@ $YS clipse-bin ttf-rubik-vf matugen-bin
 
 echo "installing DEPENDENCIES..."
 $YS ffmpegthumbnailer python-pillow bibata-cursor-theme
-$YS adw-gtk-theme starship
+$YS adw-gtk-theme starship gvfs-mtp
 
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
