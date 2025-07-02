@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Find image files, excluding hidden directories
 mapfile -t files < <(find "$HOME" -type d -name ".*" -prune -o -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -print)
 
