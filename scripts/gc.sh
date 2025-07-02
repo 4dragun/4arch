@@ -2,13 +2,11 @@
 
 cd ~/4arch
 
-echo
-echo " GIT COMMIT STARTED"
-echo
+echo && echo " GIT COMMIT STARTED"
 
 git add .
-read -p "enter commit message: " mas
+echo && read -p "enter commit message: " mas
 git commit -m "$mas"
 git push origin main
 
-echo " GIT COMMIT ENDED"
+echo && echo " GIT COMMIT ENDED" && echo
