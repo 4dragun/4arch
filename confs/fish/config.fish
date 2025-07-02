@@ -16,7 +16,7 @@ alias ls    "lsd"
 alias cat   "bat"
 alias gi    "~/4arch/scripts/gi.sh"
 alias gc    "~/4arch/scripts/gc.sh"
-alias gp    "~/4arch/scripts/gp.sh"
+alias gf    "~/4arch/scripts/gf.sh"
 alias s     "~/4arch/scripts/scrpt.sh"
 alias clear "command clear; commandline -f clear-screen"
 
