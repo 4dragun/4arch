@@ -3,60 +3,58 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
+echo && echo ".......WELCOME TO 4ARCH Script......." && echo
+
 fish ignore-this-shyit
 
-read -p "configure DOTFILES, ICONS, THEMES..? " itd
+echo && read -p "configure DOTFILES, ICONS, THEMES..? (y/n)  " itd
+echo && read -p "install YAY - Yet Another AUR Helper..? (y/n)  " yas
+echo && read -p "configure CHAOTIC-AUR repo..? (y/n)  " cas
+
 if [[ $itd = y ]]; then
-
-  rm -rf ~/.config/nvim
-  rm -rf ~/.local/state/nvim
-  rm -rf ~/.local/share/nvim
-  
-  git clone https://github.com/NvChad/starter ~/.config/nvim
-  cp -r ~/4arch/confs/chadrc.lua ~/.config/nvim/lua
-
-  mkdir -p ~/.icons
-  mkdir -p ~/.local/share/icons
-
+  echo && mkdir -p ~/.icons
+          mkdir -p ~/.local/share/icons
   tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.icons
   tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.local/share/icons
   
-  cp -r ~/4arch/confs/fish          ~/.config
-  cp -r ~/4arch/confs/ghostty       ~/.config
-  cp -r ~/4arch/confs/hypr          ~/.config
-  cp -r ~/4arch/confs/matugen       ~/.config
-  cp -r ~/4arch/confs/rofi          ~/.config
-  cp -r ~/4arch/confs/swaync        ~/.config
-  cp -r ~/4arch/confs/uwsm          ~/.config
-  cp -r ~/4arch/confs/waybar        ~/.config
+  echo && rm -rf ~/.config/nvim
+          rm -rf ~/.local/state/nvim
+          rm -rf ~/.local/share/nvim
 
+  echo && echo "CLONING NvChad..." && echo
+  git clone https://github.com/NvChad/starter ~/.config/nvim && echo
+  
+  cp -r ~/4arch/confs ~/.config
 else
-  echo "skipped DOTFILES, ICONS, THEMES setup..!"
+  echo && echo "skipped DOTFILES, ICONS, THEMES setup..!" && echo
 fi
 
-read -p "install YAY - Yet Another AUR Helper..? " yas
 if [[ $yas = y ]]; then
-  rm -rf ~/yay-bin
+  echo && rm -rf ~/yay-bin && echo
+  
   sudo pacman -S --needed --noconfirm git base-devel
   git clone https://aur.archlinux.org/yay-bin.git
   cd yay-bin && makepkg -si --noconfirm && cd && yay --noconfirm
+  echo
 else
-  echo "skipped YAY setup..!"
+  echo && echo "skipped YAY setup..!" && echo
 fi
 
-read -p "configure CHAOTIC-AUR repo..? " cas
 if [[ $cas = y ]]; then
+  echo && echo "Setting up CHAOTIC-AUR now..." && echo
   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
   sudo pacman-key --lsign-key 3056513887B78AEB
   $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
   $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 else
-  echo "skipped CHAOTIC-AUR setup..!"
+  echo && echo "skipped CHAOTIC-AUR setup..!" && echo
 fi
 
-read -p "shit went down..? REBOOT now..? " ras
+echo && read -p "shit went down..? REBOOT now..? (y/n)  " ras
 if [[ $ras = y ]]; then
-  sync && sync && sync && systemctl reboot
+  echo && sync && sync && sync && systemctl reboot
+else
+  echo && echo "CHAOTIC-AUR stuff SUCCESSFUL...!" && echo
 fi
 
 export EDITOR=nvim
