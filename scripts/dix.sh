@@ -2,15 +2,15 @@
 
 cfdisk /dev/nvme0n1
 
-mkfs.fat -F32 /dev/nvme0n1p1
-mkfs.ext4     /dev/nvme0n1p3
-mkswap        /dev/nvme0n1p2
+echo && mkfs.fat -F32 /dev/nvme0n1p1
+echo && mkfs.ext4     /dev/nvme0n1p3
+echo && mkswap        /dev/nvme0n1p2
 
-mount  /dev/nvme0n1p3 /mnt
-mount  /dev/nvme0n1p1 /mnt/boot --mkdir
-swapon /dev/nvme0n1p2
+echo && mount  /dev/nvme0n1p3 /mnt
+echo && mount  /dev/nvme0n1p1 /mnt/boot --mkdir
+echo && swapon /dev/nvme0n1p2
 
-lsblk
+echo && lsblk
 
-read -p "executing ARCHINSTALL in next step"
-archinstall
+echo && read -p " ___executing ARCHINSTALL in next step___ "
+echo && archinstall
