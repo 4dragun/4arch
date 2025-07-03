@@ -3,6 +3,9 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
+PACONF="/etc/pacman.conf"
+PACBAK="$PACONF.bak"
+
 echo && echo ".......WELCOME TO 4ARCH Script......." && echo
 
 fish ignore-this-shyit
@@ -57,7 +60,7 @@ else
   echo && echo "CHAOTIC-AUR stuff SUCCESSFUL...!" && echo
 fi
 
-export EDITOR=nvim
+
 sudoedit /etc/pacman.conf && yay --noconfirm
 
 echo "installing AUR-apps..."
