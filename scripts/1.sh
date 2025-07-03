@@ -5,6 +5,11 @@ YS="yay -S --needed --noconfirm"
 
 PACONF="/etc/pacman.conf"
 PACBAK="$PACONF.bak"
+PACTMP="$(mktemp)"
+
+LOGCONF="/etc/systemd/logind.conf"
+LOGBACK="$LOGCONF.bak"
+LOGTEMP="$(mktemp)"
 
 echo && echo ".......WELCOME TO 4ARCH Script......." && echo
 
@@ -60,43 +65,112 @@ else
   echo && echo "CHAOTIC-AUR stuff SUCCESSFUL...!" && echo
 fi
 
+echo && read -p "============> Auto-Edit PACMAN.CONF ..? (y/n)  " pas
+if [[ "$pas" == y ]]; then
+  echo && echo "<<<<<<< PACMAN.CONF auto-edit INCOMING >>>>>>>" && echo
 
-sudoedit /etc/pacman.conf && yay --noconfirm
+  echo "Backing up the PACMAN CONF file..." && echo
+  sudo cp "$PACONF" "$PACBAK" || { echo "Backup failed. ENDING."; exit 190; }
 
-echo "installing AUR-apps..."
+  awk '
+    $0 == "[options]" {
+      print
+      print "ILoveCandy"
+      print "VerbosePkgLists"
+      print "Color"
+      next
+    }
+
+    $0 == "[multilib]" {
+      in_multilib = 1
+      print
+      next
+    }
+
+    in_multilib && /^Include =/ {
+      print
+      print ""
+      print "[chaotic-aur]"
+      print "Include = /etc/pacman.d/chaotic-mirrorlist"
+      in_multilib = 0
+      next
+    }
+
+    { print }
+  ' "$PACONF" > "$PACTMP"
+
+  echo && echo "Replacing pacman.conf with the modified version..." && echo
+  sudo cp "$PACTMP" "$PACONF" && rm "$PACTMP" && echo
+  echo " <><><><><><> PACONF Edit Successful ..! <><><><><><>"
+else
+  echo && echo " ~~~~~~~~~~ PACMAN.CONF edit cancelled ~~~~~~~~~~ "
+fi
+
+echo && echo "-=-=-=-==> Running YAY to install programs <<<<<< "
+echo && yay || { echo "YAY has stopped, check configuration ..! "; }
+
+echo && echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
 
-echo "installing DEPENDENCIES..."
+echo && echo "installing DEPENDENCIES..."
 $YS ffmpegthumbnailer python-pillow bibata-cursor-theme
 $YS adw-gtk-theme gvfs-mtp
 
-echo "installing FONTS..."
+echo && echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
 $YS noto-fonts-emoji ttf-jetbrains-mono-nerd
 
-echo "installing HYPRLAND-stuff..."
+echo && echo "installing HYPRLAND-stuff..."
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm grimblast
 $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 
-echo "installing GUI-apps..."
+echo && echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look qt6ct network-manager-applet nautilus
 
-echo "installing CLI-apps..."
+echo && echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty wget
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl starship
 $YS lua-language-server power-profiles-daemon xdg-user-dirs aria2
 
-xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
+echo && xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
 
+echo && echo " >>>> reached MATUGEN color generation area >>>> " && echo
 matugen image ~/4arch/walls/Fantasy-Hongkong.png -c ~/.config/matugen/init.toml
 echo "/home/archy/4arch/walls/Fantasy-Hongkong.png">"$HOME/.cache/last-wall.txt"
 
-echo "enabling POWER-PROFILES-DAEMON..."
+echo && echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon
 
-#type here
+echo && echo "__________ Auto-Edit LOGIND.CONF _______? (y/n)  " las
+if [[ $las = y ]]; then
+  echo && echo "--- --- --- LOGIND.CONF auto-edit INCOMING == == ===" && echo
+  echo "Backing up the LOGIND CONF file..." && echo
+  sudo cp "$LOGCONF" "$LOGBACK" || { echo "Backup failed. ENDING."; exit 200; }
+
+  awk '
+    /^\[Login\]/ {
+      print
+      print "HandlePowerKey=suspend-then-hibernate"
+      print "HandleLidSwitch=suspend-then-hibernate"
+      next
+    }
+    /^HandlePowerKey=/ || /^HandleLidSwitch=/ {
+      next
+    }
+    { print }
+  ' "$LOGCONF" > "$LOGTEMP"
+
+  echo && echo "Replacing logind.conf with the modified version..." && echo
+  sudo cp "$LOGTEMP" "$LOGCONF" && rm "$LOGTEMP" && echo
+  echo " <>_________<> LOGIND.CONF Edit Successful ..! ____--------<>"
+else
+  echo && echo " ~~~~~~~~~~ PACMAN.CONF edit cancelled ~~~~~~~~~~ "
+fi
+
+
+
 
 read -p "start DISPLAY-MANAGER (sddm)..? " das
 if [[ $das = y ]]; then
