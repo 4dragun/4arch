@@ -166,7 +166,7 @@ if [[ $las = y ]]; then
   sudo cp "$LOGTEMP" "$LOGCONF" && rm "$LOGTEMP" && echo
   echo " <>_________<> LOGIND.CONF Edit Successful ..! ____--------<>"
 else
-  echo && echo " ~~~~~~~~~~ PACMAN.CONF edit cancelled ~~~~~~~~~~ "
+  echo && echo " ........ LOGIND.CONF edit cancelled ~~~~~~~~~~ "
 fi
 
 
