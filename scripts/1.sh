@@ -99,7 +99,7 @@ if [[ "$pas" == y ]]; then
     { print }
   ' "$PACONF" > "$PACTMP"
 
-  echo "Replacing pacman.conf with the modified version..." && echo
+  echo "Replacing pacman.conf with the modified version..."
   sudo cp "$PACTMP" "$PACONF" && rm "$PACTMP" && echo
   echo " <><><><><><> PACONF Edit Successful ..! <><><><><><>"
 else
@@ -162,7 +162,7 @@ if [[ $las = y ]]; then
     { print }
   ' "$LOGCONF" > "$LOGTEMP"
 
-  echo "Replacing logind.conf with the modified version..." && echo
+  echo "Replacing logind.conf with the modified version..."
   sudo cp "$LOGTEMP" "$LOGCONF" && rm "$LOGTEMP" && echo
   echo " <>_________<> LOGIND.CONF Edit Successful ..! ____--------<>"
 else
