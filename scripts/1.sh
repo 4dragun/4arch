@@ -145,7 +145,7 @@ sudo systemctl enable --now power-profiles-daemon
 
 echo && echo "__________ Auto-Edit LOGIND.CONF _______? (y/n)  " las
 if [[ $las = y ]]; then
-  echo && echo "--- --- --- LOGIND.CONF auto-edit INCOMING == == ===" && echo
+  echo && read -p "--- --- LOGIND.CONF auto-edit INCOMING == == " && echo
   echo "Backing up the LOGIND CONF file..." && echo
   sudo cp "$LOGCONF" "$LOGBACK" || { echo "Backup failed. ENDING."; exit 200; }
 
