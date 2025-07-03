@@ -107,7 +107,7 @@ else
 fi
 
 echo && echo "-=-=-=-==> Running YAY to install programs <<<<<< "
-echo && yay || { echo "YAY has stopped, check configuration ..! "; }
+echo && yay --noconfirm || { echo "YAY failed, check configuration ..! "; }
 
 echo && echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
