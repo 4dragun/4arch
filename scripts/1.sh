@@ -11,6 +11,10 @@ LOGCONF="/etc/systemd/logind.conf"
 LOGBACK="$LOGCONF.bak"
 LOGTEMP="$(mktemp)"
 
+SLEEPCONF="/etc/systemd/sleep.conf"
+SLEEPBAKP="$SLEEPCONF.bak"
+SLEEPTEMP="$(mktemp)"
+
 echo && echo ".......WELCOME TO 4ARCH Script......." && echo
 
 fish ignore-this-shyit
@@ -169,8 +173,30 @@ else
   echo && echo " ........ LOGIND.CONF edit cancelled ~~~~~~~~~~ "
 fi
 
+echo && read -p "-------> Auto-Edit SLEEP.CONF .......? (y/n)  " sas
+if [[ $sas = y ]]; then
+  echo && echo "----...... SLEEP.CONF auto-edit INCOMING >>>>" && echo
+  echo "Backing up the SLEEP CONF file..." && echo
+  sudo cp "$SLEEPCONF" "$SLEEPBAKP" || { echo "Backup failed.."; exit 28; }
 
+  awk '
+    /^\[Sleep\]/ {
+      print
+      print "HibernateDelaySec=1800"
+      next
+    }
+    /^HibernateDelaySec=/ {
+      next
+    }
+    { print }
+  ' "$SLEEPCONF" > "$SLEEPTEMP"
 
+  echo "Replacing sleep.conf with the modified version..."
+  sudo cp "$SLEEPTEMP" "$SLEEPCONF" && rm "$SLEEPTEMP" && echo
+  echo " _________ SLEEP.CONF Edit Successful ..! ----____  "
+else
+  echo && echo " +++++ SLEEP.CONF edit cancelled <++++++ "
+fi
 
 read -p "start DISPLAY-MANAGER (sddm)..? " das
 if [[ $das = y ]]; then
