@@ -15,6 +15,10 @@ SLEEPCONF="/etc/systemd/sleep.conf"
 SLEEPBAKP="$SLEEPCONF.bak"
 SLEEPTEMP="$(mktemp)"
 
+MKINITCONF="/etc/mkinitcpio.conf"
+MKINITBAKP="$MKINITCONF.bak"
+MKINITTEMP="$(mktemp)"
+
 echo && echo ".......WELCOME TO 4ARCH Script......." && echo
 
 fish ignore-this-shyit
@@ -198,10 +202,46 @@ else
   echo && echo " +++++ SLEEP.CONF edit cancelled <++++++ "
 fi
 
-read -p "start DISPLAY-MANAGER (sddm)..? " das
-if [[ $das = y ]]; then
-  sync && sync && sync
-  sudo systemctl enable --now sddm
+echo && read -p " ~~~~---> Auto-Edit MKINITCONF ____? (y/n)  " mas
+if [[ $mas = y ]]; then
+  echo && echo "<====> MKINITCONF auto-edit INCOMING ._. "
+  echo && echo " ...Backing up the MKINITCONF file..." && echo
+  sudo cp "$MKINITCONF" "$MKINITBAKP" || { echo "Backup failed."; exit 63; }
+
+  awk '
+    BEGIN { changed = 0 }
+    /^\s*HOOKS=\(.*filesystems.*fsck.*\)/ {
+      line = $0
+      if (line ~ /resume/) {
+        print line
+      } else {
+        sub(/filesystems/, "filesystems resume", line)
+        print line
+        changed = 1
+      }
+      next
+    }
+    { print }
+    END { exit changed }
+  ' "$MKINITCONF" > "$MKINITTEMP"
+
+  if [[ $? -eq 1 ]]; then
+    echo "File modified, updating and running mkinitcpio -P linux..."
+    sudo cp "$MKINITTEMP" "$MKINITCONF"
+    echo && sudo mkinitcpio -P linux && echo
+    echo ":) all MKINIT went successful ..!" && echo
+  else
+    echo "No changes detected, skipping mkinitcpio."
+  fi
+
+  sudo rm "$MKINITTEMP"
 else
-  echo "DISPLAY-MANAGER not started, script ended..!"
+  echo && echo "=***=> MKINITCONF edit cancelled ..__.."
+fi
+
+echo && read -p " 4ARCH Script Ended. REBOOT now ..? (y/n)  " nas
+if [[ $nas = y ]]; then
+  sync && sync && sync && systemctl reboot
+else
+  echo && echo " Alrighty, Reboot cancelled. "
 fi
