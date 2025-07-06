@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
-systemctl start bluetooth
+SN="bluetooth"
 
-blueman-manager
+systemctl start "$SN"
+
+SS="$(systemctl is-active "$SN")"
+
+if [ "$SS" = "active" ]; then
+  notify-send "🔵 Bluetooth" "Bluetooth service is active ✅"
+  blueman-manager
+else
+  notify-send "🔴 Bluetooth" "Bluetooth service is inactive ❌"
+fi
