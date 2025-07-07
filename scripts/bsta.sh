@@ -15,7 +15,7 @@ if [ "$SS" = "inactive" ]; then
   systemctl start "$SN" || { notify-send -i "$PI" "$B" "$SAHF" && exit; }
   
   notify-send -i "$PA" "$B" "service has been activated"
-  blueman-manager
+  blueman-applet
 fi
 if [ "$SS" = "active" ]; then
   notify-send -i "$PA" "$B" "service is already active"
