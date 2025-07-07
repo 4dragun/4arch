@@ -23,3 +23,6 @@
 .widget-dnd > switch {
   border: 1px solid @noti-border-color;
 }
+.image {
+  margin-right: 13px;
+}
