@@ -17,6 +17,7 @@ if [ "$SS" = "inactive" ]; then
   notify-send -i "$PA" "$B" "service has been activated"
   blueman-applet
 fi
+
 if [ "$SS" = "active" ]; then
   notify-send -i "$PA" "$B" "service is already active"
 fi

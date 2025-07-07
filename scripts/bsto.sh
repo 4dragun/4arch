@@ -17,6 +17,7 @@ fi
 
 if [ "$SS" = "active" ]; then
   systemctl stop "$SN" || { notify-send -i "$PA" "$B" "$SDHF" && exit;}
+  
   killall blueman-applet
   killall blueman-manager
   notify-send -i "$PI" "$B" "service has been deactivated"
