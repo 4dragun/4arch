@@ -1,14 +1,22 @@
 #!/usr/bin/env bash
 
+B="Bluetooth"
+
 SN="bluetooth"
 
-systemctl start "$SN"
+PA="$HOME/4arch/azzets/bactive.png"
+PI="$HOME/4arch/azzets/binactive.png"
+
+SAHF="service activation has failed"
 
 SS="$(systemctl is-active "$SN")"
 
-if [ "$SS" = "active" ]; then
-  notify-send -i "$HOME/4arch/azzets/bactive.png" "Bluetooth" "Bluetooth service is active"
+if [ "$SS" = "inactive" ]; then
+  systemctl start "$SN" || { notify-send -i "$PI" "$B" "$SAHF" && exit; }
+  
+  notify-send -i "$PA" "$B" "service has been activated"
   blueman-manager
-else
-  notify-send -i "$HOME/4arch/azzets/binactive.png" "Bluetooth" "Bluetooth service is inactive"
+fi
+if [ "$SS" = "active" ]; then
+  notify-send -i "$PA" "$B" "service is already active"
 fi
