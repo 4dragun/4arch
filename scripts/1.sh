@@ -21,9 +21,13 @@ MKINITTEMP="$(mktemp)"
 
 echo && echo ".......WELCOME TO 4ARCH Script......." && echo
 
-fish ignore-this-shyit
+echo " >>> Running pacman-key steps before proceeding ..."
+sudo pacman-key --init && echo
+sudo pacman-key --populate archlinux && echo
 
-echo && read -p "configure DOTFILES, ICONS, THEMES..? (y/n)  " itd
+fish ignore-this-shyit && echo
+
+echo && read -p "configure local DOTFILES, ICONS, THEMES..? (y/n)  " itd
 echo && read -p "install YAY - Yet Another AUR Helper..? (y/n)  " yas
 echo && read -p "configure CHAOTIC-AUR repo..? (y/n)  " cas
 
