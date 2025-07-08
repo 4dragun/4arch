@@ -38,5 +38,4 @@ echo "$selected_path" > "$HOME/.cache/last-wall.txt"
 echo "Applying theme using: $selected_path"
 matugen --type scheme-content image "$selected_path" || { notify-send -i "$HOME/4arch/azzets/matunoti.png" "Matugen" "manual intervention needed ..!" && exit; }
 
-notify-send "Matugen" "$selected_path" -i "$selected_path"
-
+notify-send "Matugen wallpaper" "$selected_path" -i "$selected_path"
