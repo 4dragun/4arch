@@ -3,6 +3,7 @@ configuration {
   display-drun: "";
   drun-display-format: "{icon}{name}";
   show-icons: true;
+  run-command: "uwsm app -- {cmd}";
 }
 
 @theme "../MATUGEN_OUTPUTS/maturofimain.rasi"
