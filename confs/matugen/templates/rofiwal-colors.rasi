@@ -8,7 +8,7 @@ window {
   height: 85%;
   background-color: {{colors.surface.default.hex}};
   border: 1;
-  border-color: {{colors.surface_variant.default.hex}};
+  border-color: {{colors.surface_bright.default.hex}};
   border-radius: 20;
   padding: 40;
 }
