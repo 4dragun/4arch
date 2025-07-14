@@ -1,27 +1,38 @@
-@define-color cc-bg {{colors.surface.default.hex}};
-@define-color noti-border-color {{colors.surface_variant.default.hex}};
-@define-color noti-bg {{colors.surface.default.hex}};
-@define-color text-color {{colors.secondary.default.hex}};
-
+:root {
+  --cc-bg: {{colors.surface.default.hex}};
+  --noti-border-color: {{colors.surface_bright.default.hex}};
+  --noti-bg: {{colors.surface.default.hex}};
+  --text-color: {{colors.secondary.default.hex}};
+}
+* {
+  box-shadow: none;
+}
 .notification {
-  border: 1px solid @noti-border-color;
+  border: 1px solid var(--noti-border-color);
   border-radius: 20px;
   padding: 10px 10px;
+  background: var(--noti-bg);
+}
+.notification-group {
+  background: var(--noti-bg);
 }
 .notification-row .notification-background {
   padding: 10px 10px;
   border-radius: 20px;
 }
 .control-center {
-  border: 1px solid @noti-border-color;
+  border: 1px solid var(--noti-border-color);
   border-radius: 20px;
   padding: 17px 17px;
 }
+.control-center-list {
+  background: none;
+}
 .widget-title > button {
-  border: 1px solid @noti-border-color;
+  border: 1px solid var(--noti-border-color);
 }
 .widget-dnd > switch {
-  border: 1px solid @noti-border-color;
+  border: 1px solid var(--noti-border-color);
 }
 .image {
   margin-right: 15px;
