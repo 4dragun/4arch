@@ -9,20 +9,19 @@
 }
 .notification {
   border: 1px solid var(--noti-border-color);
-  border-radius: 20px;
-  padding: 10px 10px;
+  border-radius: 30px;
+  padding: 5px 5px;
   background: var(--noti-bg);
 }
 .notification-group {
   background: var(--noti-bg);
 }
-.notification-row .notification-background {
+.notification-background {
   padding: 10px 10px;
-  border-radius: 20px;
 }
 .control-center {
   border: 1px solid var(--noti-border-color);
-  border-radius: 20px;
+  border-radius: 30px;
   padding: 17px 17px;
 }
 .control-center-list {
@@ -36,4 +35,7 @@
 }
 .image {
   margin-right: 15px;
+}
+.summary {
+  padding: 5px 0px;
 }
