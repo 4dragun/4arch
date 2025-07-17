@@ -1,14 +1,14 @@
 * {
   background-color: transparent;
+  border-radius: 30;
 }
 
 window {
   background-color: {{colors.surface.default.hex}};
-  border-radius: 20;
   width: 30%;
   padding: 30;
   border: 1;
-  border-color: {{colors.surface_bright.default.hex}};
+  border-color: {{colors.surface_container_high.default.hex}};
 }
 
 listview {
@@ -17,34 +17,32 @@ listview {
 
 element-text {
   text-color: {{colors.primary.default.hex}};
-  padding: 10;
   vertical-align: 0.5;
 }
 
 element-text selected {
-  text-color: {{colors.surface.default.hex}};
+  text-color: {{colors.secondary.default.hex}};
 }
 
 element-icon {
-  size: 48;
-  padding: 10;
+  size: 43;
+  padding: 13;
 }
 
 element selected {
-  background-color: {{colors.primary.default.hex}};
-  border-radius: 20;
+  background-color: {{colors.primary.default.hex}}1A;
 }
 
 inputbar {
-  background-color: {{colors.surface_container_low.default.hex}};
-  border-radius: 20;
-  padding: 15;
-  margin: 10;
+  background-color: {{colors.surface_container.default.hex}};
+  padding: 17;
+  margin: 0 20 25 20;
 }
 
 entry {
-  placeholder: "Search ";
+  placeholder: "Search";
   placeholder-color: {{colors.surface_bright.default.hex}};
+  font: "JetBrainsMono Nerd Font Bold 13";
   text-color: {{colors.primary.default.hex}};
   cursor-color: transparent;
 }

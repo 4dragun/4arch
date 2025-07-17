@@ -1,6 +1,6 @@
 :root {
   --cc-bg: {{colors.surface.default.hex}};
-  --noti-border-color: {{colors.surface_bright.default.hex}};
+  --noti-border-color: {{colors.surface_container_high.default.hex}};
   --noti-bg: {{colors.surface.default.hex}};
   --text-color: {{colors.secondary.default.hex}};
 }
