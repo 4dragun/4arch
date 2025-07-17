@@ -125,8 +125,7 @@ echo && echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
 
 echo && echo "installing DEPENDENCIES..."
-$YS ffmpegthumbnailer tumbler bibata-cursor-theme adw-gtk-theme
-$YS python-pillow thunar-archive-plugin thunar-volman
+$YS python-pillow ffmpegthumbnailer bibata-cursor-theme adw-gtk-theme
 
 echo && echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
@@ -139,12 +138,12 @@ $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 echo && echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
-$YS waybar nwg-look qt6ct network-manager-applet thunar
+$YS waybar nwg-look qt6ct network-manager-applet nautilus
 
 echo && echo "installing CLI-apps..."
-$YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty wget
+$YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty aria2
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl starship
-$YS lua-language-server power-profiles-daemon xdg-user-dirs aria2
+$YS lua-language-server power-profiles-daemon xdg-user-dirs
 
 echo && xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
 
