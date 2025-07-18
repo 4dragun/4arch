@@ -2,6 +2,11 @@ YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 NW="~/.config/systemd/user/niri.service.wants"
 
+mkdir -p ~/.icons
+mkdir -p ~/.local/share/icons
+tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.icons
+tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.local/share/icons
+
 mkdir -p ~/.themes
 mkdir -p ~/.local/share/themes
 mkdir -p ~/.config/Kvantum

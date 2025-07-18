@@ -32,11 +32,6 @@ echo && read -p "install YAY - Yet Another AUR Helper..? (y/n)  " yas
 echo && read -p "configure CHAOTIC-AUR repo..? (y/n)  " cas
 
 if [[ $itd = y ]]; then
-  # echo && mkdir -p ~/.icons
-  #         mkdir -p ~/.local/share/icons
-  # tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.icons
-  # tar -xf ~/4arch/azzets/kora.tar.xz -C ~/.local/share/icons
-  
   echo && rm -rf ~/.config/nvim
           rm -rf ~/.local/state/nvim
           rm -rf ~/.local/share/nvim
@@ -126,6 +121,7 @@ $YS clipse-bin ttf-rubik-vf matugen-bin
 
 echo && echo "installing DEPENDENCIES..."
 $YS python-pillow ffmpegthumbnailer bibata-cursor-theme adw-gtk-theme
+$YS mcmojave-circle-icon-theme-git
 
 echo && echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
