@@ -25,8 +25,9 @@ echo
 read -p " -> install YAY - Yet Another AUR Helper ? (y/n) = " yas
 echo
 read -p " -> add CHAOTIC-AUR repo ? (y/n) = " cas
+echo
 
-if [[ $itd = y ]]; then
+if [[ "$itd" = y ]]; then
   echo
   rm -rf ~/.config/nvim
   rm -rf ~/.local/state/nvim
@@ -44,7 +45,7 @@ else
   echo
 fi
 
-if [[ $yas = y ]]; then
+if [[ "$yas" = y ]]; then
   echo
   sudo pacman -S --needed --noconfirm git base-devel
   echo
@@ -62,7 +63,7 @@ else
   echo
 fi
 
-if [[ $cas = y ]]; then
+if [[ "$cas" = y ]]; then
   echo
   echo " ... adding CHAOTIC-AUR repo ... "
   echo
@@ -82,12 +83,12 @@ fi
 
 read -p " -> shit went down ? REBOOT now ? (y/n) = " ras
 echo
-if [[ $ras = y ]]; then
+if [[ "$ras" = y ]]; then
   echo
   sync && sync && sync && systemctl reboot
 else
   echo
-  echo " ~~~ CHAOTIC-AUR added SUCCESSFUL ~~~ "
+  echo " ~~~ CHAOTIC-AUR added SUCCESSFULLY ~~~ "
   echo
 fi
 
@@ -95,27 +96,27 @@ read -p " -> backup ORIGINAL_SYSTEM_FILES as sudo ? (y/n) = " cop
 echo
 if [[ "$cop" = y ]]; then
   echo
-  read -sp " ======> now enter PASS: " pas
-  if [[ $pas = archydoes ]]; then
-    if [[ -d $ZSF ]]; then
+  read -p " ======> now enter PASS: " pas
+  if [[ "$pas" = archydoes ]]; then
+    if [[ -d "$ZSF" ]]; then
       echo
-      echo " >>> BACKED-UP FOLDER ALREADY EXISTS ..! so exiting <<< "
+      echo " >>> BACKED-UP FOLDER ALREADY EXISTS ..! skipping backup <<< "
       echo
     else
       echo
       echo " >>> creating ZORIGINAL_SYSTEM_FILES folder ... "
       echo
-      sudo mkdir -p $ZSF
+      sudo mkdir -p "$ZSF"
       echo
       echo " >>> backing-up files now ... "
       echo
-      sudo cp -r /etc/systemd/logind.conf $ZSF
-      sudo cp -r /etc/systemd/sleep.conf $ZSF
-      sudo cp -r /etc/mkinitcpio.conf $ZSF
-      sudo cp -r /etc/pacman.conf $ZSF
-      sudo chattr +i $ZSF
+      sudo cp -r /etc/systemd/logind.conf "$ZSF"
+      sudo cp -r /etc/systemd/sleep.conf "$ZSF"
+      sudo cp -r /etc/mkinitcpio.conf "$ZSF"
+      sudo cp -r /etc/pacman.conf "$ZSF"
+      sudo chattr +i "$ZSF"
       echo
-      echo " <<< BACKED-UP ORIGINAL_SYSTEM_FILES >>> "
+      echo " <<< ORIGINAL_SYSTEM_FILES Backup Complete >>> "
       echo
     fi
   else
@@ -125,21 +126,21 @@ if [[ "$cop" = y ]]; then
   fi
 else
   echo
-  echo " ___ skipped BACKUP of og system files ___ "
+  echo " ___ skipped BACKUP of original system files ___ "
   echo
 fi
 
 read -p " -> replace SYSTEM_FILES with custom ones ? (y/n) = " sas
 echo
-if [[ $sas = y ]]; then
-  if [[ -d $ZSF ]]; then
+if [[ "$sas" = y ]]; then
+  if [[ -d "$ZSF" ]]; then
     echo " --- backup folder found --- "
     echo " --- proceeding --- "
     echo
     sudo cp -r 4arch/confs2/. /etc
   else
     echo " --- backup folder was not found --- "
-    echo " --- exiting --- "
+    echo " --- cannot procede --- "
     echo
   fi
 else
@@ -150,7 +151,7 @@ fi
 
 read -p " -> run MKINITCPIO -P ? (y/n) = " mas
 echo
-if [[ $mas = y ]]; then
+if [[ "$mas" = y ]]; then
   echo
   sudo mkinitcpio -P
   echo
@@ -167,35 +168,30 @@ echo
 
 echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
-
 echo
 echo "installing DEPENDENCIES..."
 $YS python-pillow ffmpegthumbnailer bibata-cursor-theme adw-gtk-theme
 $YS mcmojave-circle-icon-theme-git
-
 echo
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
 $YS noto-fonts-emoji ttf-jetbrains-mono-nerd
-
 echo
 echo "installing HYPRLAND-stuff..."
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm grimblast
 $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
-
 echo
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look qt6ct network-manager-applet nautilus
-
 echo
 echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty aria2
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl starship
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
-
 echo
+
 xdg-user-dirs-update
 echo
 mkdir -p ~/Pictures/Screenshots
@@ -203,18 +199,18 @@ echo
 
 echo " --> reached MATUGEN color generation area <-- "
 echo
-matugen image $WALLDIR -c ~/.config/matugen/init.toml
+matugen image "$WALLDIR" -c ~/.config/matugen/init.toml
 echo
-echo $WALLDIR > "$HOME/.cache/last-wall.txt"
+echo "$WALLDIR" > "$HOME/.cache/last-wall.txt"
+echo
 
-echo
 echo " ... enabling POWER-PROFILES-DAEMON ... "
 sudo systemctl enable --now power-profiles-daemon
 echo
 
 read -p " ... 4ARCH Script Ended. REBOOT now ? (y/n) = " nas
 echo
-if [[ $nas = y ]]; then
+if [[ "$nas" = y ]]; then
   sync && sync && sync && systemctl reboot
 else
   echo
