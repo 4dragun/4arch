@@ -5,4 +5,4 @@ B="strong rebuild perfect pipe shadow license salute flip fashion"
 C="follow boil run kitchen"
 
 wl-copy -n $A $B $C
-read -p " okay..."
+read -p " ==> okay... "
