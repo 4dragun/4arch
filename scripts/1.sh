@@ -3,58 +3,91 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
-echo && echo ".......WELCOME TO 4ARCH Script......." && echo
+echo
+echo " ... WELCOME TO 4ARCH Script ... "
+echo
 
-echo " >>> Running pacman-key steps before proceeding ..."
-sudo pacman-key --init && echo
-sudo pacman-key --populate archlinux && echo
+echo " >>> running PACMAN-KEY before proceeding >>> "
+sudo pacman-key --init
+echo
+sudo pacman-key --populate archlinux
+echo
 
-fish ignore-this-shyit && echo
+fish ignore-this-shyit
+echo
 
-echo && read -p "configure local DOTFILES, ICONS, THEMES..? (y/n)  " itd
-echo && read -p "install YAY - Yet Another AUR Helper..? (y/n)  " yas
-echo && read -p "configure CHAOTIC-AUR repo..? (y/n)  " cas
+read -p " -> configure local DOTFILES, ICONS, THEMES ? (y/n) = " itd
+echo
+read -p " -> install YAY - Yet Another AUR Helper ? (y/n) = " yas
+echo
+read -p " -> add CHAOTIC-AUR repo ? (y/n) = " cas
 
 if [[ $itd = y ]]; then
-  echo && rm -rf ~/.config/nvim
-          rm -rf ~/.local/state/nvim
-          rm -rf ~/.local/share/nvim
-
-  echo && echo "CLONING NvChad..." && echo
-  git clone https://github.com/NvChad/starter ~/.config/nvim && echo
-  
+  echo
+  rm -rf ~/.config/nvim
+  rm -rf ~/.local/state/nvim
+  rm -rf ~/.local/share/nvim
+  echo
+  echo " === cloning NvChad === "
+  echo
+  git clone https://github.com/NvChad/starter ~/.config/nvim
+  echo
   cp -r ~/4arch/confs ~/.config
+  echo
 else
-  echo && echo "skipped DOTFILES, ICONS, THEMES setup..!" && echo
+  echo
+  echo " ___ skipped DOTFILES, ICONS, THEMES setup ___ "
+  echo
 fi
 
 if [[ $yas = y ]]; then
-  echo && rm -rf ~/yay-bin && echo
-  
+  echo
   sudo pacman -S --needed --noconfirm git base-devel
+  echo
+  echo " === cloning YAY === "
+  echo
+  rm -rf ~/yay-bin
+  echo
   git clone https://aur.archlinux.org/yay-bin.git
+  echo
   cd yay-bin && makepkg -si --noconfirm && cd && yay --noconfirm
   echo
 else
-  echo && echo "skipped YAY setup..!" && echo
+  echo
+  echo " ___ skipped YAY setup ___ "
+  echo
 fi
 
 if [[ $cas = y ]]; then
-  echo && echo "Setting up CHAOTIC-AUR now..." && echo
+  echo
+  echo " ... adding CHAOTIC-AUR repo ... "
+  echo
   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+  echo
   sudo pacman-key --lsign-key 3056513887B78AEB
+  echo
   $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+  echo
   $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+  echo
 else
-  echo && echo "skipped CHAOTIC-AUR setup..!" && echo
+  echo
+  echo " ___ skipped CHAOTIC-AUR setup ___ "
+  echo
 fi
 
-echo && read -p "shit went down..? REBOOT now..? (y/n)  " ras
+read -p " -> shit went down ? REBOOT now ? (y/n) = " ras
 if [[ $ras = y ]]; then
-  echo && sync && sync && sync && systemctl reboot
+  echo
+  sync && sync && sync && systemctl reboot
 else
-  echo && echo "CHAOTIC-AUR stuff SUCCESSFUL...!" && echo
+  echo
+  echo " ~~~ CHAOTIC-AUR added SUCCESSFUL ~~~ "
+  echo
 fi
+
+read -p " --> copy over SYSTEM - FILES as backup ?"
+##################################################################
 
 echo && read -p "============> Auto-Edit PACMAN.CONF ..? (y/n)  " pas
 if [[ "$pas" == y ]]; then
