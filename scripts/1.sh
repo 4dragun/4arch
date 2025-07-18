@@ -81,6 +81,7 @@ else
 fi
 
 read -p " -> shit went down ? REBOOT now ? (y/n) = " ras
+echo
 if [[ $ras = y ]]; then
   echo
   sync && sync && sync && systemctl reboot
@@ -90,7 +91,6 @@ else
   echo
 fi
 
-echo
 read -p " -> backup ORIGINAL_SYSTEM_FILES as sudo ? (y/n) = " cop
 echo
 if [[ "$cop" = y ]]; then
@@ -131,7 +131,6 @@ else
   echo
 fi
 
-echo
 read -p " -> run MKINITCPIO -P ..? (y/n) = " mas
 echo
 if [[ $mas = y ]]; then
@@ -144,13 +143,11 @@ else
   echo
 fi
 
-echo
 echo " >>> running YAY to update >>> "
 echo
 yay --noconfirm
 echo
 
-echo
 echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
 
@@ -194,7 +191,7 @@ echo
 echo $WALLDIR > "$HOME/.cache/last-wall.txt"
 
 echo
-echo "enabling POWER-PROFILES-DAEMON..."
+echo " ... enabling POWER-PROFILES-DAEMON ... "
 sudo systemctl enable --now power-profiles-daemon
 echo
 
