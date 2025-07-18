@@ -36,7 +36,7 @@ if [[ $itd = y ]]; then
   echo
   git clone https://github.com/NvChad/starter ~/.config/nvim
   echo
-  cp -r ~/4arch/confs ~/.config
+  cp -r ~/4arch/confs/. ~/.config
   echo
 else
   echo
@@ -129,7 +129,26 @@ else
   echo
 fi
 
-read -p " -> run MKINITCPIO -P ..? (y/n) = " mas
+read -p " -> replace SYSTEM_FILES with custom ones ? (y/n) = " sas
+echo
+if [[ $sas = y ]]; then
+  if [[ -d $ZSF ]]; then
+    echo " --- backup folder found --- "
+    echo " --- proceeding --- "
+    echo
+    sudo cp -r 4arch/confs2/. /etc
+  else
+    echo " --- backup folder was not found --- "
+    echo " --- exiting --- "
+    echo
+  fi
+else
+  echo
+  echo " ___ skipped replacing SYSTEM_FILES with custom ones ___ "
+  echo
+fi
+
+read -p " -> run MKINITCPIO -P ? (y/n) = " mas
 echo
 if [[ $mas = y ]]; then
   echo
@@ -193,7 +212,7 @@ echo " ... enabling POWER-PROFILES-DAEMON ... "
 sudo systemctl enable --now power-profiles-daemon
 echo
 
-read -p " ... 4ARCH Script Ended. REBOOT now ..? (y/n) = " nas
+read -p " ... 4ARCH Script Ended. REBOOT now ? (y/n) = " nas
 echo
 if [[ $nas = y ]]; then
   sync && sync && sync && systemctl reboot
