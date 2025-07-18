@@ -4,38 +4,33 @@
   --noti-bg: {{colors.surface.default.hex}};
   --text-color: {{colors.secondary.default.hex}};
 }
+
 * {
   box-shadow: none;
+  border-radius: 30px;
 }
+
 .notification {
   border: 1px solid var(--noti-border-color);
-  border-radius: 30px;
-  padding: 5px 5px;
+  padding: 5px;
   background: var(--noti-bg);
+  margin: -1px -10px;
 }
+
 .notification-group {
   background: var(--noti-bg);
 }
-.notification-background {
-  padding: 10px 10px;
-}
+
 .control-center {
   border: 1px solid var(--noti-border-color);
-  border-radius: 30px;
-  padding: 17px 17px;
+  padding: 17px;
+  margin: 5px 1px;
 }
-.control-center-list {
-  background: none;
-}
-.widget-title > button {
-  border: 1px solid var(--noti-border-color);
-}
-.widget-dnd > switch {
-  border: 1px solid var(--noti-border-color);
-}
+
 .image {
   margin-right: 15px;
 }
+
 .summary {
-  padding: 5px 0px;
+  margin-bottom: 10px;
 }
