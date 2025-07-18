@@ -96,7 +96,6 @@ echo
 if [[ "$cop" = y ]]; then
   echo
   read -sp " ======> now enter PASS: " pas
-
   if [[ $pas = archydoes ]]; then
     if [[ -d $ZSF ]]; then
       echo
@@ -124,7 +123,6 @@ if [[ "$cop" = y ]]; then
     echo " ___ wrong pass dude :( ___ "
     echo
   fi
-
 else
   echo
   echo " ___ skipped BACKUP of og system files ___ "
