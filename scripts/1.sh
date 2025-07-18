@@ -3,22 +3,6 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
-PACONF="/etc/pacman.conf"
-PACBAK="$PACONF.bak"
-PACTMP="$(mktemp)"
-
-LOGCONF="/etc/systemd/logind.conf"
-LOGBACK="$LOGCONF.bak"
-LOGTEMP="$(mktemp)"
-
-SLEEPCONF="/etc/systemd/sleep.conf"
-SLEEPBAKP="$SLEEPCONF.bak"
-SLEEPTEMP="$(mktemp)"
-
-MKINITCONF="/etc/mkinitcpio.conf"
-MKINITBAKP="$MKINITCONF.bak"
-MKINITTEMP="$(mktemp)"
-
 echo && echo ".......WELCOME TO 4ARCH Script......." && echo
 
 echo " >>> Running pacman-key steps before proceeding ..."
