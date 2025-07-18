@@ -3,8 +3,12 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
+ZSF="~/.config/ZORIGINAL_SYSTEM_FILES"
+
+WALLDIR="/home/archy/4arch/walls/Fantasy-Hongkong.png"
+
 echo
-echo " ... WELCOME TO 4ARCH Script ... "
+echo " ... WELCOME to 4ARCH Script ... "
 echo
 
 echo " >>> running PACMAN-KEY before proceeding >>> "
@@ -86,178 +90,120 @@ else
   echo
 fi
 
-read -p " --> copy over SYSTEM - FILES as backup ?"
-##################################################################
+echo
+read -p " -> backup ORIGINAL_SYSTEM_FILES as sudo ? (y/n) = " cop
+echo
+if [[ "$cop" = y ]]; then
+  echo
+  read -sp " ======> now enter PASS: " pas
 
-echo && read -p "============> Auto-Edit PACMAN.CONF ..? (y/n)  " pas
-if [[ "$pas" == y ]]; then
-  echo && echo "<<<<<<< PACMAN.CONF auto-edit INCOMING >>>>>>>" && echo
+  if [[ $pas = archydoes ]]; then
+    if [[ -d $ZSF ]]; then
+      echo
+      echo " >>> BACKED-UP FOLDER ALREADY EXISTS ..! so exiting <<< "
+      echo
+    else
+      echo
+      echo " >>> creating ZORIGINAL_SYSTEM_FILES folder ... "
+      echo
+      sudo mkdir -p $ZSF
+      echo
+      echo " >>> backing-up files now ... "
+      echo
+      sudo cp -r /etc/systemd/logind.conf $ZSF
+      sudo cp -r /etc/systemd/sleep.conf $ZSF
+      sudo cp -r /etc/mkinitcpio.conf $ZSF
+      sudo cp -r /etc/pacman.conf $ZSF
+      sudo chattr +i $ZSF
+      echo
+      echo " <<< BACKED-UP ORIGINAL_SYSTEM_FILES >>> "
+      echo
+    fi
+  else
+    echo
+    echo " ___ wrong pass dude :( ___ "
+    echo
+  fi
 
-  echo "Backing up the PACMAN CONF file..." && echo
-  sudo cp "$PACONF" "$PACBAK" || { echo "Backup failed. ENDING."; exit 190; }
-
-  awk '
-    $0 == "[options]" {
-      print
-      print "ILoveCandy"
-      print "VerbosePkgLists"
-      print "Color"
-      next
-    }
-
-    $0 == "[multilib]" {
-      in_multilib = 1
-      print
-      next
-    }
-
-    in_multilib && /^Include =/ {
-      print
-      print ""
-      print "[chaotic-aur]"
-      print "Include = /etc/pacman.d/chaotic-mirrorlist"
-      in_multilib = 0
-      next
-    }
-
-    { print }
-  ' "$PACONF" > "$PACTMP"
-
-  echo "Replacing pacman.conf with the modified version..."
-  sudo cp "$PACTMP" "$PACONF" && rm "$PACTMP" && echo
-  echo " <><><><><><> PACONF Edit Successful ..! <><><><><><>"
 else
-  echo && echo " ~~~~~~~~~~ PACMAN.CONF edit cancelled ~~~~~~~~~~ "
+  echo
+  echo " ___ skipped BACKUP of og system files ___ "
+  echo
 fi
 
-echo && echo "-=-=-=-==> Running YAY to install programs <<<<<< "
-echo && yay --noconfirm || { echo "YAY failed, check configuration ..! "; }
+echo
+read -p " -> run MKINITCPIO -P ..? (y/n) = " mas
+echo
+if [[ $mas = y ]]; then
+  echo
+  sudo mkinitcpio -P
+  echo
+else
+  echo
+  echo " ___ skipped MKINITCPIO -P ___ "
+  echo
+fi
 
-echo && echo "installing AUR-apps..."
+echo
+echo " >>> running YAY to update >>> "
+echo
+yay --noconfirm
+echo
+
+echo
+echo "installing AUR-apps..."
 $YS clipse-bin ttf-rubik-vf matugen-bin
 
-echo && echo "installing DEPENDENCIES..."
+echo
+echo "installing DEPENDENCIES..."
 $YS python-pillow ffmpegthumbnailer bibata-cursor-theme adw-gtk-theme
 $YS mcmojave-circle-icon-theme-git
 
-echo && echo "installing FONTS..."
+echo
+echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
 $YS noto-fonts-emoji ttf-jetbrains-mono-nerd
 
-echo && echo "installing HYPRLAND-stuff..."
+echo
+echo "installing HYPRLAND-stuff..."
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm grimblast
 $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 
-echo && echo "installing GUI-apps..."
+echo
+echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look qt6ct network-manager-applet nautilus
 
-echo && echo "installing CLI-apps..."
+echo
+echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty aria2
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl starship
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
 
-echo && xdg-user-dirs-update && mkdir -p ~/Pictures/Screenshots
+echo
+xdg-user-dirs-update
+echo
+mkdir -p ~/Pictures/Screenshots
+echo
 
-echo && echo " >>>> reached MATUGEN color generation area >>>> " && echo
-matugen image ~/4arch/walls/Fantasy-Hongkong.png -c ~/.config/matugen/init.toml
-echo "/home/archy/4arch/walls/Fantasy-Hongkong.png">"$HOME/.cache/last-wall.txt"
+echo " --> reached MATUGEN color generation area <-- "
+echo
+matugen image $WALLDIR -c ~/.config/matugen/init.toml
+echo
+echo $WALLDIR > "$HOME/.cache/last-wall.txt"
 
-echo && echo "enabling POWER-PROFILES-DAEMON..."
+echo
+echo "enabling POWER-PROFILES-DAEMON..."
 sudo systemctl enable --now power-profiles-daemon
+echo
 
-echo && echo "__________ Auto-Edit LOGIND.CONF _______? (y/n)  " las
-if [[ $las = y ]]; then
-  echo && read -p "--- --- LOGIND.CONF auto-edit INCOMING == == " && echo
-  echo "Backing up the LOGIND CONF file..." && echo
-  sudo cp "$LOGCONF" "$LOGBACK" || { echo "Backup failed. ENDING."; exit 200; }
-
-  awk '
-    /^\[Login\]/ {
-      print
-      print "HandlePowerKey=suspend-then-hibernate"
-      print "HandleLidSwitch=suspend-then-hibernate"
-      next
-    }
-    /^HandlePowerKey=/ || /^HandleLidSwitch=/ {
-      next
-    }
-    { print }
-  ' "$LOGCONF" > "$LOGTEMP"
-
-  echo "Replacing logind.conf with the modified version..."
-  sudo cp "$LOGTEMP" "$LOGCONF" && rm "$LOGTEMP" && echo
-  echo " <>_________<> LOGIND.CONF Edit Successful ..! ____--------<>"
-else
-  echo && echo " ........ LOGIND.CONF edit cancelled ~~~~~~~~~~ "
-fi
-
-echo && read -p "-------> Auto-Edit SLEEP.CONF .......? (y/n)  " sas
-if [[ $sas = y ]]; then
-  echo && echo "----...... SLEEP.CONF auto-edit INCOMING >>>>" && echo
-  echo "Backing up the SLEEP CONF file..." && echo
-  sudo cp "$SLEEPCONF" "$SLEEPBAKP" || { echo "Backup failed.."; exit 28; }
-
-  awk '
-    /^\[Sleep\]/ {
-      print
-      print "HibernateDelaySec=1800"
-      next
-    }
-    /^HibernateDelaySec=/ {
-      next
-    }
-    { print }
-  ' "$SLEEPCONF" > "$SLEEPTEMP"
-
-  echo "Replacing sleep.conf with the modified version..."
-  sudo cp "$SLEEPTEMP" "$SLEEPCONF" && rm "$SLEEPTEMP" && echo
-  echo " _________ SLEEP.CONF Edit Successful ..! ----____  "
-else
-  echo && echo " +++++ SLEEP.CONF edit cancelled <++++++ "
-fi
-
-echo && read -p " ~~~~---> Auto-Edit MKINITCONF ____? (y/n)  " mas
-if [[ $mas = y ]]; then
-  echo && echo "<====> MKINITCONF auto-edit INCOMING ._. "
-  echo && echo " ...Backing up the MKINITCONF file..." && echo
-  sudo cp "$MKINITCONF" "$MKINITBAKP" || { echo "Backup failed."; exit 63; }
-
-  awk '
-    BEGIN { changed = 0 }
-    /^\s*HOOKS=\(.*filesystems.*fsck.*\)/ {
-      line = $0
-      if (line ~ /resume/) {
-        print line
-      } else {
-        sub(/filesystems/, "filesystems resume", line)
-        print line
-        changed = 1
-      }
-      next
-    }
-    { print }
-    END { exit changed }
-  ' "$MKINITCONF" > "$MKINITTEMP"
-
-  if [[ $? -eq 1 ]]; then
-    echo "File modified, updating and running mkinitcpio -P linux..."
-    sudo cp "$MKINITTEMP" "$MKINITCONF"
-    echo && sudo mkinitcpio -P linux && echo
-    echo ":) all MKINIT went successful ..!" && echo
-  else
-    echo "No changes detected, skipping mkinitcpio."
-  fi
-
-  sudo rm "$MKINITTEMP"
-else
-  echo && echo "=***=> MKINITCONF edit cancelled ..__.."
-fi
-
-echo && read -p " 4ARCH Script Ended. REBOOT now ..? (y/n)  " nas
+read -p " ... 4ARCH Script Ended. REBOOT now ..? (y/n) = " nas
+echo
 if [[ $nas = y ]]; then
   sync && sync && sync && systemctl reboot
 else
-  echo && echo " Alrighty, Reboot cancelled. "
+  echo
+  echo " === Alrighty, Reboot manually === "
+  echo
 fi
