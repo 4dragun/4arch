@@ -25,7 +25,6 @@ echo
 read -p " -> install YAY - Yet Another AUR Helper ? (y/n) = " yas
 echo
 read -p " -> add CHAOTIC-AUR repo ? (y/n) = " cas
-echo
 
 if [[ "$itd" = y ]]; then
   echo
@@ -42,7 +41,6 @@ if [[ "$itd" = y ]]; then
 else
   echo
   echo " ___ skipped DOTFILES, ICONS, THEMES setup ___ "
-  echo
 fi
 
 if [[ "$yas" = y ]]; then
@@ -60,7 +58,6 @@ if [[ "$yas" = y ]]; then
 else
   echo
   echo " ___ skipped YAY setup ___ "
-  echo
 fi
 
 if [[ "$cas" = y ]]; then
@@ -82,7 +79,6 @@ else
 fi
 
 read -p " -> shit went down ? REBOOT now ? (y/n) = " ras
-echo
 if [[ "$ras" = y ]]; then
   echo
   sync && sync && sync && systemctl reboot
@@ -93,7 +89,6 @@ else
 fi
 
 read -p " -> backup ORIGINAL_SYSTEM_FILES as sudo ? (y/n) = " cop
-echo
 if [[ "$cop" = y ]]; then
   echo
   read -p " ======> now enter PASS: " pas
@@ -131,14 +126,15 @@ else
 fi
 
 read -p " -> replace SYSTEM_FILES with custom ones ? (y/n) = " sas
-echo
 if [[ "$sas" = y ]]; then
   if [[ -d "$ZSF" ]]; then
+    echo
     echo " --- backup folder found --- "
     echo " --- proceeding --- "
     echo
     sudo cp -r 4arch/confs2/. /etc
   else
+    echo
     echo " --- backup folder was not found --- "
     echo " --- cannot procede --- "
     echo
@@ -150,7 +146,6 @@ else
 fi
 
 read -p " -> run MKINITCPIO -P ? (y/n) = " mas
-echo
 if [[ "$mas" = y ]]; then
   echo
   sudo mkinitcpio -P
@@ -192,7 +187,7 @@ $YS git-credential-manager-bin yazi wl-clipboard brightnessctl starship
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
 echo
 
-xdg-user-dirs-update
+xdg-user-dirs-update || { echo; echo " xdg-user-dirs-update failed"; }
 echo
 mkdir -p ~/Pictures/Screenshots
 echo
