@@ -14,7 +14,7 @@
   border: 1px solid var(--noti-border-color);
   padding: 5px;
   background: var(--noti-bg);
-  margin: -1px -10px;
+  margin: 7px 1px;
 }
 
 .notification-group {
@@ -24,7 +24,7 @@
 .control-center {
   border: 1px solid var(--noti-border-color);
   padding: 17px;
-  margin: 5px 1px;
+  margin: 13px;
 }
 
 .image {
