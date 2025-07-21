@@ -200,7 +200,10 @@ echo "$WALLDIR" > "$HOME/.cache/last-wall.txt"
 echo
 
 echo " ... enabling POWER-PROFILES-DAEMON ... "
-sudo systemctl enable --now power-profiles-daemon
+sudo systemctl enable power-profiles-daemon
+echo
+echo " ... enabling SDDM - Display Manager ... "
+sudo systemctl enable sddm
 echo
 
 read -p " ... 4ARCH Script Ended. REBOOT now ? (y/n) = " nas
