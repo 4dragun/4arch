@@ -179,7 +179,7 @@ echo
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
-$YS waybar nwg-look qt6ct network-manager-applet nautilus
+$YS waybar nwg-look kvantum network-manager-applet nautilus
 echo
 echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty aria2
