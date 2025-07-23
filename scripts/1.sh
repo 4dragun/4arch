@@ -162,7 +162,7 @@ yay --noconfirm
 echo
 
 echo "installing AUR-apps..."
-$YS clipse-bin ttf-rubik-vf matugen-bin
+$YS clipse-bin matugen-bin
 echo
 echo "installing DEPENDENCIES..."
 $YS python-pillow ffmpegthumbnailer bibata-cursor-theme adw-gtk-theme
