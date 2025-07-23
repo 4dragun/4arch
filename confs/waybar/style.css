@@ -48,13 +48,13 @@ button {
   /* font-size: 15pt; */
 }
 #workspaces {
-  padding: 2px 2px;
+  padding: 2px;
 }
 #workspaces button {
   color: @outline;
   background: @surface_bright;
   border-radius: 999pt;
-  margin: 2px;
+  margin: 1px 2px;
   padding: 0px 5px;
 }
 #workspaces button.active {
