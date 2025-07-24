@@ -4,19 +4,17 @@
   "height": 0,
   "spacing": 5,
   "modules-left": [
-        "hyprland/window",
-        "niri/window"
+    "hyprland/window",
+    "niri/window"
   ],
   "modules-center": [
-   "power-profiles-daemon",
-   "backlight",
-   "backlight/slider", 
-   "hyprland/workspaces",
-   //"niri/workspaces",
-    
-    
+    "power-profiles-daemon",
+    "backlight",
+    "backlight/slider", 
+    "hyprland/workspaces",
+    //"niri/workspaces",    
     "clock",
-    "pulseaudio",
+    "pulseaudio"
   ],
   "modules-right": [
     "privacy",
@@ -49,11 +47,6 @@
       "8": [],
       "9": [],
       "10": []
-    },
-    "format-icons": {
-      //"active": "" 
-      //"empty": "",
-      //"default": ""
     }
   },
   "hyprland/window": {
@@ -61,8 +54,7 @@
     "separate-outputs": true,
     "max-length": 64,
     "rewrite": {
-      "": "hyprland",
-      "kitty": "kitty"
+      "": "hyprland"
     }
   },
   "niri/workspaces": {
@@ -80,23 +72,22 @@
     "icon-size": 11
   },
   "backlight": {
-    "format": "  {percent}",
-    "format-icons": ["󰽤", "", "", "", "", "", "", "", "", ""]
+    "format": "  {percent}"
   },
   "pulseaudio": {
-    "format-bluetooth": "{icon} {volume}  {format_source}",
-    "format-bluetooth-muted": "{icon}    {format_source}",
+    "format-bluetooth": "{icon}󰂯  {volume}  󰇘 {format_source}",
+    "format-bluetooth-muted": "{icon}󰂯   󰇘 {format_source}",
     "format": "{icon}{volume}  󰇘 {format_source}",
-    "format-muted": " {format_source}",
+    "format-muted": "  󰇘 {format_source}",
     "format-source": " {volume}",
-    "format-source-muted": "",
+    "format-source-muted": " ",
     "format-icons": {
-      "headphone": "  ",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
+      "headphone": "󰋋 ",
+      "hands-free": "󰋎 ",
+      "headset": "󰋎 ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
       "default": [" ", "  ", "   "]
     },
     "on-click": "pavucontrol"
