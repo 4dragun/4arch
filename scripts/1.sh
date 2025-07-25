@@ -169,8 +169,8 @@ $YS python-pillow ffmpegthumbnailer bibata-cursor-theme adw-gtk-theme
 $YS mcmojave-circle-icon-theme-git
 echo
 echo "installing FONTS..."
-$YS noto-fonts noto-fonts-cjk noto-fonts-extra ttf-font-awesome
-$YS noto-fonts-emoji ttf-jetbrains-mono-nerd
+$YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
+$YS ttf-jetbrains-mono-nerd
 echo
 echo "installing HYPRLAND-stuff..."
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm grimblast
