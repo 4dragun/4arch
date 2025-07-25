@@ -3,9 +3,9 @@
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
-ZSF="~/.config/ZORIGINAL_SYSTEM_FILES"
+ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
-WALLDIR="/home/archy/4arch/walls/Fantasy-Hongkong.png"
+WALLDIR="$HOME/4arch/walls/Fantasy-Hongkong.png"
 
 echo
 echo " ... WELCOME to 4ARCH Script ... "
