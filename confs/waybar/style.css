@@ -21,7 +21,7 @@ window#waybar {
 #custom-notification {
   background: @surface_container;
   border-radius: 13px;
-  padding: 0 1px;
+  padding: 0 10px;
   margin: 4px 2px;
   color: @tertiary_fixed;
 }
