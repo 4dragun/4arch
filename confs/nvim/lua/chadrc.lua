@@ -19,11 +19,6 @@ M.nvdash = { load_on_startup = true }
 M.ui = {
   tabufline = {
     lazyload = false
-  },
-
-  statusline = {
-    theme = "minimal",
-    separator_style = "round"
   }
 }
 
