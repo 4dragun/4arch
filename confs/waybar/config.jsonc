@@ -92,24 +92,6 @@
     },
     "on-click": "pavucontrol"
   },
-  "network": {
-    "format-wifi": "  {essid}",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "  Disconnected",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    "max-length": 10
-  },
-  "bluetooth": {
-    "on-click": "blueman-manager",
-    "format": "󰂲 {status}",
-    "format-on": "󰂳 {status}",
-    "format-connected": "󰂰 {status}",
-    "format-disabled": " error",
-    "tooltip-format": "{device_alias}({device_battery_percentage}%)",
-    "max-length": 10
-  },
   "tray": {
     "spacing": 7,
     "icon-size": 16,
@@ -134,14 +116,14 @@
   "custom/notification": {
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
