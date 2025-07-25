@@ -3,7 +3,7 @@
 * {
   font-family: Adwaita Sans, JetBrainsMono Nerd Font;
   font-weight: normal;
-  font-size: 11pt;
+  font-size: 15px;
 }
 
 window#waybar {
@@ -14,19 +14,15 @@ window#waybar {
 #workspaces,
 #window,
 #privacy,
-#backlight,
-#backlight-slider,
 #pulseaudio,
-#network,
-#bluetooth,
 #tray,
 #battery,
 #clock,
 #custom-notification {
   background: @surface_container;
-  border-radius: 11pt;
-  padding: 0px 10px;
-  margin: 4px 0px;
+  border-radius: 13px;
+  padding: 0 1px;
+  margin: 4px 2px;
   color: @tertiary_fixed;
 }
 
@@ -51,15 +47,14 @@ window#waybar {
 #workspaces button {
   color: @primary_fixed;
   background: @surface_bright;
-  border-radius: 999pt;
+  border-radius: 999px;
   margin: 1px 2px;
-  padding: 0px 5px;
+  padding: 0 5px;
 }
 
 #workspaces button.active {
   color: @surface;
   background: @primary;
-  border-radius: 999pt;
 }
 
 #workspaces button.empty {
@@ -70,7 +65,6 @@ window#waybar {
 #workspaces button:hover {
   background: @source_color;
   color: @surface;
-  border-radius: 10pt;
 }
 
 #window {
@@ -117,12 +111,24 @@ window#waybar {
 #custom-notification {
   background: none;
   margin: 0 13px 0 0;
-  font-size: 11pt;
 }
 
-#backlight-slider {
-  min-width: 100pt;
-}
+/* check with main border-radius for consistency */
+#backlight {                                   /**/
+  border-radius: 13px 0 0 13px;                /**/
+  background: @surface_container;              /**/
+  margin: 4px 0 4px 2px;                       /**/
+  padding: 0 0 0 10px;                         /**/
+}                                              /**/
+                                               /**/
+#backlight-slider {                            /**/
+  background: @surface_container;              /**/
+  min-width: 130px;                            /**/
+  margin: 4px 2px 4px 0;                       /**/
+  border-radius: 0 13px 13px 0;                /**/
+  padding: 0 10px;                             /**/
+}                                              /**/
+/* check with main border-radius for consistency */
 
 #backlight-slider slider {
   background: none;
@@ -131,11 +137,11 @@ window#waybar {
 }
 
 #backlight-slider trough {
-  border-radius: 999pt;
+  border-radius: 999px;
 }
 
 #backlight-slider highlight {
   background: @primary;
-  min-height: 10pt;
-  border-radius: 999pt;
+  min-height: 13px;
+  border-radius: 999px;
 }

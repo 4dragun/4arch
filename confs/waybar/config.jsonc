@@ -2,17 +2,17 @@
   "layer": "bottom",
   "position": "top",
   "height": 0,
-  "spacing": 5,
+  "spacing": 0,
   "modules-left": [
-    "hyprland/window",
-    "niri/window"
+    // "niri/window",
+    "hyprland/window"
   ],
   "modules-center": [
     "power-profiles-daemon",
     "backlight",
     "backlight/slider", 
+    // "niri/workspaces",    
     "hyprland/workspaces",
-    //"niri/workspaces",    
     "clock",
     "pulseaudio"
   ],
@@ -30,7 +30,7 @@
     }
   },
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "{name}",
     "on-click": "activate",
     "sort-by-number": true,
     "all-outputs": true,
@@ -52,7 +52,6 @@
   "hyprland/window": {
     "format": "{class}",
     "separate-outputs": true,
-    "max-length": 64,
     "rewrite": {
       "": "hyprland"
     }
@@ -93,7 +92,7 @@
     "on-click": "pavucontrol"
   },
   "tray": {
-    "spacing": 7,
+    "spacing": 13,
     "icon-size": 16,
     "show-passive-items": true
   },
