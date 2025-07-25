@@ -36,6 +36,8 @@ if [[ "$itd" = y ]]; then
   echo
   git clone https://github.com/NvChad/starter ~/.config/nvim
   echo
+  cp -r ~/.config/nvim ~/.config/ORIGINAL_NVCHAD
+  echo
   cp -r ~/4arch/confs/. ~/.config
   echo
 else
