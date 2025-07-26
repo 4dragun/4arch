@@ -18,8 +18,7 @@ $cmd_duration\
 """
 
 add_newline = false
-
-palette = 'colors'
+palette     = 'colors'
 
 [palettes.colors]
 color1 = '{{colors.primary.default.hex}}'
@@ -30,34 +29,34 @@ color5 = '{{colors.source_color.default.hex}}'
 
 [username]
 show_always = true
-style_user = "bold fg:color3 bg:color1"
-style_root = "bg:#9A348E"
-format = '[$user󰧞linux]($style)'
-disabled = false
+style_user  = "bold fg:color3 bg:color1"
+style_root  = "bg:#9A348E"
+format      = '[$user󰧞linux]($style)'
+disabled    = false
 
 [directory]
-style = "bold fg:color3 bg:color4"
-format = "[ $path ]($style)"
+style             = "bold fg:color3 bg:color4"
+format            = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
 [directory.substitutions]
-"~" = " "
+"~"         = " "
 "Documents" = "󰈙 "
 "Downloads" = " "
-"Music" = " "
-"Pictures" = " "
+"Music"     = " "
+"Pictures"  = " "
 
 [git_branch]
 symbol = ""
-style = "bold color5"
+style  = "bold color5"
 format = '[ $symbol $branch]($style)'
 
 [git_status]
-style = "bold fg:#FF9700"
+style  = "bold fg:#FF9700"
 format = '[$all_status$ahead_behind]($style)'
 
 [cmd_duration]
 min_time = 0
-style = "bold fg:color3 bg:color2"
-format = '[$duration]($style)'
+style    = "bold fg:color3 bg:color2"
+format   = '[$duration]($style)'
