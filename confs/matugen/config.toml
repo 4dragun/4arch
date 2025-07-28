@@ -43,9 +43,9 @@ output_path = '../gtk-3.0/gtk.css'
 input_path = './templates/gtk-fix.css'
 output_path = '../gtk-4.0/gtk.css'
 
-# [templates.qtct]
-# input_path = './templates/Matugen.colors'
-# output_path = '~/.local/share/color-schemes/Matugen.colors'
+[templates.qtct]
+input_path = './templates/qt.colors'
+output_path = '~/.local/share/color-schemes/Matugen.colors'
 
 [templates.swaync]
 input_path = './templates/swaync-colors.css'
