@@ -70,7 +70,7 @@ window#waybar {
 
 #window {
   background: none;
-  margin: 0 0 0 13px;
+  margin: 0 0 0 23px;
 }
 
 #privacy {
@@ -111,7 +111,7 @@ window#waybar {
 
 #custom-notification {
   background: none;
-  margin: 0 13px 0 0;
+  margin: 0 23px 0 0;
 }
 
 /* check with main values for consistency ⏬ */
