@@ -1,5 +1,5 @@
 @import 'colors.css';
 
-headerbar {
-  padding: 7px 10px;
+window > * {
+ padding: 10px;
 }
