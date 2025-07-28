@@ -4,6 +4,7 @@
   font-family: Adwaita Sans, JetBrainsMono Nerd Font;
   font-weight: normal;
   font-size: 15px;
+  padding: 0;
 }
 
 window#waybar {
@@ -113,22 +114,22 @@ window#waybar {
   margin: 0 13px 0 0;
 }
 
-/* check with main border-radius for consistency */
-#backlight {                                   /**/
-  border-radius: 13px 0 0 13px;                /**/
-  background: @surface_container;              /**/
-  margin: 4px 0 4px 2px;                       /**/
-  padding: 0 0 0 10px;                         /**/
-}                                              /**/
-                                               /**/
-#backlight-slider {                            /**/
-  background: @surface_container;              /**/
-  min-width: 130px;                            /**/
-  margin: 4px 2px 4px 0;                       /**/
-  border-radius: 0 13px 13px 0;                /**/
-  padding: 0 10px;                             /**/
-}                                              /**/
-/* check with main border-radius for consistency */
+/* check with main values for consistency ⏬ */
+#backlight {
+  border-radius: 13px 0 0 13px;
+  background: @surface_container;
+  margin: 4px 0 4px 2px;
+  padding: 0 0 0 10px;
+}
+
+#backlight-slider {
+  background: @surface_container;
+  min-width: 130px;
+  margin: 4px 2px 4px 0;
+  border-radius: 0 13px 13px 0;
+  padding: 0 10px;
+}
+/* check with main values for consistency ⏫ */
 
 #backlight-slider slider {
   background: none;
