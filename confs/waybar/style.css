@@ -24,7 +24,7 @@ window#waybar {
   border-radius: 13px;
   padding: 0 10px;
   margin: 4px 2px;
-  color: @tertiary_fixed;
+  color: @primary_fixed;
 }
 
 #power-profiles-daemon {
