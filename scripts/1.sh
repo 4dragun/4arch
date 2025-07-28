@@ -5,7 +5,7 @@ YS="yay -S --needed --noconfirm"
 
 ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
-WALLDIR="$HOME/4arch/walls/Fantasy-Hongkong.png"
+WALLDIR="$HOME/4arch/walls/end42.png"
 
 echo
 echo " ... WELCOME to 4ARCH Script ... "
@@ -176,7 +176,8 @@ $YS ttf-jetbrains-mono-nerd
 echo
 echo "installing HYPRLAND-stuff..."
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm grimblast
-$YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
+$YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper swappy
+$YS qt6ct-kde breeze
 echo
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
