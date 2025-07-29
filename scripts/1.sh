@@ -201,6 +201,7 @@ matugen image "$WALLDIR" -c ~/.config/matugen/init.toml
 echo
 echo "$WALLDIR" > "$HOME/.cache/last-wall.txt"
 echo
+papirus-folders -C cyan
 
 echo " ... enabling POWER-PROFILES-DAEMON ... "
 sudo systemctl enable power-profiles-daemon
