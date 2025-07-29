@@ -168,7 +168,7 @@ $YS clipse-bin matugen-bin
 echo
 echo "installing DEPENDENCIES..."
 $YS python-pillow ffmpegthumbnailer bibata-cursor-theme adw-gtk-theme
-$YS mcmojave-circle-icon-theme-git
+$YS papirus-icon-theme papirus-folders
 echo
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
@@ -182,7 +182,7 @@ echo
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv loupe rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
-$YS waybar nwg-look kvantum network-manager-applet nautilus
+$YS waybar nwg-look kvantum network-manager-applet nemo
 echo
 echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty aria2
