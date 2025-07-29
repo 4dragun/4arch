@@ -190,7 +190,7 @@ $YS git-credential-manager-bin yazi wl-clipboard brightnessctl starship
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
 echo
 
-xdg-user-dirs-update || { echo; echo " xdg-user-dirs-update failed"; }
+xdg-user-dirs-update
 echo
 mkdir -p ~/Pictures/Screenshots
 echo
