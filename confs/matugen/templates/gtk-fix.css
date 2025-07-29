@@ -1,5 +1,3 @@
 @import 'colors.css';
 
-window > * {
- padding: 10px;
-}
+headerbar, window:not(.csd) > * { padding: 10px; }
