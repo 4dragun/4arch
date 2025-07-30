@@ -167,7 +167,8 @@ echo "installing AUR-apps..."
 $YS clipse-bin matugen-bin
 echo
 echo "installing DEPENDENCIES..."
-$YS python-pillow ffmpegthumbnailer bibata-cursor-theme adw-gtk-theme
+# $YS python-pillow ffmpegthumbnailer
+$YS bibata-cursor-theme adw-gtk-theme
 $YS papirus-icon-theme papirus-folders
 echo
 echo "installing FONTS..."
@@ -185,7 +186,7 @@ $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look kvantum network-manager-applet nemo
 echo
 echo "installing CLI-apps..."
-$YS fzf lsd bat pacseek fastfetch htop btop udiskie ghostty aria2
+$YS fzf lsd bat pacseek fastfetch htop btop udiskie kitty aria2
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl starship
 $YS lua-language-server power-profiles-daemon xdg-user-dirs
 echo

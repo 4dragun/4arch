@@ -5,9 +5,10 @@ version_check = true
 command = "hyprctl"
 arguments = ["hyprpaper reload ,"]
 
-[templates.ghostty]
-input_path = "./templates/ghostty-theme"
-output_path = "../MATUGEN_OUTPUTS/matughostty"
+[templates.kitty]
+input_path = "./templates/kitty-colors.conf"
+output_path = "../kitty/themes/matukitty.conf"
+post_hook = "kitty +kitten themes --reload-in=all matukitty"
 
 [templates.starship]
 input_path = './templates/starship-colors.toml'

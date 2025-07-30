@@ -1,8 +1,3 @@
-/*
-* GTK Colors
-* Generated with Matugen
-*/
-
 @define-color accent_color {{colors.primary_fixed_dim.default.hex}};
 @define-color accent_fg_color {{colors.on_primary_fixed.default.hex}};
 @define-color accent_bg_color {{colors.primary_fixed_dim.default.hex}};
@@ -20,4 +15,3 @@
 @define-color sidebar_fg_color @window_fg_color;
 @define-color sidebar_border_color @window_bg_color;
 @define-color sidebar_backdrop_color @window_bg_color;
-
