@@ -181,7 +181,7 @@ $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper swappy
 $YS qt6ct-kde breeze
 echo
 echo "installing GUI-apps..."
-$YS sddm brave emote pavucontrol telegram-desktop mpv loupe rofi-wayland
+$YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
 $YS waybar nwg-look kvantum network-manager-applet nemo
 echo
