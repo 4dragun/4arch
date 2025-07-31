@@ -8,4 +8,4 @@ I="$HOME/4arch/azzets/4.png"
 
 wl-copy -n $A $B $C || { exit; }
 
-notify-send "ARCHY" "done" -i "$I"
+notify-send "Archy Linux" "finished" -i "$I"
