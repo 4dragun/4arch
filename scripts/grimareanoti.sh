@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-spic="$HOME/Pictures/Screenshots/$(date +'%d-%m-%Y_%H:%M:%S_grimarea.png')"
+spic="$HOME/Pictures/Screenshots/$(date +'%d.%m.%Y_%H:%M:%S-grimarea.png')"
 
 mkdir -p ~/Pictures/Screenshots
 
