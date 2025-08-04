@@ -20,14 +20,4 @@ alias gf    "~/4arch/scripts/gf.sh"
 alias s     "~/4arch/scripts/scrpt.sh"
 alias clear "command clear; commandline -f clear-screen"
 
-function yay
-  echo
-  if command yay $argv
-    echo
-    echo " --> handling the dumb kde thing 💀💀💀"
-    echo
-    XDG_MENU_PREFIX=arch- kbuildsycoca6 --noincremental
-  end
-end
-
 starship init fish | source
