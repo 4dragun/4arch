@@ -6,8 +6,8 @@
 local M = {}
 
 M.base46 = {
-	theme = "carbonfox",
-  transparency = true,
+	theme = "hiberbee",
+  -- transparency = true,
 
 	hl_override = {
 		Comment = { italic = true },
@@ -21,5 +21,15 @@ M.ui = {
     lazyload = false
   }
 }
+
+vim.o.guifont = "JetBrainsMono Nerd Font:h13:b,i"
+
+vim.g.transparency = 0           -- Your desired content transparency
+vim.g.neovide_padding_top = 30
+vim.g.neovide_padding_bottom = 30
+vim.g.neovide_padding_right = 30
+vim.g.neovide_padding_left = 30
+
+vim.g.neovide_cursor_trail_size = 0.3
 
 return M

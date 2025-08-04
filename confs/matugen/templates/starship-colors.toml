@@ -59,4 +59,4 @@ format = '[$all_status$ahead_behind]($style)'
 [cmd_duration]
 min_time = 0
 style    = "bold fg:color3 bg:color2"
-format   = '[$duration]($style)'
+format   = '[󰔚 $duration]($style)'
