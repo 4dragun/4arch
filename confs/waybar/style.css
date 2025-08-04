@@ -118,6 +118,7 @@ window#waybar {
 #backlight {
   border-radius: 13px 0 0 13px;
   background: @surface_container;
+  color: @primary_fixed;
   margin: 4px 0 4px 2px;
   padding: 0 0 0 10px;
 }
