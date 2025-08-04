@@ -178,7 +178,7 @@ echo
 echo "installing HYPRLAND-stuff..."
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm grimblast
 $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper swappy
-$YS qt6ct-kde breeze
+$YS qt6ct kvantum
 echo
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland

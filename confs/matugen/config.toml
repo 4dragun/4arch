@@ -44,10 +44,6 @@ output_path = '../gtk-3.0/gtk.css'
 input_path = './templates/gtk-fix.css'
 output_path = '../gtk-4.0/gtk.css'
 
-[templates.qtct]
-input_path = './templates/qt.colors'
-output_path = '~/.local/share/color-schemes/Matugen.colors'
-
 [templates.swaync]
 input_path = './templates/swaync-colors.css'
 output_path = '../MATUGEN_OUTPUTS/matuswaync.css'
@@ -60,6 +56,14 @@ output_path = '../MATUGEN_OUTPUTS/maturofimain.rasi'
 [templates.rofiwal]
 input_path = './templates/rofiwal-colors.rasi'
 output_path = '../MATUGEN_OUTPUTS/maturofiwal.rasi'
+
+[templates.kvantum_kvconfig]
+input_path = './templates/kvantum-colors.kvconfig'
+output_path = '~/.config/Kvantum/matukvantum/matukvantum.kvconfig'
+
+[templates.kvantum_svg]
+input_path = './templates/kvantum-colors.svg'
+output_path = '~/.config/Kvantum/matukvantum/matukvantum.svg'
 
 ### ### ### FIXES_MAN ### ### ###
 
