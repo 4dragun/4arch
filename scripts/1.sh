@@ -183,7 +183,7 @@ echo
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple
-$YS waybar nwg-look kvantum network-manager-applet nemo
+$YS waybar nwg-look kvantum network-manager-applet nemo neovide
 echo
 echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie kitty aria2
