@@ -19,7 +19,7 @@ if [ "$SS" = "inactive" ]; then
   echo
   notify-send -i "$PA" "$B" "service has been activated"
   echo
-  uwsm app -- blueman-applet
+  blueman-applet
   echo
 fi
 

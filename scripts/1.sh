@@ -175,7 +175,7 @@ $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
 $YS ttf-jetbrains-mono-nerd
 echo
 echo "installing HYPRLAND-stuff..."
-$YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde uwsm grimblast
+$YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast
 $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 echo
 echo "installing GUI-apps..."

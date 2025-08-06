@@ -71,7 +71,7 @@ post_hook = 'killall emote'
 [templates.filepickerfixman]
 input_path = '/dev/null'
 output_path = '/dev/null'
-post_hook = 'systemctl --user restart xdg-desktop-portal-gtk'
+post_hook = 'systemctl --user restart plasma-xdg-desktop-portal-kde.service'
 
 [templates.hyprpolkitfixman]
 input_path = '/dev/null'

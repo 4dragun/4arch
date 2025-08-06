@@ -4,5 +4,5 @@ spic="$HOME/Pictures/Screenshots/$(date +'%d.%m.%Y_%H:%M:%S-grimscreen.png')"
 
 mkdir -p ~/Pictures/Screenshots
 
-uwsm app -- grimblast save screen "$spic"
+grimblast save screen "$spic"
 notify-send -i "$spic" "Screenshot Saved" "$spic"
