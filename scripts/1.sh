@@ -168,7 +168,8 @@ $YS clipse-bin matugen-bin
 echo
 echo "installing DEPENDENCIES..."
 $YS bibata-cursor-theme adw-gtk-theme darkly-qt6-git
-$YS lua-language-server papirus-icon-theme papirus-folders
+$YS papirus-icon-theme papirus-folders
+$YS lua-language-server archlinux-xdg-menu
 echo
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
@@ -193,6 +194,8 @@ echo
 xdg-user-dirs-update
 echo
 mkdir -p ~/Pictures/Screenshots
+echo
+kbuildsycoca6
 echo
 
 echo " --> reached MATUGEN color generation area <-- "
