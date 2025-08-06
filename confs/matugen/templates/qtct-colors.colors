@@ -20,10 +20,10 @@ IntensityEffect=0
 
 [Colors:Button]
 BackgroundAlternate={{colors.surface_container_low.default.hex}}
-BackgroundNormal={{colors.surface.default.hex}}
-DecorationFocus={{colors.on_secondary_fixed_variant.default.hex}}
-DecorationHover={{colors.on_secondary_fixed_variant.default.hex}}
-ForegroundActive={{colors.on_secondary_fixed_variant.default.hex}}
+BackgroundNormal={{colors.surface_container_high.default.hex}}
+DecorationFocus={{colors.primary.default.hex}}
+DecorationHover={{colors.primary.default.hex}}
+ForegroundActive={{colors.primary.default.hex}}
 ForegroundInactive={{colors.on_surface_variant.default.hex}}
 ForegroundLink={{colors.secondary.default.hex}}
 ForegroundNegative={{colors.error.default.hex}}
@@ -35,9 +35,9 @@ ForegroundVisited={{colors.on_secondary_container.default.hex}}
 [Colors:Complementary]
 BackgroundAlternate={{colors.surface_container_low.default.hex}}
 BackgroundNormal={{colors.surface.default.hex}}
-DecorationFocus={{colors.on_secondary_fixed_variant.default.hex}}
-DecorationHover={{colors.on_secondary_fixed_variant.default.hex}}
-ForegroundActive={{colors.on_secondary_fixed_variant.default.hex}}
+DecorationFocus={{colors.primary.default.hex}}
+DecorationHover={{colors.primary.default.hex}}
+ForegroundActive={{colors.primary.default.hex}}
 ForegroundInactive={{colors.on_surface_variant.default.hex}}
 ForegroundLink={{colors.secondary.default.hex}}
 ForegroundNegative={{colors.error.default.hex}}
@@ -48,10 +48,10 @@ ForegroundVisited={{colors.on_secondary_container.default.hex}}
 
 [Colors:Header]
 BackgroundAlternate={{colors.surface.default.hex}}
-BackgroundNormal={{colors.surface.default.hex}}
-DecorationFocus={{colors.on_secondary_fixed_variant.default.hex}}
-DecorationHover={{colors.on_secondary_fixed_variant.default.hex}}
-ForegroundActive={{colors.on_secondary_fixed_variant.default.hex}}
+BackgroundNormal={{colors.surface_container.default.hex}}
+DecorationFocus={{colors.primary.default.hex}}
+DecorationHover={{colors.primary.default.hex}}
+ForegroundActive={{colors.primary.default.hex}}
 ForegroundInactive={{colors.on_surface_variant.default.hex}}
 ForegroundLink={{colors.secondary.default.hex}}
 ForegroundNegative={{colors.error.default.hex}}
@@ -63,9 +63,9 @@ ForegroundVisited={{colors.on_secondary_container.default.hex}}
 [Colors:Header][Inactive]
 BackgroundAlternate={{colors.surface_container.default.hex}}
 BackgroundNormal={{colors.surface.default.hex}}
-DecorationFocus={{colors.on_secondary_fixed_variant.default.hex}}
-DecorationHover={{colors.on_secondary_fixed_variant.default.hex}}
-ForegroundActive={{colors.on_secondary_fixed_variant.default.hex}}
+DecorationFocus={{colors.primary.default.hex}}
+DecorationHover={{colors.primary.default.hex}}
+ForegroundActive={{colors.primary.default.hex}}
 ForegroundInactive={{colors.on_surface_variant.default.hex}}
 ForegroundLink={{colors.secondary.default.hex}}
 ForegroundNegative={{colors.error.default.hex}}
@@ -76,24 +76,24 @@ ForegroundVisited={{colors.on_secondary_container.default.hex}}
 
 [Colors:Selection]
 BackgroundAlternate={{colors.surface_container_low.default.hex}}
-DecorationFocus={{colors.on_secondary_fixed_variant.default.hex}}
-DecorationHover={{colors.on_secondary_fixed_variant.default.hex}}
-BackgroundNormal={{colors.on_secondary_fixed_variant.default.hex}}
-ForegroundActive={{colors.primary.default.hex}}
+BackgroundNormal={{colors.primary.default.hex}}
+DecorationFocus={{colors.primary.default.hex}}
+DecorationHover={{colors.primary.default.hex}}
+ForegroundActive={{colors.on_primary.default.hex}}
 ForegroundInactive={{colors.on_surface_variant.default.hex}}
 ForegroundLink={{colors.secondary_fixed.default.hex}}
 ForegroundNegative={{colors.error_container.default.hex}}
 ForegroundNeutral={{colors.tertiary_fixed_dim.default.hex}}
-ForegroundNormal={{colors.primary.default.hex}}
+ForegroundNormal={{colors.on_primary.default.hex}}
 ForegroundPositive={{colors.tertiary_container.default.hex}}
 ForegroundVisited={{colors.on_secondary_container.default.hex}}
 
 [Colors:Tooltip]
 BackgroundAlternate={{colors.surface.default.hex}}
 BackgroundNormal={{colors.surface_container.default.hex}}
-DecorationFocus={{colors.on_secondary_fixed_variant.default.hex}}
-DecorationHover={{colors.on_secondary_fixed_variant.default.hex}}
-ForegroundActive={{colors.on_secondary_fixed_variant.default.hex}}
+DecorationFocus={{colors.primary.default.hex}}
+DecorationHover={{colors.primary.default.hex}}
+ForegroundActive={{colors.primary.default.hex}}
 ForegroundInactive={{colors.on_surface_variant.default.hex}}
 ForegroundLink={{colors.secondary.default.hex}}
 ForegroundNegative={{colors.error.default.hex}}
@@ -103,11 +103,11 @@ ForegroundPositive={{colors.tertiary_fixed.default.hex}}
 ForegroundVisited={{colors.on_secondary_container.default.hex}}
 
 [Colors:View]
-BackgroundAlternate={{colors.surface.default.hex}}
+BackgroundAlternate={{colors.surface_container.default.hex}}
 BackgroundNormal={{colors.background.default.hex}}
 DecorationFocus={{colors.on_primary_container.default.hex}}
 DecorationHover={{colors.on_primary.default.hex}}
-ForegroundActive={{colors.on_secondary_fixed_variant.default.hex}}
+ForegroundActive={{colors.primary.default.hex}}
 ForegroundInactive={{colors.on_surface_variant.default.hex}}
 ForegroundLink={{colors.secondary.default.hex}}
 ForegroundNegative={{colors.error.default.hex}}
@@ -118,10 +118,10 @@ ForegroundVisited={{colors.on_secondary_container.default.hex}}
 
 [Colors:Window]
 BackgroundAlternate={{colors.primary_container.default.hex}}
-BackgroundNormal={{colors.surface.default.hex}}
-DecorationFocus={{colors.on_secondary_fixed_variant.default.hex}}
-DecorationHover={{colors.on_secondary_fixed_variant.default.hex}}
-ForegroundActive={{colors.on_secondary_fixed_variant.default.hex}}
+BackgroundNormal={{colors.surface_container.default.hex}}
+DecorationFocus={{colors.primary.default.hex}}
+DecorationHover={{colors.primary.default.hex}}
+ForegroundActive={{colors.primary.default.hex}}
 ForegroundInactive={{colors.on_surface_variant.default.hex}}
 ForegroundLink={{colors.secondary.default.hex}}
 ForegroundNegative={{colors.error.default.hex}}
@@ -131,11 +131,11 @@ ForegroundPositive={{colors.tertiary_fixed.default.hex}}
 ForegroundVisited={{colors.on_secondary_container.default.hex}}
 
 [General]
-ColorScheme=Matugen
-Name=Matugen
+ColorScheme=MatuQTCT
+Name=MatuQTCT
 
 [Appearance]
-color_scheme=Matugen
+color_scheme=MatuQTCT
 
 [KDE]
 contrast=4
@@ -147,4 +147,3 @@ activeForeground={{colors.on_primary_container.default.hex}}
 inactiveBackground={{colors.surface.default.hex}}
 inactiveBlend={{colors.on_surface_variant.default.hex}}
 inactiveForeground={{colors.on_surface_variant.default.hex}}
-

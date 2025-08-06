@@ -57,13 +57,9 @@ output_path = '../MATUGEN_OUTPUTS/maturofimain.rasi'
 input_path = './templates/rofiwal-colors.rasi'
 output_path = '../MATUGEN_OUTPUTS/maturofiwal.rasi'
 
-[templates.kvantum_kvconfig]
-input_path = './templates/kvantum-colors.kvconfig'
-output_path = '~/.config/Kvantum/matukvantum/matukvantum.kvconfig'
-
-[templates.kvantum_svg]
-input_path = './templates/kvantum-colors.svg'
-output_path = '~/.config/Kvantum/matukvantum/matukvantum.svg'
+[templates.qtct]
+input_path = './templates/qtct-colors.colors'
+output_path = '~/.local/share/color-schemes/MatuQTCT.colors'
 
 ### ### ### FIXES_MAN ### ### ###
 

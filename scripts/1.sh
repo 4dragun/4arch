@@ -167,9 +167,8 @@ echo "installing AUR-apps..."
 $YS clipse-bin matugen-bin
 echo
 echo "installing DEPENDENCIES..."
-# $YS python-pillow ffmpegthumbnailer
-$YS bibata-cursor-theme adw-gtk-theme
-$YS papirus-icon-theme papirus-folders
+$YS bibata-cursor-theme adw-gtk-theme darkly-qt6-git
+$YS lua-language-server papirus-icon-theme papirus-folders
 echo
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
@@ -182,13 +181,13 @@ echo
 echo "installing GUI-apps..."
 $YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple neovide
-$YS waybar nwg-look kvantum network-manager-applet dolphin swappy qt6ct
-$YS kvantum archlinux-xdg-menu
+$YS waybar nwg-look kvantum network-manager-applet dolphin swappy
+$YS qt6ct-kde
 echo
 echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie kitty aria2
 $YS git-credential-manager-bin yazi wl-clipboard brightnessctl starship
-$YS lua-language-server power-profiles-daemon xdg-user-dirs
+$YS power-profiles-daemon xdg-user-dirs
 echo
 
 xdg-user-dirs-update
