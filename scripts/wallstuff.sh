@@ -1,41 +1,26 @@
 #!/usr/bin/env bash
 
-# Find image files, excluding hidden directories
-mapfile -t files < <(find "$HOME" -type d -name ".*" -prune -o -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -print)
+FILTER="*.png *.jpg *.jpeg|Image Files"
 
-# Build rofi input with icon paths
-rofi_input=""
-for f in "${files[@]}"; do
-    filename=$(basename "$f")
-    # Format: text\0icon\x1ficon_path
-    rofi_input+="${filename}\0icon\x1f${f}\n"
-done
+MATUNOTI="$HOME/4arch/azzets/matunoti.png"
 
-# Use printf to preserve null bytes and newlines correctly
-wal=$(printf "%b" "$rofi_input" | rofi -dmenu -show-icons -theme ~/.config/MATUGEN_OUTPUTS/maturofiwal.rasi -i -p "")
+sel_wall=$(kdialog --getopenfilename "$HOME/Pictures" "$FILTER")
 
-if [ -z "$wal" ]; then
-    echo "No image selected. Exiting."
-    exit 1
+if [ -z "$sel_wall" ]; then
+  notify-send -i "$MATUNOTI" "Matugen" "No image selected!"
+  echo
+  echo " Script: No image selected. Exiting."
+  exit 1
 fi
 
-# Find full path of selected wallpaper by matching basename
-selected_path=""
-for f in "${files[@]}"; do
-    if [ "$(basename "$f")" = "$wal" ]; then
-        selected_path="$f"
-        break
-    fi
-done
+echo "$sel_wall" > "$HOME/.cache/last-wall.txt"
 
-if [ -z "$selected_path" ]; then
-    echo "Selected wallpaper not found. Exiting."
-    exit 1
-fi
+echo
+echo " Script: applying theme using $sel_wall"
+echo
+matugen image "$sel_wall" || {
+  notify-send -i "$MATUNOTI" "Matugen" "Manual intervention needed!"
+  exit 1
+}
 
-echo "$selected_path" > "$HOME/.cache/last-wall.txt"
-
-echo "Applying theme using: $selected_path"
-matugen image "$selected_path" || { notify-send -i "$HOME/4arch/azzets/matunoti.png" "Matugen" "manual intervention needed ..!" && exit; }
-
-notify-send "Matugen wallpaper" "$selected_path" -i "$selected_path"
+notify-send "Matugen" "$sel_wall" -i "$sel_wall"

@@ -36,14 +36,6 @@ output_path = '../gtk-3.0/colors.css'
 input_path = './templates/gtk-colors.css'
 output_path = '../gtk-4.0/colors.css'
 
-[templates.gtk3fix]
-input_path = './templates/gtk-fix.css'
-output_path = '../gtk-3.0/gtk.css'
-
-[templates.gtk4fix]
-input_path = './templates/gtk-fix.css'
-output_path = '../gtk-4.0/gtk.css'
-
 [templates.swaync]
 input_path = './templates/swaync-colors.css'
 output_path = '../MATUGEN_OUTPUTS/matuswaync.css'
@@ -53,13 +45,10 @@ post_hook = 'systemctl --user restart swaync'
 input_path = './templates/rofimain-colors.rasi'
 output_path = '../MATUGEN_OUTPUTS/maturofimain.rasi'
 
-[templates.rofiwal]
-input_path = './templates/rofiwal-colors.rasi'
-output_path = '../MATUGEN_OUTPUTS/maturofiwal.rasi'
-
 [templates.qtct]
 input_path = './templates/qtct-colors.colors'
-output_path = '~/.local/share/color-schemes/MatuQTCT.colors'
+output_path = '../../.local/share/color-schemes/MatuQTCT.colors'
+post_hook = '~/4arch/scripts/qtmatfix.sh'
 
 ### ### ### FIXES_MAN ### ### ###
 

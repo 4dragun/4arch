@@ -20,9 +20,4 @@ alias gf    "~/4arch/scripts/gf.sh"
 alias s     "~/4arch/scripts/scrpt.sh"
 alias clear "command clear; commandline -f clear-screen"
 
-function yay
-  echo
-  command yay $argv
-end
-
 starship init fish | source

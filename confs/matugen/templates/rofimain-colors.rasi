@@ -1,6 +1,6 @@
 * {
   background-color: transparent;
-  border-radius: 20;
+  border-radius: 30;
 }
 
 window {

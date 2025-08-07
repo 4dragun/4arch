@@ -1,0 +1,39 @@
+[General]
+ColorScheme=MatuQTCT
+XftHintStyle=hintslight
+XftSubPixel=none
+fixed=JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=Adwaita Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+
+[Icons]
+Theme=Papirus-Dark
+
+[KDE]
+widgetStyle=Darkly
+
+[KFileDialog Settings]
+Allow Expansion=false
+Automatically select filename extension=true
+Breadcrumb Navigation=true
+Decoration position=2
+LocationCombo Completionmode=5
+PathCombo Completionmode=5
+Preview Width=397
+Show Bookmarks=false
+Show Full Path=false
+Show Inline Previews=true
+Show Preview=true
+Show Speedbar=true
+Show hidden files=false
+Sort by=Name
+Sort directories first=true
+Sort hidden files last=false
+Sort reversed=false
+Speedbar Width=147
+View Style=DetailTree
+
+[WM]
+activeFont=Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1

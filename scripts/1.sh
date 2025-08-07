@@ -180,10 +180,10 @@ $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast
 $YS qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 echo
 echo "installing GUI-apps..."
-$YS sddm brave emote pavucontrol telegram-desktop mpv eog rofi-wayland
+$YS sddm brave emote pavucontrol telegram-desktop mpv gwenview rofi-wayland
 $YS firefox nwg-look blueman qbittorrent swaync reflector-simple neovide
 $YS waybar nwg-look kvantum network-manager-applet dolphin swappy
-$YS qt6ct-kde
+$YS kdialog systemsettings
 echo
 echo "installing CLI-apps..."
 $YS fzf lsd bat pacseek fastfetch htop btop udiskie kitty aria2
@@ -200,7 +200,7 @@ echo
 
 echo " --> reached MATUGEN color generation area <-- "
 echo
-matugen image "$WALLDIR" -c ~/.config/matugen/init.toml
+matugen image "$WALLDIR"
 echo
 echo "$WALLDIR" > "$HOME/.cache/last-wall.txt"
 echo

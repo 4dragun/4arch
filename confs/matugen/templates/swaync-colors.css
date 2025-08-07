@@ -7,12 +7,12 @@
 
 * {
   box-shadow: none;
-  border-radius: 20px;
+  border-radius: 30px;
 }
 
 .notification {
   border: 1px solid var(--noti-border-color);
-  padding: 5px;
+  padding: 0px;
   background: var(--noti-bg);
   margin: 6px 0px 0px 0px;
 }
@@ -32,5 +32,5 @@
 }
 
 .summary {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
