@@ -6,11 +6,7 @@ Wierd USB interacting with hibernate fix {
 
   GTK 2 apps not using icon, TRYING DCONF FOLDER FOR NOW
 
-  DOLPHIN KDE APPS WIERD STARTOVER kde globals
-
-  kdialog left panel width update in kderc
-
-
+instead of copying pacman, mkini, etc.. why not the whole foldr ??
 
 
 -----PIANO LESSSONS ........ ??????
