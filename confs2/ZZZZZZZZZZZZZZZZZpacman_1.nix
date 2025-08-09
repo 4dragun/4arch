@@ -1,18 +1,14 @@
 [options]
-HoldPkg           = pacman glibc dracut kernel-install-for-dracut eos-dracut
+HoldPkg           = pacman glibc
 Architecture      = auto
 Color
 ILoveCandy
-# CheckSpace
+CheckSpace
 VerbosePkgLists
 ParallelDownloads = 5
 DownloadUser      = alpm
 SigLevel          = Required DatabaseOptional
 LocalFileSigLevel = Optional
-
-[endeavouros]
-SigLevel = PackageRequired
-Include = /etc/pacman.d/endeavouros-mirrorlist
 
 [core]
 Include = /etc/pacman.d/mirrorlist

@@ -109,7 +109,7 @@ if [[ "$cop" = y ]]; then
       echo
       sudo cp -r /etc/systemd/logind.conf "$ZSF"
       sudo cp -r /etc/systemd/sleep.conf "$ZSF"
-      sudo cp -r /etc/mkinitcpio.conf "$ZSF"
+      # sudo cp -r /etc/mkinitcpio.conf "$ZSF"
       sudo cp -r /etc/pacman.conf "$ZSF"
       sudo chattr +i "$ZSF"
       echo

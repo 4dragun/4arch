@@ -12,6 +12,7 @@ toolBarFont=Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 Theme=Papirus-Dark
 
 [KDE]
+LookAndFeelPackage=org.kde.breezedark.desktop
 widgetStyle=Darkly
 
 [KFileDialog Settings]
@@ -21,7 +22,7 @@ Breadcrumb Navigation=true
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
-Preview Width=397
+Preview Width=400
 Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
@@ -32,8 +33,9 @@ Sort by=Name
 Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
-Speedbar Width=147
+Speedbar Width=160
 View Style=DetailTree
 
-[WM]
-activeFont=Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0

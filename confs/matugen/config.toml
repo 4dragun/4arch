@@ -20,12 +20,12 @@ output_path = '../yazi/theme.toml'
 
 [templates.waybar]
 input_path = './templates/waybar-colors.css'
-output_path = '../MATUGEN_OUTPUTS/matuwaybar.css'
+output_path = '../MATUOUTS/matuwaybar.css'
 post_hook = 'systemctl --user restart waybar'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
-output_path = '../MATUGEN_OUTPUTS/matuhyprland.conf'
+output_path = '../MATUOUTS/matuhyprland.conf'
 post_hook = 'hyprctl reload'
 
 [templates.gtk3]
@@ -38,12 +38,12 @@ output_path = '../gtk-4.0/colors.css'
 
 [templates.swaync]
 input_path = './templates/swaync-colors.css'
-output_path = '../MATUGEN_OUTPUTS/matuswaync.css'
+output_path = '../MATUOUTS/matuswaync.css'
 post_hook = 'systemctl --user restart swaync'
 
 [templates.rofimain]
 input_path = './templates/rofimain-colors.rasi'
-output_path = '../MATUGEN_OUTPUTS/maturofimain.rasi'
+output_path = '../MATUOUTS/maturofimain.rasi'
 
 [templates.qtct]
 input_path = './templates/qtct-colors.colors'
@@ -62,10 +62,10 @@ input_path = '/dev/null'
 output_path = '/dev/null'
 post_hook = 'systemctl --user restart plasma-xdg-desktop-portal-kde.service'
 
-[templates.hyprpolkitfixman]
-input_path = '/dev/null'
-output_path = '/dev/null'
-post_hook = 'systemctl --user restart hyprpolkitagent'
+# [templates.hyprpolkitfixman]
+# input_path = '/dev/null'
+# output_path = '/dev/null'
+# post_hook = 'systemctl --user restart hyprpolkitagent'
 
 [config.custom_colors]
 green = "#00ff00"

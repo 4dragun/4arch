@@ -11,4 +11,4 @@ if [[ -z "$wall" || ! -f "$wall" ]]; then
     exit 1
 fi
 
-hyprctl hyprpaper reload ",$wall"
+hyprctl hyprpaper reload ,"$wall"
