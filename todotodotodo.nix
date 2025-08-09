@@ -16,6 +16,3 @@ Wierd USB interacting with hibernate fix {
 -----PIANO LESSSONS ........ ??????
 
 ---------SDDM THEME ............. ?
-
-
-

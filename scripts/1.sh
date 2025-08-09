@@ -169,7 +169,7 @@ echo
 echo "installing DEPENDENCIES..."
 $YS bibata-cursor-theme adw-gtk-theme darkly-qt6-git
 $YS papirus-icon-theme papirus-folders
-$YS lua-language-server archlinux-xdg-menu
+$YS lua-language-server
 echo
 echo "installing FONTS..."
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji
@@ -195,7 +195,7 @@ xdg-user-dirs-update
 echo
 mkdir -p ~/Pictures/Screenshots
 echo
-kbuildsycoca6
+# kbuildsycoca6
 echo
 
 echo " --> reached MATUGEN color generation area <-- "
