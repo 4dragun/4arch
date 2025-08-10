@@ -71,7 +71,7 @@
     "icon-size": 11
   },
   "backlight": {
-    "format": "{percent}"
+    "format": "  {percent}"
   },
   "pulseaudio": {
     "format-bluetooth": "{icon}󰂯  {volume}  󰇘 {format_source}",
