@@ -5,7 +5,7 @@ YS="yay -S --needed --noconfirm"
 
 ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
-WALLDIR="$HOME/4arch/walls/end42.png"
+WALLDIR="$HOME/4arch/walls/wallhaven-7jgyre_1920x1080.png"
 
 echo
 echo " ... WELCOME to 4ARCH Script ... "
@@ -204,7 +204,7 @@ matugen image "$WALLDIR"
 echo
 echo "$WALLDIR" > "$HOME/.cache/last-wall.txt"
 echo
-papirus-folders -C cyan
+papirus-folders -C violet
 
 echo " ... enabling POWER-PROFILES-DAEMON ... "
 sudo systemctl enable power-profiles-daemon
