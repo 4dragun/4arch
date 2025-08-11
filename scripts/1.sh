@@ -80,7 +80,7 @@ else
   echo
 fi
 
-read -p " -> shit went down ? REBOOT now ? (y/n) = " ras
+read -p " -> Shyit went down ? REBOOT now ? (y/n) = " ras
 if [[ "$ras" = y ]]; then
   echo
   sync && sync && sync && systemctl reboot
@@ -120,6 +120,7 @@ if [[ "$cop" = y ]]; then
     echo
     echo " ___ wrong pass dude :( ___ "
     echo
+    exit
   fi
 else
   echo
