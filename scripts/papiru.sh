@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-COLORS=$(papirus-folders -l)
+colors=$(papirus-folders -l)
 
-SEL_COLOR=$(echo "$COLORS" | fzf --prompt=" Pick a folder color: ")
+sel_color=$(echo "$colors" | fzf --prompt=" Pick a folder color: ")
 
-SEL_COLOR=$(echo "$SEL_COLOR" | xargs)
+sel_color=$(echo "$sel_color" | xargs)
 
-if [ -n "$SEL_COLOR" ]; then
+if [ -n "$sel_color" ]; then
   echo
-  echo " -> Applying color: $SEL_COLOR"
+  echo " -> Applying color: $sel_color"
   echo
-  papirus-folders -C "$SEL_COLOR" || { echo; read -p ""; exit; }
+  papirus-folders -C "$sel_color" || { echo; read -p ""; exit; }
   echo
   read -p " -> Done! Restart your apps to see changes."
 else

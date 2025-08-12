@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-FILTER="*.png *.jpg *.jpeg|Image Files"
+filter="*.png *.jpg *.jpeg|Image Files"
 
-MATUNOTI="$HOME/4arch/azzets/matunoti.png"
+icon="$HOME/4arch/azzets/matunoti.png"
 
-sel_wall=$(kdialog --getopenfilename "$HOME/Pictures" "$FILTER")
+sel_wall=$(kdialog --getopenfilename "$HOME/Pictures" "$filter")
 
 if [ -z "$sel_wall" ]; then
-  notify-send -i "$MATUNOTI" "Matugen" "No image selected!"
+  notify-send -i "$icon" "Matugen" "No image selected!"
   echo
   echo " Script: No image selected. Exiting."
   exit 1
@@ -19,7 +19,7 @@ echo
 echo " Script: applying theme using $sel_wall"
 echo
 matugen image "$sel_wall" || {
-  notify-send -i "$MATUNOTI" "Matugen" "Manual intervention needed!"
+  notify-send -i "$icon" "Matugen" "Manual intervention needed!"
   exit 1
 }
 

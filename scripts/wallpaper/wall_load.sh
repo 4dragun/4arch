@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
+wall=$(cat "$HOME/.cache/last-wall.txt")
+
 systemctl --user start hyprpaper
 
 sleep 0.5
 
-wall=$(cat "$HOME/.cache/last-wall.txt" 2>/dev/null)
-
 if [[ -z "$wall" || ! -f "$wall" ]]; then
-    echo "No saved wallpaper found or file missing."
-    exit 1
+  echo -e "\n No saved wallpaper found or file missing.\n"
+  exit
 fi
 
 hyprctl hyprpaper reload ,"$wall"
