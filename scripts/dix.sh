@@ -3,7 +3,7 @@
 cfdisk /dev/nvme0n1
 
 echo
-echo " -> formating PARTITIONS now ->"
+echo " -> formatting PARTITIONS now ->"
 echo
 
 mkfs.fat -F 32 /dev/nvme0n1p1
