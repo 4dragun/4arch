@@ -3,7 +3,7 @@
 cfdisk /dev/nvme0n1
 
 echo
-echo " --> formating PARTITIONS now -->"
+echo " -> formating PARTITIONS now ->"
 echo
 
 mkfs.fat -F 32 /dev/nvme0n1p1
@@ -13,7 +13,7 @@ echo
 mkswap         /dev/nvme0n1p2
 
 echo
-echo " <-- mounting PARTITIONS now <--"
+echo " <- mounting PARTITIONS now <-"
 echo
 
 mount  /dev/nvme0n1p3 /mnt
