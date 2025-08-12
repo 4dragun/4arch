@@ -47,7 +47,8 @@ echo
 
 echo " ___ Enabling SERVICES ___"
 echo
-systemctl enable NetworkManager.service
+systemctl enable NetworkManager.service \
+                 fstrim.timer
 echo
 sudo -u archy systemctl --user enable pipewire-pulse.service \
                                       wireplumber.service
