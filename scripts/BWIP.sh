@@ -45,7 +45,7 @@ echo
 pacstrap -K /mnt base linux linux-firmware fish sudo intel-ucode \
                  networkmanager neovide git grub efibootmgr \
                  pipewire pipewire-alsa pipewire-audio pipewire-jack \
-                 pipewire-libcamera pipewire-pulse lib32-pipewire
+                 pipewire-libcamera pipewire-pulse
 echo
 
 echo " ... Generating fstab now ..."
