@@ -5,11 +5,9 @@ YS="yay -S --needed --noconfirm"
 
 ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
-WALLDIR="$HOME/4arch/walls/wallhaven-7jgyre_1920x1080.png"
+WALL="$HOME/4arch/walls/wallhaven-7jgyre_1920x1080.png"
 
-echo
-echo " ... WELCOME to 4ARCH Script ..."
-echo
+echo -e "\n ... WELCOME to 4ARCH Script ...\n"
 
 echo " >>> running PACMAN-KEY before proceeding >>>"
 sudo pacman-key --init
@@ -25,15 +23,15 @@ echo
 read -p " -> install YAY - Yet Another AUR Helper ? (y/n) = " yas
 echo
 read -p " -> add CHAOTIC-AUR repo ? (y/n) = " cas
+echo
 
 if [[ "$itd" = y ]]; then
-  echo
   rm -rf ~/.config/nvim
   rm -rf ~/.local/state/nvim
   rm -rf ~/.local/share/nvim
-  echo
-  echo " === cloning NvChad ==="
-  echo
+
+  echo -e "\n === cloning NvChad ===\n"
+
   git clone https://github.com/NvChad/starter ~/.config/nvim
   echo
   cp -r ~/.config/nvim ~/.config/ORIGINAL_NVCHAD
@@ -203,9 +201,9 @@ echo
 
 echo " -> reached MATUGEN color generation area <-"
 echo
-matugen image "$WALLDIR"
+matugen image "$WALL"
 echo
-echo "$WALLDIR" > "$HOME/.cache/last-wall.txt"
+echo "$WALL" > "$HOME/.cache/last-wall.txt"
 echo
 papirus-folders -C violet
 
