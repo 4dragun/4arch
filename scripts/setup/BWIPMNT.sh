@@ -1,64 +1,50 @@
 #!/usr/bin/env bash
 
-echo
-echo " ... Reached MNT byitch shyits, be careful..!"
-echo
+set -euo pipefail; echo
 
-echo " ___ Setting up timeZONE ___"
-echo
+echo -e " ... REACHED MNT, BE CAREFUL ...\n"
+
+echo -e " ... SETTING UP TIMEZONE ...\n"
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-echo
 
-echo " ___ Hardware clock somethin___"
-echo
+echo -e "\n ... HARDWARE CLOCK SOMETHIN ...\n"
 hwclock --systohc
-echo
 
-echo " ___ Locale stuff ___"
-echo
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-echo
-locale-gen
-echo
+echo -e "\n ... LOCALE STUFF ...\n"
+
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen; echo
+
+locale-gen; echo
+
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
-echo
 
-echo " ___ Writin HOSTNAME ___"
+echo -e "\n ... WRITIN HOSTNAME ...\n"
+
 echo "archy" > /etc/hostname
-echo
-echo " -> typa password for ROOT :"
-echo
+
+echo -e "\n --- typa password for ROOT :\n"
 passwd
-echo
 
-echo " ___ adding a USER ___"
-echo
+echo -e "\n ... ADDING A USER ...\n"
 useradd -m -G wheel archy
-echo
-echo " -> typa password for the USER :"
-echo
+
+echo -e "\n --- typa password for USER :\n"
 passwd archy
-echo
 
-echo " ___ SUDO stuff goin on ___"
-echo
+echo -e "\n ... SUDO STUFF GOIN ON ...\n"
+
 echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/01_testi
-echo
 
-echo " ___ Enabling SERVICES ___"
-echo
+echo -e "\n ... ENABLING SERVICES ...\n"
 systemctl enable NetworkManager.service \
                  fstrim.timer
 echo
 sudo -u archy systemctl --user enable pipewire-pulse.service \
                                       wireplumber.service
-echo
 
-echo " ___ GRUB stuff reached btw ___"
-echo
+echo -e "\n ... GRUB STUFF REACHED BTW ...\n"
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 echo
 grub-mkconfig -o /boot/grub/grub.cfg
-echo
 
-echo " ... SCRIPT FINISHED ..."
+echo -e "\n ... SCRIPT FINISHED ...\n"

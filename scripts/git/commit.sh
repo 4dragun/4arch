@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-L="lolcat"
-
 cd ~/4arch
 
-echo -e "\n  GIT commit automation started ...\n" | $L
+echo -e "\n  GIT commit automation started ...\n"
 
 git add .
 read -p " Enter commit message: " mas
@@ -13,4 +11,4 @@ git commit -m "$mas"
 echo
 git push origin main
 
-echo -e "\n  GIT commit automation finished ...\n" | $L
+echo -e "\n  GIT commit automation finished ...\n"
