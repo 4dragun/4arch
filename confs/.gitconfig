@@ -1,0 +1,10 @@
+[user]
+  name = 4
+	email = 4
+[credential]
+	credentialStore = cache
+	cacheOptions = --timeout 1800
+	helper = 
+	helper = /usr/bin/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true

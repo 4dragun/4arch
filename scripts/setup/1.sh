@@ -38,7 +38,8 @@ if [[ "$itd" = y ]]; then
   echo
   cp -r ~/.config/nvim ~/.config/ORIGINAL_NVCHAD
   echo
-  cp -r ~/4arch/confs/. ~/.config
+  cp -r ~/4arch/confs/.    ~/.config
+  mv ~/.config/.gitconfig  ~/
   echo
 else
   echo
@@ -212,6 +213,8 @@ echo " ... enabling SERVICES ..."
 sudo systemctl enable power-profiles-daemon \
                       sddm
 echo
+
+sudo rm -rf /root/4arch
 
 read -p " ... 4ARCH Script Ended. REBOOT now ? (y/n) = " nas
 echo
