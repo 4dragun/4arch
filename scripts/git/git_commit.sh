@@ -5,7 +5,6 @@ cd ~/4arch
 echo -e "\n  GIT commit automation started ...\n"
 
 git add .
-echo
 read -p " Enter commit message: " mas
 echo
 git commit -m "$mas"
