@@ -208,6 +208,9 @@ papirus-folders -C violet
 echo " ... enabling SERVICES ..."
 sudo systemctl enable power-profiles-daemon \
                       sddm
+
+sudo systemctl --user enable pipewire-pulse.service \
+                             wireplumber.service
 echo
 
 sudo rm -rf /root/4arch

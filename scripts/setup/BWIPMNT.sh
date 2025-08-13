@@ -37,14 +37,10 @@ echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/01_testi
 
 echo -e "\n ... ENABLING SERVICES ...\n"
 systemctl enable NetworkManager.service \
-                 fstrim.timer
-echo
-sudo -u archy systemctl --user enable pipewire-pulse.service \
-                                      wireplumber.service
+                 fstrim.timer; echo
 
 echo -e "\n ... GRUB STUFF REACHED BTW ...\n"
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-echo
-grub-mkconfig -o /boot/grub/grub.cfg
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=LINUXY
+echo; grub-mkconfig -o /boot/grub/grub.cfg
 
 echo -e "\n ... SCRIPT FINISHED ...\n"
