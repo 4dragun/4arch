@@ -7,7 +7,7 @@ ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
 WALL="$HOME/4arch/walls/wallhaven-7jgyre_1920x1080.png"
 
-echo -e "\n ... WELCOME to 4ARCH Script ...\n"
+echo -e "\n WELCOME to 4ARCH Script \n"
 
 echo " >>> running PACMAN-KEY before proceeding >>>"
 sudo pacman-key --init
@@ -34,13 +34,11 @@ if [[ "$itd" = y ]]; then
 
   git clone https://github.com/NvChad/starter ~/.config/nvim
   echo
-  cp -r ~/.config/nvim ~/.config/ORIGINAL_NVCHAD
+  cp -r ~/4arch/confs/. ~/.config
   echo
-  cp -r ~/4arch/confs/.    ~/.config
-  mv ~/.config/.gitconfig  ~/
+  mv ~/.config/.gitconfig ~/
   echo
 else
-  echo
   echo " ___ skipped DOTFILES, ICONS, THEMES setup ___"
 fi
 
