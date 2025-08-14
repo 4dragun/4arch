@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+PK="sudo pacman-key"
+
+L1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
+L2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
+
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
+
+ERRMSG="INVALID RESPONSE! TRY AGAIN!"
 
 ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
@@ -12,84 +19,130 @@ echo "* WELCOME TO 4ARCH SCRIPT"
 echo
 echo "* RUNNING PACMAN-KEY"
 echo
-sudo pacman-key --init
+$PK --init
 echo
-sudo pacman-key --populate archlinux
-echo
-read -p "? CONFIGURE LOCAL DOTFILES, ICONS, THEMES (y/N) = " itd
-echo
-read -p "? INSTALL YAY - Yet Another AUR Helper (y/N) = " yas
-echo
-read -p "? ADD CHAOTIC-AUR REPO (y/N) = " cas
+$PK --populate archlinux
 echo
 
-if [[ "$itd" = y ]]; then
-  rm -rf ~/.config/nvim
-  rm -rf ~/.local/state/nvim
-  rm -rf ~/.local/share/nvim
+while true; do
+  read -p "? CONFIGURE LOCAL DOTFILES, ICONS, THEMES (y/n) = " itd
   echo
-  echo "> CLONING NVCHAD"
-  echo
-  git clone https://github.com/NvChad/starter ~/.config/nvim
-  echo
-  cp -r ~/4arch/confs/. ~/.config
-  mv ~/.config/.gitconfig ~/
-  echo
-else
-  echo "~ SKIPPED DOTFILES, ICONS, THEMES SETUP"
-  echo
-fi
+  itd="${itd,,}"
 
-if [[ "$yas" = y ]]; then
-  sudo pacman -S --needed --noconfirm git base-devel
-  echo
-  echo "> CLONING YAY"
-  echo
-  rm -rf ~/yay-bin
-  echo
-  git clone https://aur.archlinux.org/yay-bin.git
-  echo
-  cd yay-bin && makepkg -si --noconfirm && cd && yay --noconfirm
-  echo
-else
-  echo "~ SKIPPED YAY SETUP"
-  echo
-fi
-
-if [[ "$cas" = y ]]; then
-  echo "* ADDING CHAOTIC-AUR REPO"
-  echo
-  sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-  echo
-  sudo pacman-key --lsign-key 3056513887B78AEB
-  echo
-  $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
-  echo
-  $YU 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
-  echo
-else
-  echo "~ SKIPPED CHAOTIC-AUR SETUP"
-  echo
-fi
-
-read -p "? CHAOTIC-AUR SETUP SUCCEEDED (Y/n) = " chas
-echo
-if [[ "$chas" = n ]]; then
-  read -p "? REBOOT now (y/N) = " ras
-  echo
-  if [[ "$ras" = y ]]; then
-    sleep 1
-    sync && sync && sync && systemctl reboot
-  else
-    echo "~ REBOOT MANUALLY!"
+  if [[ "$itd" == "y" ]]; then
+    rm -rv "$HOME/.config/nvim"
     echo
-    exit
+    rm -rv "$HOME/.local/state/nvim"
+    echo
+    rm -rv "$HOME/.local/share/nvim"
+    echo
+    echo "> CLONING NVCHAD"
+    echo
+    git clone https://github.com/NvChad/starter "$HOME/.config/nvim"
+    echo
+    cp -rv "$HOME/4arch/confs/." "$HOME/.config"
+    echo
+    break
+  elif [[ "$itd" == "n" ]]; then
+    echo "~ SKIPPED DOTFILES, ICONS, THEMES SETUP"
+    echo
+    break
+  else
+    echo "~ $ERRMSG"
+    echo
   fi
-else
-  echo "~ ASSUMING CHAOTIC-AUR SETUP WAS SUCCESSFUL"
-  echo
-fi
+done
 
+while true; do
+  read -p "? INSTALL YAY - Yet Another AUR Helper (y/n) = " yas
+  echo
+  yas="${yas,,}"
+
+  if [[ "$yas" == "y" ]]; then
+    sudo pacman -S --needed --noconfirm git base-devel
+    echo
+    rm -rv "$HOME/yay-bin"
+    echo
+    echo "> CLONING YAY"
+    echo
+    git clone https://aur.archlinux.org/yay-bin.git
+    echo
+    cd "$HOME/yay-bin" && makepkg -si --noconfirm && cd && yay --noconfirm
+    echo
+    break
+  elif [[ "$yas" == "n" ]]; then
+    echo "~ SKIPPED YAY SETUP"
+    echo
+    break
+  else
+    echo "~ $ERRMSG"
+    echo
+  fi
+done
+
+while true; do
+  read -p "? ADD CHAOTIC-AUR REPO (y/n) = " cas
+  echo
+  cas="${cas,,}"
+  
+  if [[ "$cas" == "y" ]]; then
+    echo "* ADDING CHAOTIC-AUR REPO"
+    echo
+    $PK --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+    echo
+    $PK --lsign-key 3056513887B78AEB
+    echo
+    $YU $L1
+    echo
+    $YU $L2
+    echo
+    break
+  elif [[ "$cas" == "n" ]]; then
+    echo "~ SKIPPED CHAOTIC-AUR SETUP"
+    echo
+    break
+  else
+    echo "~ $ERRMSG"
+    echo
+  fi
+done
+
+while true; do
+  read -p "? CHAOTIC-AUR SETUP SUCCEEDED (y/n) = " chas
+  echo
+  chas="${chas,,}"
+
+  if [[ "$chas" == "n" ]]; then
+
+    while true; do
+      read -p "? REBOOT NOW (y/n) = " ras
+      echo
+      ras="${ras,,}"
+
+      if [[ "$ras" == "y" ]]; then
+        sleep 1
+        sync && sync && sync && systemctl reboot
+      elif [[ "$ras" = "n" ]]; then
+        echo "~ REBOOT MANUALLY!"
+        echo
+        exit
+      else
+        echo "~ $ERRMSG"
+        echo
+      fi
+    done
+
+  elif [[ "$chas" == "y" ]]; then
+    echo "* CHAOTIC-AUR SETUP WENT SMOOTH"
+    echo
+    break
+  else
+    echo "~ $ERRMSG"
+    echo
+  fi
+done
+
+while true; do
 read -p "? BACKUP SYSTEM_FILES (y/N) = " cop
 echo
 if [[ "$cop" = y ]]; then
