@@ -16,8 +16,6 @@ sudo pacman-key --init
 echo
 sudo pacman-key --populate archlinux
 echo
-fish ignore-this-error
-echo
 read -p "? CONFIGURE LOCAL DOTFILES, ICONS, THEMES (y/N) = " itd
 echo
 read -p "? INSTALL YAY - Yet Another AUR Helper (y/N) = " yas
@@ -88,7 +86,7 @@ if [[ "$chas" = n ]]; then
     exit
   fi
 else
-  echo "~ ASSUMING CHAOTIC-AUR SETUP WAS SUCCESSFULL"
+  echo "~ ASSUMING CHAOTIC-AUR SETUP WAS SUCCESSFUL"
   echo
 fi
 
@@ -143,7 +141,7 @@ if [[ "$sas" = y ]]; then
   else
     echo "~ BACKUP FOLDER NOT FOUND!"
     echo
-    echo "~ CANNOT PROCEDE!"
+    echo "~ CANNOT PROCEED!"
     echo
     exit
   fi
@@ -188,18 +186,17 @@ echo
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast \
     qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 echo
-echo "* INSTALLING GUI-APPLICATIONS"
+echo "* INSTALLING GUI APPLICATIONS"
 echo
 $YS sddm brave emote pavucontrol telegram-desktop mpv gwenview rofi-wayland \
     firefox nwg-look blueman qbittorrent swaync reflector-simple neovide \
-    waybar nwg-look network-manager-applet dolphin ark swappy \
-    kdialog systemsettings
+    waybar network-manager-applet dolphin ark swappy systemsettings kdialog
 echo
-echo "* INSTALLING CLI-APPLICATIONS"
+echo "* INSTALLING CLI APPLICATIONS"
 echo
-$YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 \
-    git-credential-manager-bin yazi wl-clipboard brightnessctl starship \
-    power-profiles-daemon xdg-user-dirs
+$YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 yazi starship \
+    git-credential-manager-bin wl-clipboard brightnessctl xdg-user-dirs \
+    power-profiles-daemon
 echo
 echo "~ FINISHED INSTALLING APPLICATIONS"
 echo
@@ -208,10 +205,8 @@ echo "* CREATING XDG DIRECTORIES"
 echo
 xdg-user-dirs-update
 echo
-mkdir -p ~/Pictures/Screenshots
+mkdir -p "$HOME/Pictures/Screenshots"
 echo
-# kbuildsycoca6
-# echo
 
 echo "* BUILDING THEMES WITH MATUGEN"
 echo
