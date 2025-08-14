@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALL=$(cat "$HOME/.cache/last-wall.txt")
+WALL=$(cat "$HOME/.cache/last_wall.txt")
 
 systemctl --user start hyprpaper
 

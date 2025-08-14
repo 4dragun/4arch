@@ -13,7 +13,7 @@ if [ -z "$SEL_WALL" ]; then
   exit
 fi
 
-echo "$SEL_WALL" > "$HOME/.cache/last-wall.txt"
+echo "$SEL_WALL" > "$HOME/.cache/last_wall.txt"
 
 echo -e "\n Script: applying theme using $SEL_WALL\n"
 
