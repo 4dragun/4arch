@@ -131,7 +131,6 @@ while true; do
         echo
       fi
     done
-
   elif [[ "$chas" == "y" ]]; then
     echo "* CHAOTIC-AUR SETUP WENT SMOOTH"
     echo
@@ -143,77 +142,108 @@ while true; do
 done
 
 while true; do
-read -p "? BACKUP SYSTEM_FILES (y/N) = " cop
-echo
-if [[ "$cop" = y ]]; then
-  read -p "? NOW ENTER KEY: " kas
+  read -p "? BACKUP SYSTEM_FILES (y/n) = " cop
   echo
-  if [[ "$kas" = archydoes ]]; then
+  cop="${cop,,}"
+
+  if [[ "$cop" == "y" ]]; then
+    while true; do
+      read -p "? NOW ENTER KEY: " kas
+      echo
+
+      if [[ "$kas" == "archydoes" ]]; then
+        echo "* KEY MATCHES, PROCEEDING"
+        echo
+
+        if [[ -d "$ZSF" ]]; then
+          echo "~ BACKUP FOLDER ALREADY EXISTS! SKIPPING BACKUP!"
+          echo
+          break
+        else
+          echo "* CREATING ZORIGINAL_SYSTEM_FILES FOLDER"
+          echo
+          sudo mkdir -pv "$ZSF" || { exit; }
+          echo
+          echo "* BACKUP INCOMING"
+          echo
+          sudo cp -rv /etc/mkinitcpio.conf "$ZSF" || { exit; }
+          sudo cp -rv /etc/pacman.conf     "$ZSF" || { exit; }
+          echo
+          echo "* SECURING THE BACKUP"
+          echo
+          sudo chattr -V +i "$ZSF" || { exit; }
+          echo
+          echo "* SYSTEM_FILES BACKUP COMPLETE!"
+          echo
+          break
+        fi
+      else
+        echo "~ WRONG KEY DUDE, TRY AGAIN!"
+        echo
+      fi
+    done
+    break
+  elif [[ "$cop" == "n" ]]; then
+    echo "~ SKIPPED SYSTEM_FILES BACKUP!"
+    echo
+    break
+  else
+    echo "~ $ERRMSG"
+    echo
+  fi
+done
+
+while true; do
+  read -p "? REPLACE SYSTEM_FILES WITH CUSTOM ONES (y/n) = " sas
+  echo
+  sas="${sas,,}"
+
+  if [[ "$sas" == "y" ]]; then
     if [[ -d "$ZSF" ]]; then
-      echo "~ BACKUP FOLDER ALREADY EXISTS! SKIPPING BACKUP!"
+      echo "* BACKUP FOLDER FOUND!"
       echo
+      echo "* PROCEEDING"
+      echo
+      sudo cp -rv "$HOME/4arch/confs_system/." "/etc" || { exit; }
+      echo
+      break
     else
-      echo "* CREATING ZORIGINAL_SYSTEM_FILES FOLDER"
+      echo "~ BACKUP FOLDER NOT FOUND!"
       echo
-      sudo mkdir -p "$ZSF"
+      echo "~ CANNOT PROCEED!"
       echo
-      echo "* BACKUP INCOMING"
-      echo
-      sudo cp -r /etc/systemd/logind.conf "$ZSF"
-      sudo cp -r /etc/systemd/sleep.conf  "$ZSF"
-      sudo cp -r /etc/mkinitcpio.conf     "$ZSF"
-      sudo cp -r /etc/pacman.conf         "$ZSF"
-      echo
-      echo "* SECURING THE BACKUP"
-      echo
-      sudo chattr +i "$ZSF"
-      echo
-      echo "~ SYSTEM_FILES BACKUP COMPLETE!"
-      echo
+      exit
     fi
+  elif [[ "$sas" == "n" ]]; then
+    echo "~ SKIPPED REPLACING SYSTEM_FILES WITH CUSTOM ONES"
+    echo
+    break
   else
-    echo "~ WRONG KEY DUDE :("
+    echo "~ $ERRMSG"
     echo
-    exit
   fi
-else
-  echo "~ SKIPPED SYSTEM_FILES BACKUP!"
-  echo
-fi
+done
 
-read -p "? REPLACE SYSTEM_FILES WITH CUSTOM ONES (y/N) = " sas
-echo
-if [[ "$sas" = y ]]; then
-  if [[ -d "$ZSF" ]]; then
-    echo "~ BACKUP FOLDER FOUND!"
+while true; do
+  read -p "? RUN MKINITCPIO (y/n) = " mas
+  echo
+  mas="${mas,,}"
+
+  if [[ "$mas" == "y" ]]; then
+    echo "* RUNNING MKINITCPIO"
     echo
-    echo "~ PROCEEDING"
+    sudo mkinitcpio -P
     echo
-    sudo cp -r ~/4arch/confs_system/. /etc
+    break
+  elif [[ "$mas" == "n" ]]; then
+    echo "~ SKIPPED MKINITCPIO"
     echo
+    break
   else
-    echo "~ BACKUP FOLDER NOT FOUND!"
+    echo "~ $ERRMSG"
     echo
-    echo "~ CANNOT PROCEED!"
-    echo
-    exit
   fi
-else
-  echo "~ SKIPPED REPLACING SYSTEM_FILES WITH CUSTOM ONES"
-  echo
-fi
-
-read -p "? RUN MKINITCPIO (y/N) = " mas
-echo
-if [[ "$mas" = y ]]; then
-  echo "* RUNNING MKINITCPIO"
-  echo
-  sudo mkinitcpio -P
-  echo
-else
-  echo "~ SKIPPED MKINITCPIO"
-  echo
-fi
+done
 
 echo "* UPDATING SYSTEM WITH YAY"
 echo
@@ -255,10 +285,9 @@ echo "~ FINISHED INSTALLING APPLICATIONS"
 echo
 
 echo "* CREATING XDG DIRECTORIES"
-echo
 xdg-user-dirs-update
 echo
-mkdir -p "$HOME/Pictures/Screenshots"
+mkdir -pv "$HOME/Pictures/Screenshots"
 echo
 
 echo "* BUILDING THEMES WITH MATUGEN"
@@ -266,7 +295,6 @@ echo
 matugen image "$WALL"
 echo
 echo "$WALL" > "$HOME/.cache/last_wall.txt"
-echo
 echo "* SETTING FOLDER THEME"
 echo
 papirus-folders -C violet
@@ -278,20 +306,29 @@ sudo systemctl enable power-profiles-daemon \
 
 sudo systemctl --user enable pipewire-pulse.service \
                              wireplumber.service
-echo
 
+echo
 echo "* REMOVING 4ARCH REPO FROM ROOT DIRECTORY"
 echo
-sudo rm -rf /root/4arch
+sudo rm -rv /root/4arch
 echo
 
-read -p "? 4ARCH SCRIPT ENDED, REBOOT NOW (y/N) = " nas
-echo
-if [[ "$nas" = y ]]; then
-  sleep 1
-  sync && sync && sync && systemctl reboot
-else
-  echo "~ OKAY, REBOOT MANUALLY!"
+while true; do
+  read -p "? 4ARCH SCRIPT ENDED, REBOOT NOW (y/n) = " nas
   echo
-  exit
-fi
+  nas="${nas,,}"
+
+  if [[ "$nas" == "y" ]]; then
+    echo "* REBOOT INITIATED"
+    echo
+    sleep 1
+    sync && sync && sync && systemctl reboot
+  elif [[ "$nas" == "n" ]]; then
+    echo "~ OKAY, REBOOT MANUALLY!"
+    echo
+    exit
+  else
+    echo "~ $ERRMSG"
+    echo
+  fi
+done
