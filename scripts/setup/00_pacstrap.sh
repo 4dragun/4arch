@@ -4,39 +4,67 @@ set -euo pipefail; echo
 
 cfdisk /dev/nvme0n1
 
-echo -e "\n ... FORMATTING PARTITIONS ...\n"
-mkfs.fat -F 32 /dev/nvme0n1p1; echo
-mkfs.ext4      /dev/nvme0n1p3; echo
+echo
+echo "* FORMATTING PARTITIONS"
+echo
+
+mkfs.fat -F 32 /dev/nvme0n1p1
+echo
+mkfs.ext4      /dev/nvme0n1p3
+echo
 mkswap         /dev/nvme0n1p2
 
-echo -e "\n ... MOUNTING PARTITIONS ...\n"
-mount  /dev/nvme0n1p3 /mnt; echo
-mount  /dev/nvme0n1p1 /mnt/boot --mkdir; echo
-swapon /dev/nvme0n1p2; echo
+echo
+echo "* MOUNTING PARTITIONS"
+echo
 
-lsblk; echo
+mount  /dev/nvme0n1p3 /mnt
+echo
+mount  /dev/nvme0n1p1 /mnt/boot --mkdir
+echo
+swapon /dev/nvme0n1p2
 
-read -p " >>> SATISFIED WITH PARTITIONS ? (y/n) = " sap
+echo; lsblk; echo
 
-if [[ "$sap" = y ]]; then
-  echo -e "\n --- okay, continuing with script ---\n"
-else
-  echo -e "\n --- reboot your shyit and try again! ---\n"
-  exit
-fi
+while true; do
+  read -p "? SATISFIED WITH PARTITIONS (y/n) = " sap
+  echo
+  sap="${sap,,}"
 
-echo -e " ... JUICY PACSTRAP INCOMING ...\n"
+  if [[ "$sap" == "y" ]]; then
+    echo "~ okay, continuing with script"
+    echo
+    break
+  elif [[ "$sap" == "n" ]]; then
+    echo "~ reboot your shyit and try again!"
+    echo
+    exit
+  else
+    echo "~ invalid response, try again!"
+    echo
+  fi
+done
+
+echo
+echo "* JUICY PACSTRAP INCOMING"
+echo
 pacstrap -K /mnt base linux linux-firmware fish sudo intel-ucode \
                  networkmanager neovide git grub efibootmgr \
                  pipewire pipewire-alsa pipewire-audio pipewire-jack \
                  pipewire-libcamera pipewire-pulse
 
-echo -e "\n ... GENERATING FSTAB ...\n"
-genfstab -U /mnt >> /mnt/etc/fstab
+echo
+echo "* GENERATING FSTAB"
+echo
+genfstab -U /mnt >> /mnt/etc/fstab || { exit; }
 
-echo -e "\n ~~~ CLONING YOUR REPOSITORY ~~~\n"
-git clone https://github.com/4dragun/4arch --depth=1; echo
+echo
+echo "> CLONING 4ARCH REPO"
+echo
+git clone https://github.com/4dragun/4arch --depth=1
 
-cp -r 4arch /mnt/root || { exit; }; echo
+echo
+cp -rv 4arch /mnt/root || { exit; }
+echo
 
-arch-chroot /mnt /root/4arch/scripts/BWIPMNT.sh
+arch-chroot /mnt /root/4arch/scripts/setup/01_chroot.sh
