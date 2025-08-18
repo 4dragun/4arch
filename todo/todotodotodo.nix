@@ -1,10 +1,12 @@
 Wierd USB interacting with hibernate fix {
 
-  * TRY ENDEAVOURS OS maybe......
+scripts final check
 
-INSTAED OF $YS just do \\\\\\
-same for systemctl ???
+rofi new theme
 
+hyprlock and overall font, new font ?
+
+hlock bat sh editttttt
 
 -----PIANO LESSSONS ........ ??????
 

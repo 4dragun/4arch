@@ -25,4 +25,3 @@ else
 fi
 
 echo "$ICON $BATTERY% $STATE"
-

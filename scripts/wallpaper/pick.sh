@@ -7,15 +7,16 @@ ICON="$HOME/4arch/azzets/matunoti.png"
 SEL_WALL=$(kdialog --getopenfilename "$HOME/Pictures" "$FILTER")
 
 if [ -z "$SEL_WALL" ]; then
-  notify-send -i "$ICON" "Matugen" "No image selected!"
-
-  echo -e "\n Script: No image selected. Exiting.\n"
+  notify-send -i "$ICON" "Matugen" "no image selected!"
+  echo
+  echo "SCRIPT: NO IMAGE SELECTED! EXITING."
   exit
 fi
 
 echo "$SEL_WALL" > "$HOME/.cache/last_wall.txt"
-
-echo -e "\n Script: applying theme using $SEL_WALL\n"
+echo
+echo "SCRIPT: APPLYING THEME USING $SEL_WALL"
+echo
 
 matugen image "$SEL_WALL" || {
   notify-send -i "$ICON" "Matugen" "manual intervention needed!"

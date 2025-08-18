@@ -2,17 +2,17 @@
 
 COLORS=$(papirus-folders -l)
 
-SEL_COLOR=$(echo "$COLORS" | fzf --prompt=" Pick a folder color: ")
+SEL_COLOR=$(echo "$COLORS" | fzf --prompt="> PICK A FOLDER COLOR: ")
 SEL_COLOR=$(echo "$SEL_COLOR" | xargs)
 
 if [ -n "$SEL_COLOR" ]; then
-
-  echo -e "\n -> Applying color: $SEL_COLOR\n"
-
+  echo
+  echo "* APPLYING COLOR: $SEL_COLOR"
+  echo
   papirus-folders -C "$SEL_COLOR" || { echo; read -p ""; exit; }
   echo
-  read -p " -> Done! Restart your apps to see changes. "
+  read -p "~ DONE! RESTART YOUR APPS TO SEE CHANGES. "
 else
   echo
-  read -p " -> No color selected. Exiting. "
+  read -p "~ NO COLOR SELECTED. EXITING. "
 fi

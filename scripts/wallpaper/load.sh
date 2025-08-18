@@ -7,7 +7,9 @@ systemctl --user start hyprpaper
 sleep 0.5
 
 if [[ -z "$WALL" || ! -f "$WALL" ]]; then
-  echo -e "\n No saved wallpaper found or file missing.\n"
+  echo
+  echo "NO SAVED WALLPAPER FOUND OR FILE MISSING!"
+  echo
   exit
 fi
 

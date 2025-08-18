@@ -7,7 +7,7 @@ if [ ! -f "$FLAG" ]; then
   sleep 0.5
   notify-send -i "$ICON" "4ARCH" "Welcome to Archy Hyprland ✨"
 
-  ~/4arch/scripts/wallpaper/wall_sel.sh || { exit; }
+  $HOME/4arch/scripts/wallpaper/pick.sh || { exit; }
 
   touch "$FLAG"
 fi

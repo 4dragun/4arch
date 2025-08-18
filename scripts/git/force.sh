@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
-cd ~/4arch
+echo
+echo " GIT COMMIT MESSAGE EDITOR"
+echo
 
-echo -e "\n  GIT commit message editor ...\n"
+cd "$HOME/4arch"
 
-read -p " Enter new commit message: " mas
+read -p "~ ENTER NEW COMMIT MESSAGE: " mas
 echo
 git commit --amend -m "$mas"
 echo
 git push --force
 
-echo -e "\n  GIT commit message edited and FORCE-PUSHED ..!\n"
+echo
+echo " GIT COMMIT MESSAGE EDITED AND FORCE-PUSHED!"
+echo

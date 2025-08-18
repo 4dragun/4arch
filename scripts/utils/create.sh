@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-echo -e "\n   Welcome to SCRIPT creation utility\n"
+echo
+echo "  SCRIPT CREATION UTILITY"
+echo
 
-read -p " Enter SCRIPT name: " sas
+read -p "~ ENTER SCRIPT NAME: " sas
 
 sas="${sas%.sh}"
 

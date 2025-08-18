@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 
-cd ~/4arch
+echo
+echo " GIT COMMIT AUTOMATION STARTED"
+echo
 
-echo -e "\n  GIT commit automation started ...\n"
+cd "$HOME/4arch"
 
 git add .
-read -p " Enter commit message: " mas
+read -p "~ ENTER COMMIT MESSAGE: " mas
 echo
 git commit -m "$mas"
 echo
 git push origin main
 
-echo -e "\n  GIT commit automation finished ...\n"
+echo
+echo " GIT COMMIT AUTOMATION FINISHED"
+echo

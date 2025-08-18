@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-SPIC="$HOME/Pictures/Screenshots/$(date +'%d.%m.%y_%H:%M:%S_screen.png')"
+SHOT="$HOME/Pictures/Screenshots/$(date +'%d.%m.%y_%H:%M:%S_screen.png')"
 
-mkdir -p ~/Pictures/Screenshots
+mkdir -pv ~/Pictures/Screenshots
 
-grimblast save screen "$SPIC"
+grimblast save screen "$SHOT"
 
-notify-send -i "$SPIC" "Screenshot Saved" "$SPIC"
+notify-send -i "$SHOT" "Screenshot" "$SHOT"

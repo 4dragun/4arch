@@ -11,17 +11,17 @@ SAHF="service activation has failed"
 
 SS="$(systemctl is-active "$SN")"
 
-if [ "$SS" = "inactive" ]; then
-  echo -e "\n "$B" is "$SS"\n"
-
+if [ "$SS" == "inactive" ]; then
+  echo
+  echo "$B is $SS"
+  echo
   systemctl start "$SN" || { notify-send -i "$II" "$B" "$SAHF"; exit; }
   notify-send -i "$AI" "$B" "service has been activated"
   blueman-applet &
   exit
-fi
-
-if [ "$SS" = "active" ]; then
-  echo -e "\n "$B" is "$SS"\n"
-
+elif [ "$SS" == "active" ]; then
+  echo
+  echo "$B is $SS"
+  echo
   notify-send -i "$AI" "$B" "service is already active"
 fi
