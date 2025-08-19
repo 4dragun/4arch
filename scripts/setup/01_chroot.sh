@@ -1,46 +1,64 @@
 #!/usr/bin/env bash
 
-set -euo pipefail; echo
+set -euo pipefail
+echo
 
-echo -e " ... REACHED MNT, BE CAREFUL ...\n"
+echo "* REACHED MNT, BE CAREFUL!"
+echo
 
-echo -e " ... SETTING UP TIMEZONE ...\n"
-ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+echo "* SETTING UP TIMEZONE"
+echo
+ln -sfv /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+echo
 
-echo -e "\n ... HARDWARE CLOCK SOMETHIN ...\n"
+echo "* SYNCING HARDWARE CLOCK"
+echo
 hwclock --systohc
+echo
 
-echo -e "\n ... LOCALE STUFF ...\n"
-
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen; echo
-
-locale-gen; echo
-
+echo "* LOCALE SETUP"
+echo
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+echo
+locale-gen
+echo
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo
 
-echo -e "\n ... WRITIN HOSTNAME ...\n"
-
+echo "* SETTING HOSTNAME"
+echo
 echo "archy" > /etc/hostname
-
-echo -e "\n --- typa password for ROOT :\n"
+echo
+echo "~ typa password for ROOT :"
+echo
 passwd
+echo
 
-echo -e "\n ... ADDING A USER ...\n"
+echo "* ADDING A USER"
+echo
 useradd -m -G wheel archy
-
-echo -e "\n --- typa password for USER :\n"
+echo
+echo "~ typa password for USER :"
+echo
 passwd archy
+echo
 
-echo -e "\n ... SUDO STUFF GOIN ON ...\n"
+echo "* ADDING USER TO SUDO"
+echo
+echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/01_archy
+echo
 
-echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/01_testi
+echo "* ENABLING SERVICES"
+echo
+systemctl enable systemd-timesyncd.service NetworkManager.service fstrim.timer
+echo
 
-echo -e "\n ... ENABLING SERVICES ...\n"
-systemctl enable NetworkManager.service \
-                 fstrim.timer; echo
-
-echo -e "\n ... GRUB STUFF REACHED BTW ...\n"
+echo "* CREATING GRUB ENTRIES"
+echo
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=LINUXY
-echo; grub-mkconfig -o /boot/grub/grub.cfg
+echo
+grub-mkconfig -o /boot/grub/grub.cfg
+echo
 
-echo -e "\n ... SCRIPT FINISHED ...\n"
+echo "* SCRIPT FINISHED"
+echo
