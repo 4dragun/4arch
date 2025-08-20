@@ -4,8 +4,8 @@ B="Bluetooth"
 
 SN="bluetooth"
 
-AI="$HOME/4arch/assets/bl_active.png"
-II="$HOME/4arch/assets/bl_inactive.png"
+AI="$HOME/4arch/assets/blactive.png"
+II="$HOME/4arch/assets/blinactive.png"
 
 SAHF="service activation has failed"
 

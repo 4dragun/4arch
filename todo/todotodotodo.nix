@@ -1,11 +1,8 @@
-00 = done
-01, 02 = todo
 
 Wierd USB interacting with hibernate fix {
 
-scripts final check
+ad rm -rv ffffffff backkk
 
-rofi new theme
 
 hyprlock and overall font, new font ?
 

@@ -8,7 +8,7 @@ L2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
 YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
 
-ERRMSG="INVALID RESPONSE! TRY AGAIN!"
+ERRMSG="~ invalid response! try again!"
 
 ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
@@ -44,11 +44,11 @@ while true; do
     echo
     break
   elif [[ "$itd" == "n" ]]; then
-    echo "~ SKIPPED DOTFILES, ICONS, THEMES SETUP"
+    echo "~ skipped dotfiles, icons, themes setup"
     echo
     break
   else
-    echo "~ $ERRMSG"
+    echo "$ERRMSG"
     echo
   fi
 done
@@ -71,11 +71,11 @@ while true; do
     echo
     break
   elif [[ "$yas" == "n" ]]; then
-    echo "~ SKIPPED YAY SETUP"
+    echo "~ skipped yay setup"
     echo
     break
   else
-    echo "~ $ERRMSG"
+    echo "$ERRMSG"
     echo
   fi
 done
@@ -98,11 +98,11 @@ while true; do
     echo
     break
   elif [[ "$cas" == "n" ]]; then
-    echo "~ SKIPPED CHAOTIC-AUR SETUP"
+    echo "~ skipped chaotic-aur setup"
     echo
     break
   else
-    echo "~ $ERRMSG"
+    echo "$ERRMSG"
     echo
   fi
 done
@@ -123,11 +123,11 @@ while true; do
         sleep 1
         sync && sync && sync && systemctl reboot
       elif [[ "$ras" = "n" ]]; then
-        echo "~ REBOOT MANUALLY!"
+        echo "~ reboot manually!"
         echo
         exit
       else
-        echo "~ $ERRMSG"
+        echo "$ERRMSG"
         echo
       fi
     done
@@ -136,7 +136,7 @@ while true; do
     echo
     break
   else
-    echo "~ $ERRMSG"
+    echo "$ERRMSG"
     echo
   fi
 done
@@ -156,7 +156,7 @@ while true; do
         echo
 
         if [[ -d "$ZSF" ]]; then
-          echo "~ BACKUP FOLDER ALREADY EXISTS! SKIPPING BACKUP!"
+          echo "* BACKUP FOLDER ALREADY EXISTS! SKIPPING BACKUP!"
           echo
           break
         else
@@ -178,17 +178,17 @@ while true; do
           break
         fi
       else
-        echo "~ WRONG KEY DUDE, TRY AGAIN!"
+        echo "~ wrong key dude, try again!"
         echo
       fi
     done
     break
   elif [[ "$cop" == "n" ]]; then
-    echo "~ SKIPPED SYSTEM_FILES BACKUP!"
+    echo "~ skipped system_files backup!"
     echo
     break
   else
-    echo "~ $ERRMSG"
+    echo "$ERRMSG"
     echo
   fi
 done
@@ -208,18 +208,18 @@ while true; do
       echo
       break
     else
-      echo "~ BACKUP FOLDER NOT FOUND!"
+      echo "* BACKUP FOLDER NOT FOUND!"
       echo
-      echo "~ CANNOT PROCEED!"
+      echo "* CANNOT PROCEED!"
       echo
       exit
     fi
   elif [[ "$sas" == "n" ]]; then
-    echo "~ SKIPPED REPLACING SYSTEM_FILES WITH CUSTOM ONES"
+    echo "~ skipped replacing system_files with custom ones"
     echo
     break
   else
-    echo "~ $ERRMSG"
+    echo "$ERRMSG"
     echo
   fi
 done
@@ -236,11 +236,11 @@ while true; do
     echo
     break
   elif [[ "$mas" == "n" ]]; then
-    echo "~ SKIPPED MKINITCPIO"
+    echo "~ skipped mkinitcpio"
     echo
     break
   else
-    echo "~ $ERRMSG"
+    echo "$ERRMSG"
     echo
   fi
 done
@@ -281,7 +281,7 @@ $YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 yazi starship \
     git-credential-manager-bin wl-clipboard brightnessctl xdg-user-dirs \
     power-profiles-daemon
 echo
-echo "~ FINISHED INSTALLING APPLICATIONS"
+echo "* FINISHED INSTALLING APPLICATIONS"
 echo
 
 echo "* CREATING XDG DIRECTORIES"
@@ -295,19 +295,20 @@ echo
 matugen image "$WALL"
 echo
 echo "$WALL" > "$HOME/.cache/last_wall.txt"
+
 echo "* SETTING FOLDER THEME"
 echo
 papirus-folders -C violet
 echo
 
 echo "* ENABLING SERVICES"
-sudo systemctl enable power-profiles-daemon \
-                      sddm
-
-sudo systemctl --user enable pipewire-pulse.service \
-                             wireplumber.service
-
 echo
+sudo systemctl enable power-profiles-daemon sddm
+echo
+# CONFUSION GOIN ON ABOUT THIS SECTION CHECK AFTER INSTALL AND CONFIRM
+# sudo systemctl --user enable pipewire-pulse.service wireplumber.service
+echo
+
 echo "* REMOVING 4ARCH REPO FROM ROOT DIRECTORY"
 echo
 sudo rm -rv /root/4arch
@@ -324,11 +325,11 @@ while true; do
     sleep 1
     sync && sync && sync && systemctl reboot
   elif [[ "$nas" == "n" ]]; then
-    echo "~ OKAY, REBOOT MANUALLY!"
+    echo "* OKAY, REBOOT MANUALLY!"
     echo
     exit
   else
-    echo "~ $ERRMSG"
+    echo "$ERRMSG"
     echo
   fi
 done

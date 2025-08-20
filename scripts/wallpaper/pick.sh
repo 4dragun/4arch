@@ -2,7 +2,7 @@
 
 FILTER="*.png *.jpg *.jpeg|Image Files"
 
-ICON="$HOME/4arch/azzets/matunoti.png"
+ICON="$HOME/4arch/assets/matunoti.png"
 
 SEL_WALL=$(kdialog --getopenfilename "$HOME/Pictures" "$FILTER")
 
