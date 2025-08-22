@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
 PK="sudo pacman-key"
+PU="sudo pacman -U --needed --noconfirm"
 
-L1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
-L2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
-
-YU="yay -U --needed --noconfirm"
 YS="yay -S --needed --noconfirm"
+
+C1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
+C2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
+
+G1="https://github.com/vinceliuice/Tela-circle-icon-theme"
+G2="https://github.com/NvChad/starter"
 
 ERRMSG="~ invalid response! try again!"
 
@@ -14,8 +17,9 @@ ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
 WALL="$HOME/4arch/walls/wallhaven-7jgyre_1920x1080.png"
 
+cd "$HOME"
 echo
-echo "* WELCOME TO 4ARCH SCRIPT"
+echo "* WELCOME TO 4ARCH POST-INSTALL SCRIPT"
 echo
 echo "* RUNNING PACMAN-KEY"
 echo
@@ -30,17 +34,23 @@ while true; do
   itd="${itd,,}"
 
   if [[ "$itd" == "y" ]]; then
-    rm -rv "$HOME/.config/nvim"
+    rm -rfv "$HOME/.config/ZTELA"
     echo
-    rm -rv "$HOME/.local/state/nvim"
+    rm -rfv "$HOME/.config/nvim"
     echo
-    rm -rv "$HOME/.local/share/nvim"
+    rm -rfv "$HOME/.local/state/nvim"
+    echo
+    rm -rfv "$HOME/.local/share/nvim"
+    echo
+    echo "> CLONING TELA-CIRCLE-ICON-THEME"
+    echo
+    git clone "$G1" "$HOME/.config/ZTELA"
     echo
     echo "> CLONING NVCHAD"
     echo
-    git clone https://github.com/NvChad/starter "$HOME/.config/nvim"
+    git clone "$G2" "$HOME/.config/nvim"
     echo
-    cp -rv "$HOME/4arch/confs/." "$HOME/.config"
+    cp -rfv "$HOME/4arch/confs/." "$HOME/.config"
     echo
     break
   elif [[ "$itd" == "n" ]]; then
@@ -61,13 +71,16 @@ while true; do
   if [[ "$yas" == "y" ]]; then
     sudo pacman -S --needed --noconfirm git base-devel
     echo
-    rm -rv "$HOME/yay-bin"
+    rm -rfv "$HOME/yay-bin"
     echo
     echo "> CLONING YAY"
     echo
-    git clone https://aur.archlinux.org/yay-bin.git
+    git clone "https://aur.archlinux.org/yay-bin.git"
     echo
-    cd "$HOME/yay-bin" && makepkg -si --noconfirm && cd && yay --noconfirm
+    cd "$HOME/yay-bin" || { exit; }
+    makepkg -si --noconfirm
+    cd "$HOME"
+    yay --noconfirm || { exit; }
     echo
     break
   elif [[ "$yas" == "n" ]]; then
@@ -92,9 +105,9 @@ while true; do
     echo
     $PK --lsign-key 3056513887B78AEB
     echo
-    $YU $L1
+    $PU "$C1"
     echo
-    $YU $L2
+    $PU "$C2"
     echo
     break
   elif [[ "$cas" == "n" ]]; then
@@ -122,7 +135,7 @@ while true; do
       if [[ "$ras" == "y" ]]; then
         sleep 1
         sync && sync && sync && systemctl reboot
-      elif [[ "$ras" = "n" ]]; then
+      elif [[ "$ras" == "n" ]]; then
         echo "~ reboot manually!"
         echo
         exit
@@ -166,8 +179,8 @@ while true; do
           echo
           echo "* BACKUP INCOMING"
           echo
-          sudo cp -rv /etc/mkinitcpio.conf "$ZSF" || { exit; }
-          sudo cp -rv /etc/pacman.conf     "$ZSF" || { exit; }
+          sudo cp -rfv /etc/mkinitcpio.conf "$ZSF" || { exit; }
+          sudo cp -rfv /etc/pacman.conf     "$ZSF" || { exit; }
           echo
           echo "* SECURING THE BACKUP"
           echo
@@ -204,7 +217,7 @@ while true; do
       echo
       echo "* PROCEEDING"
       echo
-      sudo cp -rv "$HOME/4arch/confs_system/." "/etc" || { exit; }
+      sudo cp -rfv "$HOME/4arch/confs_system/." "/etc" || { exit; }
       echo
       break
     else
@@ -247,7 +260,7 @@ done
 
 echo "* UPDATING SYSTEM WITH YAY"
 echo
-yay --noconfirm
+yay --noconfirm || { exit; }
 echo
 echo "* INSTALLING AUR PACKAGES"
 echo
@@ -256,7 +269,6 @@ echo
 echo "* INSTALLING INTERNAL DEPENDENCIES"
 echo
 $YS bibata-cursor-theme adw-gtk-theme darkly-qt6-git \
-    papirus-icon-theme papirus-folders \
     lua-language-server
 echo
 echo "* INSTALLING FONTS"
@@ -296,10 +308,11 @@ matugen image "$WALL"
 echo
 echo "$WALL" > "$HOME/.cache/last_wall.txt"
 
-echo "* SETTING FOLDER THEME"
-echo
-papirus-folders -C violet
-echo
+# PROBABLY GOING AWAY...................
+# echo "* SETTING FOLDER THEME"
+# echo
+# papirus-folders -C violet
+# echo
 
 echo "* ENABLING SERVICES"
 echo
@@ -311,7 +324,7 @@ echo
 
 echo "* REMOVING 4ARCH REPO FROM ROOT DIRECTORY"
 echo
-sudo rm -rv /root/4arch
+sudo rm -rfv /root/4arch
 echo
 
 while true; do

@@ -21,7 +21,7 @@ find "$ICON_DIR" -maxdepth 1 -type d -name "Tela*" -exec rm -rf {} +
 # Step 3: Copy new theme to matutela
 if [[ -d "$SRC_PATH" ]]; then
     rm -rf "$DST_PATH"
-    cp -r "$SRC_PATH" "$DST_PATH"
+    cp -rf "$SRC_PATH" "$DST_PATH"
 
     # Step 4: Rename the theme inside index.theme
     if [[ -f "$INDEX_FILE" ]]; then

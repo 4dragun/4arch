@@ -64,7 +64,7 @@ echo
 git clone https://github.com/4dragun/4arch --depth=1
 
 echo
-cp -rv 4arch /mnt/root || { exit; }
+cp -rfv 4arch /mnt/root || { exit; }
 echo
 
 arch-chroot /mnt /root/4arch/scripts/setup/01_chroot.sh
