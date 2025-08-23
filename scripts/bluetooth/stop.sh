@@ -12,17 +12,11 @@ SDHF="service deactivation has failed"
 SS="$(systemctl is-active "$SN")"
 
 if [ "$SS" == "inactive" ]; then
-  echo
-  echo "$B is $SS"
-  echo
-  notify-send -i "$II" "$B" "service is not running"
-  exit
+  echo -e "\n$B is $SS\n"
+  notify-send -i "$II" "$B" "service is not running"; exit
 elif [ "$SS" == "active" ]; then
-  echo
-  echo "$B is $SS"
-  echo
+  echo -e "\n$B is $SS\n"
   systemctl stop "$SN" || { notify-send -i "$AI" "$B" "$SDHF"; exit;}
-  killall blueman-applet
-  killall blueman-manager
+  killall blueman-applet blueman-manager
   notify-send -i "$II" "$B" "service has been deactivated"
 fi

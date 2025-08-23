@@ -3,13 +3,13 @@ ColorScheme=MatuQTCT
 XftHintStyle=hintslight
 XftSubPixel=none
 fixed=JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-font=Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-menuFont=Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-smallestReadableFont=Adwaita Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-toolBarFont=Adwaita Sans,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=Rubik,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Icons]
-Theme=Papirus-Dark
+Theme=matutela
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
@@ -22,7 +22,7 @@ Breadcrumb Navigation=true
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
-Preview Width=400
+Preview Width=417
 Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
@@ -33,9 +33,5 @@ Sort by=Name
 Sort directories first=true
 Sort hidden files last=false
 Sort reversed=false
-Speedbar Width=160
+Speedbar Width=154
 View Style=DetailTree
-
-[PreviewSettings]
-EnableRemoteFolderThumbnail=false
-MaximumRemoteSize=0

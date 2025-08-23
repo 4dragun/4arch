@@ -7,10 +7,7 @@ systemctl --user start hyprpaper
 sleep 0.5
 
 if [[ -z "$WALL" || ! -f "$WALL" ]]; then
-  echo
-  echo "NO SAVED WALLPAPER FOUND OR FILE MISSING!"
-  echo
-  exit
+  echo -e "\n~ NO SAVED WALLPAPER FOUND OR FILE MISSING!\n"; exit
 fi
 
 hyprctl hyprpaper reload ,"$WALL"

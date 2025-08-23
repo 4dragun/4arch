@@ -1,10 +1,5 @@
 
-Wierd USB interacting with hibernate fix {
-
-ad rm -rv ffffffff backkk
-
-
-hyprlock and overall font, new font ?
+matutela cleanup
 
 hlock bat sh editttttt
 

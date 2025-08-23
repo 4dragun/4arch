@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-echo
-echo "  SCRIPT CREATION UTILITY"
-echo
+echo -e "\n  SCRIPT CREATION UTILITY\n"
 
 read -p "~ ENTER SCRIPT NAME: " sas
 

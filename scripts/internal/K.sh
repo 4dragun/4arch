@@ -6,6 +6,6 @@ KEEP="erase deliver pig moment chimney exit essay faith anchor twin \
 
 ICON="$HOME/4arch/assets/4.png"
 
-wl-copy -n $KEEP || { exit; }
+wl-copy -n $KEEP || exit
 
 notify-send "Archy Linux" "finished" -i "$ICON"

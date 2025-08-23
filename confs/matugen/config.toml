@@ -5,17 +5,18 @@ version_check = true
 command = "hyprctl"
 arguments = ["hyprpaper reload ,"]
 
+
 [templates.kitty]
-input_path = "./templates/kitty-colors.conf"
-output_path = "../kitty/themes/matukitty.conf"
-post_hook = "kitty +kitten themes --reload-in=all matukitty"
+input_path = './templates/kitty-colors.conf'
+output_path = '../kitty/themes/matukitty.conf'
+post_hook = 'kitty +kitten themes --reload-in=all matukitty'
 
 [templates.starship]
 input_path = './templates/starship-colors.toml'
 output_path = '../starship.toml'
 
 [templates.yazi]
-input_path = './templates/yazi-theme.toml'
+input_path = './templates/yazi-colors.toml'
 output_path = '../yazi/theme.toml'
 
 [templates.waybar]
@@ -31,6 +32,7 @@ post_hook = 'hyprctl reload'
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
 output_path = '../gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
 
 [templates.gtk4]
 input_path = './templates/gtk-colors.css'
@@ -48,24 +50,26 @@ output_path = '../MATUOUTS/maturofimain.rasi'
 [templates.qtct]
 input_path = './templates/qtct-colors.colors'
 output_path = '../../.local/share/color-schemes/MatuQTCT.colors'
-post_hook = '~/4arch/scripts/qtmatfix.sh'
+post_hook = '~/4arch/scripts/internal/matuqtct.sh'
 
-### ### ### FIXES_MAN ### ### ###
+### ### ### FIXES ### ### ###
 
-[templates.emotefixman]
+[templates.emotefix]
 input_path = '/dev/null'
 output_path = '/dev/null'
 post_hook = 'killall emote'
 
-[templates.filepickerfixman]
+[templates.filepickerfix]
 input_path = '/dev/null'
 output_path = '/dev/null'
 post_hook = 'systemctl --user restart plasma-xdg-desktop-portal-kde.service'
 
-# [templates.hyprpolkitfixman]
-# input_path = '/dev/null'
-# output_path = '/dev/null'
-# post_hook = 'systemctl --user restart hyprpolkitagent'
+### ### ### #### ### ### ###
+
+[templates.tela]
+input_path = './templates/tela-colors.archy'
+output_path = '../MATUOUTS/matutela.archy'
+post_hook = '~/4arch/scripts/internal/matutela.sh'
 
 [config.custom_colors]
 green = "#00ff00"

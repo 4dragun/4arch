@@ -42,7 +42,7 @@ inputbar {
 entry {
   placeholder: "Search";
   placeholder-color: {{colors.surface_bright.default.hex}};
-  font: "JetBrainsMono Nerd Font Bold 13";
+  // font: "JetBrainsMono Nerd Font Bold 13";
   text-color: {{colors.primary.default.hex}};
   cursor-color: transparent;
 }
