@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-set -euo pipefail; echo
+set -euo pipefail
 
-echo -e "* REACHED MNT, BE CAREFUL!\n"
+echo -e "\n* REACHED CHROOT SCRIPT, BE CAREFUL!\n"
+echo -e "\n* SETTING UP TIMEZONE\n"
+ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
-echo -e "* SETTING UP TIMEZONE\n"
-ln -sfv /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-
-echo -e "* SYNCING HARDWARE CLOCK\n"
+echo -e "\n* SYNCING HARDWARE CLOCK\n"
 hwclock --systohc --verbose
 
 echo -e "\n* LOCALE SETUP\n"
@@ -17,11 +16,11 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 echo -e "\n* SETTING HOSTNAME\n"
 echo "archy" > /etc/hostname
-echo -e "~ typa password for ROOT :\n"
+echo -e "\n~ typa password for ROOT :\n"
 passwd
 
 echo -e "\n* ADDING A USER\n"
-useradd -m -G wheel archy
+id -u archy &>/dev/null || useradd -m -G wheel archy
 echo -e "\n~ typa password for USER :\n"
 passwd archy
 

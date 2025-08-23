@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail; echo
+set -euo pipefail
 
 cfdisk /dev/nvme0n1
 
@@ -22,13 +22,11 @@ while true; do
   sap="${sap,,}"
 
   if [[ "$sap" == "y" ]]; then
-    echo -e "~ okay, continuing with script\n"
-    break
+    echo -e "\n~ okay, continuing with script\n"; break
   elif [[ "$sap" == "n" ]]; then
-    echo -e "~ reboot your shyit and try again!\n"
-    exit
+    echo -e "\n~ reboot your shyit and try again!\n"; exit
   else
-    echo -e "~ invalid response, try again!\n"
+    echo -e "\n~ invalid response, try again!\n"
   fi
 done
 
@@ -36,14 +34,14 @@ echo -e "\n* JUICY PACSTRAP INCOMING\n"
 pacstrap -K /mnt base linux linux-firmware fish sudo intel-ucode \
                  networkmanager neovide git grub efibootmgr \
                  pipewire pipewire-alsa pipewire-audio pipewire-jack \
-                 pipewire-libcamera pipewire-pulse
+                 pipewire-libcamera pipewire-pulse || exit
 
 echo -e "\n* GENERATING FSTAB\n"
-genfstab -U /mnt > /mnt/etc/fstab || { exit; }
+genfstab -U /mnt > /mnt/etc/fstab || exit
 
 echo -e "\n> CLONING 4ARCH REPO\n"
-git clone https://github.com/4dragun/4arch --depth=1
+git clone https://github.com/4dragun/4arch --depth=1 || exit
 
-cp -rf 4arch /mnt/root || { exit; }
+cp -rf 4arch /mnt/root || exit
 
 arch-chroot /mnt /root/4arch/scripts/setup/01_chroot.sh
