@@ -1,5 +1,5 @@
 configuration {
-  font: "JetBrainsMono Nerd Font 12";
+  font: "Rubik 12";
   display-drun: "";
   drun-display-format: "{icon}{name}";
   show-icons: true;
