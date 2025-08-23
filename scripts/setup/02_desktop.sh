@@ -191,25 +191,32 @@ done
 
 echo -e "\n* UPDATING SYSTEM WITH YAY\n"
 yay --noconfirm || exit
+
 echo -e "\n* INSTALLING AUR PACKAGES\n"
-$YS clipse-bin matugen-bin
+$YS clipse-bin matugen-bin ttf-rubik-vf
+
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
 $YS bibata-cursor-theme adw-gtk-theme darkly-qt6-git \
     lua-language-server
+
 echo -e "\n* INSTALLING FONTS\n"
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji \
     ttf-jetbrains-mono-nerd
+
 echo -e "\n* INSTALLING HYPRLAND AND ITS DEPENDENCIES\n"
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast \
     qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
+
 echo -e "\n* INSTALLING GUI APPLICATIONS\n"
 $YS sddm brave emote pavucontrol telegram-desktop mpv gwenview rofi-wayland \
     firefox nwg-look blueman qbittorrent swaync reflector-simple neovide \
     waybar network-manager-applet dolphin ark swappy systemsettings kdialog
+
 echo -e "\n* INSTALLING CLI APPLICATIONS\n"
 $YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 yazi starship \
     git-credential-manager-bin wl-clipboard brightnessctl xdg-user-dirs \
     power-profiles-daemon
+
 echo -e "\n* FINISHED INSTALLING APPLICATIONS\n"
 
 echo -e "\n* CREATING XDG DIRECTORIES\n"
