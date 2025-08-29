@@ -34,14 +34,14 @@ echo -e "\n* JUICY PACSTRAP INCOMING\n"
 pacstrap -K /mnt base linux linux-firmware fish sudo intel-ucode \
                  networkmanager neovide git grub efibootmgr \
                  pipewire pipewire-alsa pipewire-audio pipewire-jack \
-                 pipewire-libcamera pipewire-pulse || exit
+                 pipewire-libcamera pipewire-pulse
 
 echo -e "\n* GENERATING FSTAB\n"
-genfstab -U /mnt > /mnt/etc/fstab || exit
+genfstab -U /mnt > /mnt/etc/fstab
 
-echo -e "\n> CLONING 4ARCH REPO\n"
-git clone https://github.com/4dragun/4arch --depth=1 || exit
+#echo -e "\n> CLONING 4ARCH REPO\n"
+#git clone https://github.com/4dragun/4arch --depth=1
 
-cp -rf 4arch /mnt/root || exit
+cp -rf 4arch /mnt/root
 
 arch-chroot /mnt /root/4arch/scripts/setup/01_chroot.sh
