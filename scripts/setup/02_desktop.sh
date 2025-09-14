@@ -39,7 +39,9 @@ while true; do
     echo -e "\n> CLONING NVCHAD\n"
     git clone "$G2" "$HOME/.config/nvim"
 
-    echo; cp -rf "$HOME/4arch/confs/." "$HOME/.config"; break
+    echo; cp -rf "$HOME/4arch/confs/." "$HOME/.config"
+    echo; cp -rf "$HOME/.config/.gitconfig" "$HOME"
+    echo; rm -rf "$HOME/.config/.gitconfig"; break
   elif [[ "$itd" == "n" ]]; then
     echo -e "\n~ skipped dotfiles, icons, themes setup\n"; break
   else
