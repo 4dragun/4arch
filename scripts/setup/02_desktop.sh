@@ -211,8 +211,9 @@ $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast \
 
 echo -e "\n* INSTALLING GUI APPLICATIONS\n"
 $YS sddm brave emote pavucontrol telegram-desktop mpv gwenview rofi-wayland \
-    firefox nwg-look blueman qbittorrent swaync reflector-simple neovide \
-    waybar network-manager-applet dolphin ark swappy systemsettings kdialog
+    nwg-look blueman qbittorrent swaync reflector-simple neovide \
+    waybar network-manager-applet dolphin swappy systemsettings kdialog \
+    p7zip-gui zen-browser-bin
 
 echo -e "\n* INSTALLING CLI APPLICATIONS\n"
 $YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 yazi starship \
