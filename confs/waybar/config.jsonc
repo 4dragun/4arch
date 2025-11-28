@@ -133,7 +133,6 @@
     "escape": true
   },
   "custom/amixer": {
-    "exec": "~/4arch/scripts/internal/amixerbar.sh",
-    "interval": 1
+    "exec": "~/4arch/scripts/internal/amixerbar.sh"
   }
 }
