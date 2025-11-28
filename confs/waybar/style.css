@@ -19,7 +19,8 @@ window#waybar {
 #tray,
 #battery,
 #clock,
-#custom-notification {
+#custom-notification,
+#custom-amixer {
   background: @surface_container;
   border-radius: 13px;
   padding: 0 10px;

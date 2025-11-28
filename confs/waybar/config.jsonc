@@ -14,7 +14,8 @@
     // "niri/workspaces",    
     "hyprland/workspaces",
     "clock",
-    "pulseaudio"
+    "pulseaudio",
+    "custom/amixer"
   ],
   "modules-right": [
     "privacy",
@@ -130,5 +131,9 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "custom/amixer": {
+    "exec": "~/4arch/scripts/internal/amixerbar.sh",
+    "interval": 1
   }
 }

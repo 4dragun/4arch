@@ -195,11 +195,11 @@ echo -e "\n* UPDATING SYSTEM WITH YAY\n"
 yay --noconfirm || exit
 
 echo -e "\n* INSTALLING AUR PACKAGES\n"
-$YS clipse-bin matugen-bin ttf-rubik-vf
+$YS ttf-rubik-vf cable
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
 $YS bibata-cursor-theme adw-gtk-theme darkly-qt6-git \
-    lua-language-server
+    lua-language-server alsa-utils gst-plugins-bad
 
 echo -e "\n* INSTALLING FONTS\n"
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji \
@@ -213,12 +213,12 @@ echo -e "\n* INSTALLING GUI APPLICATIONS\n"
 $YS sddm brave emote pavucontrol telegram-desktop mpv gwenview rofi-wayland \
     nwg-look blueman qbittorrent swaync reflector-simple neovide \
     waybar network-manager-applet dolphin swappy systemsettings kdialog \
-    p7zip-gui zen-browser-bin
+    p7zip-gui zen-browser-bin strawberry
 
 echo -e "\n* INSTALLING CLI APPLICATIONS\n"
 $YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 yazi starship \
     git-credential-manager-bin wl-clipboard brightnessctl xdg-user-dirs \
-    power-profiles-daemon
+    power-profiles-daemon clipse matugen
 
 echo -e "\n* FINISHED INSTALLING APPLICATIONS\n"
 

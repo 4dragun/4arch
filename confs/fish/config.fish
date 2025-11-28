@@ -14,10 +14,9 @@ end
 alias y     "yazi"
 alias ls    "lsd"
 alias cat   "bat"
-alias gi    "~/4arch/scripts/gi.sh"
-alias gc    "~/4arch/scripts/gc.sh"
-alias gf    "~/4arch/scripts/gf.sh"
-alias s     "~/4arch/scripts/scrpt.sh"
+alias gc    "~/4arch/scripts/git/commit.sh"
+alias gf    "~/4arch/scripts/git/force.sh"
+alias s     "~/4arch/scripts/utils/create.sh"
 alias clear "command clear; commandline -f clear-screen"
 
 starship init fish | source
