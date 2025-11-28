@@ -199,7 +199,7 @@ $YS ttf-rubik-vf cable
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
 $YS bibata-cursor-theme adw-gtk-theme darkly-qt6-git \
-    lua-language-server alsa-utils gst-plugins-bad
+    lua-language-server gst-plugins-bad xdg-user-dirs
 
 echo -e "\n* INSTALLING FONTS\n"
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji \
@@ -217,7 +217,7 @@ $YS sddm brave emote pavucontrol telegram-desktop mpv gwenview rofi-wayland \
 
 echo -e "\n* INSTALLING CLI APPLICATIONS\n"
 $YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 yazi starship \
-    git-credential-manager-bin wl-clipboard brightnessctl xdg-user-dirs \
+    git-credential-manager-bin wl-clipboard brightnessctl alsa-utils \
     power-profiles-daemon clipse matugen
 
 echo -e "\n* FINISHED INSTALLING APPLICATIONS\n"
