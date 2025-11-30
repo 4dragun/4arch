@@ -1,0 +1,6 @@
+# RULE: Set safe volume for TTGK Audiocular D07 on connection
+ACTION=="add", \
+SUBSYSTEM=="usb", \
+ATTR{idVendor}=="3302", \
+ATTR{idProduct}=="3395", \
+RUN+="/home/archy/4arch/scripts/internal/dacudev.sh"
