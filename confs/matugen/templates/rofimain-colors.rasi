@@ -5,6 +5,7 @@
 
 window {
   background-color: {{colors.surface.default.hex}};
+  // background-color: {{colors.surface.default.rgba | set_alpha: 0.8}};
   width: 30%;
   padding: 30;
   border: 1;
@@ -35,6 +36,7 @@ element selected {
 
 inputbar {
   background-color: {{colors.surface_container.default.hex}};
+  // background-color: {{colors.surface_container.default.rgba | set_alpha: 0.5}};
   padding: 17;
   margin: 0 20 25 20;
 }
@@ -42,7 +44,6 @@ inputbar {
 entry {
   placeholder: "Search";
   placeholder-color: {{colors.surface_bright.default.hex}};
-  // font: "JetBrainsMono Nerd Font Bold 13";
   text-color: {{colors.primary.default.hex}};
   cursor-color: transparent;
 }

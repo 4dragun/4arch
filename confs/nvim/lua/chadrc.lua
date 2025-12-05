@@ -24,7 +24,7 @@ M.ui = {
 
 vim.o.guifont = "JetBrainsMono Nerd Font:h13:b,i"
 
-vim.g.transparency = 0           -- Your desired content transparency
+-- vim.g.neovide_opacity = 0.7
 vim.g.neovide_padding_top = 30
 vim.g.neovide_padding_bottom = 30
 vim.g.neovide_padding_right = 30
