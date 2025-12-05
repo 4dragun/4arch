@@ -22,15 +22,14 @@ M.ui = {
   }
 }
 
--- vim.g.neovide_opacity = 0.7
-
 vim.o.guifont = "JetBrainsMono Nerd Font:h13:b,i"
 
-vim.g.neovide_cursor_trail_size = 0.3
-
+-- vim.g.neovide_opacity = 0.7
 vim.g.neovide_padding_top = 30
 vim.g.neovide_padding_bottom = 30
 vim.g.neovide_padding_right = 30
 vim.g.neovide_padding_left = 30
+
+vim.g.neovide_cursor_trail_size = 0.3
 
 return M

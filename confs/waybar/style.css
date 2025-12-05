@@ -115,7 +115,7 @@ window#waybar {
   margin: 0 23px 0 0;
 }
 
-/* check with main values for consistency 👇️ */
+/* check with main values for consistency ⏬ */
 #backlight {
   border-radius: 13px 0 0 13px;
   background: @surface_container;
@@ -131,7 +131,7 @@ window#waybar {
   border-radius: 0 13px 13px 0;
   padding: 0 10px;
 }
-/* check with main values for consistency 👆️ */
+/* check with main values for consistency ⏫ */
 
 #backlight-slider slider {
   background: none;

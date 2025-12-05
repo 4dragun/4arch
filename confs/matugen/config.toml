@@ -5,6 +5,7 @@ version_check = true
 command = "hyprctl"
 arguments = ["hyprpaper reload ,"]
 
+
 [templates.kitty]
 input_path = './templates/kitty-colors.conf'
 output_path = '../kitty/themes/matukitty.conf'
@@ -31,6 +32,7 @@ post_hook = 'hyprctl reload'
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
 output_path = '../gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
 
 [templates.gtk4]
 input_path = './templates/gtk-colors.css'
