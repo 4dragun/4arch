@@ -3,10 +3,12 @@
   "position": "top",
   "height": 0,
   "spacing": 0,
+
   "modules-left": [
     // "niri/window",
     "hyprland/window"
   ],
+
   "modules-center": [
     "power-profiles-daemon",
     "backlight",
@@ -17,12 +19,14 @@
     "pulseaudio",
     "custom/amixer"
   ],
+
   "modules-right": [
     "privacy",
     "tray",
     "battery",
     "custom/notification"
   ],
+
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -30,6 +34,7 @@
       "default": "󰮯 󰧞󰧞󰧞󰧞󰧞󰧞"
     }
   },
+
   "hyprland/workspaces": {
     "format": "{name}",
     "on-click": "activate",
@@ -50,6 +55,7 @@
       "10": []
     }
   },
+
   "hyprland/window": {
     "format": "{class}",
     "separate-outputs": true,
@@ -57,6 +63,7 @@
       "": "hyprland"
     }
   },
+
   "niri/workspaces": {
     "format": "{icon}",
     "all-outputs": true,
@@ -64,16 +71,20 @@
       "active": "<b>=</b>"
     }
   },
+
   "niri/window": {
     "format": "{app_id}",
     "separate-outputs": true
   },
+
   "privacy": {
     "icon-size": 11
   },
+
   "backlight": {
     "format": "{percent}"
   },
+
   "pulseaudio": {
     "format-bluetooth": "{icon}󰂯  {volume}  󰇘 {format_source}",
     "format-bluetooth-muted": "{icon}󰂯   󰇘 {format_source}",
@@ -92,11 +103,13 @@
     },
     "on-click": "pavucontrol"
   },
+
   "tray": {
     "spacing": 13,
     "icon-size": 16,
     "show-passive-items": true
   },
+
   "battery": {
     "states": {
       "warning": 30,
@@ -109,10 +122,12 @@
     "format-alt": "{icon}   {time}",
     "format-icons": ["", "", "", "", ""]
   },
+
   "clock": {
     "format": "{:%R 󰧞 %A %b %d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
+
   "custom/notification": {
     "format": "{icon}",
     "format-icons": {
@@ -132,6 +147,7 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
+
   "custom/amixer": {
     "exec": "~/4arch/scripts/internal/amixerbar.sh"
   }
