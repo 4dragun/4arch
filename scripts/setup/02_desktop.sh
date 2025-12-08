@@ -198,7 +198,7 @@ echo -e "\n* INSTALLING AUR PACKAGES\n"
 $YS ttf-rubik-vf cable
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
-$YS bibata-cursor-theme adw-gtk-theme darkly-qt6-git \
+$YS bibata-cursor-theme adw-gtk-theme darkly-bin \
     lua-language-server gst-plugins-bad xdg-user-dirs
 
 echo -e "\n* INSTALLING FONTS\n"
