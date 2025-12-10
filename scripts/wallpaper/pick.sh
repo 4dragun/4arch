@@ -14,7 +14,7 @@ fi
 echo "$SEL_WALL" > "$HOME/.cache/last_wall.txt"
 echo -e "\n* APPLYING THEME USING $SEL_WALL\n"
 
-matugen image "$SEL_WALL" || {
+matugen -t scheme-content image "$SEL_WALL" || {
   notify-send -i "$ICON" "Matugen" "manual intervention needed!"
   exit
 }

@@ -13,7 +13,7 @@ G2="https://github.com/NvChad/starter"
 
 ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
-WALL="$HOME/4arch/walls/wallhaven-7jgyre_1920x1080.png"
+WALL="$HOME/4arch/walls/Anime-Japan-Street.png"
 
 ERRMSG="~ invalid response! try again!"
 
@@ -227,7 +227,7 @@ xdg-user-dirs-update
 mkdir -p "$HOME/Pictures/Screenshots"
 
 echo -e "\n* BUILDING THEMES WITH MATUGEN\n"
-matugen image "$WALL"; echo
+matugen -t scheme-content image "$WALL"; echo
 echo "$WALL" > "$HOME/.cache/last_wall.txt"
 
 # PROBABLY GOING AWAY...................
