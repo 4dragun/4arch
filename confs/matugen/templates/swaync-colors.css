@@ -14,7 +14,7 @@
   border: 1px solid var(--noti-border-color);
   padding: 0px;
   background: var(--noti-bg);
-  margin: 6px 0px 0px 0px;
+  margin: 6px 0px 0px 66px;
 }
 
 .notification-group {
