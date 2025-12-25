@@ -1,4 +1,5 @@
 {
+  "fixed-center": true,
   "layer": "bottom",
   "position": "top",
   "height": 0,
@@ -6,7 +7,8 @@
 
   "modules-left": [
     // "niri/window",
-    "hyprland/window"
+    "hyprland/window",
+    "mpris"
   ],
 
   "modules-center": [
@@ -26,6 +28,15 @@
     "battery",
     "custom/notification"
   ],
+
+  "mpris": {
+    "format": "󰇘  {status_icon} {title}",
+    "title-len": 20,
+    "status-icons": {
+      "paused": "  ",
+      "playing": "  "
+	  }
+  },
 
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -58,6 +69,7 @@
 
   "hyprland/window": {
     "format": "{class}",
+    "max-length": 10,
     "separate-outputs": true,
     "rewrite": {
       "": "hyprland"
@@ -82,7 +94,7 @@
   },
 
   "backlight": {
-    "format": "{percent}"
+    "format": "  {percent}"
   },
 
   "pulseaudio": {
