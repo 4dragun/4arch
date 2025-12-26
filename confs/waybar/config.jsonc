@@ -94,7 +94,7 @@
   },
 
   "backlight": {
-    "format": "  {percent}"
+    "format": "{percent}"
   },
 
   "pulseaudio": {
