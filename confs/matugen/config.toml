@@ -3,7 +3,7 @@ version_check = true
 
 [config.wallpaper]
 command = "hyprctl"
-arguments = ["hyprpaper reload ,"]
+arguments = ["hyprpaper wallpaper ,"]
 
 [templates.kitty]
 input_path = './templates/kitty-colors.conf'
