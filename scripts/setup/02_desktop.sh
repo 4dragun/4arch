@@ -195,7 +195,7 @@ echo -e "\n* UPDATING SYSTEM WITH YAY\n"
 yay --noconfirm || exit
 
 echo -e "\n* INSTALLING AUR PACKAGES\n"
-$YS ttf-rubik-vf cable
+$YS ttf-rubik-vf wvkbd
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
 $YS bibata-cursor-theme adw-gtk-theme darkly-bin \
