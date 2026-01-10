@@ -199,7 +199,8 @@ $YS ttf-rubik-vf wvkbd
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
 $YS bibata-cursor-theme adw-gtk-theme darkly-bin \
-    lua-language-server gst-plugins-bad xdg-user-dirs
+    lua-language-server gst-plugins-bad xdg-user-dirs \
+    archlinux-xdg-menu
 
 echo -e "\n* INSTALLING FONTS\n"
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji \
