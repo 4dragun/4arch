@@ -111,7 +111,7 @@
       "phone": " ",
       "portable": " ",
       "car": " ",
-      "default": [" ", "  ", "    "]
+      "default": ["  ", "   "]
     },
     "on-click": "pavucontrol"
   },
@@ -129,8 +129,8 @@
     },
     "format": "{icon}   {capacity}%",
     "format-full": "{icon}   {capacity}%",
-    "format-charging": "{icon} 󱐋 {capacity}%",
-    "format-plugged": "{icon} 󱐋 {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": "󱐋 {capacity}%",
     "format-alt": "{icon}   {time}",
     "format-icons": ["", "", "", "", ""]
   },
