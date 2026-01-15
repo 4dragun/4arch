@@ -6,7 +6,7 @@
 window {
   background-color: {{colors.surface.default.hex}};
   // background-color: {{colors.surface.default.rgba | set_alpha: 0.8}};
-  width: 30%;
+  width: 27%;
   padding: 30;
   border: 1;
   border-color: {{colors.surface_container_high.default.hex}};
