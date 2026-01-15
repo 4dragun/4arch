@@ -57,6 +57,7 @@ window#waybar {
 #workspaces button.active {
   color: @surface;
   background: @primary;
+  transition: 0.3s ease;
 }
 
 #workspaces button.empty {
