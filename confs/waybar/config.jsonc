@@ -47,7 +47,7 @@
   },
 
   "hyprland/workspaces": {
-    "format": "{icon}",
+    "format": "{name}",
     "on-click": "activate",
     "sort-by-number": true,
     "all-outputs": true,
@@ -64,9 +64,6 @@
       "8": [],
       "9": [],
       "10": []
-    },
-    "format-icons": {
-      "active": "<span font_size='23pt'>󰻂</span>"
     }
   },
 
