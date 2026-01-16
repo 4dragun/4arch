@@ -52,13 +52,12 @@ window#waybar {
   border-radius: 999px;
   margin: 1px 2px;
   padding: 0 5px;
-  transition: 0.3s
 }
 
 #workspaces button.active {
-  color: @surface;
-  background: @primary;
-  padding: 0 12px
+  color: @primary;
+  background: none;
+  margin: -99px 3px -99px -5px;
 }
 
 #workspaces button.empty {
