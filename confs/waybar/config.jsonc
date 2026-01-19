@@ -117,8 +117,8 @@
   },
 
   "tray": {
-    "spacing": 13,
-    "icon-size": 16,
+    "spacing": 12,
+    "icon-size": 15,
     "show-passive-items": true
   },
 
@@ -127,8 +127,8 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon}   {capacity}%",
-    "format-full": "{icon}   {capacity}%",
+    "format": "{icon}    {capacity}%",
+    "format-full": "{icon}    {capacity}%",
     "format-charging": "󱐋 {capacity}%",
     "format-plugged": "󱐋 {capacity}%",
     "format-alt": "{icon}   {time}",

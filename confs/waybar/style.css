@@ -7,9 +7,7 @@
   padding: 0;
 }
 
-window#waybar {
-  background: @surface
-}
+window#waybar { background: @surface }
 
 #power-profiles-daemon,
 #workspaces,
@@ -22,7 +20,7 @@ window#waybar {
 #custom-notification,
 #custom-amixer {
   background: @surface_container;
-  border-radius: 13px;
+  border-radius: 999px;
   padding: 0 10px;
   margin: 4px 2px;
   color: @primary_fixed;
@@ -31,12 +29,10 @@ window#waybar {
 #power-profiles-daemon {
   color: @primary
 }
-
 #power-profiles-daemon.performance {
   color: @surface;
   background: @red;
 }
-
 #power-profiles-daemon.power-saver {
   color: @surface;
   background: @green;
@@ -45,29 +41,27 @@ window#waybar {
 #workspaces {
   padding: 2px;
 }
-
 #workspaces button {
-  color: @primary_fixed;
-  background: @surface_bright;
+  color: @primary;
+  background: @primary_custom;
   border-radius: 999px;
   margin: 1px 2px;
   padding: 0 5px;
+  transition: 0.5s
 }
-
 #workspaces button.active {
   color: @surface;
   background: @primary;
-  transition: 0.5s
+  padding: 0 13px;
 }
-
 #workspaces button.empty {
   color: @outline;
   background: none;
+  padding: 0 5px;
 }
-
 #workspaces button:hover {
   background: @source_color;
-  color: @surface;
+  color: @primary_fixed;
 }
 
 #window {
@@ -80,23 +74,23 @@ window#waybar {
   background: none
 }
 
-#tray {
+#tray { background: none; }
+
+#battery {
   background: none;
+  font-size: 14px;
 }
-
-#battery { background: none; }
-
 #battery.charging, #battery.plugged {
-  color: @surface;
-  background: @primary;
+  color: @primary;
+  background: @primary_custom;
+  padding: 0 15px;
 }
-
 #battery.warning:not(.charging) {
-  background: @red;
-  color: @surface;
+  background: @red_custom;
+  color: @red;
 }
-
 #battery.critical:not(.charging) {
+  color: @red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
@@ -106,8 +100,8 @@ window#waybar {
 
 @keyframes blink {
   to {
-    background: @red;
-    color: @surface;
+    background: @red_custom;
+    color: @red;
   }
 }
 
@@ -124,7 +118,6 @@ window#waybar {
   margin: 4px 0 4px 2px;
   padding: 0 0 0 10px;
 }
-
 #backlight-slider {
   background: @surface_container;
   min-width: 130px;
@@ -133,17 +126,14 @@ window#waybar {
   padding: 0 10px;
 }
 /* check with main values for consistency 👆️ */
-
 #backlight-slider slider {
   background: none;
   border: none;
   box-shadow:none
 }
-
 #backlight-slider trough {
   border-radius: 999px;
 }
-
 #backlight-slider highlight {
   background: @primary;
   min-height: 13px;

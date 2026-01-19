@@ -1,6 +1,6 @@
 <* for name, value in colors *>
-    @define-color {{name}} {{value.default.hex}};
+    @define-color {{name}} {{value.default.rgba}};
 <* endfor *>
 
-/* @define-color surface {{colors.surface.default.rgba | set_alpha: 0.8}}; */
-/* @define-color surface_container {{colors.surface_container.default.rgba | set_alpha: 0.5}}; */
+@define-color red_custom     {{colors.red.default.rgba     | set_alpha: 0.2}};
+@define-color primary_custom {{colors.primary.default.rgba | set_alpha: 0.1}};
