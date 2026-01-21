@@ -51,7 +51,7 @@ window#waybar { background: @surface }
 }
 #workspaces button.active {
   color: @surface;
-  background: @primary;
+  background: @primary_custom_a;
   padding: 0 13px;
 }
 #workspaces button.empty {
@@ -112,7 +112,7 @@ window#waybar { background: @surface }
 
 /* check with main values for consistency 👇️ */
 #backlight {
-  border-radius: 13px 0 0 13px;
+  border-radius: 999px 0 0 999px;
   background: @surface_container;
   color: @primary_fixed;
   margin: 4px 0 4px 2px;
@@ -122,20 +122,21 @@ window#waybar { background: @surface }
   background: @surface_container;
   min-width: 130px;
   margin: 4px 2px 4px 0;
-  border-radius: 0 13px 13px 0;
+  border-radius: 0 999px 999px 0;
   padding: 0 10px;
 }
 /* check with main values for consistency 👆️ */
 #backlight-slider slider {
-  background: none;
+  background: @primary_custom;
   border: none;
   box-shadow:none
 }
 #backlight-slider trough {
   border-radius: 999px;
+  background: @primary_custom;
 }
 #backlight-slider highlight {
   background: @primary;
-  min-height: 13px;
+  min-height: 7px;
   border-radius: 999px;
 }
