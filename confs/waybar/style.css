@@ -23,7 +23,7 @@ window#waybar { background: @surface }
   border-radius: 999px;
   padding: 0 10px;
   margin: 4px 2px;
-  color: @primary_fixed;
+  color: @primary;
 }
 
 #power-profiles-daemon {
@@ -61,12 +61,17 @@ window#waybar { background: @surface }
 }
 #workspaces button:hover {
   background: @source_color;
-  color: @primary_fixed;
+  color: @primary;
 }
 
 #window {
   background: none;
-  margin: 0 0 0 23px;
+  margin: 0 3px 0 23px;
+}
+
+#mpris {
+  color: @primary;
+  font-size: 14px;
 }
 
 #privacy {
@@ -114,7 +119,7 @@ window#waybar { background: @surface }
 #backlight {
   border-radius: 999px 0 0 999px;
   background: @surface_container;
-  color: @primary_fixed;
+  color: @primary;
   margin: 4px 0 4px 2px;
   padding: 0 0 0 10px;
 }

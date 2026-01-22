@@ -53,23 +53,12 @@
     "all-outputs": true,
     "show-special": true,
     "special-visible-only": true,
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": [],
-      "10": []
-    }
+    "persistent-workspaces": { "*": 10 }
   },
 
   "hyprland/window": {
     "format": "{class}",
-    "max-length": 10,
+    "max-length": 13,
     "separate-outputs": true,
     "rewrite": {
       "": "hyprland"
