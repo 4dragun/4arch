@@ -195,7 +195,7 @@ echo -e "\n* UPDATING SYSTEM WITH YAY\n"
 yay --noconfirm || exit
 
 echo -e "\n* INSTALLING AUR PACKAGES\n"
-$YS ttf-rubik-vf wvkbd
+$YS ttf-rubik-vf wvkbd ayugram-desktop-bin
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
 $YS bibata-cursor-theme adw-gtk-theme darkly-bin \
@@ -211,7 +211,7 @@ $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast \
     qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 
 echo -e "\n* INSTALLING GUI APPLICATIONS\n"
-$YS sddm brave emote pavucontrol ayugram-desktop-bin gwenview rofi-wayland \
+$YS sddm brave emote pavucontrol gwenview rofi-wayland \
     nwg-look blueman qbittorrent swaync reflector-simple neovide mpv\
     waybar network-manager-applet dolphin swappy systemsettings kdialog \
     p7zip-gui zen-browser-bin strawberry
