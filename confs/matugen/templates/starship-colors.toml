@@ -29,6 +29,7 @@ color1 = '{{colors.on_primary.default.hex}}'
 color2 = '{{colors.primary.default.hex}}'
 color3 = '{{colors.surface.default.hex}}'
 color4 = '{{colors.secondary_container.default.hex}}'
+color5 = '{{colors.tertiary.default.hex}}'
 
 [username]
 show_always = true
@@ -44,9 +45,9 @@ truncation_length = 3
 truncation_symbol = "󰇘 "
 
 [git_branch]
-symbol = ""
+symbol = " "
 style  = "bold color5"
-format = '[ $symbol $branch]($style)'
+format = '[ $symbol$branch]($style)'
 
 [git_status]
 style  = "bold fg:#FF9700"
@@ -54,6 +55,5 @@ format = '[$all_status$ahead_behind]($style)'
 
 [cmd_duration]
 min_time = 0
-show_milliseconds = true
 style    = "bold fg:color2 bg:color1"
 format   = '[$duration]($style)'
