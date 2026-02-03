@@ -1,6 +1,8 @@
 format = """
-[](color1)\
+[](color2)\
 $username\
+[](fg:color1 bg:color2)\
+[linux](bold bg:color1 fg:color2)\
 [](color1)\
 [ ]()\
 [](color4)\
@@ -13,39 +15,33 @@ $git_status\
 
 right_format = """
 [](color2)\
+[󰔚 ](bg:color2 fg:color1)\
+[](bg:color2 fg:color1)\
 $cmd_duration\
-[](color2)\
+[](color1)\
 """
 
 add_newline = false
 palette     = 'colors'
 
 [palettes.colors]
-color1 = '{{colors.primary.default.hex}}'
-color2 = '{{colors.primary_fixed.default.hex}}'
+color1 = '{{colors.on_primary.default.hex}}'
+color2 = '{{colors.primary.default.hex}}'
 color3 = '{{colors.surface.default.hex}}'
-color4 = '{{colors.secondary.default.hex}}'
-color5 = '{{colors.source_color.default.hex}}'
+color4 = '{{colors.secondary_container.default.hex}}'
 
 [username]
 show_always = true
-style_user  = "bold fg:color3 bg:color1"
+style_user  = "bold italic fg:color3 bg:color2"
 style_root  = "bg:#9A348E"
-format      = '[$user󰧞linux]($style)'
+format      = '[$user ]($style)'
 disabled    = false
 
 [directory]
-style             = "bold fg:color3 bg:color4"
-format            = "[ $path ]($style)"
+style             = "bold fg:color2 bg:color4"
+format            = "[$path]($style)"
 truncation_length = 3
-truncation_symbol = "…/"
-
-[directory.substitutions]
-"~"         = " "
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music"     = " "
-"Pictures"  = " "
+truncation_symbol = "󰇘 "
 
 [git_branch]
 symbol = ""
@@ -58,5 +54,6 @@ format = '[$all_status$ahead_behind]($style)'
 
 [cmd_duration]
 min_time = 0
-style    = "bold fg:color3 bg:color2"
-format   = '[󰔚 $duration]($style)'
+show_milliseconds = true
+style    = "bold fg:color2 bg:color1"
+format   = '[$duration]($style)'
