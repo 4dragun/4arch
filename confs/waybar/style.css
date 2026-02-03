@@ -30,12 +30,12 @@ window#waybar { background: @surface }
   color: @primary
 }
 #power-profiles-daemon.performance {
-  color: @surface;
-  background: @red;
+  color: @red;
+  background: @red_custom;
 }
 #power-profiles-daemon.power-saver {
-  color: @surface;
-  background: @green;
+  color: @green;
+  background: @green_custom;
 }
 
 #workspaces {
@@ -86,8 +86,8 @@ window#waybar { background: @surface }
   font-size: 14px;
 }
 #battery.charging, #battery.plugged {
-  color: @primary;
-  background: @primary_custom;
+  color: @green;
+  background: @green_custom;
   padding: 0 15px;
 }
 #battery.warning:not(.charging) {
@@ -125,7 +125,7 @@ window#waybar { background: @surface }
 }
 #backlight-slider {
   background: @surface_container;
-  min-width: 130px;
+  min-width: 120px;
   margin: 4px 2px 4px 0;
   border-radius: 0 999px 999px 0;
   padding: 0 10px;

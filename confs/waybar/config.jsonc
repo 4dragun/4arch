@@ -97,12 +97,9 @@
       "headphone": "  ",
       "hands-free": "󰋎 ",
       "headset": "󰋎 ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
       "default": ["  ", "   "]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pwvucontrol"
   },
 
   "tray": {
@@ -116,12 +113,11 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon}    {capacity}%",
-    "format-full": "{icon}    {capacity}%",
-    "format-charging": "󱐋  {capacity}%",
-    "format-plugged": "󱐋  {capacity}%",
+    "format": "{icon}   {capacity}%",
+    "format-full": "{icon}   {capacity}%",
+    "format-charging": "  {capacity}%",
     "format-alt": "{icon}   {time}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
 
   "clock": {

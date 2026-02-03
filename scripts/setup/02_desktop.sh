@@ -211,7 +211,7 @@ $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast \
     qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 
 echo -e "\n* INSTALLING GUI APPLICATIONS\n"
-$YS sddm brave emote pavucontrol gwenview rofi-wayland \
+$YS sddm brave emote pwvucontrol gwenview rofi-wayland \
     nwg-look blueman qbittorrent swaync reflector-simple neovide mpv\
     waybar network-manager-applet dolphin swappy systemsettings kdialog \
     p7zip-gui zen-browser-bin strawberry

@@ -3,5 +3,6 @@
 <* endfor *>
 
 @define-color red_custom       {{colors.red.default.rgba     | set_alpha: 0.2}};
+@define-color green_custom     {{colors.green.default.rgba   | set_alpha: 0.1}};
 @define-color primary_custom   {{colors.primary.default.rgba | set_alpha: 0.1}};
 @define-color primary_custom_a {{colors.primary.default.rgba | set_alpha: 0.8}};

@@ -5,20 +5,30 @@ BATTERY=$(cat /sys/class/power_supply/BAT0/capacity)
 STATE=$(cat /sys/class/power_supply/BAT0/status)
 
 if [[ "$STATE" == "Charging" ]]; then
-  ICON="󱐌"
+  ICON=" "
 elif [[ "$STATE" == "Full" ]]; then
-  ICON="  "
+  ICON="󰁹 "
 elif [[ "$STATE" == "Discharging" ]]; then
-  if (( BATTERY > 80 )); then
-    ICON="  "
+  if (( BATTERY > 90 )); then
+    ICON="󰂂 "
+  elif (( BATTERY > 80 )); then
+    ICON="󰂁 "
+  elif (( BATTERY > 70 )); then
+    ICON="󰂀 "
   elif (( BATTERY > 60 )); then
-    ICON="  "
+    ICON="󰁿 "
+  elif (( BATTERY > 50 )); then
+    ICON="󰁾 "
   elif (( BATTERY > 40 )); then
-    ICON="  "
+    ICON="󰁽 "
+  elif (( BATTERY > 30 )); then
+    ICON="󰁼 "
   elif (( BATTERY > 20 )); then
-    ICON="  "
+    ICON="󰁻 "
+  elif (( BATTERY > 10 )); then
+    ICON="󰁺 "
   else
-    ICON="  "
+    ICON="󰂎 "
   fi
 else
   ICON="???"
