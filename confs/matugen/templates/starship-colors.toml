@@ -30,6 +30,7 @@ color2 = '{{colors.primary.default.hex}}'
 color3 = '{{colors.surface.default.hex}}'
 color4 = '{{colors.secondary_container.default.hex}}'
 color5 = '{{colors.tertiary.default.hex}}'
+color6 = '{{colors.red.default.hex}}'
 
 [username]
 show_always = true
@@ -50,8 +51,8 @@ style  = "bold color5"
 format = '[ $symbol$branch]($style)'
 
 [git_status]
-style  = "bold fg:#FF9700"
-format = '[$all_status$ahead_behind]($style)'
+style  = "bold color6"
+format = '[ $all_status$ahead_behind]($style)'
 
 [cmd_duration]
 min_time = 0
