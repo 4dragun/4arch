@@ -75,11 +75,14 @@ window#waybar { background: @surface }
 }
 
 #privacy {
-  color: greenyellow;
+  color: @green;
   background: none
 }
 
-#tray { background: none; }
+#tray {
+  background: none;
+  margin-right: -5px
+}
 
 #battery {
   background: none;
@@ -88,7 +91,6 @@ window#waybar { background: @surface }
 #battery.charging, #battery.plugged {
   color: @green;
   background: @green_custom;
-  padding: 0 15px;
 }
 #battery.warning:not(.charging) {
   background: @red_custom;

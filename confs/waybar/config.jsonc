@@ -103,7 +103,7 @@
   },
 
   "tray": {
-    "spacing": 12,
+    "spacing": 10,
     "icon-size": 15,
     "show-passive-items": true
   },
