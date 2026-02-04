@@ -4,18 +4,19 @@ $username\
 [](fg:color1 bg:color2)\
 [linux](bold bg:color1 fg:color2)\
 [](color1)\
-[ ]()\
-[](color4)\
+[ ](color4)\
 $directory\
-[](color4)\
+[ ](color4)\
 $git_branch\
 $git_status\
-[ ]()\
+[](color2)\
+[󰧞󰧞](fg:color1 bg:color2)\
+[ ](color2)\
 """
 
 right_format = """
 [](color2)\
-[󰔚 ](bg:color2 fg:color1)\
+[󰪣 ](bg:color2 fg:color1)\
 [](bg:color2 fg:color1)\
 $cmd_duration\
 [](color1)\
@@ -47,14 +48,14 @@ truncation_symbol = "󰇘 "
 
 [git_branch]
 symbol = " "
-style  = "bold color5"
-format = '[ $symbol$branch]($style)'
+style  = "color5"
+format = '[$symbol$branch]($style)'
 
 [git_status]
-style  = "bold color6"
-format = '[ $all_status$ahead_behind]($style)'
+style  = "color6"
+format = '[$all_status$ahead_behind]($style) '
 
 [cmd_duration]
 min_time = 0
-style    = "bold fg:color2 bg:color1"
+style    = "bold italic fg:color2 bg:color1"
 format   = '[$duration]($style)'

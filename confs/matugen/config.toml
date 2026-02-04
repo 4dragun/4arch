@@ -21,7 +21,7 @@ output_path = '../yazi/theme.toml'
 [templates.waybar]
 input_path = './templates/waybar-colors.css'
 output_path = '../MATUOUTS/matuwaybar.css'
-post_hook = 'systemctl --user restart waybar; pkill kded6'
+post_hook = 'systemctl --user restart waybar; pkill kded'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
@@ -50,6 +50,11 @@ input_path = './templates/qtct-colors.colors'
 output_path = '../../.local/share/color-schemes/MatuQTCT.colors'
 post_hook = '~/4arch/scripts/internal/matuqtct.sh'
 
+[templates.tela]
+input_path = './templates/tela-colors.archy'
+output_path = '../MATUOUTS/matutela.archy'
+post_hook = '~/4arch/scripts/internal/matutela.sh'
+
 ### ### ### FIXES ### ### ###
 
 [templates.emotefix]
@@ -63,11 +68,6 @@ output_path = '/dev/null'
 post_hook = 'systemctl --user restart plasma-xdg-desktop-portal-kde.service'
 
 ### ### ### #### ### ### ###
-
-[templates.tela]
-input_path = './templates/tela-colors.archy'
-output_path = '../MATUOUTS/matutela.archy'
-post_hook = '~/4arch/scripts/internal/matutela.sh'
 
 [config.custom_colors]
 green = "#00ff00"
