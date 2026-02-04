@@ -81,7 +81,7 @@ window#waybar { background: @surface }
 
 #tray {
   background: none;
-  margin-right: -5px
+  margin-right: -7px
 }
 
 #battery {
