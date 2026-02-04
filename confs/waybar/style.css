@@ -79,10 +79,7 @@ window#waybar { background: @surface }
   background: none
 }
 
-#tray {
-  background: none;
-  margin-right: -7px
-}
+#tray { background: none }
 
 #battery {
   background: none;
