@@ -1,22 +1,21 @@
 #!/usr/bin/env bash
 
-FILTER="*.png *.jpg *.jpeg|Image Files"
-
+FILT="*.png *.jpg *.jpeg|Image Files"
 ICON="$HOME/4arch/assets/matunoti.png"
 
-SEL_WALL=$(kdialog --getopenfilename "$HOME/Pictures" "$FILTER")
+WALL=$(QT_QPA_PLATFORMTHEME=kde kdialog --getopenfilename "$HOME/Pictures" "$FILT")
 
-if [ -z "$SEL_WALL" ]; then
+if [ -z "$WALL" ]; then
   notify-send -i "$ICON" "Matugen" "no image selected!"
   echo -e "\n~ NO IMAGE SELECTED! EXITING.\n"; exit
 fi
 
-echo "$SEL_WALL" > "$HOME/.cache/last_wall.txt"
-echo -e "\n* APPLYING THEME USING $SEL_WALL\n"
+echo "$WALL" > "$HOME/.cache/last_wall.txt"
+echo -e "\n* APPLYING THEME USING $WALL\n"
 
-matugen -t scheme-content image "$SEL_WALL" || {
+matugen -t scheme-content image "$WALL" || {
   notify-send -i "$ICON" "Matugen" "manual intervention needed!"
   exit
 }
 
-notify-send "Matugen" "$SEL_WALL" -i "$SEL_WALL"
+notify-send "Matugen" "$WALL" -i "$WALL"

@@ -198,27 +198,27 @@ echo -e "\n* INSTALLING AUR PACKAGES\n"
 $YS ttf-rubik-vf wvkbd ayugram-desktop-bin
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
-$YS bibata-cursor-theme adw-gtk-theme darkly-bin \
-    lua-language-server gst-plugins-bad xdg-user-dirs \
+$YS bibata-cursor-theme adw-gtk-theme darkly-bin\
+    lua-language-server gst-plugins-bad xdg-user-dirs\
     archlinux-xdg-menu
 
 echo -e "\n* INSTALLING FONTS\n"
-$YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji \
+$YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji\
     ttf-jetbrains-mono-nerd
 
 echo -e "\n* INSTALLING HYPRLAND AND ITS DEPENDENCIES\n"
-$YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast \
+$YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast\
     qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper
 
 echo -e "\n* INSTALLING GUI APPLICATIONS\n"
-$YS sddm brave emote pwvucontrol gwenview rofi-wayland \
+$YS sddm brave emote pwvucontrol gwenview rofi-wayland\
     nwg-look blueman qbittorrent swaync reflector-simple neovide mpv\
-    waybar network-manager-applet dolphin swappy systemsettings kdialog \
+    waybar network-manager-applet dolphin swappy kdialog\
     p7zip-gui zen-browser-bin strawberry
 
 echo -e "\n* INSTALLING CLI APPLICATIONS\n"
-$YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 yazi starship \
-    git-credential-manager-bin wl-clipboard brightnessctl alsa-utils \
+$YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 yazi starship\
+    git-credential-manager-bin wl-clipboard brightnessctl alsa-utils\
     power-profiles-daemon clipse matugen
 
 echo -e "\n* FINISHED INSTALLING APPLICATIONS\n"
