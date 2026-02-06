@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 while true; do
-  out=$(amixer -M -c 1 get "PCM" 2>/dev/null)
+  out=$(amixer -M -D hw:Audio get "PCM" 2>/dev/null)
   
   [[ -z "$out" ]] && echo "󱥔   " && sleep 0.5 && continue
   
