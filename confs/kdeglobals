@@ -1,12 +1,7 @@
 [General]
 ColorScheme=MatuQTCT
-XftHintStyle=hintslight
-XftSubPixel=none
-fixed=JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+fixed=JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,
 font=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-menuFont=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-smallestReadableFont=Rubik,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-toolBarFont=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Icons]
 Theme=matutela
@@ -16,22 +11,5 @@ LookAndFeelPackage=org.kde.breezedark.desktop
 widgetStyle=Darkly
 
 [KFileDialog Settings]
-Allow Expansion=false
-Automatically select filename extension=true
-Breadcrumb Navigation=true
-Decoration position=2
-LocationCombo Completionmode=5
-PathCombo Completionmode=5
-Preview Width=417
-Show Bookmarks=false
-Show Full Path=false
-Show Inline Previews=true
+Preview Width=300
 Show Preview=true
-Show Speedbar=true
-Show hidden files=false
-Sort by=Name
-Sort directories first=true
-Sort hidden files last=false
-Sort reversed=false
-Speedbar Width=154
-View Style=DetailTree

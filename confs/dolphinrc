@@ -1,0 +1,5 @@
+[MainWindow]
+MenuBar=Disabled
+
+[PlacesPanel]
+IconSize=32
