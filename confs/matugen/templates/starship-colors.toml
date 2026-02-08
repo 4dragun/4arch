@@ -28,14 +28,13 @@ palette     = 'colors'
 [palettes.colors]
 color1 = '{{colors.on_primary.default.hex}}'
 color2 = '{{colors.primary.default.hex}}'
-color3 = '{{colors.surface.default.hex}}'
 color4 = '{{colors.secondary_container.default.hex}}'
 color5 = '{{colors.tertiary.default.hex}}'
 color6 = '{{colors.red.default.hex}}'
 
 [username]
 show_always = true
-style_user  = "bold italic fg:color3 bg:color2"
+style_user  = "bold italic fg:color1 bg:color2"
 style_root  = "bg:#9A348E"
 format      = '[$user ]($style)'
 disabled    = false
