@@ -57,12 +57,12 @@ post_hook = '~/4arch/scripts/internal/matutela.sh'
 
 ### ### ### FIXES ### ### ###
 
-[templates.emotefix]
+[templates.emote_fix]
 input_path = '/dev/null'
 output_path = '/dev/null'
 post_hook = 'killall emote'
 
-[templates.filepickerfix]
+[templates.kdefilepicker_fix]
 input_path = '/dev/null'
 output_path = '/dev/null'
 post_hook = 'systemctl --user restart plasma-xdg-desktop-portal-kde.service'
@@ -70,6 +70,6 @@ post_hook = 'systemctl --user restart plasma-xdg-desktop-portal-kde.service'
 ### ### ### #### ### ### ###
 
 [config.custom_colors]
-green = "#00ff00"
 red = "#ff0000"
-blue = { color = "#0000ff", blend = false }
+blue = "#0000ff"
+green = "#00ff00"
