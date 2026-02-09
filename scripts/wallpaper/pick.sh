@@ -3,19 +3,20 @@
 FILT="*.png *.jpg *.jpeg|Image Files"
 ICON="$HOME/4arch/assets/matunoti.png"
 
-WALL=$(QT_QPA_PLATFORMTHEME=kde kdialog --getopenfilename "$HOME/Pictures" "$FILT")
+PICK=$(QT_QPA_PLATFORMTHEME=kde kdialog --getopenfilename "$HOME/Pictures" "$FILT")
+WALL=$(basename "$PICK")
 
-if [ -z "$WALL" ]; then
+if [ -z "$PICK" ]; then
   notify-send -i "$ICON" "Matugen" "no image selected!"
   echo -e "\n~ NO IMAGE SELECTED! EXITING.\n"; exit
 fi
 
-echo "$WALL" > "$HOME/.cache/last_wall.txt"
-echo -e "\n* APPLYING THEME USING $WALL\n"
+echo "$PICK" > "$HOME/.cache/last_wall.txt"
+echo -e "\n* APPLYING THEME USING $PICK\n"
 
-matugen -t scheme-content image "$WALL" || {
+matugen -t scheme-content image "$PICK" || {
   notify-send -i "$ICON" "Matugen" "manual intervention needed!"
   exit
 }
 
-notify-send "Matugen" "$WALL" -i "$WALL"
+notify-send -i "$PICK" "Matugen" "$WALL"
