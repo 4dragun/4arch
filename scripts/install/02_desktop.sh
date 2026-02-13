@@ -163,7 +163,7 @@ while true; do
     if [[ -d "$ZSF" ]]; then
       echo -e "\n* BACKUP FOLDER FOUND!\n"
       echo -e "\n* PROCEEDING\n"
-      sudo cp -rf "$HOME/4arch/confs_system/." "/etc" || exit
+      sudo cp -rf "$HOME/4arch/confs_root/." "/etc" || exit
       break
     else
       echo -e "\n* BACKUP FOLDER NOT FOUND!\n"
