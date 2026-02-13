@@ -48,12 +48,12 @@ output_path = '../MATUOUTS/maturofimain.rasi'
 [templates.qtct]
 input_path = './templates/qtct-colors.colors'
 output_path = '../../.local/share/color-schemes/MatuQTCT.colors'
-post_hook = '~/4arch/scripts/internal/matuqtct.sh'
+post_hook = '~/4arch/scripts/misc/matuqtct.sh'
 
 [templates.tela]
 input_path = './templates/tela-colors.archy'
 output_path = '../MATUOUTS/matutela.archy'
-post_hook = '~/4arch/scripts/internal/matutela.sh'
+post_hook = '~/4arch/scripts/misc/matutela.sh'
 
 ### ### ### FIXES ### ### ###
 

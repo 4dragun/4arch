@@ -146,6 +146,6 @@
   },
 
   "custom/amixer": {
-    "exec": "~/4arch/scripts/internal/amixerbar.sh"
+    "exec": "~/4arch/scripts/misc/amixerbar.sh"
   }
 }

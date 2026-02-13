@@ -39,9 +39,6 @@ pacstrap -K /mnt base linux linux-firmware fish sudo intel-ucode \
 echo -e "\n* GENERATING FSTAB\n"
 genfstab -U /mnt > /mnt/etc/fstab
 
-#echo -e "\n> CLONING 4ARCH REPO\n"
-#git clone https://github.com/4dragun/4arch --depth=1
-
 cp -rf 4arch /mnt/root
 
-arch-chroot /mnt /root/4arch/scripts/setup/01_chroot.sh
+arch-chroot /mnt /root/4arch/scripts/install/01_chroot.sh

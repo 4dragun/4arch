@@ -195,12 +195,13 @@ echo -e "\n* UPDATING SYSTEM WITH YAY\n"
 yay --noconfirm || exit
 
 echo -e "\n* INSTALLING AUR PACKAGES\n"
-$YS ttf-rubik-vf wvkbd ayugram-desktop-bin qt5ct-kde\
+$YS ttf-rubik-vf wvkbd ayugram-desktop-bin darkly-bin\
+    darkly-bin
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
-$YS bibata-cursor-theme adw-gtk-theme darkly-bin\
-    lua-language-server gst-plugins-bad xdg-user-dirs\
-    archlinux-xdg-menu
+$YS bibata-cursor-theme adw-gtk-theme lua-language-server\
+    gst-plugins-bad xdg-user-dirs archlinux-xdg-menu\
+    libadwaita-without-adwaita-git
 
 echo -e "\n* INSTALLING FONTS\n"
 $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji\
@@ -208,7 +209,7 @@ $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji\
 
 echo -e "\n* INSTALLING HYPRLAND AND ITS DEPENDENCIES\n"
 $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast\
-    qt5-wayland qt6ct-kde hypridle hyprlock hyprpicker hyprpolkitagent\
+    qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent\
     hyprpaper
 
 echo -e "\n* INSTALLING GUI APPLICATIONS\n"
@@ -232,16 +233,8 @@ echo -e "\n* BUILDING THEMES WITH MATUGEN\n"
 matugen -t scheme-content image "$WALL"; echo
 echo "$WALL" > "$HOME/.cache/last_wall.txt"
 
-# PROBABLY GOING AWAY...................
-# echo "* SETTING FOLDER THEME"
-# echo
-# papirus-folders -C violet
-# echo
-
 echo -e "\n* ENABLING SERVICES\n"
 sudo systemctl enable power-profiles-daemon sddm; echo
-# CONFUSION GOIN ON ABOUT THIS SECTION CHECK AFTER INSTALL AND CONFIRM
-# sudo systemctl --user enable pipewire-pulse.service wireplumber.service
 
 echo -e "\n* REMOVING 4ARCH REPO FROM ROOT DIRECTORY\n"
 sudo rm -rf /root/4arch; echo

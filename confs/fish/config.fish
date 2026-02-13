@@ -16,7 +16,7 @@ alias ls    "lsd"
 alias cat   "bat"
 alias gc    "~/4arch/scripts/git/commit.sh"
 alias gf    "~/4arch/scripts/git/force.sh"
-alias s     "~/4arch/scripts/utils/create.sh"
+alias s     "~/4arch/scripts/misc/create.sh"
 alias clear "command clear; commandline -f clear-screen"
 
 starship init fish | source
