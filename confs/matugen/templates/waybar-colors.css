@@ -1,5 +1,5 @@
 <* for name, value in colors *>
-    @define-color {{name}} {{value.default.rgba}};
+    @define-color {{name}} {{value.default.hex}};
 <* endfor *>
 
 @define-color red_custom       {{colors.red.default.rgba     | set_alpha: 0.2}};

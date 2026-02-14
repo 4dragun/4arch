@@ -3,6 +3,7 @@ configuration {
   display-drun: "";
   drun-display-format: "{icon}{name}";
   show-icons: true;
+  icon-theme: "matutela";
 }
 
 @theme "../MATUOUTS/maturofimain.rasi"
