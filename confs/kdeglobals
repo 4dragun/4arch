@@ -1,7 +1,10 @@
 [General]
 ColorScheme=MatuQTCT
-fixed=JetBrainsMono Nerd Font Mono,12,-1,5,400,0,0,0,0,0,0,0,
+fixed=JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 font=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=Rubik,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Icons]
 Theme=matutela
@@ -11,5 +14,5 @@ LookAndFeelPackage=org.kde.breezedark.desktop
 widgetStyle=Darkly
 
 [KFileDialog Settings]
-Preview Width=300
+Preview Width=321
 Show Preview=true
