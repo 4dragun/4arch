@@ -39,7 +39,7 @@ while true; do
     echo -e "\n> CLONING NVCHAD\n"
     git clone "$G2" "$HOME/.config/nvim"
 
-    echo; cp -rf "$HOME/4arch/confs/." "$HOME/.config"
+    echo; cp -rf "$HOME/4arch/config/." "$HOME/.config"
     echo; cp -rf "$HOME/.config/.gitconfig" "$HOME"
     echo; rm -rf "$HOME/.config/.gitconfig"; break
   elif [[ "$itd" == "n" ]]; then
@@ -163,7 +163,7 @@ while true; do
     if [[ -d "$ZSF" ]]; then
       echo -e "\n* BACKUP FOLDER FOUND!\n"
       echo -e "\n* PROCEEDING\n"
-      sudo cp -rf "$HOME/4arch/confs_root/." "/etc" || exit
+      sudo cp -rf "$HOME/4arch/etc/." "/etc" || exit
       break
     else
       echo -e "\n* BACKUP FOLDER NOT FOUND!\n"

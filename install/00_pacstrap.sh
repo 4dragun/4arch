@@ -41,4 +41,4 @@ genfstab -U /mnt > /mnt/etc/fstab
 
 cp -rf 4arch /mnt/root
 
-arch-chroot /mnt /root/4arch/scripts/install/01_chroot.sh
+arch-chroot /mnt /root/4arch/install/01_chroot.sh
