@@ -4,8 +4,8 @@ B="Bluetooth"
 
 SN="bluetooth"
 
-AI="$HOME/4arch/assets/blactive.png"
-II="$HOME/4arch/assets/blinactive.png"
+AI="$HOME/.local/share/icons/matutela/scalable/apps/bluetooth-active.svg"
+II="$HOME/.local/share/icons/matutela/scalable/apps/bluetooth-inactive.svg"
 
 SAHF="service activation has failed"
 

@@ -4,8 +4,7 @@ B="Bluetooth"
 
 SN="bluetooth"
 
-AI="$HOME/4arch/assets/blactive.png"
-II="$HOME/4arch/assets/blinactive.png"
+II="$HOME/.local/share/icons/matutela/scalable/apps/bluetooth-inactive.svg"
 
 SDHF="service deactivation has failed"
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-COLOR=$(cat ~/.config/MATUOUTS/matutela.archy)
+COLOR=$(cat ~/.cache/matutela.archy)
 INSTALL_SCRIPT="$HOME/.config/ZTELA/install.sh"
 THEME_NAME="Tela-circle-${COLOR}-dark"
 SRC_PATH="$HOME/.local/share/icons/$THEME_NAME"
@@ -8,7 +8,7 @@ DST_PATH="$HOME/.local/share/icons/matutela"
 INDEX_FILE="$DST_PATH/index.theme"
 ICON_DIR="$HOME/.local/share/icons"
 
-NOTI_ICON="$HOME/4arch/assets/matunoti.png"
+NOTI_ICON="$HOME/.local/share/icons/matutela/scalable/apps/adjust-colors.svg"
 
 notify-send -i "$NOTI_ICON" "Matugen" "please wait..."
 

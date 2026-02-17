@@ -20,43 +20,42 @@ output_path = '../yazi/theme.toml'
 
 [templates.waybar]
 input_path = './templates/waybar-colors.css'
-output_path = '../MATUOUTS/matuwaybar.css'
+output_path = '../waybar/themes/matuwaybar.css'
 post_hook = 'systemctl --user restart waybar; pkill kded'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
-output_path = '../MATUOUTS/matuhyprland.conf'
+output_path = '../hypr/hyprland/colors.conf'
 post_hook = 'hyprctl reload'
 
 [templates.gtk3]
 input_path = './templates/gtk-colors.css'
-output_path = '../gtk-3.0/colors.css'
+output_path = '../gtk-3.0/matugtk.css'
 
 [templates.gtk4]
 input_path = './templates/gtk-colors.css'
-output_path = '../gtk-4.0/colors.css'
+output_path = '../gtk-4.0/matugtk.css'
 
 [templates.swaync]
 input_path = './templates/swaync-colors.css'
-output_path = '../MATUOUTS/matuswaync.css'
+output_path = '../swaync/style.css'
 post_hook = 'systemctl --user restart swaync'
 
 [templates.rofimain]
 input_path = './templates/rofimain-colors.rasi'
-output_path = '../MATUOUTS/maturofimain.rasi'
+output_path = '../rofi/themes/maturofimain.rasi'
 
 [templates.qtct]
 input_path = './templates/qtct-colors.colors'
 output_path = '../../.local/share/color-schemes/MatuQTCT.colors'
-post_hook = '~/4arch/scripts/misc/matuqtct.sh'
+post_hook = '~/.config/matugen/scripts/matuqtct.sh'
 
 [templates.tela]
 input_path = './templates/tela-colors.archy'
-output_path = '../MATUOUTS/matutela.archy'
-post_hook = '~/4arch/scripts/misc/matutela.sh'
+output_path = '../../.cache/matutela.archy'
+post_hook = '~/.config/matugen/scripts/matutela.sh'
 
 ### ### ### FIXES ### ### ###
-
 [templates.emote_fix]
 input_path = '/dev/null'
 output_path = '/dev/null'
@@ -66,7 +65,6 @@ post_hook = 'killall emote'
 input_path = '/dev/null'
 output_path = '/dev/null'
 post_hook = 'systemctl --user restart plasma-xdg-desktop-portal-kde.service'
-
 ### ### ### #### ### ### ###
 
 [config.custom_colors]

@@ -6,4 +6,4 @@ configuration {
   icon-theme: "matutela";
 }
 
-@theme "../MATUOUTS/maturofimain.rasi"
+@theme "./themes/maturofimain.rasi"

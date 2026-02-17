@@ -99,7 +99,7 @@
       "headset": "󰋎 ",
       "default": ["  ", "   "]
     },
-    "on-click": "pwvucontrol"
+    "on-click": "pavucontrol-qt"
   },
 
   "tray": {

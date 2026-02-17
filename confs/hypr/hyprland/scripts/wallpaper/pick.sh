@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 FILT="*.png *.jpg *.jpeg|Image Files"
-ICON="$HOME/4arch/assets/matunoti.png"
+ICON="$HOME/.local/share/icons/matutela/scalable/apps/adjust-colors.svg"
 
 PICK=$(QT_QPA_PLATFORMTHEME=kde kdialog --getopenfilename "$HOME/Pictures" "$FILT")
 WALL=$(basename "$PICK")

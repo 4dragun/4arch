@@ -28,8 +28,26 @@ echo -e "\n* ADDING USER TO SUDO\n"
 echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/01_archy
 echo "Defaults pwfeedback, insults" >> /etc/sudoers.d/01_archy
 
+echo -e "\n FIXING SOME HARDWARE KEYBOARD KEYS\n"
+mkdir -pv /etc/keyd; echo
+cat <<EOF > /etc/keyd/default.conf
+[ids]
+*
+
+[main]
+f8       = a
+f9       = q
+grave    = tab
+capslock = esc
+
+[shift]
+grave    = ~
+capslock = capslock
+EOF
+
 echo -e "\n* ENABLING SERVICES\n"
-systemctl enable systemd-timesyncd.service NetworkManager.service fstrim.timer
+systemctl enable systemd-timesyncd.service NetworkManager.service fstrim.timer\
+                 keyd.service
 
 echo -e "\n* CREATING GRUB ENTRIES\n"
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=LINUXY

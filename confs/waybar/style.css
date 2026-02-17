@@ -1,4 +1,4 @@
-@import "../MATUOUTS/matuwaybar.css";
+@import "./themes/matuwaybar.css";
 
 * {
   font-family: Rubik, JetBrainsMono Nerd Font;
