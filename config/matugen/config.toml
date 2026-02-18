@@ -38,7 +38,7 @@ output_path = '../gtk-4.0/matugtk.css'
 
 [templates.swaync]
 input_path = './templates/swaync-colors.css'
-output_path = '../swaync/style.css'
+output_path = '../swaync/themes/matuswaync.css'
 post_hook = 'systemctl --user restart swaync'
 
 [templates.rofimain]
