@@ -21,7 +21,7 @@ output_path = '../yazi/theme.toml'
 [templates.waybar]
 input_path = './templates/waybar-colors.css'
 output_path = '../waybar/themes/matuwaybar.css'
-post_hook = 'systemctl --user restart waybar; pkill kded'
+post_hook = 'systemctl --user restart waybar; sleep 0.3; pkill kded'
 
 [templates.hyprland]
 input_path = './templates/hyprland-colors.conf'
