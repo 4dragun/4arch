@@ -1,0 +1,13 @@
+{
+  "notification-inline-replies": true,
+  "notification-window-width": 400,
+  "image-visibility": "always",
+ 
+  "widgets": [
+    "mpris",
+    "inhibitors",
+    "title",
+    "dnd",
+    "notifications"
+  ]
+}
