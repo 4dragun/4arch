@@ -37,3 +37,13 @@
   border: 1px solid var(--noti-border-color);
   margin: 10px;
 }
+
+.widget-mpris > box > button:hover {
+  background: transparent;
+}
+
+.widget-mpris > box > button image {
+  background: var(--noti-bg-hover);
+  -gtk-icon-filter: brightness(0) invert(0.5);
+  padding: 10px;
+}

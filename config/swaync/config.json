@@ -9,5 +9,14 @@
     "title",
     "dnd",
     "notifications"
-  ]
+  ],
+
+  "widget-config": {
+    "title": {
+      "button-text": "   Clear All"
+    },
+    "mpris": {
+      "loop-carousel": true
+    }
+  }
 }
