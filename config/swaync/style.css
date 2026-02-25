@@ -20,30 +20,139 @@
 
 .notification {
   background: var(--noti-bg);
-  border: 1px solid var(--noti-border-color);
+  border: var(--border);
+}
+
+.notification-action {
+  background: var(--noti-bg-hover);
+  border: var(--border);
+  margin: 10px;
 }
 
 .notification-group {
   background: transparent;
 }
 
-.notification-group-headers {
-  margin: 0px 0px 20px 0px;
-  padding: 8px 12px;
-  background: var(--noti-bg-hover);
-}
-
 .control-center {
-  border: 1px solid var(--noti-border-color);
+  border: var(--border);
   margin: 10px;
 }
 
-.widget-mpris > box > button:hover {
-  background: transparent;
+.control-center-list-placeholder {
+  opacity: 0;
 }
 
-.widget-mpris > box > button image {
-  background: var(--noti-bg-hover);
-  -gtk-icon-filter: invert(0.5);
+.summary {
+  padding: 7px 0px;
+  font-size: 14px;
+}
+
+.body {
+  padding-bottom: 5px;
+  margin-right: 10px;
+}
+
+.image {
+  padding: 3px;
+  margin: 5px 10px;
+  background: var(--common-color-a);
+  border-radius: 999px;
+}
+
+.time {
+  padding: 7px;
+}
+
+.widget-mpris {
+  margin: 0px -40px;
+}
+
+.widget-mpris-player {
+  border: var(--border);
+}
+
+.widget-mpris-player button {
+  margin-bottom: 25px;
+}
+
+.widget-mpris carouselindicatordots {
+  margin-top: -70px;
+}
+
+.widget-volume button > label {
+  background: none;
+  border: none;
+}
+
+.widget-volume button {
+  background: none;
+  padding: 0px;
+  margin-left: -10px;
+}
+
+.widget-backlight, .widget-volume {
+  background: var(--common-bg);
+  margin: 5px 15px;
+  padding: 5px;
+  border: var(--border);
+}
+
+.widget-backlight label, .widget-volume label {
+  background: var(--common-color-a);
+  padding: 5px 15px 5px 10px;
+  color: var(--common-color);
+  border-radius: 999px;
+  font-size: 17px;
+  border: var(--border-a);
+}
+
+.widget-backlight trough, .widget-volume trough {
+  background: var(--common-color-a);
+}
+
+.widget-backlight trough highlight, .widget-volume trough highlight {
+  padding: 4px;
+  background: var(--common-color);
+}
+
+.widget-backlight slider, .widget-volume slider {
+  background: var(--common-color-a);
+}
+
+.widget-label.pill {
+  background: #19211c;
+  padding: 0px;
+  margin: 10px 220px;
+}
+
+.widget-title button {
+  padding: 8px 15px;
+}
+
+.widget-buttons-grid {
+  margin: 20px 20px 0px 20px;
   padding: 10px;
+  background: var(--common-bg);
+  border: var(--border);
+}
+
+.widget-buttons-grid label {
+  padding: 0px 0px;
+  margin: 0px 0px;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.widget-buttons-grid button {
+  background: var(--common-color-a);
+  border-radius: 999px;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  border: var(--border-a);
+}
+
+.widget-buttons-grid button.toggle:checked {
+  background: var(--common-color);
+  color: var(--noti-bg);
+  border-radius: 999px;
 }

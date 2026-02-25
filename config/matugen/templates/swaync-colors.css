@@ -1,7 +1,13 @@
 :root {
-  --cc-bg: {{colors.surface.default.hex}};
-  --noti-border-color: {{colors.surface_container_high.default.hex}};
-  --noti-bg: {{colors.surface.default.hex}};
-  --text-color: {{colors.secondary.default.hex}};
+  --cc-bg: {{colors.surface.default.rgba}};
+  --noti-border-color: {{colors.surface_container_high.default.rgba}};
+  --border: 1px solid var(--noti-border-color);
+  --border-a: 5px solid var(--noti-border-color);
+  --noti-bg: {{colors.surface.default.rgba}};
+  --text-color: {{colors.secondary.default.rgba}};
   --noti-bg-hover: {{colors.primary.default.rgba | set_alpha: 0.1}};
+  --common-bg: {{colors.surface_container.default.rgba}};
+  --common-color: {{colors.primary.default.rgba}};
+  --common-color-a: {{colors.primary.default.rgba | set_alpha: 0.1}};
+  --common-color-b: {{colors.primary.default.rgba | set_alpha: 0.8}};
 }
