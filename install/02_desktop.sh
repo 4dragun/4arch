@@ -195,7 +195,7 @@ echo -e "\n* UPDATING SYSTEM WITH YAY\n"
 yay --noconfirm || exit
 
 echo -e "\n* INSTALLING AUR PACKAGES\n"
-$YS ttf-rubik-vf wvkbd ayugram-desktop-bin\
+$YS ttf-rubik-vf wvkbd ayugram-desktop-bin surge-bin\
 $YS darkly-bin
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
@@ -218,7 +218,7 @@ $YS sddm brave emote pavucontrol-qt gwenview rofi-wayland\
     p7zip-gui zen-browser-bin strawberry
 
 echo -e "\n* INSTALLING CLI APPLICATIONS\n"
-$YS fzf lsd bat pacseek fastfetch btop udiskie kitty aria2 yazi starship\
+$YS fzf lsd bat pacseek fastfetch btop udiskie kitty yazi starship\
     git-credential-manager-bin wl-clipboard brightnessctl alsa-utils\
     power-profiles-daemon clipse matugen
 
