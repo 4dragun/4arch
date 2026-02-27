@@ -43,13 +43,13 @@
           "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
         },
         {
-          "label": ""
+          "label": ""
         },
         {
-          "label": "󰅶"
+          "label": ""
         },
         {
-          "label": ""
+          "label": ""
         },
         {
           "label": " 󰂯   Bluetooth",
@@ -58,13 +58,13 @@
           "update-command": "sh -c 'systemctl is-active bluetooth >/dev/null && echo true || echo false'"
         },
         {
-          "label": "󰡭"
+          "label": ""
         },
         {
-          "label": "󱊞"
+          "label": "󱊟"
         },
         {
-          "label": ""
+          "label": ""
         }
       ]
      }
