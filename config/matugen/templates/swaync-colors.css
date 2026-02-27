@@ -15,4 +15,5 @@
   --common-color-b: {{colors.primary.default.rgba | set_alpha: 0.3}};
 
   --shado: 1px -1px 1px var(--common-color-b), -1px 1px 1px var(--common-color-b);
+  --t-shado: 0px 0px 5px var(--common-color-b);
 }

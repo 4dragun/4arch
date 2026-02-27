@@ -86,6 +86,7 @@
 .widget-volume button > label {
   background: none;
   box-shadow: none;
+  text-shadow: none;
 }
 
 .widget-volume button {
@@ -108,6 +109,7 @@
   border-radius: 999px;
   font-size: 17px;
   box-shadow: var(--shado);
+  text-shadow: var(--t-shado);
 }
 
 .widget-backlight trough, .widget-volume trough {
@@ -128,6 +130,7 @@
 .widget-title button {
   padding: 8px 15px;
   box-shadow: var(--shado);
+  text-shadow: var(--t-shado);
 }
 
 .widget-buttons-grid {
@@ -152,6 +155,7 @@
   margin: 2px 1px;
   color: var(--common-color);
   box-shadow: var(--shado);
+  text-shadow: var(--t-shado);
 }
 
 .widget-buttons-grid button.toggle:checked {
