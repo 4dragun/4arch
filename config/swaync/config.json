@@ -52,7 +52,7 @@
           "label": ""
         },
         {
-          "label": "󰂯   Bluetooth",
+          "label": " 󰂯   Bluetooth",
           "type": "toggle",
           "command": "blueman-manager",
           "update-command": "sh -c 'systemctl is-active bluetooth >/dev/null && echo true || echo false'"

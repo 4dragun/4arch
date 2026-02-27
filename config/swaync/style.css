@@ -64,7 +64,7 @@
 }
 
 .widget-mpris {
-  margin: 0px -40px;
+  /* margin: 0px -40px; */
 }
 
 .widget-mpris-player {
@@ -73,6 +73,19 @@
 
 .widget-mpris-player button {
   margin-bottom: 25px;
+}
+
+.widget-mpris > box > button {
+  background: red;
+  margin: 0px -90px;
+  padding: 0px;
+  opacity: 0;
+}
+
+.widget-mpris > box > button > image {
+  padding: 0px;
+  margin: 0px;
+  -gtk-icon-filter: invert(1);
 }
 
 .widget-mpris carouselindicatordots {
@@ -139,7 +152,7 @@
 .widget-buttons-grid label {
   padding: 0px 0px;
   margin: 0px 0px;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -147,7 +160,7 @@
   background: var(--common-color-a);
   border-radius: 999px;
   padding: 0px 0px;
-  margin: 0px 0px;
+  margin: 0px 1px;
   border: var(--border-a);
 }
 
