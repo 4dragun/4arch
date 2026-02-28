@@ -21,12 +21,12 @@
 
 .notification {
   background: var(--noti-bg);
-  border: var(--border);
+  box-shadow: var(--shado-a);
 }
 
 .notification-action {
-  background: var(--noti-bg-hover);
-  border: var(--border);
+  background: var(--common-bg);
+  box-shadow: var(--shado-a);
   margin: 10px;
 }
 
@@ -66,8 +66,9 @@
 }
 
 .widget-mpris-player {
-  border: var(--border-a);
+  box-shadow: var(--shado-a);
   border-radius: 50px;
+  margin-bottom: 11px;
 }
 
 .widget-mpris-player button {
@@ -99,12 +100,13 @@
   background: var(--common-bg);
   margin: 5px 30px;
   padding: 5px;
-  border: var(--border-a);
+  box-shadow: var(--shado-a);
 }
 
 .widget-backlight label, .widget-volume label {
   background: var(--common-color-a);
   padding: 5px 15px 5px 10px;
+  margin-left: 3px;
   color: var(--common-color);
   border-radius: 999px;
   font-size: 17px;
@@ -114,7 +116,6 @@
 
 .widget-backlight trough, .widget-volume trough {
   background: var(--common-color-a);
-  border: var(--border-a);
 }
 
 .widget-backlight trough highlight, .widget-volume trough highlight {
@@ -137,7 +138,7 @@
   margin: 20px 20px 0px 20px;
   padding: 15px;
   background: var(--common-bg);
-  border: var(--border-a);
+  box-shadow: var(--shado-a);
   border-radius: 50px;
 }
 
