@@ -43,11 +43,18 @@ capslock = esc
 [shift]
 grave    = ~
 capslock = capslock
+
+f1 = mute
+f2 = volumedown
+f3 = volumeup
+
+f4 = brightnessdown
+f5 = brightnessup
 EOF
 
 echo -e "\n* ENABLING SERVICES\n"
 systemctl enable systemd-timesyncd.service NetworkManager.service fstrim.timer\
-                 keyd.service
+                 keyd.service sddm.service
 
 echo -e "\n* CREATING GRUB ENTRIES\n"
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=LINUXY

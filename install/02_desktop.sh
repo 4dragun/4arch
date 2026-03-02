@@ -195,7 +195,7 @@ echo -e "\n* UPDATING SYSTEM WITH YAY\n"
 yay --noconfirm || exit
 
 echo -e "\n* INSTALLING AUR PACKAGES\n"
-$YS ttf-rubik-vf wvkbd ayugram-desktop-bin surge-bin\
+$YS ttf-rubik-vf wvkbd ayugram-desktop-bin surge-bin
 $YS darkly-bin
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"

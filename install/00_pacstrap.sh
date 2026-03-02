@@ -34,7 +34,7 @@ echo -e "\n* JUICY PACSTRAP INCOMING\n"
 pacstrap -K /mnt base linux linux-firmware fish sudo intel-ucode\
                  networkmanager neovide git grub efibootmgr keyd\
                  pipewire pipewire-alsa pipewire-audio pipewire-jack\
-                 pipewire-libcamera pipewire-pulse
+                 pipewire-libcamera pipewire-pulse sddm
 
 echo -e "\n* GENERATING FSTAB\n"
 genfstab -U /mnt > /mnt/etc/fstab
