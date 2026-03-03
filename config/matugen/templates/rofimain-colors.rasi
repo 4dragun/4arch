@@ -1,49 +1,63 @@
 * {
   background-color: transparent;
-  border-radius: 30;
+  border-radius: 50;
 }
 
 window {
-  background-color: {{colors.surface.default.hex}};
-  // background-color: {{colors.surface.default.rgba | set_alpha: 0.8}};
-  width: 27%;
-  padding: 30;
+  background-color: {{colors.surface.default.rgba}};
+  border-color: {{colors.surface_container_high.default.rgba}};
+  width: 25%;
+  padding: 0;
   border: 1;
-  border-color: {{colors.surface_container_high.default.hex}};
 }
 
 listview {
   lines: 9;
+  padding: 13;
+  margin: 0 20 20 20;
+  background-color: {{colors.surface_container.default.rgba}};
+  border: 1 0 1 0;
+  border-color: {{colors.surface_bright.default.rgba | lighten: 1}};
+}
+
+element {
+  border: 0 0 1 0;
+  border-color: {{colors.surface.default.rgba | lighten: 10}};
 }
 
 element-text {
-  text-color: {{colors.primary.default.hex}};
+  text-color: {{colors.primary.default.rgba}};
   vertical-align: 0.5;
 }
 
 element-text selected {
-  text-color: {{colors.secondary.default.hex}};
+  text-color: {{colors.secondary.default.rgba}};
 }
 
 element-icon {
-  size: 43;
-  padding: 13;
+  size: 45;
+  margin: 10;
+  border-color: {{colors.primary.default.rgba | set_alpha: 0.3}};
 }
 
 element selected {
-  background-color: {{colors.primary.default.hex}}1A;
+  border-radius: 50;
+  background-color: {{colors.primary.default.rgba | set_alpha: 0.1}};
+  border: 1 0 1 0;
+  border-color: {{colors.primary.default.rgba | set_alpha: 0.3}};
 }
 
 inputbar {
-  background-color: {{colors.surface_container.default.hex}};
-  // background-color: {{colors.surface_container.default.rgba | set_alpha: 0.5}};
-  padding: 17;
-  margin: 0 20 25 20;
+  background-color: {{colors.surface_container.default.rgba}};
+  border: 1 0 1 0;
+  border-color: {{colors.surface_bright.default.rgba | lighten: 1}};
+  padding: 15;
+  margin: 20 40;
 }
 
 entry {
-  placeholder: "Search";
-  placeholder-color: {{colors.surface_bright.default.hex}};
-  text-color: {{colors.primary.default.hex}};
+  placeholder-color: {{colors.surface_bright.default.rgba}};
+  text-color: {{colors.primary.default.rgba}};
   cursor-color: transparent;
+  placeholder: "    Search";
 }

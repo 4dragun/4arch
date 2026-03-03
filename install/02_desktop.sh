@@ -13,7 +13,7 @@ G2="https://github.com/NvChad/starter"
 
 ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
-WALL="$HOME/4arch/walls/Anime-Japan-Street.png"
+WALL="$HOME/4arch/walls/magician-walks-magical-tree-houses-illustration.jpg"
 
 ERRMSG="~ invalid response! try again!"
 
