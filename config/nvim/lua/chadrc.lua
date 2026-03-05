@@ -16,10 +16,9 @@ M.base46 = {
 }
 
 M.nvdash = { load_on_startup = true }
+
 M.ui = {
-  tabufline = {
-    lazyload = false
-  },
+  tabufline = { lazyload = false },
   statusline = {
     separator_style = "round",
     theme = "minimal"
@@ -32,9 +31,9 @@ vim.o.guifont = "JetBrainsMono Nerd Font:h13:b,i"
 
 vim.g.neovide_cursor_trail_size = 0.3
 
-vim.g.neovide_padding_top = 30
+vim.g.neovide_padding_top    = 30
 vim.g.neovide_padding_bottom = 30
-vim.g.neovide_padding_right = 30
-vim.g.neovide_padding_left = 30
+vim.g.neovide_padding_right  = 30
+vim.g.neovide_padding_left   = 30
 
 return M
