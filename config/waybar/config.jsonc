@@ -6,7 +6,6 @@
   "spacing": 0,
 
   "modules-left": [
-    // "niri/window",
     "hyprland/window",
     "mpris"
   ],
@@ -15,7 +14,6 @@
     "power-profiles-daemon",
     "backlight",
     "backlight/slider", 
-    // "niri/workspaces",    
     "hyprland/workspaces",
     "clock",
     "pulseaudio",
@@ -32,18 +30,13 @@
   "mpris": {
     "format": "󰇘  {status_icon} {title}",
     "title-len": 20,
-    "status-icons": {
-      "playing": "  ",
-      "paused": "  "
-	  }
+    "status-icons": { "playing": "  ", "paused": "  " }
   },
 
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "format-icons": {
-      "default": "󰮯 󰧞󰧞󰧞󰧞󰧞󰧞"
-    }
+    "format-icons": { "default": "󰮯 󰧞󰧞󰧞󰧞󰧞󰧞" }
   },
 
   "hyprland/workspaces": {
@@ -60,31 +53,12 @@
     "format": "{class}",
     "max-length": 13,
     "separate-outputs": true,
-    "rewrite": {
-      "": "hyprland"
-    }
+    "rewrite": { "": "hyprland" }
   },
+ 
+  "privacy": { "icon-size": 11 },
 
-  "niri/workspaces": {
-    "format": "{icon}",
-    "all-outputs": true,
-    "format-icons": {
-      "active": "<b>=</b>"
-    }
-  },
-
-  "niri/window": {
-    "format": "{app_id}",
-    "separate-outputs": true
-  },
-
-  "privacy": {
-    "icon-size": 11
-  },
-
-  "backlight": {
-    "format": "{percent}"
-  },
+  "backlight": { "format": "{percent}" },
 
   "pulseaudio": {
     "format-bluetooth": "{icon}󰂯  {volume}  󰇘 {format_source}",
@@ -109,10 +83,7 @@
   },
 
   "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 20
-    },
+    "states": { "warning": 30, "critical": 20 },
     "format": "{icon}   {capacity}%",
     "format-full": "{icon}   {capacity}%",
     "format-charging": "   {capacity}%",
@@ -145,7 +116,5 @@
     "escape": true
   },
 
-  "custom/amixer": {
-    "exec": "~/4arch/scripts/misc/amixerbar.sh"
-  }
+  "custom/amixer": { "exec": "~/.config/waybar/scripts/amixerbar.sh" }
 }

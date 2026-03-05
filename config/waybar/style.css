@@ -26,9 +26,7 @@ window#waybar { background: @surface }
   color: @primary;
 }
 
-#power-profiles-daemon {
-  color: @primary
-}
+#power-profiles-daemon { color: @primary }
 #power-profiles-daemon.performance {
   color: @red;
   background: @red_custom;
@@ -38,9 +36,7 @@ window#waybar { background: @surface }
   background: @green_custom;
 }
 
-#workspaces {
-  padding: 2px;
-}
+#workspaces { padding: 2px; }
 #workspaces button {
   color: @primary;
   background: @primary_custom;

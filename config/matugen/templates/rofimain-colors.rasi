@@ -30,9 +30,7 @@ element-text {
   vertical-align: 0.5;
 }
 
-element-text selected {
-  text-color: {{colors.secondary.default.rgba}};
-}
+element-text selected { text-color: {{colors.secondary.default.rgba}}; }
 
 element-icon {
   size: 45;

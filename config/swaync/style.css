@@ -12,13 +12,9 @@
   color: transparent;
 }
 
-.close-button:hover {
-  background: transparent;
-}
+.close-button:hover { background: transparent; }
 
-.floating-notifications {
-  /* margin: 2px 0px 0px 0px; */
-}
+/* .floating-notifications {} */
 
 .notification {
   background: var(--noti-bg);
@@ -31,22 +27,19 @@
   margin: 10px;
 }
 
-.notification-group {
-  background: transparent;
-}
+.notification-group { background: transparent; }
 
 .control-center {
   border: var(--border);
   margin: 10px;
 }
 
-.control-center-list-placeholder {
-  opacity: 0;
-}
+.control-center-list-placeholder { opacity: 0; }
 
 .summary {
   padding: 7px 0px;
   font-size: 14px;
+  text-shadow: var(--t-shado);
 }
 
 .body {
@@ -62,9 +55,7 @@
   box-shadow: var(--shado);
 }
 
-.time {
-  padding: 7px;
-}
+.time { padding: 7px; }
 
 .mpris-overlay button {
   box-shadow: var(--shado);
@@ -72,9 +63,7 @@
   margin: 0px 2px;
 }
 
-.mpris-background {
-  filter: blur(10px);
-}
+.mpris-background { filter: blur(10px); }
 
 .widget-mpris-player {
   box-shadow: var(--shado-a);
@@ -82,18 +71,14 @@
   margin-bottom: 11px;
 }
 
-.widget-mpris-player button {
-  margin-bottom: 35px;
-}
+.widget-mpris-player button { margin-bottom: 35px; }
 
 .widget-mpris > box > button {
   margin: 0px -90px;
   opacity: 0;
 }
 
-.widget-mpris carouselindicatordots {
-  margin-top: -65px;
-}
+.widget-mpris carouselindicatordots { margin-top: -65px; }
 
 .widget-volume button > label {
   background: none;
@@ -164,7 +149,7 @@
   background: var(--common-color-a);
   border-radius: 999px;
   padding: 0px 0px;
-  margin: 2px 1px;
+  margin: 3px 1px;
   color: var(--common-color);
   box-shadow: var(--shado);
   text-shadow: var(--t-shado);
