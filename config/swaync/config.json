@@ -35,18 +35,43 @@
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
           "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
         },
-        { "label": "" },
-        { "label": "" },
-        { "label": "" },
+        {
+          "label": "",
+          "type": "toggle",
+          "command": "sh -c '[[ -f /tmp/1 ]] && rm /tmp/1 || touch /tmp/1'",
+          "update-command": "sh -c '[[ -f /tmp/1 ]] && echo true || echo false'"
+        },
+        { "label": "",
+          "type": "toggle",
+          "command": "sh -c '[[ -f /tmp/2 ]] && rm /tmp/2 || touch /tmp/2'",
+          "update-command": "sh -c '[[ -f /tmp/2 ]] && echo true || echo false'"
+        },
+        { "label": "",
+          "type": "toggle",
+          "command": "sh -c '[[ -f /tmp/3 ]] && rm /tmp/3 || touch /tmp/3'",
+          "update-command": "sh -c '[[ -f /tmp/3 ]] && echo true || echo false'"
+        },
         {
           "label": " 󰂯   Bluetooth",
           "type": "toggle",
           "command": "blueman-manager",
           "update-command": "sh -c 'systemctl is-active bluetooth >/dev/null && echo true || echo false'"
         },
-        { "label": "" },
-        { "label": "󱊟" },
-        { "label": "" }
+        { "label": "",
+          "type": "toggle",
+          "command": "sh -c '[[ -f /tmp/4 ]] && rm /tmp/4 || touch /tmp/4'",
+          "update-command": "sh -c '[[ -f /tmp/4 ]] && echo true || echo false'"
+        },
+        { "label": "󱊟",
+          "type": "toggle",
+          "command": "sh -c '[[ -f /tmp/5 ]] && rm /tmp/5 || touch /tmp/5'",
+          "update-command": "sh -c '[[ -f /tmp/5 ]] && echo true || echo false'"
+        },
+        { "label": "",
+          "type": "toggle",
+          "command": "sh -c '[[ -f /tmp/6 ]] && rm /tmp/6 || touch /tmp/6'",
+          "update-command": "sh -c '[[ -f /tmp/6 ]] && echo true || echo false'"
+        }
       ]
      },
 
