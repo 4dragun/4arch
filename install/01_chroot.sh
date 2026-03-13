@@ -56,8 +56,30 @@ echo -e "\n* ENABLING SERVICES\n"
 systemctl enable systemd-timesyncd.service NetworkManager.service fstrim.timer\
                  keyd.service sddm.service
 
-echo -e "\n* CREATING GRUB ENTRIES\n"
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=LINUXY
-echo; grub-mkconfig -o /boot/grub/grub.cfg
+# echo -e "\n* CREATING GRUB ENTRIES\n"
+# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=LINUXY
+# echo; grub-mkconfig -o /boot/grub/grub.cfg
+
+echo -e "\n* SETTING UP SYSTEMD-BOOT\n"
+bootctl install
+
+# Automatically grab the UUID of your root partition (/dev/nvme0n1p3)
+ROOT_UUID=$(findmnt -n -o UUID /)
+
+# 1. Main loader configuration
+cat <<EOF > /boot/loader/loader.conf
+default      arch-lts.conf
+timeout      9
+console-mode auto
+editor       no
+EOF
+
+# 2. The LTS Boot Entry
+cat <<EOF > /boot/loader/entries/arch-lts.conf
+title   Arch Linux - LTS
+linux   /vmlinuz-linux-lts
+initrd  /initramfs-linux-lts.img
+options root=UUID=$ROOT_UUID rw
+EOF
 
 echo -e "\n* SCRIPT FINISHED\n"
