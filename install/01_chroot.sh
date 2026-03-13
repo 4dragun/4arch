@@ -83,4 +83,44 @@ initrd  /initramfs-linux-lts.img
 options root=UUID=$ROOT_UUID rw
 EOF
 
+echo -e "\n*EXP. RUNNING PACMAN-KEY\n"
+PK="pacman-key"
+PU="pacman -U --needed --noconfirm"
+
+$PK --init; echo
+$PK --populate archlinux; echo
+
+echo -e "\n* EXP. CHAOTIC STUFF GOIN ON"
+C1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
+C2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
+
+$PK --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com; echo
+$PK --lsign-key 3056513887B78AEB; echo
+$PU "$C1"; echo
+$PU "$C2"; echo
+
+echo -e "\n* CREATING PACMAN DROP-INS (ZERO TOUCH METHOD)\n"
+
+# 1. Create the directory (it usually doesn't exist by default)
+mkdir -p /etc/pacman.d/conf.d
+
+# 2. Create your custom settings file
+# This handles the options and the repos without touching pacman.conf
+cat <<EOF > /etc/pacman.d/conf.d/archy-custom.conf
+[options]
+Color
+ILoveCandy
+VerbosePkgLists
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+
+[chaotic-aur]
+Include = /etc/pacman.d/chaotic-mirrorlist
+EOF
+
+# 3. Only ONE change to the main file: tell it to look at your new folder
+# We just append this to the very end
+echo 'Include = /etc/pacman.d/conf.d/*.conf' >> /etc/pacman.conf
+
 echo -e "\n* SCRIPT FINISHED\n"

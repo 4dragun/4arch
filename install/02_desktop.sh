@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-PK="sudo pacman-key"
-PU="sudo pacman -U --needed --noconfirm"
+# PK="sudo pacman-key"
+# PU="sudo pacman -U --needed --noconfirm"
 
 YS="yay -S --needed --noconfirm"
 
-C1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
-C2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
+# C1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
+# C2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
 
 G1="https://github.com/vinceliuice/Tela-circle-icon-theme"
 G2="https://github.com/NvChad/starter"
@@ -29,13 +29,13 @@ while true; do
   itd="${itd,,}"
 
   if [[ "$itd" == "y" ]]; then
-    rm -rf "$HOME/.config/ZTELA"
+    rm -rf "$HOME/.cache/TELA-GIT"
     rm -rf "$HOME/.config/nvim"
     rm -rf "$HOME/.local/state/nvim"
     rm -rf "$HOME/.local/share/nvim"
 
     echo -e "\n> CLONING TELA-CIRCLE-ICON-THEME\n"
-    git clone "$G1" "$HOME/.config/ZTELA"
+    git clone "$G1" "$HOME/.cache/TELA-GIT"
     echo -e "\n> CLONING NVCHAD\n"
     git clone "$G2" "$HOME/.config/nvim"
 
@@ -73,108 +73,108 @@ while true; do
   fi
 done
 
-while true; do
-  read -p "? ADD CHAOTIC-AUR REPO (y/n) = " cas
-  echo
-  cas="${cas,,}"
-  
-  if [[ "$cas" == "y" ]]; then
-    echo -e "\n* ADDING CHAOTIC-AUR REPO\n"
-    $PK --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com; echo
-    $PK --lsign-key 3056513887B78AEB; echo
-    $PU "$C1"; echo
-    $PU "$C2"; echo; break
-  elif [[ "$cas" == "n" ]]; then
-    echo -e "\n~ skipped chaotic-aur setup\n"; break
-  else
-    echo -e "\n$ERRMSG\n"
-  fi
-done
+# while true; do
+#   read -p "? ADD CHAOTIC-AUR REPO (y/n) = " cas
+#   echo
+#   cas="${cas,,}"
+#
+#   if [[ "$cas" == "y" ]]; then
+#     echo -e "\n* ADDING CHAOTIC-AUR REPO\n"
+#     $PK --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com; echo
+#     $PK --lsign-key 3056513887B78AEB; echo
+#     $PU "$C1"; echo
+#     $PU "$C2"; echo; break
+#   elif [[ "$cas" == "n" ]]; then
+#     echo -e "\n~ skipped chaotic-aur setup\n"; break
+#   else
+#     echo -e "\n$ERRMSG\n"
+# fi
+# done
 
-while true; do
-  read -p "? CHAOTIC-AUR SETUP SUCCEEDED (y/n) = " chas
-  echo
-  chas="${chas,,}"
+# while true; do
+#   read -p "? CHAOTIC-AUR SETUP SUCCEEDED (y/n) = " chas
+#   echo
+#   chas="${chas,,}"
+#
+#   if [[ "$chas" == "n" ]]; then
+#     while true; do
+#       read -p "? REBOOT NOW (y/n) = " ras
+#       echo
+#       ras="${ras,,}"
+#
+#       if [[ "$ras" == "y" ]]; then
+#         sleep 1; sync; sync; sync; systemctl reboot
+#       elif [[ "$ras" == "n" ]]; then
+#         echo -e "\n~ reboot manually!\n"; exit
+#       else
+#         echo -e "\n$ERRMSG\n"
+#       fi
+#     done
+#   elif [[ "$chas" == "y" ]]; then
+#     echo -e "\n* CHAOTIC-AUR SETUP WENT SMOOTH\n"; break
+#   else
+#     echo -e "\n$ERRMSG\n"
+#   fi
+# done
 
-  if [[ "$chas" == "n" ]]; then
-    while true; do
-      read -p "? REBOOT NOW (y/n) = " ras
-      echo
-      ras="${ras,,}"
+# while true; do
+#   read -p "? BACKUP SYSTEM_FILES (y/n) = " cop
+#   echo
+#   cop="${cop,,}"
+#
+#   if [[ "$cop" == "y" ]]; then
+#     while true; do
+#       read -p "? NOW ENTER KEY: " kas
+#       echo
+#
+#       if [[ "$kas" == "archydoes" ]]; then
+#         echo -e "\n* KEY MATCHES, PROCEEDING\n"
+#
+#         if [[ -d "$ZSF" ]]; then
+#           echo -e "\n* BACKUP FOLDER EXISTS! SKIPPING BACKUP!\n"; break
+#         else
+#           echo -e "\n* CREATING ZORIGINAL_SYSTEM_FILES FOLDER\n"; echo
+#           sudo mkdir -p "$ZSF" || exit
+#           echo -e "\n* BACKUP INCOMING\n"
+#           sudo cp -rf /etc/mkinitcpio.conf "$ZSF" || exit
+#           sudo cp -rf /etc/pacman.conf     "$ZSF" || exit
+#           echo -e "\n* SECURING THE BACKUP\n"
+#           sudo chattr -V +i "$ZSF" || exit
+#           echo -e "\n* SYSTEM_FILES BACKUP COMPLETE!\n"; break
+#         fi
+#       else
+#         echo -e "\n~ wrong key dude, try again!\n"
+#       fi
+#     done
+#     break
+#   elif [[ "$cop" == "n" ]]; then
+#     echo -e "\n~ skipped system_files backup!\n"; break
+#   else
+#     echo -e "\n$ERRMSG\n"
+#   fi
+# done
 
-      if [[ "$ras" == "y" ]]; then
-        sleep 1; sync; sync; sync; systemctl reboot
-      elif [[ "$ras" == "n" ]]; then
-        echo -e "\n~ reboot manually!\n"; exit
-      else
-        echo -e "\n$ERRMSG\n"
-      fi
-    done
-  elif [[ "$chas" == "y" ]]; then
-    echo -e "\n* CHAOTIC-AUR SETUP WENT SMOOTH\n"; break
-  else
-    echo -e "\n$ERRMSG\n"
-  fi
-done
-
-while true; do
-  read -p "? BACKUP SYSTEM_FILES (y/n) = " cop
-  echo
-  cop="${cop,,}"
-
-  if [[ "$cop" == "y" ]]; then
-    while true; do
-      read -p "? NOW ENTER KEY: " kas
-      echo
-
-      if [[ "$kas" == "archydoes" ]]; then
-        echo -e "\n* KEY MATCHES, PROCEEDING\n"
-
-        if [[ -d "$ZSF" ]]; then
-          echo -e "\n* BACKUP FOLDER EXISTS! SKIPPING BACKUP!\n"; break
-        else
-          echo -e "\n* CREATING ZORIGINAL_SYSTEM_FILES FOLDER\n"; echo
-          sudo mkdir -p "$ZSF" || exit
-          echo -e "\n* BACKUP INCOMING\n"
-          sudo cp -rf /etc/mkinitcpio.conf "$ZSF" || exit
-          sudo cp -rf /etc/pacman.conf     "$ZSF" || exit
-          echo -e "\n* SECURING THE BACKUP\n"
-          sudo chattr -V +i "$ZSF" || exit
-          echo -e "\n* SYSTEM_FILES BACKUP COMPLETE!\n"; break
-        fi
-      else
-        echo -e "\n~ wrong key dude, try again!\n"
-      fi
-    done
-    break
-  elif [[ "$cop" == "n" ]]; then
-    echo -e "\n~ skipped system_files backup!\n"; break
-  else
-    echo -e "\n$ERRMSG\n"
-  fi
-done
-
-while true; do
-  read -p "? REPLACE SYSTEM_FILES WITH CUSTOM ONES (y/n) = " sas
-  echo
-  sas="${sas,,}"
-
-  if [[ "$sas" == "y" ]]; then
-    if [[ -d "$ZSF" ]]; then
-      echo -e "\n* BACKUP FOLDER FOUND!\n"
-      echo -e "\n* PROCEEDING\n"
-      sudo cp -rf "$HOME/4arch/etc/." "/etc" || exit
-      break
-    else
-      echo -e "\n* BACKUP FOLDER NOT FOUND!\n"
-      echo -e "\n* CANNOT PROCEED!\n"; exit
-    fi
-  elif [[ "$sas" == "n" ]]; then
-    echo -e "\n~ skipped replacing system-files with custom ones\n"; break
-  else
-    echo -e "\n$ERRMSG\n"
-  fi
-done
+# while true; do
+#   read -p "? REPLACE SYSTEM_FILES WITH CUSTOM ONES (y/n) = " sas
+#   echo
+#   sas="${sas,,}"
+#
+#   if [[ "$sas" == "y" ]]; then
+#     if [[ -d "$ZSF" ]]; then
+#       echo -e "\n* BACKUP FOLDER FOUND!\n"
+#       echo -e "\n* PROCEEDING\n"
+#       sudo cp -rf "$HOME/4arch/etc/." "/etc" || exit
+#       break
+#     else
+#       echo -e "\n* BACKUP FOLDER NOT FOUND!\n"
+#       echo -e "\n* CANNOT PROCEED!\n"; exit
+#     fi
+#   elif [[ "$sas" == "n" ]]; then
+#     echo -e "\n~ skipped replacing system-files with custom ones\n"; break
+#   else
+#     echo -e "\n$ERRMSG\n"
+#   fi
+# done
 
 while true; do
   read -p "? RUN MKINITCPIO (y/n) = " mas
