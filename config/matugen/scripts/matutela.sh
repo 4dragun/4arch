@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 COLOR=$(cat ~/.cache/matutela.archy)
-INSTALL_SCRIPT="$HOME/.config/ZTELA/install.sh"
+INSTALL_SCRIPT="$HOME/.cache/TELA-GIT/install.sh"
 THEME_NAME="Tela-circle-${COLOR}-dark"
 SRC_PATH="$HOME/.local/share/icons/$THEME_NAME"
 DST_PATH="$HOME/.local/share/icons/matutela"
