@@ -78,6 +78,7 @@ EOF
 cat <<EOF > /boot/loader/entries/arch-lts.conf
 title   Arch Linux - LTS
 linux   /vmlinuz-linux-lts
+initrd  /intel-ucode.img
 initrd  /initramfs-linux-lts.img
 options root=UUID=$ROOT_UUID rw
 EOF
