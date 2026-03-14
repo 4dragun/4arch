@@ -100,7 +100,7 @@ mkdir -p /etc/mkinitcpio.conf.d
 cat <<EOF > /etc/mkinitcpio.conf.d/archy-resume.conf
 HOOKS=(base systemd autodetect microcode modconf kms keyboard keymap sd-vconsole block filesystems resume fsck)
 EOF
-mkinitcpio -P
+mkinitcpio -P || true
 
 echo -e "\n*EXP. RUNNING PACMAN-KEY\n"
 PK="pacman-key"
