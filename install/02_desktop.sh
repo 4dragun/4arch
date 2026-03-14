@@ -1,27 +1,15 @@
 #!/usr/bin/env bash
 
-# PK="sudo pacman-key"
-# PU="sudo pacman -U --needed --noconfirm"
-
 YS="yay -S --needed --noconfirm"
-
-# C1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
-# C2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
 
 G1="https://github.com/vinceliuice/Tela-circle-icon-theme"
 G2="https://github.com/NvChad/starter"
-
-ZSF="$HOME/.config/ZORIGINAL_SYSTEM_FILES"
 
 WALL="$HOME/4arch/walls/magician-walks-magical-tree-houses-illustration.jpg"
 
 ERRMSG="~ invalid response! try again!"
 
-cd "$HOME"
-echo -e "\n* WELCOME TO 4ARCH POST-INSTALL SCRIPT\n"
-echo -e "\n* RUNNING PACMAN-KEY\n"
-$PK --init; echo
-$PK --populate archlinux; echo
+cd "$HOME"; echo -e "\n* WELCOME TO 4ARCH POST-INSTALL SCRIPT\n"
 
 while true; do
   read -p "? CONFIGURE LOCAL DOTFILES, ICONS, THEMES (y/n) = " itd
@@ -73,130 +61,8 @@ while true; do
   fi
 done
 
-# while true; do
-#   read -p "? ADD CHAOTIC-AUR REPO (y/n) = " cas
-#   echo
-#   cas="${cas,,}"
-#
-#   if [[ "$cas" == "y" ]]; then
-#     echo -e "\n* ADDING CHAOTIC-AUR REPO\n"
-#     $PK --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com; echo
-#     $PK --lsign-key 3056513887B78AEB; echo
-#     $PU "$C1"; echo
-#     $PU "$C2"; echo; break
-#   elif [[ "$cas" == "n" ]]; then
-#     echo -e "\n~ skipped chaotic-aur setup\n"; break
-#   else
-#     echo -e "\n$ERRMSG\n"
-# fi
-# done
-
-# while true; do
-#   read -p "? CHAOTIC-AUR SETUP SUCCEEDED (y/n) = " chas
-#   echo
-#   chas="${chas,,}"
-#
-#   if [[ "$chas" == "n" ]]; then
-#     while true; do
-#       read -p "? REBOOT NOW (y/n) = " ras
-#       echo
-#       ras="${ras,,}"
-#
-#       if [[ "$ras" == "y" ]]; then
-#         sleep 1; sync; sync; sync; systemctl reboot
-#       elif [[ "$ras" == "n" ]]; then
-#         echo -e "\n~ reboot manually!\n"; exit
-#       else
-#         echo -e "\n$ERRMSG\n"
-#       fi
-#     done
-#   elif [[ "$chas" == "y" ]]; then
-#     echo -e "\n* CHAOTIC-AUR SETUP WENT SMOOTH\n"; break
-#   else
-#     echo -e "\n$ERRMSG\n"
-#   fi
-# done
-
-# while true; do
-#   read -p "? BACKUP SYSTEM_FILES (y/n) = " cop
-#   echo
-#   cop="${cop,,}"
-#
-#   if [[ "$cop" == "y" ]]; then
-#     while true; do
-#       read -p "? NOW ENTER KEY: " kas
-#       echo
-#
-#       if [[ "$kas" == "archydoes" ]]; then
-#         echo -e "\n* KEY MATCHES, PROCEEDING\n"
-#
-#         if [[ -d "$ZSF" ]]; then
-#           echo -e "\n* BACKUP FOLDER EXISTS! SKIPPING BACKUP!\n"; break
-#         else
-#           echo -e "\n* CREATING ZORIGINAL_SYSTEM_FILES FOLDER\n"; echo
-#           sudo mkdir -p "$ZSF" || exit
-#           echo -e "\n* BACKUP INCOMING\n"
-#           sudo cp -rf /etc/mkinitcpio.conf "$ZSF" || exit
-#           sudo cp -rf /etc/pacman.conf     "$ZSF" || exit
-#           echo -e "\n* SECURING THE BACKUP\n"
-#           sudo chattr -V +i "$ZSF" || exit
-#           echo -e "\n* SYSTEM_FILES BACKUP COMPLETE!\n"; break
-#         fi
-#       else
-#         echo -e "\n~ wrong key dude, try again!\n"
-#       fi
-#     done
-#     break
-#   elif [[ "$cop" == "n" ]]; then
-#     echo -e "\n~ skipped system_files backup!\n"; break
-#   else
-#     echo -e "\n$ERRMSG\n"
-#   fi
-# done
-
-# while true; do
-#   read -p "? REPLACE SYSTEM_FILES WITH CUSTOM ONES (y/n) = " sas
-#   echo
-#   sas="${sas,,}"
-#
-#   if [[ "$sas" == "y" ]]; then
-#     if [[ -d "$ZSF" ]]; then
-#       echo -e "\n* BACKUP FOLDER FOUND!\n"
-#       echo -e "\n* PROCEEDING\n"
-#       sudo cp -rf "$HOME/4arch/etc/." "/etc" || exit
-#       break
-#     else
-#       echo -e "\n* BACKUP FOLDER NOT FOUND!\n"
-#       echo -e "\n* CANNOT PROCEED!\n"; exit
-#     fi
-#   elif [[ "$sas" == "n" ]]; then
-#     echo -e "\n~ skipped replacing system-files with custom ones\n"; break
-#   else
-#     echo -e "\n$ERRMSG\n"
-#   fi
-# done
-
-# while true; do
-#   read -p "? RUN MKINITCPIO (y/n) = " mas
-#   echo
-#   mas="${mas,,}"
-#
-#   if [[ "$mas" == "y" ]]; then
-#     echo -e "\n* RUNNING MKINITCPIO\n"
-#     sudo mkinitcpio -P; echo; break
-#   elif [[ "$mas" == "n" ]]; then
-#     echo -e "\n~ skipped mkinitcpio\n"; break
-#   else
-#     echo -e "\n$ERRMSG\n"
-#   fi
-# done
-
-echo -e "\n* UPDATING SYSTEM WITH YAY\n"
-yay --noconfirm || exit
-
 echo -e "\n* INSTALLING AUR PACKAGES\n"
 $YS ttf-rubik-vf wvkbd ayugram-desktop-bin surge-bin
-$YS darkly-bin
 
 echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n"
 $YS bibata-cursor-theme adw-gtk-theme lua-language-server\
@@ -222,6 +88,10 @@ $YS fzf lsd bat pacseek fastfetch btop udiskie kitty yazi starship\
     git-credential-manager-bin wl-clipboard brightnessctl alsa-utils\
     power-profiles-daemon clipse matugen
 
+##########################
+echo; $YS darkly-bin; echo
+##########################
+
 echo -e "\n* FINISHED INSTALLING APPLICATIONS\n"
 
 echo -e "\n* CREATING XDG DIRECTORIES\n"
@@ -229,7 +99,7 @@ xdg-user-dirs-update
 mkdir -p "$HOME/Pictures/Screenshots"
 
 echo -e "\n* BUILDING THEMES WITH MATUGEN\n"
-matugen -t scheme-content image "$WALL"; echo
+matugen -t scheme-content --source-color-index 0 --continue-on-error image "$WALL"
 echo "$WALL" > "$HOME/.cache/last_wall.txt"
 
 echo -e "\n* ENABLING SERVICES\n"

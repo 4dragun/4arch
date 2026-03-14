@@ -13,7 +13,7 @@ fi
 echo "$WALL" > "$HOME/.cache/last_wall.txt"
 echo -e "\n* APPLYING THEME USING $WALL\n"
 
-matugen -t scheme-content image "$WALL" || {
+matugen -t scheme-content --source-color-index 0 image "$WALL" || {
   notify-send -i "$ICON" "Matugen" "manual intervention needed!"
   exit
 }

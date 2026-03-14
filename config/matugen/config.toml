@@ -2,8 +2,7 @@
 version_check = true
 
 [config.wallpaper]
-command   = "hyprctl"
-arguments = ["hyprpaper wallpaper ,"]
+command   = "hyprctl hyprpaper wallpaper ,{{image}}"
 
 [templates.kitty]
 input_path  = './templates/kitty-colors.conf'
