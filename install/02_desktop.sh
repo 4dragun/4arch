@@ -176,20 +176,20 @@ done
 #   fi
 # done
 
-while true; do
-  read -p "? RUN MKINITCPIO (y/n) = " mas
-  echo
-  mas="${mas,,}"
-
-  if [[ "$mas" == "y" ]]; then
-    echo -e "\n* RUNNING MKINITCPIO\n"
-    sudo mkinitcpio -P; echo; break
-  elif [[ "$mas" == "n" ]]; then
-    echo -e "\n~ skipped mkinitcpio\n"; break
-  else
-    echo -e "\n$ERRMSG\n"
-  fi
-done
+# while true; do
+#   read -p "? RUN MKINITCPIO (y/n) = " mas
+#   echo
+#   mas="${mas,,}"
+#
+#   if [[ "$mas" == "y" ]]; then
+#     echo -e "\n* RUNNING MKINITCPIO\n"
+#     sudo mkinitcpio -P; echo; break
+#   elif [[ "$mas" == "n" ]]; then
+#     echo -e "\n~ skipped mkinitcpio\n"; break
+#   else
+#     echo -e "\n$ERRMSG\n"
+#   fi
+# done
 
 echo -e "\n* UPDATING SYSTEM WITH YAY\n"
 yay --noconfirm || exit

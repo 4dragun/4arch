@@ -83,6 +83,25 @@ initrd  /initramfs-linux-lts.img
 options root=UUID=$ROOT_UUID rw
 EOF
 
+echo -e "\n* EXP. SYSTEMD-FILES DROP-INS"
+mkdir -p /etc/systemd/logind.conf.d /etc/systemd/sleep.conf.d
+cat <<EOF > /etc/systemd/logind.conf.d/archy-logind.conf
+[Login]
+HandlePowerKey=suspend-then-hibernate
+HandleLidSwitch=suspend-then-hibernate
+EOF
+cat <<EOF > /etc/systemd/sleep.conf.d/archy-sleep.conf
+[Sleep]
+HibernateDelaySec=1800
+EOF
+
+echo -e "\n*EXP. HIBERNATION HOOKS (SAFE ORDER)\n"
+mkdir -p /etc/mkinitcpio.conf.d
+cat <<EOF > /etc/mkinitcpio.conf.d/archy-resume.conf
+HOOKS=(base systemd autodetect microcode modconf kms keyboard keymap sd-vconsole block filesystems resume fsck)
+EOF
+mkinitcpio -P
+
 echo -e "\n*EXP. RUNNING PACMAN-KEY\n"
 PK="pacman-key"
 PU="pacman -U --needed --noconfirm"
@@ -100,13 +119,10 @@ $PU "$C1"; echo
 $PU "$C2"; echo
 
 echo -e "\n* CREATING PACMAN DROP-INS (ZERO TOUCH METHOD)\n"
-
 # 1. Create the directory (it usually doesn't exist by default)
-mkdir -p /etc/pacman.d/conf.d
-
+mkdir -p /etc/pacman.d
 # 2. Create your custom settings file
-# This handles the options and the repos without touching pacman.conf
-cat <<EOF > /etc/pacman.d/conf.d/archy-custom.conf
+cat <<EOF > /etc/pacman.d/archy-custom.conf
 [options]
 Color
 ILoveCandy
@@ -118,9 +134,7 @@ Include = /etc/pacman.d/mirrorlist
 [chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist
 EOF
-
 # 3. Only ONE change to the main file: tell it to look at your new folder
-# We just append this to the very end
-echo 'Include = /etc/pacman.d/conf.d/*.conf' >> /etc/pacman.conf
+echo 'Include = /etc/pacman.d/*.conf' >> /etc/pacman.conf
 
 echo -e "\n* SCRIPT FINISHED\n"
