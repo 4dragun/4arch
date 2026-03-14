@@ -96,20 +96,18 @@ EOF
 mkinitcpio -P || true
 
 echo -e "\n*EXP. RUNNING PACMAN-KEY\n"
-PK="pacman-key"
-PU="pacman -U --needed --noconfirm"
-
-$PK --init; echo
-$PK --populate archlinux; echo
+pacman-key --init; echo
+pacman-key --populate archlinux; echo
 
 echo -e "\n* EXP. CHAOTIC STUFF GOIN ON"
 C1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
 C2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
 
-$PK --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com; echo
-$PK --lsign-key 3056513887B78AEB; echo
-$PU "$C1"; echo
-$PU "$C2"; echo
+pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com; echo
+pacman-key --lsign-key 3056513887B78AEB; echo
+
+pacman -U --needed --noconfirm "$C1"; echo
+pacman -U --needed --noconfirm "$C2"; echo
 
 echo -e "\n* CREATING PACMAN DROP-INS (ZERO TOUCH METHOD)\n"
 # 1. Create the directory (it usually doesn't exist by default)
@@ -129,5 +127,7 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 EOF
 # 3. Only ONE change to the main file: tell it to look at your new folder
 echo 'Include = /etc/pacman.d/*.conf' >> /etc/pacman.conf
+# 4. FINAL CONFIRMATION
+pacman -Syu --needed --noconfirm
 
 echo -e "\n* SCRIPT FINISHED\n"
