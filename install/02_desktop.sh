@@ -7,7 +7,7 @@ G2="https://github.com/NvChad/starter"
 
 WALL="$HOME/4arch/walls/magician-walks-magical-tree-houses-illustration.jpg"
 
-ERRMSG="~ invalid response! try again!"
+ERRMSG="ERROR: invalid response! (try y or n)"
 
 cd "$HOME"; echo -e "\n* WELCOME TO 4ARCH POST-INSTALL SCRIPT\n"
 
@@ -38,26 +38,44 @@ while true; do
 done
 
 while true; do
-  read -p "? INSTALL YAY - Yet Another AUR Helper (y/n) = " yas
-  echo
+  read -p "===> INSTALL YAY? (y/n) = " yas; echo
   yas="${yas,,}"
 
   if [[ "$yas" == "y" ]]; then
-    sudo pacman -S --needed --noconfirm git base-devel; echo
-    rm -rf "$HOME/yay-bin"
-    
-    echo -e "\n> CLONING YAY\n"
-    git clone "https://aur.archlinux.org/yay-bin.git"; echo
 
-    cd "$HOME/yay-bin" || exit
-    makepkg -si --noconfirm
-    cd "$HOME"
-    yay --noconfirm || exit
-    echo; break
+    while true; do
+      echo -e "\n>>>> YAY INSTALLATION STARTED...\n"
+      
+      if sudo pacman -S --needed --noconfirm git base-devel &&\
+        rm -rf "$HOME/yay-bin" &&\
+        git clone "https://aur.archlinux.org/yay-bin.git" "$HOME/yay-bin" &&\
+        cd "$HOME/yay-bin" && makepkg -si --noconfirm &&\
+        yay --noconfirm; then
+        
+        echo -e "\n>>>> SUCCESS: YAY installed!\n"; cd "$HOME"; break 2
+      else
+        echo -e "\n>>>> ERROR: YAY installation error!\n"
+
+        while true; do
+          read -p "===> RETRY: retry YAY installation? (y/n) = " retry
+          retry="${retry,,}"
+
+          if [[ "$retry" == "y" ]]; then
+            echo -e "\n>>>> RETRY: retrying YAY installation...\n"; cd "$HOME"
+            break
+          elif [[ "$retry" == "n" ]]; then
+            echo -e "\n>>>> ABORT: stopped YAY installation retry!\n"; cd "$HOME"
+            break 2
+          else
+            clear; echo -e "\n$ERRMSG\n"
+          fi
+        done
+      fi
+    done
   elif [[ "$yas" == "n" ]]; then
-    echo -e "\n~ skipped yay setup\n"; break
+    clear; echo -e "\n>>>> SKIP: skipped YAY installation!\n"; break
   else
-    echo -e "\n$ERRMSG\n"
+    clear; echo -e "\n$ERRMSG\n";
   fi
 done
 
