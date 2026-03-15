@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# conditions for CLEARING: retry, abort, errormsg, skip
+
 YS="yay -S --needed --noconfirm"
 
 G1="https://github.com/vinceliuice/Tela-circle-icon-theme"
@@ -7,39 +9,54 @@ G2="https://github.com/NvChad/starter"
 
 WALL="$HOME/4arch/walls/magician-walks-magical-tree-houses-illustration.jpg"
 
-ERRMSG="ERROR: invalid response! (try y or n)"
+ERRMSG=">>>> ERROR: invalid response! (try y or n)"
 
-cd "$HOME"; echo -e "\n* WELCOME TO 4ARCH POST-INSTALL SCRIPT\n"
+clear; cd "$HOME"; echo -e "\n===> WELCOME TO 4ARCH POST-INSTALL SCRIPT\n"
 
 while true; do
-  read -p "? CONFIGURE LOCAL DOTFILES, ICONS, THEMES (y/n) = " itd
-  echo
-  itd="${itd,,}"
+  read -p "===> CONFIGURE LOCAL DOTFILES? (y/n) = " local
+  echo; local="${local,,}"
 
-  if [[ "$itd" == "y" ]]; then
-    rm -rf "$HOME/.cache/TELA-GIT"
-    rm -rf "$HOME/.config/nvim"
-    rm -rf "$HOME/.local/state/nvim"
-    rm -rf "$HOME/.local/share/nvim"
+  if [[ "$local" == "y" ]]; then
+    while true; do
 
-    echo -e "\n> CLONING TELA-CIRCLE-ICON-THEME\n"
-    git clone "$G1" "$HOME/.cache/TELA-GIT"
-    echo -e "\n> CLONING NVCHAD\n"
-    git clone "$G2" "$HOME/.config/nvim"
+      if rm -rf "$HOME/.cache/TELA-GIT" "$HOME/.config/nvim"\
+        "$HOME/.local/state/nvim" "$HOME/.local/share/nvim" &&\
 
-    echo; cp -rf "$HOME/4arch/config/." "$HOME/.config"
-    echo; cp -rf "$HOME/.config/.gitconfig" "$HOME"
-    echo; rm -rf "$HOME/.config/.gitconfig"; break
-  elif [[ "$itd" == "n" ]]; then
-    echo -e "\n~ skipped dotfiles, icons, themes setup\n"; break
+        echo && git clone "$G1" "$HOME/.cache/TELA-GIT" &&\
+        echo && git clone "$G2" "$HOME/.config/nvim" &&\
+
+        echo && cp -rf "$HOME/4arch/config/." "$HOME/.config" &&\
+        echo && mv -f "$HOME/.config/.gitconfig" "$HOME"; then
+
+        echo -e "\n>>>> SUCCESS: configured DOTFILES!\n"; break 2
+      else
+        echo -e "\n>>>> ERROR: error while configuring DOTFILES!\n"
+
+        while true; do
+
+          read -p "===> RETRY: retry DOTFILE setup? (y/n) = " das
+          echo; das="${das,,}"
+
+          if [[ "$das" == "y" ]]; then
+            clear; echo -e "\n>>>> RETRY: retrying DOTFILE setup...\n"; break
+          elif [[ "$das" == "n" ]]; then
+            clear; echo -e ">>>> ABORT: cancelled DOTFILES setup!\n\n"; break 3
+          else
+            clear; echo -e "\n$ERRMSG\n"
+          fi
+        done
+      fi
+    done
+  elif [[ "$local" == "n" ]]; then
+    clear; echo -e "\n>>>> SKIP: skipped DOTFILES setup\n"; break
   else
-    echo -e "\n$ERRMSG\n"
+    clear; echo -e "\n$ERRMSG\n"
   fi
 done
 
 while true; do
-  read -p "===> INSTALL YAY? (y/n) = " yas; echo
-  yas="${yas,,}"
+  read -p "===> INSTALL YAY? (y/n) = " yas; echo; yas="${yas,,}"
 
   if [[ "$yas" == "y" ]]; then
 
@@ -61,11 +78,13 @@ while true; do
           retry="${retry,,}"
 
           if [[ "$retry" == "y" ]]; then
+            clear
             echo -e "\n>>>> RETRY: retrying YAY installation...\n"; cd "$HOME"
             break
           elif [[ "$retry" == "n" ]]; then
+            clear
             echo -e "\n>>>> ABORT: stopped YAY installation retry!\n"; cd "$HOME"
-            break 2
+            break 3
           else
             clear; echo -e "\n$ERRMSG\n"
           fi
