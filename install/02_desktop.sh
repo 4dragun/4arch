@@ -193,10 +193,10 @@ xdg-user-dirs-update; mkdir -p "$HOME/Pictures/Screenshots"
 # echo "$WALL" > "$HOME/.cache/last_wall.txt"
 
 echo -e "\n>>>> ENABLING SERVICES...\n"
-sudo systemctl enable power-profiles-daemon sddm; echo
+sudo systemctl enable power-profiles-daemon sddm
 
 echo -e "\n>>>> REMOVING 4ARCH REPO FROM ROOT DIRECTORY...\n"
-sudo rm -rf /root/4arch; echo
+sudo rm -rf /root/4arch
 
 while true; do
   read -p "===> 4ARCH SCRIPT ENDED, REBOOT NOW? (y/n) = " nas; echo
