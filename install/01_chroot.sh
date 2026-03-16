@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+ERRMSG=">>>> ERROR: invalid response! (try y or n)"
 
 echo -e "\n* REACHED CHROOT SCRIPT, BE CAREFUL!\n"
 echo -e "\n* SETTING UP TIMEZONE\n"
