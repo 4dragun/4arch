@@ -175,7 +175,21 @@ while true; do
         clear; echo -e "\n>>>> SUCCESS: finished installing APPS & UTILS!\n"
         break 2
       else
-        echo -e "\n>>>> ERROR: failed installing some APPS!\n"; exit
+        echo -e "\n>>>> ERROR: failed installing some APPS!\n"
+
+        while true; do
+
+          read -p "===> RETRY: retry installing APPS & UTILS? (y/n) = " rias
+          echo; rias="${rias,,}"
+
+          if [[ "$rias" == "y" ]]; then break
+          elif [[ "$rias" == "n" ]]; then
+            clear; echo -e "\n>>>> ABORT: cancelled APPS & UTILS installation!\n"
+            break 3
+          else
+            clear; echo -e "\n$ERRMSG\n"
+          fi
+        done
       fi
     done
   elif [[ "$apps" == "n" ]]; then
