@@ -139,15 +139,35 @@ while true; do
 done
 
 while true; do
-echo -e "\n* EXP. CHAOTIC STUFF GOIN ON"
-C1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
-C2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
+  C1="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst"
+  C2="https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst"
 
-pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com; echo
-pacman-key --lsign-key 3056513887B78AEB; echo
+  echo -e "\n>>>> ADDING CHAOTIC-AUR STUFF...\n"
 
-pacman -U --needed --noconfirm "$C1"; echo
-pacman -U --needed --noconfirm "$C2"; echo
+  if pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com &&\
+     echo &&\
+     pacman-key --lsign-key 3056513887B78AEB &&\
+     echo &&\
+     pacman -U --needed --noconfirm "$C1" && echo &&\
+     pacman -U --needed --noconfirm "$C2" && echo; then
+
+     clear; echo -e "\n>>>> SUCCESS: configured CHAOTIC-AUR!\n"; break
+  else
+    echo -e "\n>>>> ERROR: failed to configure CHAOTIC-AUR!\n"
+
+    while true; do
+      read -p "===> RETRY: retry configuring CHAOTIC-AUR? (y/n) = " chos
+      echo; chos="${chos,,}"
+
+      if [[ "$chos" == "y" ]]; then
+        clear; break
+      elif [[ "$chos" == "n" ]]; then
+        clear; echo -e "\n>>>> ABORT: cancelled CHAOTIC-AUR setup!\n"; break 2
+      else
+        clear; echo -e "\n$ERRMSG\n"
+      fi
+    done
+  fi
 done
 
 echo -e "\n* CREATING PACMAN DROP-INS (ZERO TOUCH METHOD)\n"
