@@ -143,36 +143,36 @@ while true; do
 
     while true; do
       
-      if clear && echo -e "\n* INSTALLING AUR PACKAGES\n" &&\
+      if clear && echo -e "\n>>>> INSTALLING AUR PACKAGES...\n" &&\
         $YS ttf-rubik-vf wvkbd ayugram-desktop-bin surge-bin &&\
 
-        echo -e "\n* INSTALLING INTERNAL DEPENDENCIES\n" &&\
+        echo -e "\n>>>> INSTALLING INTERNAL DEPENDENCIES...\n" &&\
         $YS bibata-cursor-theme adw-gtk-theme lua-language-server\
             gst-plugins-bad xdg-user-dirs archlinux-xdg-menu\
             libadwaita-without-adwaita-git &&\
 
-        echo -e "\n* INSTALLING FONTS\n" &&\
+        echo -e "\n>>>> INSTALLING FONTS...\n" &&\
         $YS noto-fonts noto-fonts-cjk noto-fonts-extra noto-fonts-emoji\
             ttf-jetbrains-mono-nerd &&\
 
-        echo -e "\n* INSTALLING HYPRLAND AND ITS DEPENDENCIES\n" &&\
+        echo -e "\n>>>> INSTALLING HYPRLAND AND ITS DEPENDENCIES...\n" &&\
         $YS hyprland xdg-desktop-portal-hyprland xdg-desktop-portal-kde grimblast\
             qt5-wayland hypridle hyprlock hyprpicker hyprpolkitagent hyprpaper &&\
 
-        echo -e "\n* INSTALLING GUI APPLICATIONS\n" &&\
+        echo -e "\n>>>> INSTALLING GUI APPLICATIONS...\n" &&\
         $YS sddm brave emote pavucontrol-qt gwenview rofi-wayland\
             nwg-look blueman qbittorrent swaync reflector-simple neovide mpv\
             waybar network-manager-applet dolphin swappy systemsettings kdialog\
             p7zip-gui zen-browser-bin strawberry &&\
 
-        echo -e "\n* INSTALLING CLI APPLICATIONS\n" &&\
+        echo -e "\n>>>> INSTALLING CLI APPLICATIONS...\n" &&\
         $YS fzf lsd bat pacseek fastfetch btop udiskie kitty yazi starship\
             git-credential-manager-bin wl-clipboard brightnessctl alsa-utils\
             power-profiles-daemon clipse matugen &&\
 
         echo && $YS darkly-bin && echo; then
 
-        echo -e "\n>>>> SUCCESS: finished installing APPS & UTILS!\n"
+        clear; echo -e "\n>>>> SUCCESS: finished installing APPS & UTILS!\n"
         break 2
       else
         echo -e "\n>>>> ERROR: failed installing some APPS!\n"; exit
@@ -185,31 +185,29 @@ while true; do
   fi
 done
 
-# echo -e "\n* CREATING XDG DIRECTORIES\n"
-# xdg-user-dirs-update
-# mkdir -p "$HOME/Pictures/Screenshots"
-#
+echo -e "\n>>>> CREATING XDG DIRECTORIES...\n"
+xdg-user-dirs-update; mkdir -p "$HOME/Pictures/Screenshots"
+
 # echo -e "\n* BUILDING THEMES WITH MATUGEN\n"
 # matugen -t scheme-content --source-color-index 0 --continue-on-error image "$WALL"
 # echo "$WALL" > "$HOME/.cache/last_wall.txt"
-#
-# echo -e "\n* ENABLING SERVICES\n"
-# sudo systemctl enable power-profiles-daemon sddm; echo
-#
-# echo -e "\n* REMOVING 4ARCH REPO FROM ROOT DIRECTORY\n"
-# sudo rm -rf /root/4arch; echo
-#
-# while true; do
-#   read -p "? 4ARCH SCRIPT ENDED, REBOOT NOW (y/n) = " nas
-#   echo
-#   nas="${nas,,}"
-#
-#   if [[ "$nas" == "y" ]]; then
-#     echo -e "\n* REBOOT INITIATED\n"
-#     sleep 1; sync; sync; sync; systemctl reboot
-#   elif [[ "$nas" == "n" ]]; then
-#     echo -e "\n* OKAY, REBOOT MANUALLY!\n"; exit
-#   else
-#     echo -e "\n$ERRMSG\n"
-#   fi
-# done
+
+echo -e "\n>>>> ENABLING SERVICES...\n"
+sudo systemctl enable power-profiles-daemon sddm; echo
+
+echo -e "\n>>>> REMOVING 4ARCH REPO FROM ROOT DIRECTORY...\n"
+sudo rm -rf /root/4arch; echo
+
+while true; do
+  read -p "===> 4ARCH SCRIPT ENDED, REBOOT NOW? (y/n) = " nas; echo
+  nas="${nas,,}"
+
+  if [[ "$nas" == "y" ]]; then
+    clear; echo -e "\n>>>> REBOOT INITIATED...\n"
+    sleep 1; sync; sync; sync; systemctl reboot
+  elif [[ "$nas" == "n" ]]; then
+    clear; echo -e "\n>>>> OKAY, REBOOT MANUALLY!\n"; exit
+  else
+    clear; echo -e "\n$ERRMSG\n"
+  fi
+done
