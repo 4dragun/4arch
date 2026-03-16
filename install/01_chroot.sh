@@ -170,7 +170,7 @@ while true; do
   fi
 done
 
-echo -e "\n* CREATING PACMAN DROP-INS (ZERO TOUCH METHOD)\n"
+echo -e "\n>>>> CREATING PACMAN DROP-INS (ZERO TOUCH METHOD)...\n"
 # 1. Create the directory (it usually doesn't exist by default)
 mkdir -p /etc/pacman.d
 # 2. Create your custom settings file
@@ -190,7 +190,27 @@ EOF
 echo 'Include = /etc/pacman.d/*.conf' >> /etc/pacman.conf
 
 while true; do
-pacman -Syu --needed --noconfirm
+  clear; echo -e "\n>>>> TESTING PACMAN-UPDATE...\n"
+
+  if pacman -Syu --needed --noconfirm; then
+    clear; echo -e "\n>>>> SUCCESS: PACMAN is now fully functional!\n"
+    break
+  else
+    echo -e "\n>>>> ERROR: PACMAN failed!\n"
+   
+    while true; do
+      read -p "===> RETRY: retry running PACMAN? (y/n) = " paca
+      echo; paca="${paca,,}"
+
+      if [[ "$paca" == "y" ]]; then
+        clear; break
+      elif [[ "$paca" == "n" ]]; then
+        clear; echo -e "\n>>>> ABORT: cancelled running PACMAN-UPDATE!\n"; break 2
+      else
+        clear; echo -e "\n$ERRMSG\n"
+      fi
+    done
+  fi
 done
 
 echo -e "\n>>>> CHROOT SCRIPT FINISHED!\n"
