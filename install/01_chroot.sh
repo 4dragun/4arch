@@ -28,6 +28,10 @@ echo -e "\n* ADDING USER TO SUDO\n"
 echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/01_archy
 echo "Defaults pwfeedback, insults" >> /etc/sudoers.d/01_archy
 
+echo -e "\n* ENABLING SERVICES\n"
+systemctl enable systemd-timesyncd.service NetworkManager.service fstrim.timer\
+                 keyd.service
+
 echo -e "\n FIXING SOME HARDWARE KEYBOARD KEYS\n"
 mkdir -pv /etc/keyd; echo
 cat <<EOF > /etc/keyd/default.conf
@@ -51,10 +55,6 @@ f3 = volumeup
 f4 = brightnessdown
 f5 = brightnessup
 EOF
-
-echo -e "\n* ENABLING SERVICES\n"
-systemctl enable systemd-timesyncd.service NetworkManager.service fstrim.timer\
-                 keyd.service
 
 echo -e "\n* SETTING UP SYSTEMD-BOOT\n"
 bootctl install
