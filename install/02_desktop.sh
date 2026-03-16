@@ -41,7 +41,7 @@ while true; do
           echo; das="${das,,}"
 
           if [[ "$das" == "y" ]]; then
-            clear; echo -e "\n>>>> RETRY: retrying DOTFILE setup...\n"; break
+            break
           elif [[ "$das" == "n" ]]; then
             clear; echo -e ">>>> ABORT: cancelled DOTFILES setup!\n\n"; break 3
           else
@@ -105,29 +105,29 @@ while true; do
 
   if [[ "$pas" == "y" ]]; then
 
-    clear; echo -e "\n>>>> EXP. INSTALLING PARU...\n"
-    
-    if sudo pacman -S --needed --noconfirm paru; then
+    while true; do
+      clear; echo -e "\n>>>> EXP. INSTALLING PARU...\n"
 
-      clear; echo -e "\n>>>> SUCCESS: installed PARU!\n"; break
-    else
-      echo -e "\n>>>> ERROR: failed to install PARU!\n"
+      if sudo pacman -S --needed --noconfirm paru; then
+        clear; echo -e "\n>>>> SUCCESS: installed PARU!\n"; break 2
+      else
+        echo -e "\n>>>> ERROR: failed to install PARU!\n"
 
-      while true; do
+        while true; do
 
-        read -p "===> RETRY: retry PARU installation? (y/n) = " pras
-        echo; pras="${pras,,}"
+          read -p "===> RETRY: retry PARU installation? (y/n) = " pras
+          echo; pras="${pras,,}"
 
-        if [[ "$pras" == "y" ]]; then
-          clear; echo -e "\n>>>> RETRY: retrying PARU installation...\n"; break
-
-        elif [[ "$pras" == "n" ]]; then
-          clear; echo -e "\n>>>> ABORT: cancelled PARU installation!\n"; break 2
-        else
-          clear; echo -e "\n$ERRMSG\n"
-        fi
-      done
-    fi
+          if [[ "$pras" == "y" ]]; then
+            break
+          elif [[ "$pras" == "n" ]]; then
+            clear; echo -e "\n>>>> ABORT: cancelled PARU installation!\n"; break 3
+          else
+            clear; echo -e "\n$ERRMSG\n"
+          fi
+        done
+      fi
+    done
   elif [[ "$pas" == "n" ]]; then
     clear; echo -e "\n>>>> SKIP: skipped PARU installation!\n"; break
   else
@@ -144,7 +144,7 @@ while true; do
     while true; do
       
       if clear && echo -e "\n>>>> INSTALLING AUR PACKAGES...\n" &&\
-        $YS ttf-rubik-vf wvkbd ayugram-desktop-bin surge-bin &&\
+        $YS ttf-rubik-vf wvkbd ayugram-desktop-bin surge-bin darkly-bin &&\
 
         echo -e "\n>>>> INSTALLING INTERNAL DEPENDENCIES...\n" &&\
         $YS bibata-cursor-theme adw-gtk-theme lua-language-server\
@@ -168,9 +168,7 @@ while true; do
         echo -e "\n>>>> INSTALLING CLI APPLICATIONS...\n" &&\
         $YS fzf lsd bat pacseek fastfetch btop udiskie kitty yazi starship\
             git-credential-manager-bin wl-clipboard brightnessctl alsa-utils\
-            power-profiles-daemon clipse matugen &&\
-
-        echo && $YS darkly-bin && echo; then
+            power-profiles-daemon clipse matugen; then
 
         clear; echo -e "\n>>>> SUCCESS: finished installing APPS & UTILS!\n"
         break 2
@@ -182,7 +180,8 @@ while true; do
           read -p "===> RETRY: retry installing APPS & UTILS? (y/n) = " rias
           echo; rias="${rias,,}"
 
-          if [[ "$rias" == "y" ]]; then break
+          if [[ "$rias" == "y" ]]; then
+            break
           elif [[ "$rias" == "n" ]]; then
             clear; echo -e "\n>>>> ABORT: cancelled APPS & UTILS installation!\n"
             break 3
