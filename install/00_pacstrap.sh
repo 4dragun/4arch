@@ -21,9 +21,9 @@ while true; do
   echo; sap="${sap,,}"
 
   if [[ "$sap" == "y" ]]; then
-    clear; echo -e "\n>>>> okay, continuing with script...\n"; break
+    clear; echo -e "\n>>>> SUCCESS: continuing with SCRIPT...\n"; break
   elif [[ "$sap" == "n" ]]; then
-    echo -e "\n>>>> reboot your shyit and try again!\n"; exit
+    echo -e "\n>>>> REBOOT your SHYIT and try again!\n"; exit
   else
     clear; echo -e "\n$ERRMSG\n"
   fi
