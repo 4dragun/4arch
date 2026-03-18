@@ -10,19 +10,64 @@ echo -e "\n>>>> SYNCING HARDWARE CLOCK...\n"
 hwclock --systohc --verbose
 
 echo -e "\n>>>> LOCALE SETUP...\n"
-echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+
+grep -qxF "en_US.UTF-8 UTF-8" /etc/locale.gen ||\
+  echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+
 echo; locale-gen; echo
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 echo -e "\n>>>> SETTING HOSTNAME...\n"
 echo "archy-pc" > /etc/hostname
 
-echo -e "\n===> SET A PASSWORD FOR ROOT :\n"; passwd
+while true; do
+  echo -e "\n===> SET A PASSWORD FOR ROOT :\n"
+
+  if passwd; then
+    clear; echo -e "\n>>>> SUCCESS: password set for ROOT!\n"; break
+  else
+    echo -e "\n>>>> ERROR: failed to set PASSWORD for ROOT!\n"
+
+    while true; do
+      read -p "===> RETRY: retry setting password for ROOT? (y/n) = " rpr
+      echo; rpr="${rpr,,}"
+
+      if [[ "$rpr" == "y" ]]; then
+        break
+      elif [[ "$rpr" == "n" ]]; then
+        clear; echo -e "\n>>>> ABORT: password not set for ROOT!\n"; break 2
+      else
+        clear; echo -e "\n$ERRMSG\n"
+      fi
+    done
+  fi
+done
 
 echo -e "\n>>>> ADDING USER - ARCHY...\n"
 id -u archy &>/dev/null || useradd -m -G wheel archy
 
-echo -e "\n>>>> SET A PASSWORD FOR USER - ARCHY :\n"; passwd archy
+while true; do
+  echo -e "\n>>>> SET A PASSWORD FOR USER - ARCHY :\n"
+
+  if passwd archy; then
+    clear; echo -e ">>>> SUCCESS: password set for ARCHY!"; break
+  else
+    echo -e "\n>>>> ERROR: failed to set PASSWORD for ARCHY!\n"
+
+    while true; do
+      read -p "===> RETRY: retry setting password for ARCHY? (y/n) = " rar
+      echo; rar="${rar,,}"
+
+      if [[ "$rar" == "y" ]]; then
+        break
+      elif [[ "$rar" == "n" ]]; then
+        clear; echo -e "\n>>>> ABORT: password not set for ARCHY!\n"; break 2
+      else
+        clear; echo -e "\n$ERRMSG\n"
+      fi
+    done
+  fi
+done
 
 echo -e "\n>>>> ADDING USERS TO SUDO...\n"
 echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/01_archy
@@ -57,7 +102,7 @@ f5 = brightnessup
 EOF
 
 echo -e "\n>>>> SETTING UP SYSTEMD-BOOT...\n"
-bootctl install
+bootctl install || bootctl update
 # Automatically grab the UUID of your root partition (/dev/nvme0n1p3)
 ROOT_UUID=$(findmnt -n -o UUID /)
 # 1. Main loader configuration
@@ -144,12 +189,13 @@ while true; do
 
   echo -e "\n>>>> ADDING CHAOTIC-AUR STUFF...\n"
 
-  if pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com &&\
-     echo &&\
-     pacman-key --lsign-key 3056513887B78AEB &&\
-     echo &&\
-     pacman -U --needed --noconfirm "$C1" && echo &&\
-     pacman -U --needed --noconfirm "$C2" && echo; then
+  if
+    pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com &&\
+    echo &&\
+    pacman-key --lsign-key 3056513887B78AEB &&\
+    echo &&\
+    pacman -U --needed --noconfirm "$C1" && echo &&\
+    pacman -U --needed --noconfirm "$C2" && echo; then
 
      clear; echo -e "\n>>>> SUCCESS: configured CHAOTIC-AUR!\n"; break
   else
@@ -187,7 +233,8 @@ Include = /etc/pacman.d/mirrorlist
 Include = /etc/pacman.d/chaotic-mirrorlist
 EOF
 # 3. Only ONE change to the main file: tell it to look at your new folder
-echo 'Include = /etc/pacman.d/*.conf' >> /etc/pacman.conf
+grep -qxF 'Include = /etc/pacman.d/*.conf' /etc/pacman.conf ||\
+  echo 'Include = /etc/pacman.d/*.conf' >> /etc/pacman.conf
 
 while true; do
   clear; echo -e "\n>>>> TESTING PACMAN-UPDATE...\n"
@@ -205,7 +252,7 @@ while true; do
       if [[ "$paca" == "y" ]]; then
         clear; break
       elif [[ "$paca" == "n" ]]; then
-        clear; echo -e "\n>>>> ABORT: cancelled running PACMAN-UPDATE!\n"; break 2
+        clear; echo -e "\n>>>> ABORT: cancelled PACMAN-UPDATE!\n"; break 2
       else
         clear; echo -e "\n$ERRMSG\n"
       fi
@@ -213,4 +260,16 @@ while true; do
   fi
 done
 
-echo -e "\n>>>> CHROOT SCRIPT FINISHED!\n"
+while true; do
+  read -p "===> CHROOT-SCRIPT ENDED, REBOOT NOW? (y/n) = " csas
+  echo; csas="${csas,,}"
+
+  if [[ "$csas" == "y" ]]; then
+    clear; echo -e "\n>>>> REBOOT INITIATED...\n"
+    break; sleep 1; sync; sync; sync; systemctl reboot
+  elif [[ "$csas" == "n" ]]; then
+    clear; echo -e "\n>>>> OKAY, REBOOT MANUALLY!\n"; exit
+  else
+    clear; echo -e "\n$ERRMSG\n"
+  fi
+done
