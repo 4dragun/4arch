@@ -2,17 +2,40 @@
 
 ERRMSG=">>>> ERROR: invalid response! (try y or n)"
 
-cfdisk /dev/nvme0n1
+clear; echo -e "\n>>>> WELCOME...\n"; sleep 1
 
-echo -e "\n>>>> FORMATTING PARTITIONS...\n"
-mkfs.fat -F 32 /dev/nvme0n1p1
-mkfs.ext4      /dev/nvme0n1p3
-mkswap         /dev/nvme0n1p2
+echo -e "\n>>>> CHECKING IF DISK IS READY FOR PARTITIONING...\n"; sleep 1
 
-echo -e "\n>>>> MOUNTING PARTITIONS...\n"
-mount  /dev/nvme0n1p3 /mnt
-mount  /dev/nvme0n1p1 /mnt/boot --mkdir
-swapon /dev/nvme0n1p2
+if mountpoint /mnt; then
+  clear
+  echo -e "\n>>>> SKIP: /mnt is already mounted! skipping FORMATTING...\n"
+else
+  while true; do
+
+  read -p "===> PARTITION & FORMAT DISK AS REQUIRED? (y/n) = " pfa
+  echo; pfa="${pfa,,}"
+
+    if [[ "$pfa" == "y" ]]; then
+      cfdisk /dev/nvme0n1
+
+      echo -e "\n>>>> FORMATTING PARTITIONS...\n"
+      mkfs.fat -F 32 /dev/nvme0n1p1
+      mkfs.ext4      /dev/nvme0n1p3
+      mkswap         /dev/nvme0n1p2
+
+      echo -e "\n>>>> MOUNTING PARTITIONS...\n"
+      mount  /dev/nvme0n1p3 /mnt
+      mount  /dev/nvme0n1p1 /mnt/boot --mkdir
+      swapon /dev/nvme0n1p2
+      clear; break
+    elif [[ "$pfa" == "n" ]]; then
+      clear; echo -e "\n>>>> ERROR: DISK is not ready for further steps!\n"
+      exit
+    else
+      clear; echo -e "\n$ERRMSG\n"
+    fi
+  done
+fi
 
 echo; lsblk; echo
 
@@ -46,9 +69,9 @@ while true; do
       if [[ "$pas" == "y" ]]; then
         clear; break
       elif [[ "$pas" == "n" ]]; then
-        clear; echo -e "\n>>>> ABORT: cancelled PACSTRAP!\n"; break 2
+        clear; echo -e "\n>>>> ABORT: cancelled PACSTRAP!\n"; exit
       else
-        echo -e "\n$ERRMSG\n"
+        clear; echo -e "\n$ERRMSG\n"
       fi
     done
   fi
@@ -60,3 +83,22 @@ genfstab -U /mnt > /mnt/etc/fstab
 cp -rf 4arch /mnt/root
 
 arch-chroot /mnt /root/4arch/install/01_chroot.sh
+
+while true; do
+  read -p "===> SCRIPT ENDED, REBOOT NOW? (y/n) = " csas
+  echo; csas="${csas,,}"
+
+  if [[ "$csas" == "y" ]]; then
+    
+    clear; echo -e "\n>>>> UNMOUNTING PARTITIONS nd shyit...\n"
+    umount -R /mnt
+    
+    echo -e "\n>>>> REBOOT INITIATED...\n"
+    break; sleep 1; sync; sync; sync; systemctl reboot
+  
+  elif [[ "$csas" == "n" ]]; then
+    clear; echo -e "\n>>>> OKAY, REBOOT MANUALLY!\n"; exit
+  else
+    clear; echo -e "\n$ERRMSG\n"
+  fi
+done

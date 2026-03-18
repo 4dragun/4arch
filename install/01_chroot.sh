@@ -260,16 +260,5 @@ while true; do
   fi
 done
 
-while true; do
-  read -p "===> CHROOT-SCRIPT ENDED, REBOOT NOW? (y/n) = " csas
-  echo; csas="${csas,,}"
-
-  if [[ "$csas" == "y" ]]; then
-    clear; echo -e "\n>>>> REBOOT INITIATED...\n"
-    break; sleep 1; sync; sync; sync; systemctl reboot
-  elif [[ "$csas" == "n" ]]; then
-    clear; echo -e "\n>>>> OKAY, REBOOT MANUALLY!\n"; exit
-  else
-    clear; echo -e "\n$ERRMSG\n"
-  fi
-done
+clear; echo -e "\n>>>> CHROOT-SCRIPT ENDED, RETURNING TO MAIN SCRIPT...\n"
+sleep 1; exit
