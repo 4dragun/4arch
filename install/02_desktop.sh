@@ -57,49 +57,6 @@ while true; do
   fi
 done
 
-# while true; do
-#   read -p "===> INSTALL YAY? (y/n) = " yas; echo; yas="${yas,,}"
-#
-#   if [[ "$yas" == "y" ]]; then
-#
-#     while true; do
-#       clear; echo -e "\n>>>> YAY INSTALLATION STARTED...\n"
-#
-#       if sudo pacman -S --needed --noconfirm git base-devel &&\
-#         rm -rf "$HOME/yay-bin" &&\
-#         git clone "https://aur.archlinux.org/yay-bin.git" "$HOME/yay-bin" &&\
-#         cd "$HOME/yay-bin" && makepkg -si --noconfirm &&\
-#         yay --noconfirm; then
-#
-#         clear; echo -e "\n>>>> SUCCESS: YAY installed!\n"; cd "$HOME"; break 2
-#       else
-#         echo -e "\n>>>> ERROR: YAY installation error!\n"
-#
-#         while true; do
-#           read -p "===> RETRY: retry YAY installation? (y/n) = " retry
-#           retry="${retry,,}"
-#
-#           if [[ "$retry" == "y" ]]; then
-#             clear
-#             echo -e "\n>>>> RETRY: retrying YAY installation...\n"; cd "$HOME"
-#             break
-#           elif [[ "$retry" == "n" ]]; then
-#             clear
-#             echo -e "\n>>>> ABORT: stopped YAY installation retry!\n"; cd "$HOME"
-#             break 3
-#           else
-#             clear; echo -e "\n$ERRMSG\n"
-#           fi
-#         done
-#       fi
-#     done
-#   elif [[ "$yas" == "n" ]]; then
-#     clear; echo -e "\n>>>> SKIP: skipped YAY installation!\n"; break
-#   else
-#     clear; echo -e "\n$ERRMSG\n";
-#   fi
-# done
-
 while true; do
   read -p "===> EXP. INSTALL PARU? (y/n) = " pas; echo; pas="${pas,,}"
 
@@ -200,10 +157,6 @@ done
 
 echo -e "\n>>>> CREATING XDG DIRECTORIES...\n"
 xdg-user-dirs-update; mkdir -p "$HOME/Pictures/Screenshots"
-
-# echo -e "\n* BUILDING THEMES WITH MATUGEN\n"
-# matugen -t scheme-content --source-color-index 0 --continue-on-error image "$WALL"
-# echo "$WALL" > "$HOME/.cache/last_wall.txt"
 
 echo -e "\n>>>> ENABLING SERVICES...\n"
 sudo systemctl enable power-profiles-daemon sddm
