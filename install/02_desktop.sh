@@ -172,7 +172,7 @@ while true; do
 
   if [[ "$nas" == "y" ]]; then
     clear; echo -e "\n>>>> REBOOT INITIATED...\n"
-    sleep 1; sync; sync; sync; systemctl reboot
+    sleep 3; sync; sync; sync; systemctl reboot
   elif [[ "$nas" == "n" ]]; then
     clear; echo -e "\n>>>> OKAY, REBOOT MANUALLY!\n"; exit
   else

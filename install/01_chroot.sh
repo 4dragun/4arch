@@ -261,4 +261,4 @@ while true; do
 done
 
 clear; echo -e "\n>>>> CHROOT-SCRIPT ENDED, RETURNING TO MAIN SCRIPT...\n"
-sleep 1; exit
+sleep 3; exit

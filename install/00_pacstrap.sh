@@ -2,9 +2,9 @@
 
 ERRMSG=">>>> ERROR: invalid response! (try y or n)"
 
-clear; echo -e "\n>>>> WELCOME...\n"; sleep 1
+clear; echo -e "\n>>>> WELCOME...\n"; sleep 3
 
-echo -e "\n>>>> CHECKING IF DISK IS READY FOR PARTITIONING...\n"; sleep 1
+echo -e "\n>>>> CHECKING IF DISK IS READY FOR PARTITIONING...\n"; sleep 3
 
 if mountpoint /mnt; then
   clear
@@ -29,7 +29,7 @@ else
       swapon /dev/nvme0n1p2
       clear; break
     elif [[ "$pfa" == "n" ]]; then
-      clear; echo -e "\n>>>> ERROR: DISK is not ready for further steps!\n"
+      clear; echo -e "\n>>>> ERROR: DISK is not ready for installation!\n"
       exit
     else
       clear; echo -e "\n$ERRMSG\n"
@@ -37,6 +37,7 @@ else
   done
 fi
 
+echo -e "\n>>>> CURRENT PARTITION TABLE OVERVIEW: \n"
 echo; lsblk; echo
 
 while true; do
@@ -69,7 +70,7 @@ while true; do
       if [[ "$pas" == "y" ]]; then
         clear; break
       elif [[ "$pas" == "n" ]]; then
-        clear; echo -e "\n>>>> ABORT: cancelled PACSTRAP!\n"; exit
+        clear; echo -e "\n>>>> ABORT: cancelled PACSTRAP! Exited!\n"; exit
       else
         clear; echo -e "\n$ERRMSG\n"
       fi
@@ -85,7 +86,7 @@ cp -rf 4arch /mnt/root
 arch-chroot /mnt /root/4arch/install/01_chroot.sh
 
 while true; do
-  read -p "===> SCRIPT ENDED, REBOOT NOW? (y/n) = " csas
+  read -p "===> 00_SCRIPT ENDED, REBOOT NOW? (y/n) = " csas
   echo; csas="${csas,,}"
 
   if [[ "$csas" == "y" ]]; then
@@ -94,7 +95,7 @@ while true; do
     umount -R /mnt
     
     echo -e "\n>>>> REBOOT INITIATED...\n"
-    break; sleep 1; sync; sync; sync; systemctl reboot
+    sleep 3; sync; sync; sync; systemctl reboot
   
   elif [[ "$csas" == "n" ]]; then
     clear; echo -e "\n>>>> OKAY, REBOOT MANUALLY!\n"; exit
