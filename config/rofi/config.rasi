@@ -1,9 +1,10 @@
 configuration {
   font                : "Rubik 12";
   display-drun        : "";
-  drun-display-format : "{icon}{name}";
+  drun-display-format : "{name}";
   show-icons          : true;
   icon-theme          : "matutela";
+  disable-history     : false;
 }
 
 @theme "./themes/maturofimain.rasi"
