@@ -13,16 +13,15 @@ window {
 
 listview {
   lines: 9;
-  padding: 13;
-  margin: 0 20 20 20;
-  background-color: {{colors.surface_container.default.rgba}};
-  border: 1 0 1 0;
-  border-color: {{colors.surface_bright.default.rgba | lighten: 1}};
+  padding: 1 13 13 13;
+  margin: 0 20 10 20;
+  border-radius: 0;
 }
 
 element {
   border: 0 0 1 0;
-  border-color: {{colors.surface.default.rgba | lighten: 10}};
+  border-color: {{colors.surface.default.rgba | lighten: 5}};
+  border-radius: 0;
 }
 
 element-text {
@@ -35,7 +34,6 @@ element-text selected { text-color: {{colors.secondary.default.rgba}}; }
 element-icon {
   size: 45;
   margin: 10;
-  border-color: {{colors.primary.default.rgba | set_alpha: 0.3}};
 }
 
 element selected {
@@ -46,11 +44,11 @@ element selected {
 }
 
 inputbar {
-  background-color: {{colors.surface_container.default.rgba}};
+  background-color: {{colors.surface_container.default.rgba | set_alpha: 0.5}};
   border: 1 0 1 0;
-  border-color: {{colors.surface_bright.default.rgba | lighten: 1}};
+  border-color: {{colors.surface_bright.default.rgba | set_alpha: 0.7}};
   padding: 15;
-  margin: 20 40;
+  margin: 20 50;
 }
 
 entry {
