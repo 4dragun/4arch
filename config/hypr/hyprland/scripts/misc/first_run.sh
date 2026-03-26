@@ -6,6 +6,8 @@ ICON="$HOME/.local/share/icons/matutela/scalable/apps/kalu.svg"
 if [ ! -f "$FLAG" ]; then
   sleep 0.5
   notify-send -i "$ICON" "4ARCH" "Welcome to Archy Hyprland ✨"
+  notify-send -i "$ICON" "4ARCH" "Pick a picture to set as wallpaper 🎨"
+
   $HOME/.config/hypr/hyprland/scripts/wallpaper/pick.sh || exit
   touch "$FLAG"
 fi

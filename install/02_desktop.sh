@@ -169,6 +169,8 @@ sudo systemctl enable power-profiles-daemon sddm
 echo -e "\n>>>> REMOVING 4ARCH REPO FROM ROOT DIRECTORY...\n"
 sudo rm -rf /root/4arch
 
+echo "$WALL" > "$HOME/.cache/last_wall.txt"
+
 while true; do
   read -p "===> 4ARCH SCRIPT ENDED, REBOOT NOW? (y/n) = " nas; echo
   nas="${nas,,}"

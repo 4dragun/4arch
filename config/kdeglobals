@@ -1,10 +1,10 @@
 [General]
 ColorScheme=MatuQTCT
 fixed=JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-font=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-menuFont=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-smallestReadableFont=Rubik,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
-toolBarFont=Rubik,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Google Sans Flex,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=Google Sans Flex,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=Google Sans Flex,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=Google Sans Flex,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Icons]
 Theme=matutela

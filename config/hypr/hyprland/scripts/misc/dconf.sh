@@ -4,4 +4,4 @@ D="dbus-run-session gsettings set org.gnome.desktop.interface"
 
 $D gtk-theme  'adw-gtk3-dark'
 $D icon-theme 'matutela'
-$D font-name  'Rubik 12'
+$D font-name  'Google Sans Flex 12'

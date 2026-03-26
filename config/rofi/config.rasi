@@ -1,5 +1,5 @@
 configuration {
-  font                : "Rubik 12";
+  font                : "Google Sans Flex 12";
   display-drun        : "";
   drun-display-format : "{name}";
   show-icons          : true;
