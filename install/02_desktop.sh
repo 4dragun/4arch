@@ -29,7 +29,10 @@ while true; do
         echo && git clone "$G2" "$HOME/.config/nvim" &&\
 
         echo && cp -rf "$HOME/4arch/config/." "$HOME/.config" &&\
-        echo && mv -f "$HOME/.config/.gitconfig" "$HOME"; then
+        echo && mv -f "$HOME/.config/.gitconfig" "$HOME" &&\
+
+        echo && mkdir -p "$HOME/.local/share/fonts" &&\
+        echo && cp -rf "$HOME/4arch/misc/flex" "$HOME/.local/share/fonts"; then
 
         clear; echo -e "\n>>>> SUCCESS: configured DOTFILES!\n"; break 2
       else
@@ -119,7 +122,7 @@ while true; do
         $YS sddm brave emote pavucontrol-qt gwenview rofi-wayland\
             nwg-look blueman qbittorrent swaync reflector-simple neovide mpv\
             waybar network-manager-applet dolphin swappy systemsettings\
-            kdialog p7zip-gui zen-browser-bin strawberry &&\
+            kdialog p7zip-gui zen-browser-bin strawberry gnome-calculator &&\
 
         echo -e "\n>>>> INSTALLING CLI APPLICATIONS...\n" &&\
         $YS fzf lsd bat pacseek fastfetch btop udiskie kitty yazi starship\
