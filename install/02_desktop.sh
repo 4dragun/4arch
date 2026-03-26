@@ -122,7 +122,7 @@ while true; do
         $YS sddm brave emote pavucontrol-qt gwenview rofi-wayland\
             nwg-look blueman qbittorrent swaync reflector-simple neovide mpv\
             waybar network-manager-applet dolphin swappy systemsettings\
-            kdialog p7zip-gui zen-browser-bin strawberry gnome-calculator &&\
+            kdialog p7zip-gui zen-browser-bin strawberry kcalc &&\
 
         echo -e "\n>>>> INSTALLING CLI APPLICATIONS...\n" &&\
         $YS fzf lsd bat pacseek fastfetch btop udiskie kitty yazi starship\
@@ -130,7 +130,7 @@ while true; do
             power-profiles-daemon clipse matugen &&\
 
         echo -e "\n>>>> INSTALLING AUR PACKAGES...\n" &&\
-        $YS ttf-rubik-vf wvkbd ayugram-desktop-bin surge-bin darkly-bin; then
+        $YS wvkbd ayugram-desktop-bin surge-bin darkly-bin; then
 
         clear; echo -e "\n>>>> SUCCESS: finished installing APPS & UTILS!\n"
         break 2
