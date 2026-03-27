@@ -130,7 +130,8 @@ while true; do
             power-profiles-daemon clipse matugen &&\
 
         echo -e "\n>>>> INSTALLING AUR PACKAGES...\n" &&\
-        $YS wvkbd ayugram-desktop-bin surge-bin darkly-bin; then
+        $YS wvkbd ayugram-desktop-bin surge-bin darkly-bin\
+            pixie-sddm-git; then
 
         clear; echo -e "\n>>>> SUCCESS: finished installing APPS & UTILS!\n"
         break 2

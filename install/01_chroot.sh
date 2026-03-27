@@ -77,6 +77,26 @@ echo -e "\n>>>> ENABLING SERVICES...\n"
 systemctl enable systemd-timesyncd.service NetworkManager.service fstrim.timer\
                  keyd.service
 
+echo -e "\n>>>> SETTING UP SYSTEMD-BOOT...\n"
+bootctl install || bootctl update
+# Automatically grab the UUID of your root partition (/dev/nvme0n1p3)
+ROOT_UUID=$(findmnt -n -o UUID /)
+# 1. Main loader configuration
+cat <<EOF > /boot/loader/loader.conf
+default      arch-lts.conf
+timeout      9
+console-mode auto
+editor       no
+EOF
+# 2. The LTS Boot Entry
+cat <<EOF > /boot/loader/entries/arch-lts.conf
+title   Arch Linux - LTS
+linux   /vmlinuz-linux-lts
+initrd  /intel-ucode.img
+initrd  /initramfs-linux-lts.img
+options root=UUID=$ROOT_UUID rw
+EOF
+
 echo -e "\n>>>> FIXING SOME HARDWARE KEYBOARD KEYS...\n"
 mkdir -pv /etc/keyd; echo
 cat <<EOF > /etc/keyd/default.conf
@@ -101,24 +121,16 @@ f4 = brightnessdown
 f5 = brightnessup
 EOF
 
-echo -e "\n>>>> SETTING UP SYSTEMD-BOOT...\n"
-bootctl install || bootctl update
-# Automatically grab the UUID of your root partition (/dev/nvme0n1p3)
-ROOT_UUID=$(findmnt -n -o UUID /)
-# 1. Main loader configuration
-cat <<EOF > /boot/loader/loader.conf
-default      arch-lts.conf
-timeout      9
-console-mode auto
-editor       no
-EOF
-# 2. The LTS Boot Entry
-cat <<EOF > /boot/loader/entries/arch-lts.conf
-title   Arch Linux - LTS
-linux   /vmlinuz-linux-lts
-initrd  /intel-ucode.img
-initrd  /initramfs-linux-lts.img
-options root=UUID=$ROOT_UUID rw
+echo -e "\n>>>> CONFIGURING SDDM...\n"
+rm -rf /etc/sddm.conf; echo
+mkdir -pv /etc/sddm.conf.d; echo
+cat <<EOF > /etc/sddm.conf.d/archy-sddm.conf
+[General]
+DisplayServer=wayland
+Numlock=on
+
+[Theme]
+Current=pixie
 EOF
 
 echo -e "\n>>>> GIVING SYSTEMD-FILES DROP-INS...\n"
