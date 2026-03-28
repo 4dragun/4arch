@@ -19,6 +19,6 @@ matugen -t scheme-content --source-color-index 0 image "$WALL" || {
   exit
 }
 
-# pkexec sudo cp -rf "$WALL" /usr/share/sddm/themes/pixie/assets/background.jpg
-
 notify-send -i "$ICON" "Matugen" "$WALL"
+
+pkexec sudo cp -rf "$WALL" /usr/share/sddm/themes/pixie/assets/background.jpg
