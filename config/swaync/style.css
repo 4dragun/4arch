@@ -64,7 +64,7 @@
   margin: 0px 2px;
 }
 
-.mpris-background { filter: blur(10px); }
+.mpris-background { filter: blur(13px); }
 
 .widget-mpris-player {
   box-shadow: var(--shado-a);
