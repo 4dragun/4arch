@@ -130,7 +130,8 @@ while true; do
             power-profiles-daemon clipse matugen &&\
 
         echo -e "\n>>>> INSTALLING VULKAN & STUFF...\n" &&\
-        $YS lib32-vulkan-intel vulkan-tools mangoverlay intel-media-driver &&\
+        $YS lib32-vulkan-intel vulkan-tools mangoverlay intel-media-driver\
+            intel-gpu-tools &&\
 
         echo -e "\n>>>> INSTALLING AUR PACKAGES...\n" &&\
         $YS wvkbd ayugram-desktop-bin surge-bin darkly-bin\
