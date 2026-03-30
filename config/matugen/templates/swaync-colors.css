@@ -11,7 +11,7 @@
   --common-color-a: {{colors.primary.default.rgba | set_alpha: 0.1}};
   --common-color-b: {{colors.primary.default.rgba | set_alpha: 0.3}};
 
-  --test: {{colors.surface_bright.default.rgba | lighten: 4}};
+  --test: {{colors.surface_container.default.rgba | lighten: 15}};
 
   --shado: 1px -1px 1px var(--common-color-b), -1px 1px 1px var(--common-color-b);
   --shado-a: 0px 1px 1px var(--test), 0px -1px 1px var(--test);
