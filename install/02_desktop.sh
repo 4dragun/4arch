@@ -129,6 +129,9 @@ while true; do
             git-credential-manager-bin wl-clipboard brightnessctl alsa-utils\
             power-profiles-daemon clipse matugen &&\
 
+        echo -e "\n>>>> INSTALLING VULKAN & STUFF...\n" &&\
+        $YS lib32-vulkan-intel vulkan-tools mangoverlay &&\
+
         echo -e "\n>>>> INSTALLING AUR PACKAGES...\n" &&\
         $YS wvkbd ayugram-desktop-bin surge-bin darkly-bin\
             pixie-sddm-git; then
