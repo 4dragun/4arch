@@ -19,14 +19,14 @@ else
       cfdisk /dev/nvme0n1
 
       echo -e "\n>>>> FORMATTING PARTITIONS...\n"
-      mkfs.fat -F 32 /dev/nvme0n1p1
-      mkfs.ext4      /dev/nvme0n1p3
-      mkswap         /dev/nvme0n1p2
+      mkfs.fat -F 32 /dev/nvme0n1p5
+      mkfs.ext4      /dev/nvme0n1p7
+      mkswap         /dev/nvme0n1p6
 
       echo -e "\n>>>> MOUNTING PARTITIONS...\n"
-      mount  /dev/nvme0n1p3 /mnt
-      mount  /dev/nvme0n1p1 /mnt/boot --mkdir
-      swapon /dev/nvme0n1p2
+      mount  /dev/nvme0n1p7 /mnt
+      mount  /dev/nvme0n1p5 /mnt/boot --mkdir
+      swapon /dev/nvme0n1p6
       clear; break
     elif [[ "$pfa" == "n" ]]; then
       clear; echo -e "\n>>>> ERROR: DISK is not ready for installation!\n"
