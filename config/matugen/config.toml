@@ -23,9 +23,13 @@ output_path = '../waybar/themes/matuwaybar.css'
 post_hook   = 'systemctl --user restart waybar; pkill kded'
 
 [templates.hyprland]
-input_path  = './templates/hyprland-colors.conf'
-output_path = '../hypr/hyprland/colors.conf'
+input_path  = './templates/hyprland-colors.lua'
+output_path = '../hypr/hyprland/colors.lua'
 post_hook   = 'hyprctl reload'
+
+[templates.hyprlock]
+input_path  = './templates/hyprlock-colors.conf'
+output_path = '../hypr/hyprlock/colors.conf'
 
 [templates.gtk3]
 input_path  = './templates/gtk-colors.css'
