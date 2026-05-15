@@ -1,35 +1,28 @@
 hl.config({ animations = { enabled = true, }, })
 
--- hl.curve("easeOutQuint",   { type = "bezier", points = { {0.23, 1},    {0.32, 1}    } })
--- hl.curve("easeInOutCubic", { type = "bezier", points = { {0.65, 0.05}, {0.36, 1}    } })
+hl.curve("easeOutQuint", { type = "bezier", points = { {0.22, 1},    {0.36, 1}    } })
+hl.curve("easeOutBack",  { type = "bezier", points = { {0.34, 1.56}, {0.64, 1}    } })
 
+hl.animation({ leaf = "global",        enabled = true,  speed = 10, bezier = "default" })
+hl.animation({ leaf = "border",        enabled = false })
 
---   #        NAME,         X0,   Y0,   X1,   Y1
---   bezier = easeOutQuint, 0.22, 1,    0.36, 1
---   bezier = easeOutBack,  0.34, 1.56, 0.64, 1
---
---   #           NAME,          ONOFF, SPEED, CURVE,        [STYLE]
---   animation = global,        1,     10,    default
---   animation = border,        0
---
---   animation = windows,       1,     5,     easeOutQuint
---   animation = windowsIn,     1,     7,     easeOutBack,  popin 90%
---   animation = windowsOut,    1,     5,     default
---
---   animation = fadeIn,        0
---   animation = fadeOut,       1,     5,     default
---   animation = fade,          0
---
---   animation = layers,        0
---   animation = layersIn,      1,     5,     easeOutQuint, popin 90%
---   animation = layersOut,     1,     5,     default
---
---   animation = fadeLayersIn,  1,     1,     default
---   animation = fadeLayersOut, 1,     5,     default
---
---   animation = workspaces,    0
---   animation = workspacesIn,  1,     4,     default,      slide
---   animation = workspacesOut, 1,     4,     default,      slide
---
---   animation = zoomFactor,    1,     17,     default
--- }
+hl.animation({ leaf = "windows",       enabled = true,  speed = 5, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 7, bezier = "easeOutBack", style = "popin 90%" })
+hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 5, bezier = "default" })
+
+hl.animation({ leaf = "fadeIn",        enabled = false })
+hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 5, bezier = "default" })
+hl.animation({ leaf = "fade",          enabled = false })
+
+hl.animation({ leaf = "layers",        enabled = false })
+hl.animation({ leaf = "layersIn",      enabled = true,  speed = 5, bezier = "easeOutQuint", style = "popin 90%" })
+hl.animation({ leaf = "layersOut",     enabled = true,  speed = 5, bezier = "default" })
+
+hl.animation({ leaf = "fadeLayersIn",  enabled = true,  speed = 1, bezier = "default" })
+hl.animation({ leaf = "fadeLayersOut", enabled = true,  speed = 5, bezier = "default" })
+
+hl.animation({ leaf = "workspaces",    enabled = false })
+hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 4, bezier = "default", style = "slide" })
+hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 4, bezier = "default", style = "slide" })
+
+hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 17, bezier = "default" })
