@@ -43,17 +43,6 @@ for i = 1, 10 do
     hl.bind("SUPER + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- bind = SUPER SHIFT, 1, movetoworkspace, 1
--- bind = SUPER SHIFT, 2, movetoworkspace, 2
--- bind = SUPER SHIFT, 3, movetoworkspace, 3
--- bind = SUPER SHIFT, 4, movetoworkspace, 4
--- bind = SUPER SHIFT, 5, movetoworkspace, 5
--- bind = SUPER SHIFT, 6, movetoworkspace, 6
--- bind = SUPER SHIFT, 7, movetoworkspace, 7
--- bind = SUPER SHIFT, 8, movetoworkspace, 8
--- bind = SUPER SHIFT, 9, movetoworkspace, 9
--- bind = SUPER SHIFT, 0, movetoworkspace, 10
-
 -- Example special workspace (scratchpad)
 hl.bind("SUPER + S",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
@@ -62,28 +51,28 @@ hl.bind("SUPER + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" })
 hl.bind("SUPER + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- bind = SUPER SHIFT, left, resizeactive,-50 0
--- bind = SUPER SHIFT, right, resizeactive,50 0
--- bind = SUPER SHIFT, up, resizeactive,0 -50
--- bind = SUPER SHIFT, down, resizeactive,0 50
+hl.bind("SUPER + SHIFT + left",  hl.dsp.window.resize({ x = -50, y =  0,  relative = true }))
+hl.bind("SUPER + SHIFT + right", hl.dsp.window.resize({ x =  50, y =  0,  relative = true }))
+hl.bind("SUPER + SHIFT + up",    hl.dsp.window.resize({ x =  0,  y = -50, relative = true }))
+hl.bind("SUPER + SHIFT + down",  hl.dsp.window.resize({ x =  0,  y =  50, relative = true }))
 
--- bind = SUPER CTRL, left, movewindow, l
--- bind = SUPER CTRL, right, movewindow, r
--- bind = SUPER CTRL, up, movewindow, u
--- bind = SUPER CTRL, down, movewindow, d
+hl.bind("SUPER + CTRL + left",  hl.dsp.window.move({ direction = "left"  }))
+hl.bind("SUPER + CTRL + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind("SUPER + CTRL + up",    hl.dsp.window.move({ direction = "up"    }))
+hl.bind("SUPER + CTRL + down",  hl.dsp.window.move({ direction = "down"  }))
 
--- bind = SUPER ALT, left, movetoworkspace, r-1
--- bind = SUPER ALT, right, movetoworkspace, r+1
---
--- bindel = ,XF86MonBrightnessUp,   exec, brightnessctl s 1%+
--- bindel = ,XF86MonBrightnessDown, exec, brightnessctl s 1%-
---
--- bind   = ,XF86AudioPlay,        exec, playerctl play-pause
--- bindel = ,XF86AudioMute,        exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
--- bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-
--- bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+
---
--- # EXTERNAL DAC
--- # bind   = ,XF86AudioPlay,        exec, amixer -D hw:Audio set "PCM" toggle
--- # bindel = ,XF86AudioLowerVolume, exec, amixer -M -D hw:Audio set "PCM" 1%-
--- # bindel = ,XF86AudioRaiseVolume, exec, amixer -M -D hw:Audio set "PCM" 1%+
+hl.bind("SUPER + ALT + left",  hl.dsp.window.move({ workspace = "-1" }))
+hl.bind("SUPER + ALT + right", hl.dsp.window.move({ workspace = "+1" }))
+
+hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl s 1%+"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl s 1%-"), { locked = true, repeating = true })
+
+hl.bind("XF86AudioPlay",        hl.dsp.exec_cmd("playerctl play-pause"),                           { locked = true, repeating = true })
+hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"),      { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 1%+"), { locked = true, repeating = true })
+
+-- EXTERNAL DAC
+-- bind   = ,XF86AudioPlay,        exec, amixer -D hw:Audio set "PCM" toggle
+-- bindel = ,XF86AudioLowerVolume, exec, amixer -M -D hw:Audio set "PCM" 1%-
+-- bindel = ,XF86AudioRaiseVolume, exec, amixer -M -D hw:Audio set "PCM" 1%+
