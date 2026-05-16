@@ -119,7 +119,7 @@ while true; do
             hyprpaper &&\
 
         echo -e "\n>>>> INSTALLING GUI APPLICATIONS...\n" &&\
-        $YS sddm brave emote pavucontrol-qt gwenview rofi-wayland\
+        $YS sddm brave emote pavucontrol-qt gwenview rofi-wayland papers\
             nwg-look blueman qbittorrent swaync reflector-simple neovide mpv\
             waybar network-manager-applet dolphin swappy systemsettings\
             kdialog p7zip-gui zen-browser-bin strawberry kcalc &&\
