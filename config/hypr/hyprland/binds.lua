@@ -17,6 +17,7 @@ hl.bind("SUPER + G",      hl.dsp.exec_cmd("gwenview"))
 hl.bind("SUPER + L",      hl.dsp.exec_cmd("hyprlock"))
 hl.bind("SUPER + H",      hl.dsp.exec_cmd("hyprpicker -a --format=hex"))
 hl.bind("SUPER + N",      hl.dsp.exec_cmd("neovide"))
+hl.bind("SUPER + D",      hl.dsp.exec_cmd("papers"))
 
 hl.bind("SUPER + K",         hl.dsp.exec_cmd("wvkbd-mobintl"))
 hl.bind("SUPER + SHIFT + K", hl.dsp.exec_cmd("pkill wvkbd"))
