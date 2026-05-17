@@ -16,8 +16,8 @@
     "backlight/slider", 
     "hyprland/workspaces",
     "clock",
-    "pulseaudio",
-    "custom/amixer"
+    "pulseaudio"
+    //"custom/amixer"
   ],
 
   "modules-right": [
@@ -71,7 +71,8 @@
       "headphone": "  ",
       "hands-free": "󰋎 ",
       "headset": "󰋎 ",
-      "default": ["  ", "   "]
+      "default": ["  ", "   "],
+      "alsa_output.usb-TTGK_USB_HiFi_Audio_5000000001-01.analog-stereo": "   "
     },
     "on-click": "pavucontrol-qt"
   },
@@ -116,5 +117,5 @@
     "escape": true
   },
 
-  "custom/amixer": { "exec": "~/.config/waybar/scripts/amixerbar.sh" }
+  //"custom/amixer": { "exec": "~/.config/waybar/scripts/amixerbar.sh" }
 }
