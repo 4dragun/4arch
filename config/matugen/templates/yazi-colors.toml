@@ -19,7 +19,7 @@ count_cut      = { fg = "{{colors.on_tertiary_fixed.default.hex}}", bg = "{{colo
 count_selected = { fg = "{{colors.on_primary.default.hex}}", bg = "{{colors.tertiary.default.hex}}" }
 
 # Border
-border_symbol = "│"
+border_symbol = " "
 border_style  = { fg = "{{colors.surface_tint.default.hex}}" }
 
 # : ]]]
