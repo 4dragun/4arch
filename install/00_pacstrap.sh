@@ -56,7 +56,7 @@ done
 while true; do
   echo -e "\n>>>> JUICY PACSTRAP INCOMING...\n"
   if pacstrap -K /mnt base linux-lts linux-firmware fish sudo intel-ucode\
-                      networkmanager neovide git base-devel keyd\
+                      networkmanager neovide git base-devel keyd unzip\
                       pipewire pipewire-alsa pipewire-audio pipewire-jack\
                       pipewire-libcamera pipewire-pulse sddm; then
 

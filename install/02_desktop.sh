@@ -27,6 +27,9 @@ while true; do
 
         echo && git clone "$G1" "$HOME/.cache/TELA-GIT" &&\
         echo && git clone "$G2" "$HOME/.config/nvim" &&\
+        echo &&\
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/tomasklaen/uosc/HEAD/installers/unix.sh)" &&\
+        echo &&\
 
         echo && cp -rf "$HOME/4arch/config/." "$HOME/.config" &&\
         echo && mv -f "$HOME/.config/.gitconfig" "$HOME" &&\
@@ -120,9 +123,9 @@ while true; do
 
         echo -e "\n>>>> INSTALLING GUI APPLICATIONS...\n" &&\
         $YS sddm brave emote pavucontrol-qt gwenview rofi-wayland papers\
-            nwg-look blueman qbittorrent swaync reflector-simple neovide mpv\
+            nwg-look blueman qbittorrent swaync reflector-simple neovide kcalc\
             waybar network-manager-applet dolphin swappy systemsettings\
-            kdialog p7zip-gui zen-browser-bin strawberry kcalc &&\
+            kdialog p7zip-gui zen-browser-bin strawberry mpv mpv-mpris &&\
 
         echo -e "\n>>>> INSTALLING CLI APPLICATIONS...\n" &&\
         $YS fzf lsd bat pacseek fastfetch btop udiskie kitty yazi starship\
