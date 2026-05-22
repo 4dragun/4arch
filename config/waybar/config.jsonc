@@ -72,7 +72,7 @@
       "hands-free": "󰋎 ",
       "headset": "󰋎 ",
       "default": ["  ", "   "],
-      "alsa_output.usb-TTGK_USB_HiFi_Audio_5000000001-01.analog-stereo": "   "
+      "alsa_output.usb-TTGK_USB_HiFi_Audio_5000000001-01.analog-stereo": "   "
     },
     "on-click": "pavucontrol-qt"
   },
