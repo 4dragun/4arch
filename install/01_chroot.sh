@@ -280,6 +280,8 @@ while true; do
       read -p "===> RETRY: retry running PACMAN? (y/n) = " paca
       echo; paca="${paca,,}"
 
+      if [[ "$paca" == "y" ]]; then
+        clear; break
       elif [[ "$paca" == "n" ]]; then
         clear; echo -e "\n>>>> ABORT: cancelled PACMAN-UPDATE!\n"; break 2
       else
