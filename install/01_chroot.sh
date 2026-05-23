@@ -230,7 +230,7 @@ done
 
 echo -e "\n>>>> CREATING PACMAN DROP-INS (ZERO TOUCH METHOD)...\n"
 # 1. Create the directory (it usually doesn't exist by default)
-mkdir -p /etc/pacman.d
+mkdir -p /etc/pacman.d/hooks
 # 2. Create your custom settings file
 cat <<EOF > /etc/pacman.d/archy-custom.conf
 [options]
@@ -248,6 +248,25 @@ EOF
 grep -qxF 'Include = /etc/pacman.d/*.conf' /etc/pacman.conf ||\
   echo 'Include = /etc/pacman.d/*.conf' >> /etc/pacman.conf
 
+# 4. OPTIONAL KDEcache FIX HOOK
+cat <<EOF > /etc/pacman.d/hooks/updateKDEcache.hook
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Path
+Target = usr/share/applications/*.desktop
+
+[Action]
+Description = Updating the Kservice desktop file configuration cache...
+When = PostTransaction
+Exec = /bin/bash -c "sudo -u \"$(logname)\" bash -lc 'XDG_MENU_PREFIX=arch- /usr/bin/kbuildsycoca6 --noincremental'"
+Depends = sudo
+Depends = coreutils
+Depends = kservice
+Depends = archlinux-xdg-menu
+EOF
+
 while true; do
   clear; echo -e "\n>>>> TESTING PACMAN-UPDATE...\n"
 
@@ -261,8 +280,6 @@ while true; do
       read -p "===> RETRY: retry running PACMAN? (y/n) = " paca
       echo; paca="${paca,,}"
 
-      if [[ "$paca" == "y" ]]; then
-        clear; break
       elif [[ "$paca" == "n" ]]; then
         clear; echo -e "\n>>>> ABORT: cancelled PACMAN-UPDATE!\n"; break 2
       else
@@ -274,3 +291,5 @@ done
 
 clear; echo -e "\n>>>> CHROOT-SCRIPT ENDED, RETURNING TO MAIN SCRIPT...\n"
 sleep 3; exit
+#!/usr/bin/env bash
+

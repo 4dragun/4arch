@@ -58,7 +58,8 @@ while true; do
   if pacstrap -K /mnt base linux-lts linux-firmware fish sudo intel-ucode\
                       networkmanager neovide git base-devel keyd unzip\
                       pipewire pipewire-alsa pipewire-audio pipewire-jack\
-                      pipewire-libcamera pipewire-pulse sddm; then
+                      pipewire-libcamera pipewire-pulse sddm\
+                      archlinux-xdg-menu; then
 
     clear; echo -e "\n>>>> SUCCESS: completed PACSTRAP!\n"; break
   else
