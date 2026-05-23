@@ -293,5 +293,3 @@ done
 
 clear; echo -e "\n>>>> CHROOT-SCRIPT ENDED, RETURNING TO MAIN SCRIPT...\n"
 sleep 3; exit
-#!/usr/bin/env bash
-
