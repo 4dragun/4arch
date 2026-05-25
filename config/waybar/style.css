@@ -5,6 +5,7 @@
   font-weight: normal;
   font-size: 15px;
   padding: 0;
+  transition: 0.5s;
 }
 
 window#waybar { background: @surface }
@@ -25,6 +26,17 @@ window#waybar { background: @surface }
   margin: 4px 2px;
   color: @secondary;
 }
+
+#power-profiles-daemon:hover,
+#workspaces:hover,
+#window:hover,
+#privacy:hover,
+#pulseaudio:hover,
+#tray:hover,
+#battery:hover,
+#clock:hover,
+#custom-notification:hover,
+#custom-amixer:hover { background: @primary_custom; }
 
 #power-profiles-daemon { color: @primary }
 #power-profiles-daemon.performance {
@@ -61,9 +73,10 @@ window#waybar { background: @surface }
   padding: 0 13px;
 }
 
+/* ✴️ Watch out for consistency in values ✴️ */
 #window {
   background: none;
-  margin: 0 3px 0 23px;
+  margin: 4px 0 4px 23px;
 }
 
 #mpris {
@@ -106,9 +119,10 @@ window#waybar { background: @surface }
   }
 }
 
+/* ✴️ Watch out for consistency in values ✴️ */
 #custom-notification {
   background: none;
-  margin: 0 23px 0 0;
+  margin: 4px 23px 4px 0;
 }
 
 /* check with main values for consistency 👇️ */

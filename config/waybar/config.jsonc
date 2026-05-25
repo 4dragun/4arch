@@ -61,16 +61,16 @@
   "backlight": { "format": "{percent}" },
 
   "pulseaudio": {
-    "format-bluetooth": "{icon}󰂯  {volume}  󰇘 {format_source}",
-    "format-bluetooth-muted": "{icon}󰂯   󰇘 {format_source}",
+    "format-bluetooth": "{icon}<span size='9500' rise='1500'>󰂯</span> {volume}  󰇘 {format_source}",
+    "format-bluetooth-muted": "{icon}<span size='9500' rise='1500'>󰂯</span>   󰇘 {format_source}",
     "format": "{icon}{volume}  󰇘 {format_source}",
     "format-muted": "  󰇘 {format_source}",
     "format-source": " {volume}",
     "format-source-muted": " ",
     "format-icons": {
-      "headphone": "  ",
-      "hands-free": "󰋎 ",
-      "headset": "󰋎 ",
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
       "default": ["  ", "   "],
       "alsa_output.usb-TTGK_USB_HiFi_Audio_5000000001-01.analog-stereo": "   "
     },
