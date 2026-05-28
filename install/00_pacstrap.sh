@@ -59,7 +59,7 @@ while true; do
                       networkmanager neovide git base-devel keyd unzip\
                       pipewire pipewire-alsa pipewire-audio pipewire-jack\
                       pipewire-libcamera pipewire-pulse sddm\
-                      archlinux-xdg-menu; then
+                      archlinux-xdg-menu veracrypt exfatprogs; then
 
     clear; echo -e "\n>>>> SUCCESS: completed PACSTRAP!\n"; break
   else

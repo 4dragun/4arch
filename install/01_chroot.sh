@@ -72,6 +72,10 @@ done
 echo -e "\n>>>> ADDING USERS TO SUDO...\n"
 echo "%wheel ALL=(ALL:ALL) ALL" > /etc/sudoers.d/01_archy
 echo "Defaults pwfeedback, insults" >> /etc/sudoers.d/01_archy
+# EXPERIMENTAL CRYPTION >>>
+echo "archy ALL = (root) NOPASSWD:/usr/bin/veracrypt, /usr/bin/true" >> /etc/sudoers.d/01_archy
+# EXPERIMENTAL CRYPTYYY >>>
+echo "options loop max_loop=8" | sudo tee /etc/modprobe.d/loop_devices.conf
 
 echo -e "\n>>>> ENABLING SERVICES...\n"
 systemctl enable systemd-timesyncd.service NetworkManager.service fstrim.timer\
