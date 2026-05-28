@@ -53,12 +53,19 @@ while true; do
   fi
 done
 
+# Download and extract the installer
+curl -O https://mirror.cachyos.org/cachyos-repo.tar.xz
+tar xvf cachyos-repo.tar.xz && cd cachyos-repo
+
+# Run the automated installer
+./cachyos-repo.sh
+
 while true; do
   echo -e "\n>>>> JUICY PACSTRAP INCOMING...\n"
-  if pacstrap -K /mnt base linux-lts linux-firmware fish sudo intel-ucode\
-                      networkmanager neovide git base-devel keyd unzip\
-                      pipewire pipewire-alsa pipewire-audio pipewire-jack\
-                      pipewire-libcamera pipewire-pulse sddm\
+  if pacstrap -K /mnt base linux-cachyos-bore linux-firmware fish sudo\
+                      intel-ucode networkmanager neovide git base-devel keyd\
+                      unzip pipewire pipewire-alsa pipewire-audio\
+                      pipewire-jack pipewire-libcamera pipewire-pulse sddm\
                       archlinux-xdg-menu veracrypt exfatprogs; then
 
     clear; echo -e "\n>>>> SUCCESS: completed PACSTRAP!\n"; break
