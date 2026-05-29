@@ -18,15 +18,30 @@ else
     if [[ "$pfa" == "y" ]]; then
       cfdisk /dev/nvme0n1
 
-      echo -e "\n>>>> FORMATTING PARTITIONS...\n"
+      echo -e "\n>>>> FORMATTING PARTITIONS (BTRFS ARCH WIKI METHOD)...\n"
+      # Format isolated 2GB UEFI boot room
       mkfs.fat -F 32 /dev/nvme0n1p5
-      mkfs.ext4      /dev/nvme0n1p7
-      mkswap         /dev/nvme0n1p6
+      
+      # Target p6 as your primary 98GB Btrfs workspace pool
+      mkfs.btrfs -L ARCH_VAULT -f /dev/nvme0n1p6
 
-      echo -e "\n>>>> MOUNTING PARTITIONS...\n"
-      mount  /dev/nvme0n1p7 /mnt
-      mount  /dev/nvme0n1p5 /mnt/boot --mkdir
-      swapon /dev/nvme0n1p6
+      echo -e "\n>>>> CREATING BTRFS SUBVOLUMES (THE DIVIDERS)...\n"
+      # Mount your new p6 partition temporarily to lay down namespaces
+      mount /dev/nvme0n1p6 /mnt
+      btrfs subvolume create /mnt/@
+      btrfs subvolume create /mnt/@home
+      umount /mnt
+
+      echo -e "\n>>>> MOUNTING COMPRESSED SUBVOLUMES...\n"
+      # Mount Root subvolume from p6 with active transparent zstd compression
+      mount -o noatime,compress=zstd:3,subvol=@ /dev/nvme0n1p6 /mnt
+      
+      # Build inner structural closets
+      mkdir -p /mnt/home /mnt/boot
+
+      # Mount Home subvolume from p6 and isolated Boot partition from p5
+      mount -o noatime,compress=zstd:3,subvol=@home /dev/nvme0n1p6 /mnt/home
+      mount /dev/nvme0n1p5 /mnt/boot
       clear; break
     elif [[ "$pfa" == "n" ]]; then
       clear; echo -e "\n>>>> ERROR: DISK is not ready for installation!\n"
@@ -55,11 +70,7 @@ done
 
 while true; do
   echo -e "\n>>>> JUICY PACSTRAP INCOMING...\n"
-  if pacstrap -K /mnt base linux linux-firmware fish sudo\
-                      intel-ucode networkmanager neovide git base-devel keyd\
-                      unzip pipewire pipewire-alsa pipewire-audio\
-                      pipewire-jack pipewire-libcamera pipewire-pulse sddm\
-                      archlinux-xdg-menu veracrypt exfatprogs; then
+  if pacstrap -K /mnt base linux linux-firmware; then
 
     clear; echo -e "\n>>>> SUCCESS: completed PACSTRAP!\n"; break
   else
@@ -82,9 +93,10 @@ done
 echo -e "\n>>>> GENERATING FSTAB...\n"
 genfstab -U /mnt > /mnt/etc/fstab
 
-cp -rf 4arch /mnt/root
+# Copying to the root layout path to ensure clean chroot absolute path execution
+cp -rf 4arch /mnt/
 
-arch-chroot /mnt /root/4arch/install/01_chroot.sh
+arch-chroot /mnt /4arch/install/01_chroot.sh
 
 while true; do
   read -p "===> 00_SCRIPT ENDED, REBOOT NOW? (y/n) = " csas
@@ -92,7 +104,10 @@ while true; do
 
   if [[ "$csas" == "y" ]]; then
     
-    clear; echo -e "\n>>>> UNMOUNTING PARTITIONS nd shyit...\n"
+    clear; echo -e "\n>>>> CLEANING OUT INSTALLATION ASSETS FROM DISK...\n"
+    rm -rf /mnt/4arch
+    
+    echo -e "\n>>>> UNMOUNTING PARTITIONS nd shyit...\n"
     umount -R /mnt
     
     echo -e "\n>>>> REBOOT INITIATED...\n"
