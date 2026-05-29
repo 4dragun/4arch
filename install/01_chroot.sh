@@ -87,17 +87,17 @@ bootctl install || bootctl update
 ROOT_UUID=$(findmnt -n -o UUID /)
 # 1. Main loader configuration
 cat <<EOF > /boot/loader/loader.conf
-default      linux-cachyos-bore.conf
+default      linux.conf
 timeout      9
 console-mode auto
 editor       no
 EOF
 # 2. The LTS Boot Entry
-cat <<EOF > /boot/loader/entries/linux-cachyos-bore.conf
-title   LINUX-CACHYOS-BORE
-linux   /vmlinuz-linux-cachyos-bore
+cat <<EOF > /boot/loader/entries/linux.conf
+title   LINUX CHAD
+linux   /vmlinuz-linux
 initrd  /intel-ucode.img
-initrd  /initramfs-linux-cachyos-bore.img
+initrd  /initramfs-linux.img
 options root=UUID=$ROOT_UUID rw
 EOF
 
