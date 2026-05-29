@@ -3,6 +3,25 @@
 ERRMSG=">>>> ERROR: invalid response! (try y or n)"
 
 echo -e "\n>>>> REACHED CHROOT SCRIPT, BE CAREFUL!\n"
+
+#EXPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+# Download and extract the installer
+curl -O https://mirror.cachyos.org/cachyos-repo.tar.xz
+tar xvf cachyos-repo.tar.xz && cd cachyos-repo
+# Run the automated installer
+sudo ./cachyos-repo.sh
+pacman -Syu
+
+pacman -S --needed linux-cachyos-bore btrfs-progs fish sudo\
+                   intel-ucode networkmanager neovide git base-devel keyd\
+                   unzip pipewire pipewire-alsa pipewire-audio\
+                   pipewire-jack pipewire-libcamera pipewire-pulse sddm\
+                   archlinux-xdg-menu veracrypt exfatprogs
+
+echo -e "\n>>>> CREATING SECURE ENCRYPTED BTRFS SWAPFILE...\n"
+btrfs filesystem mkswapfile --size 16g /swapfile
+swapon /swapfile
+
 echo -e "\n>>>> SETTING UP TIMEZONE...\n"
 ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 
@@ -87,18 +106,18 @@ bootctl install || bootctl update
 ROOT_UUID=$(findmnt -n -o UUID /)
 # 1. Main loader configuration
 cat <<EOF > /boot/loader/loader.conf
-default      linux.conf
+default      linux-cachyos-bore.conf
 timeout      9
 console-mode auto
 editor       no
 EOF
 # 2. The LTS Boot Entry
 cat <<EOF > /boot/loader/entries/linux.conf
-title   LINUX CHAD
-linux   /vmlinuz-linux
+title   LINUX CACHYOS BORE
+linux   /vmlinuz-linux-cachyos-bore
 initrd  /intel-ucode.img
-initrd  /initramfs-linux.img
-options root=UUID=$ROOT_UUID rw
+initrd  /initramfs-linux-cachyos-bore.img
+options root=UUID=$ROOT_UUID rootflags=subvol=@ rw
 EOF
 
 echo -e "\n>>>> FIXING SOME HARDWARE KEYBOARD KEYS...\n"
